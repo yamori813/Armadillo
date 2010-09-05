@@ -13,6 +13,8 @@
 
 @implementation Armadillo
 
+// Crossam2 Debug code
+
 - (IBAction)debugInit:(id)sender
 {
 	crossam2_init((CFStringRef)@"/dev/cu.F5U103000013FD");
@@ -33,6 +35,7 @@
 	crossam2_led(0);
 }
 
+// PC-OP-RS1 Debug code
 
 - (IBAction)debugPcoprs1_1:(id)sender
 {
