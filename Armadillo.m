@@ -7,6 +7,7 @@
  *
  */
 
+#include "serial.h"
 #include "crossam2.h"
 #include "pcoprs1.h"
 #import "Armadillo.h"
@@ -17,7 +18,27 @@
 
 - (IBAction)debugInit:(id)sender
 {
-	crossam2_init((CFStringRef)@"/dev/cu.F5U103000013FD");
+	NSMutableArray *ifList;
+	NSMutableString *portName;
+	// get serial port name list
+    ifList = [[ NSMutableArray alloc ] init];
+    io_iterator_t	serialPortIterator;
+    FindModems(&serialPortIterator);
+    GetModemPath(serialPortIterator, (CFMutableArrayRef)ifList);
+    IOObjectRelease(serialPortIterator);	// Release the iterator.
+	int i;
+	for(i =0; i < [ ifList count]; ++i) {
+		NSRange range;
+		range = [[ifList objectAtIndex:i] rangeOfString:@"F5U103"];
+		if (range.location != NSNotFound) {
+			//			NSLog(@"MORI MORI port %@\n", [ifList objectAtIndex:i]);
+			portName = [[ NSMutableString alloc ] init];
+			[portName setString:[ifList objectAtIndex:i]];
+			break;
+		}
+	}
+	
+	crossam2_init((CFStringRef)portName);
 }
 
 - (IBAction)debugPushKey:(id)sender
@@ -39,7 +60,32 @@
 
 - (IBAction)debugPcoprs1_1:(id)sender
 {
-	pcoprs1_init((CFStringRef)@"/dev/cu.OPRS00002776");
+	NSMutableArray *ifList;
+	NSMutableString *portName;
+	// get serial port name list
+    ifList = [[ NSMutableArray alloc ] init];
+    io_iterator_t	serialPortIterator;
+    FindModems(&serialPortIterator);
+    GetModemPath(serialPortIterator, (CFMutableArrayRef)ifList);
+    IOObjectRelease(serialPortIterator);	// Release the iterator.
+	int i;
+	for(i =0; i < [ ifList count]; ++i) {
+		NSRange range;
+		range = [[ifList objectAtIndex:i] rangeOfString:@"OPRS"];
+		if (range.location != NSNotFound) {
+			//			NSLog(@"MORI MORI port %@\n", [ifList objectAtIndex:i]);
+			portName = [[ NSMutableString alloc ] init];
+			[portName setString:[ifList objectAtIndex:i]];
+			break;
+		}
+	}
+	
+	pcoprs1_init((CFStringRef)portName);
+}
+
+- (void) transferTask
+{
+	pcoprs1_transfer(1, data);
 }
 
 - (void) receiveTask
@@ -59,7 +105,8 @@
 
 - (IBAction)debugPcoprs1_3:(id)sender
 {
-	pcoprs1_transfer(1, data);
+	[NSThread detachNewThreadSelector:@selector(transferTask) toTarget:self
+						   withObject:nil];
 }
 	
 - (IBAction)debugPcoprs1_4:(id)sender
