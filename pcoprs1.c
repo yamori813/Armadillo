@@ -23,11 +23,11 @@ static void sioinit()
 	struct termios	rstio;
 	
 	tcgetattr(pcoprs1_port, &rstio);
-	//	rstio.c_cflag |= CS8;
-	//	rstio.c_cflag &= ~CSTOPB;
-	//	rstio.c_cflag |= (PARODD | PARENB);
-	/*	rstio.c_cflag |= (CRTS_IFLOW | CDTR_IFLOW);*/
-	/*	rstio.c_cflag |= (CDSR_OFLOW | CCAR_OFLOW);*/
+	rstio.c_cflag |= CS8;
+	rstio.c_cflag &= ~CSTOPB;
+	rstio.c_cflag &= ~(PARODD | PARENB);
+	rstio.c_cflag &= ~(CRTS_IFLOW | CDTR_IFLOW);
+	rstio.c_cflag &= ~(CDSR_OFLOW | CCAR_OFLOW);
 	rstio.c_ispeed = rstio.c_ospeed = B115200;
 	tcsetattr(pcoprs1_port, TCSADRAIN, &rstio);
 }
