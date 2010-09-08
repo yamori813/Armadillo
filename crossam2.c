@@ -73,6 +73,21 @@ void crossam2_writedata(char *data, int datasize)
 	}
 }
 
+int crossam2_leam(int dial, int key)
+{
+	char outbytes[128];
+	sprintf(outbytes, "/G%d,%d", dial, key);
+	printf("MORI MORI debug %s\n", outbytes);
+	int cmdlen = strlen(outbytes);
+	outbytes[cmdlen] = 0x0d;
+	crossam2_writedata(outbytes, cmdlen+1);
+	char inbytes[128];
+	if(crossam2_readline(inbytes, sizeof(inbytes)) == 0) {
+		return 0;
+	} else
+		return 1;
+}
+
 void crossam2_protectoff()
 {
 	char outbytes[128];
@@ -81,8 +96,6 @@ void crossam2_protectoff()
 	len = strlen(outbytes);
 	outbytes[len] = 0x0d;
 	crossam2_writedata(outbytes, len+1);
-	char inbytes[128];
-	crossam2_readline(inbytes, sizeof(inbytes));
 }
 
 void crossam2_getkey()

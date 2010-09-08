@@ -11,6 +11,7 @@
 
 int crossam2_init(CFStringRef devname);
 void crossam2_close();
+int crossam2_leam(int dial, int key);
 void crossam2_protectoff();
 int crossam2_read(int dial, int key);
 void crossam2_pushkey(int dial, int key);
