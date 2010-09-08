@@ -84,6 +84,22 @@ void crossam2_getkey()
 	crossam2_readline(inbytes, sizeof(inbytes));
 }
 
+int crossam2_read(int dial, int key)
+{
+	char outbytes[128];
+	sprintf(outbytes, "/R%d,%d", dial, key);
+	printf("MORI MORI debug %s\n", outbytes);
+	int cmdlen = strlen(outbytes);
+	outbytes[cmdlen] = 0x0d;
+	crossam2_writedata(outbytes, cmdlen+1);
+	char inbytes[128];
+	if(crossam2_readline(inbytes, sizeof(inbytes)) == 0) {
+		return 0;
+	} else
+		return 1;
+}
+
+
 void crossam2_led(int ledon)
 {
 	char outbytes[128];
