@@ -73,6 +73,18 @@ void crossam2_writedata(char *data, int datasize)
 	}
 }
 
+void crossam2_protectoff()
+{
+	char outbytes[128];
+	int len;
+	strcpy(outbytes, "/HA Laboratory INC.");
+	len = strlen(outbytes);
+	outbytes[len] = 0x0d;
+	crossam2_writedata(outbytes, len+1);
+	char inbytes[128];
+	crossam2_readline(inbytes, sizeof(inbytes));
+}
+
 void crossam2_getkey()
 {
 	char outbytes[128];
