@@ -15,5 +15,6 @@ int crossam2_leam(int dial, int key);
 void crossam2_protectoff();
 int crossam2_read(int dial, int key, unsigned char *data, int datasize);
 void crossam2_pushkey(int dial, int key);
+void crossam2_version(char *verstr, int strsize);
 void crossam2_led(int ledon);
 

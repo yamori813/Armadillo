@@ -42,8 +42,8 @@ int crossam2_readline(char *data, int datasize)
 	while(1) {
 		FD_ZERO(&sio_fd);
 		FD_SET(crossam2_port, &sio_fd);
-		wtime.tv_sec = 2;
-		wtime.tv_usec = 0;
+		wtime.tv_sec = 0;
+		wtime.tv_usec = 500*1000;
 		select(crossam2_port + 1, &sio_fd, 0, 0, &wtime);
 		if(!FD_ISSET(crossam2_port, &sio_fd)) {
 			printf("MORI MORI Debug error\n");
@@ -159,6 +159,22 @@ int crossam2_read(int dial, int key, unsigned char *data, int datasize)
 		return 1;
 	else
 		return 0;
+}
+
+void crossam2_version(char *verstr, int strsize)
+{
+	char outbytes[128];
+	char inbytes[128];
+	verstr[0] = 0x00;
+	strcpy(outbytes, "/V");
+	printf("MORI MORI debug %s\n", outbytes);
+	int cmdlen = strlen(outbytes);
+	outbytes[cmdlen] = 0x0d;
+	crossam2_writedata(outbytes, cmdlen+1);
+	while(crossam2_readline(inbytes, sizeof(inbytes)) != 0) {
+		strcat(verstr, inbytes);
+		strcat(verstr, "\n");
+	}
 }
 
 void crossam2_led(int ledon)

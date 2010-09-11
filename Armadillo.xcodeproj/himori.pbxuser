@@ -250,6 +250,35 @@
 			30193718123B1B7A00243B2A /* PBXTextBookmark */ = 30193718123B1B7A00243B2A /* PBXTextBookmark */;
 			3019371B123B1B8300243B2A /* PBXTextBookmark */ = 3019371B123B1B8300243B2A /* PBXTextBookmark */;
 			3019371C123B1B8300243B2A /* PBXTextBookmark */ = 3019371C123B1B8300243B2A /* PBXTextBookmark */;
+			30193720123B206A00243B2A /* PBXBookmark */ = 30193720123B206A00243B2A /* PBXBookmark */;
+			30193728123B20F400243B2A /* PBXTextBookmark */ = 30193728123B20F400243B2A /* PBXTextBookmark */;
+			30193729123B20F400243B2A /* PBXTextBookmark */ = 30193729123B20F400243B2A /* PBXTextBookmark */;
+			3019372C123B20F400243B2A /* PBXTextBookmark */ = 3019372C123B20F400243B2A /* PBXTextBookmark */;
+			30193732123B21AB00243B2A /* PBXTextBookmark */ = 30193732123B21AB00243B2A /* PBXTextBookmark */;
+			30193733123B21AB00243B2A /* PBXTextBookmark */ = 30193733123B21AB00243B2A /* PBXTextBookmark */;
+			30193734123B21AB00243B2A /* PBXTextBookmark */ = 30193734123B21AB00243B2A /* PBXTextBookmark */;
+			30193736123B21D100243B2A /* PBXTextBookmark */ = 30193736123B21D100243B2A /* PBXTextBookmark */;
+			30193737123B21D100243B2A /* PBXTextBookmark */ = 30193737123B21D100243B2A /* PBXTextBookmark */;
+			30193739123B221100243B2A /* PBXBookmark */ = 30193739123B221100243B2A /* PBXBookmark */;
+			3019373B123B223900243B2A /* PBXTextBookmark */ = 3019373B123B223900243B2A /* PBXTextBookmark */;
+			3019373C123B223900243B2A /* PBXTextBookmark */ = 3019373C123B223900243B2A /* PBXTextBookmark */;
+			3019373E123B223C00243B2A /* PBXTextBookmark */ = 3019373E123B223C00243B2A /* PBXTextBookmark */;
+			30193741123B223C00243B2A /* PBXTextBookmark */ = 30193741123B223C00243B2A /* PBXTextBookmark */;
+			30193742123B223C00243B2A /* PBXTextBookmark */ = 30193742123B223C00243B2A /* PBXTextBookmark */;
+			30193746123B22B500243B2A /* PBXTextBookmark */ = 30193746123B22B500243B2A /* PBXTextBookmark */;
+			30193747123B22B500243B2A /* PBXTextBookmark */ = 30193747123B22B500243B2A /* PBXTextBookmark */;
+			30193748123B22B500243B2A /* PBXTextBookmark */ = 30193748123B22B500243B2A /* PBXTextBookmark */;
+			3019374B123B22DF00243B2A /* PBXTextBookmark */ = 3019374B123B22DF00243B2A /* PBXTextBookmark */;
+			3019374C123B22DF00243B2A /* PBXTextBookmark */ = 3019374C123B22DF00243B2A /* PBXTextBookmark */;
+			3019374D123B22FF00243B2A /* PBXTextBookmark */ = 3019374D123B22FF00243B2A /* PBXTextBookmark */;
+			3019374E123B230200243B2A /* PBXBookmark */ = 3019374E123B230200243B2A /* PBXBookmark */;
+			30193752123B233B00243B2A /* PBXTextBookmark */ = 30193752123B233B00243B2A /* PBXTextBookmark */;
+			30193755123B233B00243B2A /* PBXTextBookmark */ = 30193755123B233B00243B2A /* PBXTextBookmark */;
+			30193756123B237300243B2A /* PBXTextBookmark */ = 30193756123B237300243B2A /* PBXTextBookmark */;
+			3019375A123B23A600243B2A /* PBXTextBookmark */ = 3019375A123B23A600243B2A /* PBXTextBookmark */;
+			3019375B123B23A600243B2A /* PBXTextBookmark */ = 3019375B123B23A600243B2A /* PBXTextBookmark */;
+			3019375C123B23A600243B2A /* PBXTextBookmark */ = 3019375C123B23A600243B2A /* PBXTextBookmark */;
+			3019375D123B23A600243B2A /* PBXTextBookmark */ = 3019375D123B23A600243B2A /* PBXTextBookmark */;
 			30350AF1123317B500DDD914 = 30350AF1123317B500DDD914 /* PBXTextBookmark */;
 			30350B1D123324B500DDD914 = 30350B1D123324B500DDD914 /* PBXTextBookmark */;
 			30350B1F123324B500DDD914 = 30350B1F123324B500DDD914 /* PBXTextBookmark */;
@@ -279,7 +308,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 115";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 749;
 		vrLoc = 214;
@@ -310,7 +339,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 164";
 		rLen = 0;
-		rLoc = 4203;
+		rLoc = 4604;
 		rType = 0;
 		vrLen = 649;
 		vrLoc = 3114;
@@ -330,7 +359,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 187";
 		rLen = 0;
-		rLoc = 4548;
+		rLoc = 4949;
 		rType = 0;
 		vrLen = 625;
 		vrLoc = 3179;
@@ -350,7 +379,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 170";
 		rLen = 0;
-		rLoc = 4288;
+		rLoc = 4689;
 		rType = 0;
 		vrLen = 638;
 		vrLoc = 3114;
@@ -370,7 +399,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 70";
 		rLen = 0;
-		rLoc = 1383;
+		rLoc = 1390;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 805;
@@ -390,7 +419,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 794;
 		vrLoc = 805;
@@ -410,7 +439,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 795;
 		vrLoc = 805;
@@ -430,7 +459,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 824;
 		vrLoc = 1006;
@@ -450,7 +479,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 187";
 		rLen = 0;
-		rLoc = 4564;
+		rLoc = 4965;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 3200;
@@ -470,7 +499,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 187";
 		rLen = 0;
-		rLoc = 4548;
+		rLoc = 4949;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 3200;
@@ -490,7 +519,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 905;
 		vrLoc = 912;
@@ -510,7 +539,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 188";
 		rLen = 0;
-		rLoc = 4570;
+		rLoc = 4971;
 		rType = 0;
 		vrLen = 528;
 		vrLoc = 3313;
@@ -530,7 +559,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 67";
 		rLen = 18;
-		rLoc = 1336;
+		rLoc = 1343;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 964;
@@ -618,7 +647,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 1424;
@@ -628,7 +657,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 142";
 		rLen = 0;
-		rLoc = 3700;
+		rLoc = 4101;
 		rType = 0;
 		vrLen = 705;
 		vrLoc = 2485;
@@ -648,7 +677,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 1424;
@@ -658,7 +687,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 871;
 		vrLoc = 878;
@@ -678,7 +707,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 1424;
@@ -688,7 +717,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 870;
 		vrLoc = 878;
@@ -708,7 +737,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 443;
 		vrLoc = 1424;
@@ -718,7 +747,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 869;
 		vrLoc = 878;
@@ -738,7 +767,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 1424;
@@ -748,7 +777,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 870;
 		vrLoc = 878;
@@ -768,7 +797,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 1424;
@@ -778,7 +807,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 193";
 		rLen = 0;
-		rLoc = 4569;
+		rLoc = 4970;
 		rType = 0;
 		vrLen = 537;
 		vrLoc = 3363;
@@ -798,7 +827,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 1424;
@@ -808,7 +837,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 158";
 		rLen = 0;
-		rLoc = 4013;
+		rLoc = 4414;
 		rType = 0;
 		vrLen = 657;
 		vrLoc = 2827;
@@ -828,7 +857,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 1424;
@@ -838,7 +867,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 158";
 		rLen = 0;
-		rLoc = 4013;
+		rLoc = 4414;
 		rType = 0;
 		vrLen = 752;
 		vrLoc = 0;
@@ -858,7 +887,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 1424;
@@ -868,7 +897,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 193";
 		rLen = 0;
-		rLoc = 4570;
+		rLoc = 4971;
 		rType = 0;
 		vrLen = 533;
 		vrLoc = 3363;
@@ -888,7 +917,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 1424;
@@ -898,7 +927,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 193";
 		rLen = 0;
-		rLoc = 4578;
+		rLoc = 4979;
 		rType = 0;
 		vrLen = 533;
 		vrLoc = 3360;
@@ -918,7 +947,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 441;
 		vrLoc = 1424;
@@ -928,7 +957,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 142";
 		rLen = 0;
-		rLoc = 3700;
+		rLoc = 4101;
 		rType = 0;
 		vrLen = 704;
 		vrLoc = 2557;
@@ -948,7 +977,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 440;
 		vrLoc = 1424;
@@ -958,7 +987,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 786;
 		vrLoc = 1048;
@@ -978,7 +1007,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 440;
 		vrLoc = 1424;
@@ -988,7 +1017,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 191";
 		rLen = 0;
-		rLoc = 4548;
+		rLoc = 4949;
 		rType = 0;
 		vrLen = 535;
 		vrLoc = 3359;
@@ -1008,7 +1037,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 1424;
@@ -1018,7 +1047,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 870;
 		vrLoc = 858;
@@ -1038,7 +1067,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 1424;
@@ -1048,7 +1077,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 871;
 		vrLoc = 858;
@@ -1068,7 +1097,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 1424;
@@ -1078,7 +1107,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1473;
+		rLoc = 1480;
 		rType = 0;
 		vrLen = 871;
 		vrLoc = 858;
@@ -1098,7 +1127,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 1424;
@@ -1108,7 +1137,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1473;
+		rLoc = 1480;
 		rType = 0;
 		vrLen = 838;
 		vrLoc = 792;
@@ -1128,7 +1157,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 1424;
@@ -1138,7 +1167,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 193";
 		rLen = 0;
-		rLoc = 4578;
+		rLoc = 4979;
 		rType = 0;
 		vrLen = 533;
 		vrLoc = 3364;
@@ -1158,7 +1187,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 446;
 		vrLoc = 1424;
@@ -1168,7 +1197,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1473;
+		rLoc = 1480;
 		rType = 0;
 		vrLen = 731;
 		vrLoc = 1326;
@@ -1188,7 +1217,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 1424;
@@ -1198,7 +1227,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1473;
+		rLoc = 1480;
 		rType = 0;
 		vrLen = 729;
 		vrLoc = 1326;
@@ -1218,7 +1247,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 444;
 		vrLoc = 1424;
@@ -1232,7 +1261,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 485;
 		vrLoc = 1381;
@@ -1242,7 +1271,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1252,7 +1281,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 132";
 		rLen = 0;
-		rLoc = 3456;
+		rLoc = 3857;
 		rType = 0;
 		vrLen = 752;
 		vrLoc = 2417;
@@ -1266,7 +1295,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 485;
 		vrLoc = 1381;
@@ -1276,7 +1305,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 457;
 		vrLoc = 1381;
@@ -1286,7 +1315,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 72";
 		rLen = 0;
-		rLoc = 1475;
+		rLoc = 1482;
 		rType = 0;
 		vrLen = 869;
 		vrLoc = 878;
@@ -1300,7 +1329,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1320,7 +1349,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 63";
 		rLen = 0;
-		rLoc = 2013;
+		rLoc = 2014;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 641;
@@ -1330,7 +1359,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 151";
 		rLen = 18;
-		rLoc = 3845;
+		rLoc = 4246;
 		rType = 0;
 		vrLen = 778;
 		vrLoc = 2137;
@@ -1340,7 +1369,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 485;
 		vrLoc = 1381;
@@ -1350,7 +1379,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 151";
 		rLen = 18;
-		rLoc = 3845;
+		rLoc = 4246;
 		rType = 0;
 		vrLen = 780;
 		vrLoc = 2137;
@@ -1360,7 +1389,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 485;
 		vrLoc = 1383;
@@ -1370,7 +1399,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 149";
 		rLen = 0;
-		rLoc = 3904;
+		rLoc = 4305;
 		rType = 0;
 		vrLen = 746;
 		vrLoc = 2625;
@@ -1380,7 +1409,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 456;
 		vrLoc = 1383;
@@ -1390,7 +1419,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 148";
 		rLen = 0;
-		rLoc = 3885;
+		rLoc = 4286;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 2625;
@@ -1400,7 +1429,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 456;
 		vrLoc = 1383;
@@ -1410,7 +1439,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 63";
 		rLen = 0;
-		rLoc = 2013;
+		rLoc = 2014;
 		rType = 0;
 		vrLen = 1018;
 		vrLoc = 124;
@@ -1430,7 +1459,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 456;
 		vrLoc = 1383;
@@ -1440,7 +1469,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1454,7 +1483,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1464,7 +1493,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 65";
 		rLen = 0;
-		rLoc = 2013;
+		rLoc = 2014;
 		rType = 0;
 		vrLen = 536;
 		vrLoc = 870;
@@ -1478,7 +1507,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 485;
 		vrLoc = 1381;
@@ -1488,7 +1517,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1498,7 +1527,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 99";
 		rLen = 0;
-		rLoc = 2078;
+		rLoc = 2085;
 		rType = 0;
 		vrLen = 822;
 		vrLoc = 1424;
@@ -1508,7 +1537,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1518,7 +1547,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 95";
 		rLen = 0;
-		rLoc = 1902;
+		rLoc = 1909;
 		rType = 0;
 		vrLen = 823;
 		vrLoc = 1424;
@@ -1528,7 +1557,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1538,7 +1567,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 95";
 		rLen = 0;
-		rLoc = 1925;
+		rLoc = 1932;
 		rType = 0;
 		vrLen = 822;
 		vrLoc = 1424;
@@ -1548,7 +1577,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1558,7 +1587,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 95";
 		rLen = 0;
-		rLoc = 1941;
+		rLoc = 1948;
 		rType = 0;
 		vrLen = 822;
 		vrLoc = 1424;
@@ -1568,7 +1597,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1578,7 +1607,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 95";
 		rLen = 0;
-		rLoc = 1941;
+		rLoc = 1948;
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 1424;
@@ -1588,7 +1617,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 95";
 		rLen = 0;
-		rLoc = 1925;
+		rLoc = 1932;
 		rType = 0;
 		vrLen = 873;
 		vrLoc = 1687;
@@ -1598,7 +1627,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 485;
 		vrLoc = 1381;
@@ -1608,7 +1637,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 123";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 826;
 		vrLoc = 1824;
@@ -1618,7 +1647,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1628,7 +1657,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 121";
 		rLen = 0;
-		rLoc = 2951;
+		rLoc = 2958;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 1839;
@@ -1638,7 +1667,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1648,7 +1677,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 123";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2193;
@@ -1658,7 +1687,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1668,7 +1697,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 124";
 		rLen = 0;
-		rLoc = 3022;
+		rLoc = 3029;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 2132;
@@ -1682,7 +1711,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1702,7 +1731,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1722,7 +1751,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 113";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 458;
 		vrLoc = 1381;
@@ -1768,7 +1797,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 148";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 442;
 		vrLoc = 2836;
@@ -1778,7 +1807,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 149";
 		rLen = 0;
-		rLoc = 3367;
+		rLoc = 3374;
 		rType = 0;
 		vrLen = 783;
 		vrLoc = 2597;
@@ -1788,7 +1817,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 148";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 491;
 		vrLoc = 2518;
@@ -1798,7 +1827,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 125";
 		rLen = 0;
-		rLoc = 2575;
+		rLoc = 2582;
 		rType = 0;
 		vrLen = 789;
 		vrLoc = 1889;
@@ -1808,7 +1837,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 148";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 456;
 		vrLoc = 2342;
@@ -1818,7 +1847,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 118";
 		rLen = 0;
-		rLoc = 2401;
+		rLoc = 2408;
 		rType = 0;
 		vrLen = 789;
 		vrLoc = 1889;
@@ -1828,7 +1857,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 151";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 514;
 		vrLoc = 2342;
@@ -1838,7 +1867,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 148";
 		rLen = 0;
-		rLoc = 3183;
+		rLoc = 3190;
 		rType = 0;
 		vrLen = 828;
 		vrLoc = 2476;
@@ -1848,7 +1877,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 154";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 514;
 		vrLoc = 2342;
@@ -1858,7 +1887,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 151";
 		rLen = 0;
-		rLoc = 3336;
+		rLoc = 3343;
 		rType = 0;
 		vrLen = 843;
 		vrLoc = 2476;
@@ -1868,7 +1897,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 157";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 549;
 		vrLoc = 2342;
@@ -1878,7 +1907,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 145";
 		rLen = 0;
-		rLoc = 3104;
+		rLoc = 3111;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -1892,7 +1921,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 157";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 549;
 		vrLoc = 2342;
@@ -1912,7 +1941,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -1922,7 +1951,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 157";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 549;
 		vrLoc = 2342;
@@ -1932,7 +1961,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 157";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 549;
 		vrLoc = 2342;
@@ -1942,7 +1971,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 136";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 753;
 		vrLoc = 215;
@@ -1952,7 +1981,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 99";
 		rLen = 0;
-		rLoc = 3248;
+		rLoc = 3474;
 		rType = 0;
 		vrLen = 656;
 		vrLoc = 2152;
@@ -1961,7 +1990,7 @@
 		isa = PBXTextBookmark;
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 43";
-		rLen = 2414;
+		rLen = 2640;
 		rLoc = 1252;
 		rType = 0;
 		vrLen = 917;
@@ -1972,7 +2001,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -1982,7 +2011,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 136";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 753;
 		vrLoc = 215;
@@ -1992,7 +2021,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 100";
 		rLen = 0;
-		rLoc = 3248;
+		rLoc = 3474;
 		rType = 0;
 		vrLen = 793;
 		vrLoc = 1718;
@@ -2002,7 +2031,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 102";
 		rLen = 0;
-		rLoc = 3248;
+		rLoc = 3474;
 		rType = 0;
 		vrLen = 911;
 		vrLoc = 1718;
@@ -2012,7 +2041,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -2022,7 +2051,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 136";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 593;
 		vrLoc = 215;
@@ -2032,7 +2061,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 102";
 		rLen = 0;
-		rLoc = 3248;
+		rLoc = 3474;
 		rType = 0;
 		vrLen = 958;
 		vrLoc = 1672;
@@ -2052,7 +2081,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 912;
 		vrLoc = 2475;
@@ -2062,7 +2091,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 138";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 215;
@@ -2072,7 +2101,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -2086,7 +2115,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 138";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 592;
 		vrLoc = 215;
@@ -2106,7 +2135,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 912;
 		vrLoc = 2475;
@@ -2116,7 +2145,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 138";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 215;
@@ -2126,7 +2155,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 125";
 		rLen = 23;
-		rLoc = 3299;
+		rLoc = 3525;
 		rType = 0;
 		vrLen = 672;
 		vrLoc = 2427;
@@ -2136,7 +2165,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -2146,7 +2175,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 138";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 215;
@@ -2166,7 +2195,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -2176,7 +2205,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 138";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 215;
@@ -2196,7 +2225,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -2206,7 +2235,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 139";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 393;
 		vrLoc = 215;
@@ -2226,7 +2255,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -2236,7 +2265,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 147";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 369;
 		vrLoc = 215;
@@ -2246,7 +2275,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -2256,7 +2285,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 156";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 369;
 		vrLoc = 215;
@@ -2266,7 +2295,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 2475;
@@ -2276,7 +2305,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 157";
 		rLen = 0;
-		rLoc = 3351;
+		rLoc = 3358;
 		rType = 0;
 		vrLen = 357;
 		vrLoc = 2476;
@@ -2286,7 +2315,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 156";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 215;
@@ -2296,10 +2325,280 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 3056;
+		rLoc = 3063;
 		rType = 0;
 		vrLen = 912;
 		vrLoc = 2475;
+	};
+	30193720123B206A00243B2A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+	};
+	30193728123B20F400243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 156";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 215;
+	};
+	30193729123B20F400243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 159";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 215;
+	};
+	3019372C123B20F400243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 90";
+		rLen = 0;
+		rLoc = 2013;
+		rType = 0;
+		vrLen = 659;
+		vrLoc = 1744;
+	};
+	30193732123B21AB00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 160";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 215;
+	};
+	30193733123B21AB00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 90";
+		rLen = 0;
+		rLoc = 2013;
+		rType = 0;
+		vrLen = 692;
+		vrLoc = 1744;
+	};
+	30193734123B21AB00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 91";
+		rLen = 0;
+		rLoc = 2013;
+		rType = 0;
+		vrLen = 689;
+		vrLoc = 1744;
+	};
+	30193736123B21D100243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 160";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 215;
+	};
+	30193737123B21D100243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 91";
+		rLen = 0;
+		rLoc = 2013;
+		rType = 0;
+		vrLen = 689;
+		vrLoc = 1744;
+	};
+	30193739123B221100243B2A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+	};
+	3019373B123B223900243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: 'ledon' undeclared (first use in this function)";
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+		rLen = 1;
+		rLoc = 168;
+		rType = 1;
+	};
+	3019373C123B223900243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+		name = "crossam2.c: 169";
+		rLen = 0;
+		rLoc = 3542;
+		rType = 0;
+		vrLen = 358;
+		vrLoc = 3381;
+	};
+	3019373E123B223C00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 160";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 215;
+	};
+	30193741123B223C00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+		name = "crossam2.c: 168";
+		rLen = 0;
+		rLoc = 3511;
+		rType = 0;
+		vrLen = 835;
+		vrLoc = 3151;
+	};
+	30193742123B223C00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 91";
+		rLen = 0;
+		rLoc = 2013;
+		rType = 0;
+		vrLen = 689;
+		vrLoc = 1744;
+	};
+	30193746123B22B500243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 160";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 215;
+	};
+	30193747123B22B500243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 91";
+		rLen = 0;
+		rLoc = 2013;
+		rType = 0;
+		vrLen = 691;
+		vrLoc = 1744;
+	};
+	30193748123B22B500243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 91";
+		rLen = 0;
+		rLoc = 2013;
+		rType = 0;
+		vrLen = 763;
+		vrLoc = 1744;
+	};
+	3019374B123B22DF00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 160";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 215;
+	};
+	3019374C123B22DF00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 89";
+		rLen = 0;
+		rLoc = 2013;
+		rType = 0;
+		vrLen = 690;
+		vrLoc = 1744;
+	};
+	3019374D123B22FF00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+		name = "crossam2.c: 169";
+		rLen = 0;
+		rLoc = 3542;
+		rType = 0;
+		vrLen = 358;
+		vrLoc = 3381;
+	};
+	3019374E123B230200243B2A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+	};
+	30193752123B233B00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 160";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 369;
+		vrLoc = 215;
+	};
+	30193755123B233B00243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+		name = "crossam2.c: 46";
+		rLen = 0;
+		rLoc = 904;
+		rType = 0;
+		vrLen = 931;
+		vrLoc = 215;
+	};
+	30193756123B237300243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+		name = "crossam2.c: 169";
+		rLen = 0;
+		rLoc = 3542;
+		rType = 0;
+		vrLen = 358;
+		vrLoc = 3388;
+	};
+	3019375A123B23A600243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 160";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 215;
+	};
+	3019375B123B23A600243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 13";
+		rLen = 0;
+		rLoc = 188;
+		rType = 0;
+		vrLen = 494;
+		vrLoc = 0;
+	};
+	3019375C123B23A600243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 160";
+		rLen = 0;
+		rLoc = 3814;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 215;
+	};
+	3019375D123B23A600243B2A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 13";
+		rLen = 0;
+		rLoc = 188;
+		rType = 0;
+		vrLen = 494;
+		vrLoc = 0;
 	};
 	303508E01233169A00DDD914 /* Armadillo */ = {
 		isa = PBXExecutable;
@@ -2341,33 +2640,33 @@
 	};
 	303509011233175700DDD914 /* Armadillo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 554}}";
-			sepNavSelRange = "{224, 19}";
-			sepNavVisRange = "{0, 617}";
+			sepNavIntBoundsRect = "{{0, 0}, {597, 420}}";
+			sepNavSelRange = "{188, 0}";
+			sepNavVisRange = "{0, 494}";
 			sepNavWindowFrame = "{{15, 91}, {996, 682}}";
 		};
 	};
 	303509021233175700DDD914 /* Armadillo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {597, 2408}}";
-			sepNavSelRange = "{3588, 0}";
-			sepNavVisRange = "{215, 445}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 2534}}";
+			sepNavSelRange = "{2153, 0}";
+			sepNavVisRange = "{1647, 837}";
 			sepNavWindowFrame = "{{249, 69}, {996, 682}}";
 		};
 	};
 	303509041233176500DDD914 /* crossam2.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 531}}";
-			sepNavSelRange = "{357, 0}";
-			sepNavVisRange = "{0, 431}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 554}}";
+			sepNavSelRange = "{455, 12}";
+			sepNavVisRange = "{0, 481}";
 			sepNavWindowFrame = "{{15, 91}, {996, 682}}";
 		};
 	};
 	303509051233176500DDD914 /* crossam2.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 3374}}";
-			sepNavSelRange = "{3056, 0}";
-			sepNavVisRange = "{2475, 912}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 3500}}";
+			sepNavSelRange = "{904, 0}";
+			sepNavVisRange = "{215, 979}";
 			sepNavWindowFrame = "{{264, 71}, {996, 682}}";
 		};
 	};
@@ -2512,7 +2811,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 53";
 		rLen = 0;
-		rLoc = 3588;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 365;
 		vrLoc = 310;
@@ -2570,7 +2869,7 @@
 		ignoreCount = 0;
 		lineNumber = 76;
 		location = Armadillo;
-		modificationTime = 305862392.464297;
+		modificationTime = 305865414.685441;
 		state = 1;
 	};
 	3052A6AA12384EBB004BBCEB /* PBXTextBookmark */ = {
@@ -2578,7 +2877,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 1437;
@@ -2598,7 +2897,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 112";
 		rLen = 13;
-		rLoc = 2622;
+		rLoc = 2629;
 		rType = 0;
 		vrLen = 445;
 		vrLoc = 1437;

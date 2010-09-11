@@ -19,6 +19,7 @@
 - (IBAction)debugCrossam_3:(id)sender;
 - (IBAction)debugCrossam_4:(id)sender;
 - (IBAction)debugCrossam_5:(id)sender;
+- (IBAction)debugCrossam_6:(id)sender;
 
 - (IBAction)debugPcoprs1_1:(id)sender;
 - (IBAction)debugPcoprs1_2:(id)sender;

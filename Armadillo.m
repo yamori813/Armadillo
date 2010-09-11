@@ -86,6 +86,17 @@
 {
 	unsigned char data[128];
 	crossam2_read(0,40, data, sizeof(data));
+
+	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+						   withObject:nil];
+}
+
+- (IBAction)debugCrossam_6:(id)sender
+{
+	char str[1024];
+	crossam2_version(str, sizeof(str));
+	NSLog(@"Version : %s", str);
+	
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];
 }
