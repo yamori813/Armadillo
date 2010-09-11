@@ -12,6 +12,7 @@
 @interface Armadillo : NSObject {
 	unsigned char data[240];
 	IBOutlet NSProgressIndicator *waitTimer;
+	Boolean cancelReceive;
 }
 
 - (IBAction)debugCrossam_1:(id)sender;
@@ -26,5 +27,6 @@
 - (IBAction)debugPcoprs1_2:(id)sender;
 - (IBAction)debugPcoprs1_3:(id)sender;
 - (IBAction)debugPcoprs1_4:(id)sender;
+- (IBAction)debugPcoprs1_5:(id)sender;
 
 @end

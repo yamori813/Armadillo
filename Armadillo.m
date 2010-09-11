@@ -130,10 +130,14 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	if(pcoprs1_receive_start()) {
-		while(pcoprs1_receive_data(data) == 0)
-			;
+		while(pcoprs1_receive_data(data) == 0) {
+			if(cancelReceive == YES)
+				break;
+		}
 		NSLog(@"MORI MORI Debug %02x %02x", data[0], data[1]);
 	}
+	[waitTimer stopAnimation:self];
+	[waitTimer setHidden:YES];
 }
 
 
@@ -164,6 +168,10 @@
 
 - (IBAction)debugPcoprs1_2:(id)sender
 {
+	[waitTimer setHidden:NO];
+	[waitTimer startAnimation:self];
+	cancelReceive = NO;
+	
 	[NSThread detachNewThreadSelector:@selector(receiveTask) toTarget:self
 						   withObject:nil];
 }
@@ -181,7 +189,12 @@
 
 - (IBAction)debugPcoprs1_5:(id)sender
 {
+	cancelReceive = YES;
+
 	pcoprs1_receive_cancel();
+
+	[waitTimer stopAnimation:self];
+	[waitTimer setHidden:YES];
 }
 
 @end

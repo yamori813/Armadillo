@@ -52,7 +52,7 @@ int pcoprs1_receive_data(unsigned char *data)
 	while(1) {
 		FD_ZERO(&sio_fd);
 		FD_SET(pcoprs1_port, &sio_fd);
-		wtime.tv_sec = 2;
+		wtime.tv_sec = 1;
 		wtime.tv_usec = 0;
 		select(pcoprs1_port + 1, &sio_fd, 0, 0, &wtime);
 		if(!FD_ISSET(pcoprs1_port, &sio_fd)) {
