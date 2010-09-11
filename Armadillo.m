@@ -14,9 +14,21 @@
 
 @implementation Armadillo
 
+//
 // Crossam2 Debug code
+//
 
-- (IBAction)debugInit:(id)sender
+- (void) timerTask
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	[waitTimer setHidden:NO];
+	[waitTimer startAnimation:self];
+	sleep(10);
+	[waitTimer stopAnimation:self];
+	[waitTimer setHidden:YES];
+}
+
+- (IBAction)debugCrossam_1:(id)sender
 {
 	NSMutableArray *ifList;
 	NSMutableString *portName;
@@ -39,24 +51,67 @@
 	}
 	
 	crossam2_init((CFStringRef)portName);
+
+	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+						   withObject:nil];
 }
 
-- (IBAction)debugPushKey:(id)sender
+- (IBAction)debugCrossam_2:(id)sender
 {
-	crossam2_pushkey(0,40);
+//	crossam2_pushkey(0,40);
+	crossam2_protectoff();
+//	crossam2_read(0,40);
+//	crossam2_leam(0,40);
+	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+						   withObject:nil];
 }
 
-- (IBAction)debugLEDOn:(id)sender
+- (IBAction)debugCrossam_3:(id)sender
 {
 	crossam2_led(1);
+
+	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+						   withObject:nil];
 }
 
-- (IBAction)debugLEDOff:(id)sender
+- (IBAction)debugCrossam_4:(id)sender
 {
 	crossam2_led(0);
+
+	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+						   withObject:nil];
 }
 
+- (IBAction)debugCrossam_5:(id)sender
+{
+	unsigned char data[128];
+	crossam2_read(0,40, data, sizeof(data));
+	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+						   withObject:nil];
+}
+
+//
 // PC-OP-RS1 Debug code
+//
+
+- (void) transferTask
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	pcoprs1_transfer(1, data);
+}
+
+- (void) receiveTask
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	if(pcoprs1_receive_start()) {
+		while(pcoprs1_receive_data(data) == 0)
+			;
+		NSLog(@"MORI MORI Debug %02x %02x", data[0], data[1]);
+	}
+}
+
 
 - (IBAction)debugPcoprs1_1:(id)sender
 {
@@ -81,20 +136,6 @@
 	}
 	
 	pcoprs1_init((CFStringRef)portName);
-}
-
-- (void) transferTask
-{
-	pcoprs1_transfer(1, data);
-}
-
-- (void) receiveTask
-{
-	if(pcoprs1_receive_start()) {
-		while(pcoprs1_receive_data(data) == 0)
-			;
-		NSLog(@"MORI MORI Debug %02x %02x", data[0], data[1]);
-	}
 }
 
 - (IBAction)debugPcoprs1_2:(id)sender

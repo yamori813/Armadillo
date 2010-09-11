@@ -11,12 +11,14 @@
 
 @interface Armadillo : NSObject {
 	unsigned char data[240];
+	IBOutlet NSProgressIndicator *waitTimer;
 }
 
-- (IBAction)debugInit:(id)sender;
-- (IBAction)debugPushKey:(id)sender;
-- (IBAction)debugLEDOn:(id)sender;
-- (IBAction)debugLEDOff:(id)sender;
+- (IBAction)debugCrossam_1:(id)sender;
+- (IBAction)debugCrossam_2:(id)sender;
+- (IBAction)debugCrossam_3:(id)sender;
+- (IBAction)debugCrossam_4:(id)sender;
+- (IBAction)debugCrossam_5:(id)sender;
 
 - (IBAction)debugPcoprs1_1:(id)sender;
 - (IBAction)debugPcoprs1_2:(id)sender;
