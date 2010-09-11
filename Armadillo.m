@@ -101,6 +101,19 @@
 						   withObject:nil];
 }
 
+- (IBAction)debugCrossam_7:(id)sender
+{
+	unsigned char cmddata[1024];
+	// Preset Sony TV Power
+	cmddata[0] = 0x00;
+	cmddata[1] = 0xc0;
+	cmddata[2] = 0x11;
+	crossam2_write(4,40, cmddata, 3);	
+	
+	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+						   withObject:nil];
+}
+
 //
 // PC-OP-RS1 Debug code
 //

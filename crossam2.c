@@ -127,6 +127,30 @@ int hex2Int(char *hexstr)
 	return result;
 }
 
+int crossam2_write(int dial, int key, unsigned char *data, int datasize)
+{
+	
+	char outbytes[128];
+	int i;
+	sprintf(outbytes, "/W%d,%d %x", dial, key, datasize);
+	printf("MORI MORI debug %s\n", outbytes);
+	int cmdlen = strlen(outbytes);
+	outbytes[cmdlen] = 0x0d;
+	crossam2_writedata(outbytes, cmdlen+1);
+
+	for(i = 0; i < datasize; ++i) {
+		sprintf(outbytes, "%02x", data[i]);
+		printf("MORI MORI debug %s\n", outbytes);
+		int cmdlen = strlen(outbytes);
+		outbytes[cmdlen] = 0x0d;
+		crossam2_writedata(outbytes, cmdlen+1);
+	}
+	char inbytes[128];
+	
+	crossam2_readline(inbytes, sizeof(inbytes));
+	return 1;
+}
+
 int crossam2_read(int dial, int key, unsigned char *data, int datasize)
 {
 	char outbytes[128];
@@ -200,6 +224,7 @@ void crossam2_pushkey(int dial, int key)
 
 	usleep(300*1000);
 	
+	// stop send signal
 	crossam2_sendcr();
 }
 
@@ -241,6 +266,7 @@ int crossam2_init(CFStringRef devname)
 
 	sioinit();
 
+	// wake up from sleep
 	crossam2_sendcr();
 
 	usleep(200*1000);
