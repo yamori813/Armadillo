@@ -58,10 +58,8 @@
 
 - (IBAction)debugCrossam_2:(id)sender
 {
-//	crossam2_pushkey(0,40);
 	crossam2_protectoff();
-//	crossam2_read(0,40);
-//	crossam2_leam(0,40);
+
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];
 }
@@ -117,6 +115,14 @@
 	cmddata[1] = 0xc0;
 	cmddata[2] = 0x11;
 	crossam2_write(4,40, cmddata, 3);	
+	
+	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+						   withObject:nil];
+}
+
+- (IBAction)debugCrossam_8:(id)sender
+{
+	crossam2_pushkey(0,40);
 	
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];
