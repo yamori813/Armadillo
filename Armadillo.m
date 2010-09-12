@@ -84,9 +84,17 @@
 
 - (IBAction)debugCrossam_5:(id)sender
 {
-	unsigned char data[128];
-	crossam2_read(0,40, data, sizeof(data));
-
+	unsigned char crossam_data[128];
+	int read_size;
+	read_size = crossam2_read(0,40, crossam_data, sizeof(crossam_data));
+	int i;
+	for(i = 0; i < read_size; ++i) {
+		printf("%02x ", crossam_data[i]);
+		if((i + 1) % 16 == 0)
+			printf("\n");
+	}
+	printf("\n");
+	
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];
 }

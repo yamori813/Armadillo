@@ -55,7 +55,7 @@ int crossam2_readline(char *data, int datasize)
 		if(allsize > 2 && data[allsize-2] == 0x0d &&
 		   data[allsize-1] == 0x0a) {
 			data[allsize-2] = 0x00;
-			printf("MORI MORI Debug %s\n", data);
+//			printf("MORI MORI Debug %s\n", data);
 			break;
 		}
 	}
@@ -174,13 +174,13 @@ int crossam2_read(int dial, int key, unsigned char *data, int datasize)
 			dataSize = hex2Int(inbytes);
 		} else if (lineCount == 2) {
 			dataSize += hex2Int(inbytes) * 0x100;
-			printf("data size = %d\n", dataSize);
+//			printf("data size = %d\n", dataSize);
 		} else if(lineCount == dataSize + 2) {
 			break;
 		}
 	}
 	if(lineCount)
-		return 1;
+		return dataSize + 2;
 	else
 		return 0;
 }
