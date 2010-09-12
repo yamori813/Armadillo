@@ -134,7 +134,14 @@
 			if(cancelReceive == YES)
 				break;
 		}
-		NSLog(@"MORI MORI Debug %02x %02x", data[0], data[1]);
+//		NSLog(@"MORI MORI Debug %02x %02x", data[0], data[1]);
+		int i, j;
+		for(j = 0; j < 15; ++j) {
+			for(i = 0; i < 16; ++i) {
+				printf("%02x ", data[j * 16 + i]);
+			}
+			printf("\n");
+		}
 	}
 	[waitTimer stopAnimation:self];
 	[waitTimer setHidden:YES];
