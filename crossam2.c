@@ -87,6 +87,11 @@ int crossam2_leam(int dial, int key)
 		return 1;
 }
 
+void crossam2_protecton()
+{
+	// ???
+}
+
 void crossam2_protectoff()
 {
 	char outbytes[128];
