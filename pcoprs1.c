@@ -87,7 +87,7 @@ int pcoprs1_receive_start()
 		wtime.tv_usec = 0;
 		select(pcoprs1_port + 1, &sio_fd, 0, 0, &wtime);
 		if(!FD_ISSET(pcoprs1_port, &sio_fd)) {
-			printf("MORI MORI pcoprs1_receive_start error\n");
+			printf("pcoprs1_receive_start error\n");
 			return 0;
 		}
 		read_size = read(pcoprs1_port, data, 1);
@@ -120,7 +120,7 @@ int pcoprs1_transfer(int chnnel, unsigned char *data)
 		wtime.tv_usec = 0;
 		select(pcoprs1_port + 1, &sio_fd, 0, 0, &wtime);
 		if(!FD_ISSET(pcoprs1_port, &sio_fd)) {
-			printf("MORI MORI pcoprs1_receive_start error\n");
+			printf("pcoprs1_transfer error\n");
 			return 0;
 		}
 		read_size = read(pcoprs1_port, tmpbuff, 1);
@@ -142,7 +142,7 @@ int pcoprs1_transfer(int chnnel, unsigned char *data)
 		wtime.tv_usec = 0;
 		select(pcoprs1_port + 1, &sio_fd, 0, 0, &wtime);
 		if(!FD_ISSET(pcoprs1_port, &sio_fd)) {
-			printf("MORI MORI pcoprs1_receive_start error\n");
+			printf("pcoprs1_transfer error\n");
 			return 0;
 		}
 		read_size = read(pcoprs1_port, tmpbuff, 1);
@@ -163,7 +163,7 @@ int pcoprs1_transfer(int chnnel, unsigned char *data)
 		wtime.tv_usec = 0;
 		select(pcoprs1_port + 1, &sio_fd, 0, 0, &wtime);
 		if(!FD_ISSET(pcoprs1_port, &sio_fd)) {
-			printf("MORI MORI pcoprs1_receive_start error\n");
+			printf("pcoprs1_transfert error\n");
 			return 0;
 		}
 		read_size = read(pcoprs1_port, tmpbuff, 1);
@@ -195,12 +195,11 @@ int pcoprs1_led()
 		wtime.tv_usec = 200*1000;
 		select(pcoprs1_port + 1, &sio_fd, 0, 0, &wtime);
 		if(!FD_ISSET(pcoprs1_port, &sio_fd)) {
-			printf("MORI MORI pcoprs1_led error\n");
+			printf("pcoprs1_led error\n");
 			return 0;
 		}
 		read_size = read(pcoprs1_port, data, 1);
 		
-		printf("MORI MORI pcoprs1_led %02x\n", data[0]);
 		// check recive ack
 		if(read_size == 1 && data[0] == 0x4f)
 			return 1;
@@ -224,9 +223,9 @@ int pcoprs1_init(CFStringRef devname)
     if(pcoprs1_port < 0)
         return 0;
 	
-//	tcflush(pcoprs1_port, TCIOFLUSH);
+	tcflush(pcoprs1_port, TCIOFLUSH);
+
 	sioinit();
-	printf("MORI MORI pcoprs1_port = %d\n", pcoprs1_port);
 	
 	return 1;
 }

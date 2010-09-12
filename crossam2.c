@@ -42,11 +42,11 @@ int crossam2_readline(char *data, int datasize)
 	while(1) {
 		FD_ZERO(&sio_fd);
 		FD_SET(crossam2_port, &sio_fd);
-		wtime.tv_sec = 0;
-		wtime.tv_usec = 500*1000;
+		wtime.tv_sec = 1;
+		wtime.tv_usec = 0;
 		select(crossam2_port + 1, &sio_fd, 0, 0, &wtime);
 		if(!FD_ISSET(crossam2_port, &sio_fd)) {
-			printf("MORI MORI Debug error\n");
+			printf("crossam2_readline error\n");
 			return 0;
 		}
 		read_size = read(crossam2_port, data+allsize, datasize-allsize);
@@ -77,7 +77,6 @@ int crossam2_leam(int dial, int key)
 {
 	char outbytes[128];
 	sprintf(outbytes, "/G%d,%d", dial, key);
-	printf("MORI MORI debug %s\n", outbytes);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
 	crossam2_writedata(outbytes, cmdlen+1);
@@ -94,7 +93,6 @@ void crossam2_protectoff()
 	int cmdlen;
 	strcpy(outbytes, "/HAL Laboratory INC.");
 	cmdlen = strlen(outbytes);
-	printf("MORI MORI debug %s\n", outbytes);
 	outbytes[cmdlen] = 0x0d;
 	crossam2_writedata(outbytes, cmdlen+1);
 }
@@ -133,14 +131,12 @@ int crossam2_write(int dial, int key, unsigned char *data, int datasize)
 	char outbytes[128];
 	int i;
 	sprintf(outbytes, "/W%d,%d %x", dial, key, datasize);
-	printf("MORI MORI debug %s\n", outbytes);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
 	crossam2_writedata(outbytes, cmdlen+1);
 
 	for(i = 0; i < datasize; ++i) {
 		sprintf(outbytes, "%02x", data[i]);
-		printf("MORI MORI debug %s\n", outbytes);
 		int cmdlen = strlen(outbytes);
 		outbytes[cmdlen] = 0x0d;
 		crossam2_writedata(outbytes, cmdlen+1);
@@ -157,7 +153,6 @@ int crossam2_read(int dial, int key, unsigned char *data, int datasize)
 	int lineCount = 0;
 	int dataSize;
 	sprintf(outbytes, "/R%d,%d", dial, key);
-	printf("MORI MORI debug %s\n", outbytes);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
 	crossam2_writedata(outbytes, cmdlen+1);
@@ -191,7 +186,6 @@ void crossam2_version(char *verstr, int strsize)
 	char inbytes[128];
 	verstr[0] = 0x00;
 	strcpy(outbytes, "/V");
-	printf("MORI MORI debug %s\n", outbytes);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
 	crossam2_writedata(outbytes, cmdlen+1);
@@ -206,7 +200,6 @@ void crossam2_led(int ledon)
 	char outbytes[128];
 	
 	sprintf(outbytes, "/P%d", ledon);
-	printf("MORI MORI debug %s\n", outbytes);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
 	crossam2_writedata(outbytes, cmdlen+1);
@@ -217,7 +210,6 @@ void crossam2_pushkey(int dial, int key)
 	char outbytes[128];
 
 	sprintf(outbytes, "/T%d,%d", dial, key);
-	printf("MORI MORI debug %s\n", outbytes);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
 	crossam2_writedata(outbytes, cmdlen+1);
