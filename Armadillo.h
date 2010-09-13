@@ -13,6 +13,11 @@
 	unsigned char data[240];
 	IBOutlet NSProgressIndicator *waitTimer;
 	Boolean cancelReceive;
+	Boolean isSignal;
+	NSString *remoteName;
+	NSString *buttonName;
+	NSString *buttonRepeatType;
+	NSMutableString *signalValue;
 }
 
 - (IBAction)debugCrossam_1:(id)sender;

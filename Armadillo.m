@@ -14,6 +14,61 @@
 
 @implementation Armadillo
 
+// parser for as follow site data
+// http://www.256byte.com/remocon/iremo_db.php
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser
+{
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    if([elementName compare:@"remote"] == NSOrderedSame){
+		remoteName = [[NSMutableString alloc] initWithString:[attributeDict objectForKey:@"name"]];
+	}
+    if([elementName compare:@"button"] == NSOrderedSame){
+		buttonName = [[NSMutableString alloc] initWithString:[attributeDict objectForKey:@"name"]];
+		buttonRepeatType = [[NSMutableString alloc] initWithString:[attributeDict objectForKey:@"repeat_type"]];
+	}
+    if([elementName compare:@"signal"] == NSOrderedSame){
+        isSignal = YES;
+
+        signalValue = [[NSMutableString string] retain];
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
+    if(isSignal){
+        [signalValue appendString:string];
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName
+{
+	if([elementName compare:@"button"] == NSOrderedSame){
+		[buttonName release];
+		[buttonRepeatType release];
+	}
+	if([elementName compare:@"signal"] == NSOrderedSame){
+        isSignal = NO;
+    }
+}
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+}
+
+- (void) readData
+{
+	NSData *result = [[NSData alloc] initWithContentsOfFile:@"/tmp/iremo.xml"];
+	NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:result];
+	[xmlParser setDelegate:self];
+	[xmlParser parse];
+	[xmlParser release];
+}
+
 //
 // Crossam2 Debug code
 //
@@ -49,7 +104,8 @@
 			break;
 		}
 	}
-	
+
+	[self readData];
 	crossam2_init((CFStringRef)portName);
 
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
