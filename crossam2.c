@@ -135,7 +135,7 @@ int crossam2_write(int dial, int key, unsigned char *data, int datasize)
 	
 	char outbytes[128];
 	int i;
-	sprintf(outbytes, "/W%d,%d %x", dial, key, datasize);
+	sprintf(outbytes, "/W%d,%d %d", dial, key, datasize);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
 	crossam2_writedata(outbytes, cmdlen+1);
