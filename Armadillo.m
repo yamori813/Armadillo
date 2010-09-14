@@ -105,7 +105,7 @@
 		}
 	}
 
-	[self readData];
+//	[self readData];
 	crossam2_init((CFStringRef)portName);
 
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
@@ -140,7 +140,7 @@
 {
 	unsigned char crossam_data[128];
 	int read_size;
-	read_size = crossam2_read(0,40, crossam_data, sizeof(crossam_data));
+	read_size = crossam2_read(4,40, crossam_data, sizeof(crossam_data));
 	int i;
 	for(i = 0; i < read_size; ++i) {
 		printf("%02x ", crossam_data[i]);
@@ -166,11 +166,38 @@
 - (IBAction)debugCrossam_7:(id)sender
 {
 	unsigned char cmddata[1024];
+	int gen_size;
+#if 0
 	// Preset Sony TV Power
 	cmddata[0] = 0x00;
 	cmddata[1] = 0xc0;
 	cmddata[2] = 0x11;
-	crossam2_write(4,40, cmddata, 3);	
+	gen_size = 3;
+#else
+	// Make Sony TV Power
+	unsigned char cmd[2];
+	cmd[0] = 0xa9;
+	cmd[1] = 0x00;
+	irpat = (irdata *)malloc(sizeof(irdata));
+	irpat->zero_h = 660;
+	irpat->zero_l = 540;
+	irpat->one_h = 1245;
+	irpat->one_l = 540;
+	irpat->stop_h = 0;
+	irpat->stop_l = 25100;
+	irpat->start_h = 2460;
+	irpat->start_l = 525;
+	gen_size = genir_crossam2(irpat, cmd, 12,
+								 2, cmddata, sizeof(cmddata));
+#endif
+	int i;
+	for(i = 0; i < gen_size; ++i) {
+		printf("%02x ", cmddata[i]);
+		if((i + 1) % 16 == 0)
+			printf("\n");
+	}
+	printf("\n");
+	crossam2_write(4,40, cmddata, gen_size);	
 	
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];

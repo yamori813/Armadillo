@@ -9,6 +9,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#include "genir.h"
+
 @interface Armadillo : NSObject {
 	unsigned char data[240];
 	IBOutlet NSProgressIndicator *waitTimer;
@@ -18,6 +20,7 @@
 	NSString *buttonName;
 	NSString *buttonRepeatType;
 	NSMutableString *signalValue;
+	irdata *irpat;
 }
 
 - (IBAction)debugCrossam_1:(id)sender;

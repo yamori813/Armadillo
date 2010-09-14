@@ -9,12 +9,55 @@
 
 #include "genir.h"
 
-int genir_crossam()
+void set3byte(unsigned char *buff, int val)
 {
-	return 0;
+	buff[0] = val & 0xff;
+	buff[1] = (val >> 8) & 0xff;
+	buff[2] = (val >> 16) & 0xff;
 }
 
-int genir_pcoprs1()
+int genir_crossam2(irdata *format, unsigned char *data, int bitlen,
+				  int repeat, unsigned char *buff, int size)
 {
-	return 0;
+	int tmpval;
+
+	buff[0] = 0;
+	buff[1] = 4;
+	buff[2] = 0x20;
+
+	tmpval = format->zero_h * 10 / 4;
+	set3byte(&buff[3], tmpval);	
+	tmpval = format->zero_l * 10 / 4;
+	set3byte(&buff[6], tmpval);
+	tmpval = format->one_h * 10 / 4;
+	set3byte(&buff[9], tmpval);
+	tmpval = format->one_l * 10 / 4;
+	set3byte(&buff[12], tmpval);
+	tmpval = format->stop_h * 10 / 4;
+	set3byte(&buff[15], tmpval);
+	tmpval = format->stop_l * 10 / 4;
+	set3byte(&buff[18], tmpval);
+	tmpval = format->start_h * 10 / 4;
+	set3byte(&buff[21], tmpval);
+	tmpval = format->start_l * 10 / 4;
+	set3byte(&buff[24], tmpval);
+
+	buff[27] = 0x31;
+	buff[28] = 0x01;
+	buff[29] = 0x01;
+	buff[30] = 0x00;
+	buff[31] = 0x10;
+	buff[32] = 0x00;
+	buff[33] = 0x02;
+
+	buff[34] = 0xfe;
+	buff[35] = 0x0e;
+
+	return 36;
+}
+
+int genir_pcoprs1(irdata *format, unsigned char *data, int bitlen,
+				  int repeat, unsigned char *buff)
+{
+	return 1;
 }
