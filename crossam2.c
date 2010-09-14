@@ -73,7 +73,7 @@ void crossam2_writedata(char *data, int datasize)
 	}
 }
 
-int crossam2_leam(int dial, int key)
+int crossam2_learn(int dial, int key)
 {
 	char outbytes[128];
 	sprintf(outbytes, "/G%d,%d", dial, key);
