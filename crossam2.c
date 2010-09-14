@@ -120,12 +120,12 @@ int hex2Int(char *hexstr)
 	if(hexstr[0] >= '0' && hexstr[0] <= '9')
 		result = ((int)hexstr[0] - '0') * 16;
 	else
-		result = ((int)hexstr[0] - 'A' + 10) * 16;
+		result = ((int)hexstr[0] - 'a' + 10) * 16;
 
 	if(hexstr[1] >= '0' && hexstr[1] <= '9')
-		result += (int)hexstr[1] - '0';
+		result += (int)hexstr[1] - (int)'0';
 	else
-		result += (int)hexstr[1] - 'A' + 10;
+		result += (int)hexstr[1] - (int)'a' + 10;
 	
 	return result;
 }
