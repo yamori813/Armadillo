@@ -9,6 +9,8 @@
 
 #include "genir.h"
 
+#include <stdio.h>
+#include <stdio.h>
 void set3byte(unsigned char *buff, int val)
 {
 	buff[0] = val & 0xff;
@@ -42,6 +44,28 @@ int genir_crossam2(irdata *format, unsigned char *data, int bitlen,
 	tmpval = format->start_l * 10 / 4;
 	set3byte(&buff[24], tmpval);
 
+	int i, j;
+	i = 0;
+	j = 0;
+	buff[27 + (j * 8 + i) / 2] = 0x30;
+	do {
+		if((j * 8 + i + 1) % 2 == 0)
+			buff[27 + (j * 8 + i + 1) / 2] = (data[j] >> (7 - i) & 1) << 4;
+		else
+			buff[27 + (j * 8 + i + 1) / 2] |= (data[j] >> (7 - i) & 1);
+//		printf("%d ", (data[j] >> (7 - i) & 1));
+		if(i == 8) {
+			i = 0;
+			++j;
+		} else {
+			++i;
+		}
+	} while((j * 8 + i) != bitlen);
+	if((j * 8 + i + 1) % 2 == 0)
+		buff[27 + (j * 8 + i + 1) / 2] = 2;
+	else
+		buff[27 + (j * 8 + i + 1) / 2] |= 2;
+	/*
 	buff[27] = 0x31;
 	buff[28] = 0x01;
 	buff[29] = 0x01;
@@ -49,7 +73,7 @@ int genir_crossam2(irdata *format, unsigned char *data, int bitlen,
 	buff[31] = 0x10;
 	buff[32] = 0x00;
 	buff[33] = 0x02;
-
+*/
 	buff[34] = 0xfe;
 	buff[35] = 0x0e;
 
