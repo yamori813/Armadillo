@@ -18,7 +18,7 @@ typedef struct _irdata {
 	int stop_l;
 } irdata;
 
-int genir_crossam2(irdata *format, unsigned char *data, int bitlen,
+int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
 				  int repeat, unsigned char *buff, int size);
-int genir_pcoprs1(irdata *format, unsigned char *data, int bitlen,
+int genir_pcoprs1(int car, irdata *format, unsigned char *data, int bitlen,
 				  int repeat, unsigned char *buff);

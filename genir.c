@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stdio.h>
+
 void set3byte(unsigned char *buff, int val)
 {
 	buff[0] = val & 0xff;
@@ -18,14 +19,23 @@ void set3byte(unsigned char *buff, int val)
 	buff[2] = (val >> 16) & 0xff;
 }
 
-int genir_crossam2(irdata *format, unsigned char *data, int bitlen,
+int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
 				  int repeat, unsigned char *buff, int size)
 {
 	int tmpval;
 
 	buff[0] = 0;
 	buff[1] = 4;
-	buff[2] = 0x20;
+	if(car == 0)	// 40.3KHz
+		buff[2] = 0x1f;
+	else if(car == 1)	// 39.1KHz
+		buff[2] = 0x20;
+	else if(car == 2)	// 37.9KHz
+		buff[2] = 0x21;
+	else if(car == 3)	// ???
+		buff[2] = 0x22;
+	else if(car == 4)	// 35.KHz
+		buff[2] = 0x23;
 
 	tmpval = format->zero_h * 10 / 4;
 	set3byte(&buff[3], tmpval);	
@@ -102,10 +112,13 @@ int genir_crossam2(irdata *format, unsigned char *data, int bitlen,
 	buff[35] = 0x0e;
 	 */
 
-	return 36;
+	if((j * 8 + i + 1) % 2 == 0)
+		return 27 + (j * 8 + i + 1) / 2;
+
+	return 27 + (j * 8 + i + 1) / 2 + 1;
 }
 
-int genir_pcoprs1(irdata *format, unsigned char *data, int bitlen,
+int genir_pcoprs1(int car, irdata *format, unsigned char *data, int bitlen,
 				  int repeat, unsigned char *buff)
 {
 	return 1;
