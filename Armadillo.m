@@ -187,7 +187,7 @@
 	irpat->stop_l = 25100;
 	irpat->start_h = 2460;
 	irpat->start_l = 525;
-	gen_size = genir_crossam2(irpat, cmd, 12,
+	gen_size = genir_crossam2(1, irpat, cmd, 12,
 								 2, cmddata, sizeof(cmddata));
 #endif
 	int i;
