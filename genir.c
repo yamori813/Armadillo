@@ -32,9 +32,9 @@ int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
 		buff[2] = 0x20;
 	else if(car == 2)	// 37.9KHz
 		buff[2] = 0x21;
-	else if(car == 3)	// ???
+	else if(car == 3)	// 36.7 KHz ?
 		buff[2] = 0x22;
-	else if(car == 4)	// 35.KHz
+	else if(car == 4)	// 35.7KHz
 		buff[2] = 0x23;
 
 	tmpval = format->zero_h * 10 / 4;
