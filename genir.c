@@ -10,7 +10,7 @@
 #include "genir.h"
 
 #include <stdio.h>
-#include <stdio.h>
+#include <string.h>
 
 void set3byte(unsigned char *buff, int val)
 {
@@ -19,12 +19,36 @@ void set3byte(unsigned char *buff, int val)
 	buff[2] = (val >> 16) & 0xff;
 }
 
+int timepos(int count, int *timearray, int hi, int lo)
+{
+	int i;
+	for(i = 0; i < count; ++i) {
+		if(*(timearray + i * 2) == hi && *(timearray + i * 2 + 1) == lo)
+			return i;
+	}
+	return -1;
+}
+
+void timeset(int count, int *timearray, int hi, int lo)
+{
+	*(timearray + count * 2) = hi;
+	*(timearray + count * 2 + 1) = lo;
+	return;
+}
+
 //int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
 //				  int repeat, unsigned char *buff, int size)
 int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int size)
 {
-	int tmpval;
+	int totalbit;
+	int timecount;
+	int timearray[128];
+	int tpos;
+	char bitbuff[512];
+	int zeropat, onepat, startpat, stoppat;
+	totalbit = 0;
 
+	timecount = 0;
 	buff[0] = 0;
 	buff[1] = 4;
 	if(car == 0)	// 40.3KHz
@@ -38,87 +62,125 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 	else if(car == 4)	// 35.7KHz
 		buff[2] = 0x23;
 
-	tmpval = pat->format.zero_h * 10 / 4;
-	set3byte(&buff[3], tmpval);	
-	tmpval = pat->format.zero_l * 10 / 4;
-	set3byte(&buff[6], tmpval);
-	tmpval =  pat->format.one_h * 10 / 4;
-	set3byte(&buff[9], tmpval);
-	tmpval =  pat->format.one_l * 10 / 4;
-	set3byte(&buff[12], tmpval);
-	tmpval = pat->format.stop_h * 10 / 4;
-	set3byte(&buff[15], tmpval);
-	tmpval = pat->format.stop_l * 10 / 4;
-	set3byte(&buff[18], tmpval);
-	tmpval = pat->format.start_h * 10 / 4;
-	set3byte(&buff[21], tmpval);
-	tmpval = pat->format.start_l * 10 / 4;
-	set3byte(&buff[24], tmpval);
-
-	int i, j;
-	if(pat->bitlen) {
-		i = 0;
-		j = 0;
-		if(pat->format.start_h + pat->format.start_l != 0) {
-			buff[27 + (j * 8 + i) / 2] = 0x30;
-		}
-		do {
-			if((j * 8 + i + 1) % 2 == 0)
-				buff[27 + (j * 8 + i + 1) / 2] = (pat->data[j] >> (7 - i) & 1) << 4;
-			else
-				buff[27 + (j * 8 + i + 1) / 2] |= (pat->data[j] >> (7 - i) & 1);
-//		printf("%d ", (data[j] >> (7 - i) & 1));
-
-			if(i == 8) {
-				i = 0;
-				++j;
+	do {
+		if(pat->format.zero_h + pat->format.zero_l != 0) {
+			tpos = timepos(timecount, timearray, 
+						   pat->format.zero_h, pat->format.zero_l);
+			if(tpos == -1) {
+				timeset(timecount, timearray, 
+							   pat->format.zero_h, pat->format.zero_l);
+				zeropat = timecount;
+				++timecount;
 			} else {
-				++i;
+				zeropat = tpos;
 			}
-		} while((j * 8 + i) != pat->bitlen);
-	}
-	if(pat->format.stop_h + pat->format.stop_l != 0) {
-		if((j * 8 + i + 1) % 2 == 0)
-			buff[27 + (j * 8 + i + 1) / 2] = 2 << 4;
-		else
-			buff[27 + (j * 8 + i + 1) / 2] |= 2;
-		++i;
-	}
-	if((j * 8 + i + 1) % 2 == 0)
-		buff[27 + (j * 8 + i + 1) / 2] = 0xf << 4;
-	else
-		buff[27 + (j * 8 + i + 1) / 2] |= 0xf;
-	++i;
-	if((j * 8 + i + 1) % 2 == 0)
-		buff[27 + (j * 8 + i + 1) / 2] = 0xe << 4;
-	else
-		buff[27 + (j * 8 + i + 1) / 2] |= 0xe;
-	++i;
-	if((j * 8 + i + 1) % 2 == 0)
-		buff[27 + (j * 8 + i + 1) / 2] = 0;
-	else
-		buff[27 + (j * 8 + i + 1) / 2] |= 0;
-	++i;
-	if((j * 8 + i + 1) % 2 == 0)
-		buff[27 + (j * 8 + i + 1) / 2] = pat->bitlen + 2 << 4;
-	else
-		buff[27 + (j * 8 + i + 1) / 2] |= pat->bitlen + 2;			
-	/*
-	buff[27] = 0x31;
-	buff[28] = 0x01;
-	buff[29] = 0x01;
-	buff[30] = 0x00;
-	buff[31] = 0x10;
-	buff[32] = 0x00;
-	buff[33] = 0x02;
-	buff[34] = 0xfe;
-	buff[35] = 0x0e;
-	 */
+		}
+		if(pat->format.one_h + pat->format.one_l != 0) {
+			tpos = timepos(timecount, timearray, 
+						   pat->format.one_h, pat->format.one_l);
+			if(tpos == -1) {
+				timeset(timecount, timearray, 
+							   pat->format.one_h, pat->format.one_l);
+				onepat = timecount;
+				++timecount;
+			} else {
+				onepat = tpos;
+			}
+		}
+		if(pat->format.stop_h + pat->format.stop_l != 0) {
+			tpos = timepos(timecount, timearray, 
+						   pat->format.stop_h, pat->format.stop_l);
+			if(tpos == -1) {
+				timeset(timecount, timearray, 
+							   pat->format.stop_h, pat->format.stop_l);
+				stoppat = timecount;
+				++timecount;
+			} else {
+				stoppat = tpos;
+			}
+		}
+		if(pat->format.start_h + pat->format.start_l != 0) {
+			tpos = timepos(timecount, timearray, 
+						   pat->format.start_h, pat->format.start_l);
+			if(tpos == -1) {
+				timeset(timecount, timearray, 
+							   pat->format.start_h, pat->format.start_l);
+				startpat = timecount;
+				++timecount;
+			} else {
+				startpat = tpos;
+			}
+		}
 
-	if((j * 8 + i + 1) % 2 == 0)
-		return 27 + (j * 8 + i + 1) / 2;
+		int i, j;
+		if(pat->bitlen) {
+			i = 0;
+			j = 0;
+			if(pat->format.start_h + pat->format.start_l != 0) {
+				bitbuff[totalbit + (j * 8 + i) / 2] = startpat << 4;
+			}
+			do {
+				if((j * 8 + i + 1) % 2 == 0)
+					bitbuff[totalbit + (j * 8 + i + 1) / 2] = (pat->data[j] >> (7 - i) & 1) ? onepat << 4 : zeropat;
+				else
+					bitbuff[totalbit + (j * 8 + i + 1) / 2] |= (pat->data[j] >> (7 - i) & 1) ? onepat : zeropat;
+				//		printf("%d ", (data[j] >> (7 - i) & 1));
+				
+				if(i == 8) {
+					i = 0;
+					++j;
+				} else {
+					++i;
+				}
+			} while((j * 8 + i) != pat->bitlen);
+		}
+		totalbit += j * 8 + i + 1;
 
-	return 27 + (j * 8 + i + 1) / 2 + 1;
+		if(pat->format.stop_h + pat->format.stop_l != 0) {
+			if(totalbit % 2 == 0)
+				bitbuff[totalbit / 2 + 1] = stoppat << 4;
+			else
+				bitbuff[totalbit/ 2 ] |= stoppat;
+			++totalbit;
+		}
+
+		--patcount;
+	} while(patcount);
+
+	if(totalbit % 2 == 0)
+		bitbuff[totalbit / 2] = 0xf << 4;
+	else
+		bitbuff[totalbit / 2] |= 0xf;
+	++totalbit;
+	if(totalbit % 2 == 0)
+		bitbuff[totalbit / 2] = 0xe << 4;
+	else
+		bitbuff[totalbit / 2] |= 0xe;
+	++totalbit;
+	if(totalbit% 2 == 0)
+		bitbuff[totalbit / 2] = 0;
+	else
+		bitbuff[totalbit / 2] |= 0;
+	++totalbit;
+	if(totalbit % 2 == 0)
+		bitbuff[totalbit / 2] = pat->bitlen + 2 << 4;
+	else
+		bitbuff[totalbit / 2] |= pat->bitlen + 2;
+	++totalbit;
+
+	int i;
+	for(i = 0; i < timecount; ++i) {
+		set3byte(buff + 3 + 6 * i, *(timearray + i * 2) * 10 / 4);
+		set3byte(buff + 3 + 6 * i + 3, *(timearray + i * 2 + 1) * 10 / 4);
+	}
+
+	if(totalbit % 2 == 0) {
+		memcpy(buff + 3 + timecount * 6, bitbuff, totalbit / 2);
+		return 3 + timecount * 6 + totalbit / 2;
+	}
+
+	memcpy(buff + 3 + timecount * 6, bitbuff, totalbit / 2 + 1);
+	return 3 + timecount * 6 + totalbit / 2 + 1;
 }
 
 int genir_pcoprs1(int car, irdata *format, unsigned char *data, int bitlen,
