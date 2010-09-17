@@ -19,8 +19,9 @@ void set3byte(unsigned char *buff, int val)
 	buff[2] = (val >> 16) & 0xff;
 }
 
-int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
-				  int repeat, unsigned char *buff, int size)
+//int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
+//				  int repeat, unsigned char *buff, int size)
+int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int size)
 {
 	int tmpval;
 
@@ -37,21 +38,21 @@ int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
 	else if(car == 4)	// 35.7KHz
 		buff[2] = 0x23;
 
-	tmpval = format->zero_h * 10 / 4;
+	tmpval = pat->format.zero_h * 10 / 4;
 	set3byte(&buff[3], tmpval);	
-	tmpval = format->zero_l * 10 / 4;
+	tmpval = pat->format.zero_l * 10 / 4;
 	set3byte(&buff[6], tmpval);
-	tmpval = format->one_h * 10 / 4;
+	tmpval =  pat->format.one_h * 10 / 4;
 	set3byte(&buff[9], tmpval);
-	tmpval = format->one_l * 10 / 4;
+	tmpval =  pat->format.one_l * 10 / 4;
 	set3byte(&buff[12], tmpval);
-	tmpval = format->stop_h * 10 / 4;
+	tmpval = pat->format.stop_h * 10 / 4;
 	set3byte(&buff[15], tmpval);
-	tmpval = format->stop_l * 10 / 4;
+	tmpval = pat->format.stop_l * 10 / 4;
 	set3byte(&buff[18], tmpval);
-	tmpval = format->start_h * 10 / 4;
+	tmpval = pat->format.start_h * 10 / 4;
 	set3byte(&buff[21], tmpval);
-	tmpval = format->start_l * 10 / 4;
+	tmpval = pat->format.start_l * 10 / 4;
 	set3byte(&buff[24], tmpval);
 
 	int i, j;
@@ -59,37 +60,37 @@ int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
 	j = 0;
 	buff[27 + (j * 8 + i) / 2] = 0x30;
 	do {
-		if((j * 8 + i) < bitlen) {
+		if((j * 8 + i) < pat->bitlen) {
 			if((j * 8 + i + 1) % 2 == 0)
-				buff[27 + (j * 8 + i + 1) / 2] = (data[j] >> (7 - i) & 1) << 4;
+				buff[27 + (j * 8 + i + 1) / 2] = (pat->data[j] >> (7 - i) & 1) << 4;
 			else
-				buff[27 + (j * 8 + i + 1) / 2] |= (data[j] >> (7 - i) & 1);
+				buff[27 + (j * 8 + i + 1) / 2] |= (pat->data[j] >> (7 - i) & 1);
 //		printf("%d ", (data[j] >> (7 - i) & 1));
-		} else if((j * 8 + i) == bitlen) {
+		} else if((j * 8 + i) == pat->bitlen) {
 			if((j * 8 + i + 1) % 2 == 0)
 				buff[27 + (j * 8 + i + 1) / 2] = 2 << 4;
 			else
 				buff[27 + (j * 8 + i + 1) / 2] |= 2;
-		} else if((j * 8 + i) == bitlen + 1) {
+		} else if((j * 8 + i) == pat->bitlen + 1) {
 			if((j * 8 + i + 1) % 2 == 0)
 				buff[27 + (j * 8 + i + 1) / 2] = 0xf << 4;
 			else
 				buff[27 + (j * 8 + i + 1) / 2] |= 0xf;
-		} else if((j * 8 + i) == bitlen + 2) {
+		} else if((j * 8 + i) == pat->bitlen + 2) {
 			if((j * 8 + i + 1) % 2 == 0)
 				buff[27 + (j * 8 + i + 1) / 2] = 0xe << 4;
 			else
 				buff[27 + (j * 8 + i + 1) / 2] |= 0xe;			
-		} else if((j * 8 + i) == bitlen + 3) {
+		} else if((j * 8 + i) == pat->bitlen + 3) {
 			if((j * 8 + i + 1) % 2 == 0)
 				buff[27 + (j * 8 + i + 1) / 2] = 0;
 			else
 				buff[27 + (j * 8 + i + 1) / 2] |= 0;
-		} else if((j * 8 + i) == bitlen + 4) {
+		} else if((j * 8 + i) == pat->bitlen + 4) {
 			if((j * 8 + i + 1) % 2 == 0)
-				buff[27 + (j * 8 + i + 1) / 2] = bitlen + 2 << 4;
+				buff[27 + (j * 8 + i + 1) / 2] = pat->bitlen + 2 << 4;
 			else
-				buff[27 + (j * 8 + i + 1) / 2] |= bitlen + 2;			
+				buff[27 + (j * 8 + i + 1) / 2] |= pat->bitlen + 2;			
 		}
 
 		if(i == 8) {
@@ -98,7 +99,7 @@ int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
 		} else {
 			++i;
 		}
-	} while((j * 8 + i) != bitlen + 5);
+	} while((j * 8 + i) != pat->bitlen + 5);
 
 	/*
 	buff[27] = 0x31;

@@ -7,7 +7,7 @@
  *
  */
 
-typedef struct _irdata {
+typedef struct _irtime {
 	int start_h;
 	int start_l;
 	int zero_h;
@@ -16,9 +16,15 @@ typedef struct _irdata {
 	int one_l;
 	int stop_h;
 	int stop_l;
+} irtime;
+
+typedef struct _irdata {
+	irtime format;
+	unsigned char *data;
+	int bitlen;
+	int repeat;
 } irdata;
 
-int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
-				  int repeat, unsigned char *buff, int size);
+int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int size);
 int genir_pcoprs1(int car, irdata *format, unsigned char *data, int bitlen,
 				  int repeat, unsigned char *buff);

@@ -178,17 +178,20 @@
 	unsigned char cmd[2];
 	cmd[0] = 0xa9;
 	cmd[1] = 0x00;
-	irpat = (irdata *)malloc(sizeof(irdata));
-	irpat->zero_h = 660;
-	irpat->zero_l = 540;
-	irpat->one_h = 1245;
-	irpat->one_l = 540;
-	irpat->stop_h = 0;
-	irpat->stop_l = 25100;
-	irpat->start_h = 2460;
-	irpat->start_l = 525;
-	gen_size = genir_crossam2(1, irpat, cmd, 12,
-								 2, cmddata, sizeof(cmddata));
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 2);
+	pat = patptr;
+	patptr->format.zero_h = 660;
+	patptr->format.zero_l = 540;
+	patptr->format.one_h = 1245;
+	patptr->format.one_l = 540;
+	patptr->format.stop_h = 0;
+	patptr->format.stop_l = 25100;
+	patptr->format.start_h = 2460;
+	patptr->format.start_l = 525;
+	patptr->data = cmd;
+	patptr->bitlen = 12;
+	patptr->repeat = 2;
+	gen_size = genir_crossam2(2, 1, patptr , cmddata, sizeof(cmddata));
 #endif
 	int i;
 	for(i = 0; i < gen_size; ++i) {
@@ -197,10 +200,10 @@
 			printf("\n");
 	}
 	printf("\n");
-	crossam2_write(4,40, cmddata, gen_size);	
+//	crossam2_write(4,40, cmddata, gen_size);	
 	
-	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-						   withObject:nil];
+//	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+//						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_8:(id)sender

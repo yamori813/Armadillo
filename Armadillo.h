@@ -20,7 +20,7 @@
 	NSString *buttonName;
 	NSString *buttonRepeatType;
 	NSMutableString *signalValue;
-	irdata *irpat;
+	irdata *pat;
 }
 
 - (IBAction)debugCrossam_1:(id)sender;
