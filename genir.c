@@ -56,51 +56,53 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 	set3byte(&buff[24], tmpval);
 
 	int i, j;
-	i = 0;
-	j = 0;
-	buff[27 + (j * 8 + i) / 2] = 0x30;
-	do {
-		if((j * 8 + i) < pat->bitlen) {
+	if(pat->bitlen) {
+		i = 0;
+		j = 0;
+		if(pat->format.start_h + pat->format.start_l != 0) {
+			buff[27 + (j * 8 + i) / 2] = 0x30;
+		}
+		do {
 			if((j * 8 + i + 1) % 2 == 0)
 				buff[27 + (j * 8 + i + 1) / 2] = (pat->data[j] >> (7 - i) & 1) << 4;
 			else
 				buff[27 + (j * 8 + i + 1) / 2] |= (pat->data[j] >> (7 - i) & 1);
 //		printf("%d ", (data[j] >> (7 - i) & 1));
-		} else if((j * 8 + i) == pat->bitlen) {
-			if((j * 8 + i + 1) % 2 == 0)
-				buff[27 + (j * 8 + i + 1) / 2] = 2 << 4;
-			else
-				buff[27 + (j * 8 + i + 1) / 2] |= 2;
-		} else if((j * 8 + i) == pat->bitlen + 1) {
-			if((j * 8 + i + 1) % 2 == 0)
-				buff[27 + (j * 8 + i + 1) / 2] = 0xf << 4;
-			else
-				buff[27 + (j * 8 + i + 1) / 2] |= 0xf;
-		} else if((j * 8 + i) == pat->bitlen + 2) {
-			if((j * 8 + i + 1) % 2 == 0)
-				buff[27 + (j * 8 + i + 1) / 2] = 0xe << 4;
-			else
-				buff[27 + (j * 8 + i + 1) / 2] |= 0xe;			
-		} else if((j * 8 + i) == pat->bitlen + 3) {
-			if((j * 8 + i + 1) % 2 == 0)
-				buff[27 + (j * 8 + i + 1) / 2] = 0;
-			else
-				buff[27 + (j * 8 + i + 1) / 2] |= 0;
-		} else if((j * 8 + i) == pat->bitlen + 4) {
-			if((j * 8 + i + 1) % 2 == 0)
-				buff[27 + (j * 8 + i + 1) / 2] = pat->bitlen + 2 << 4;
-			else
-				buff[27 + (j * 8 + i + 1) / 2] |= pat->bitlen + 2;			
-		}
 
-		if(i == 8) {
-			i = 0;
-			++j;
-		} else {
-			++i;
-		}
-	} while((j * 8 + i) != pat->bitlen + 5);
-
+			if(i == 8) {
+				i = 0;
+				++j;
+			} else {
+				++i;
+			}
+		} while((j * 8 + i) != pat->bitlen);
+	}
+	if(pat->format.stop_h + pat->format.stop_l != 0) {
+		if((j * 8 + i + 1) % 2 == 0)
+			buff[27 + (j * 8 + i + 1) / 2] = 2 << 4;
+		else
+			buff[27 + (j * 8 + i + 1) / 2] |= 2;
+		++i;
+	}
+	if((j * 8 + i + 1) % 2 == 0)
+		buff[27 + (j * 8 + i + 1) / 2] = 0xf << 4;
+	else
+		buff[27 + (j * 8 + i + 1) / 2] |= 0xf;
+	++i;
+	if((j * 8 + i + 1) % 2 == 0)
+		buff[27 + (j * 8 + i + 1) / 2] = 0xe << 4;
+	else
+		buff[27 + (j * 8 + i + 1) / 2] |= 0xe;
+	++i;
+	if((j * 8 + i + 1) % 2 == 0)
+		buff[27 + (j * 8 + i + 1) / 2] = 0;
+	else
+		buff[27 + (j * 8 + i + 1) / 2] |= 0;
+	++i;
+	if((j * 8 + i + 1) % 2 == 0)
+		buff[27 + (j * 8 + i + 1) / 2] = pat->bitlen + 2 << 4;
+	else
+		buff[27 + (j * 8 + i + 1) / 2] |= pat->bitlen + 2;			
 	/*
 	buff[27] = 0x31;
 	buff[28] = 0x01;
