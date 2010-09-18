@@ -36,8 +36,6 @@ void timeset(int count, int *timearray, int hi, int lo)
 	return;
 }
 
-//int genir_crossam2(int car, irdata *format, unsigned char *data, int bitlen,
-//				  int repeat, unsigned char *buff, int size)
 int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int size)
 {
 	int totalbit;
@@ -209,8 +207,9 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 	return 3 + timecount * 6 + totalbit / 2 + 1;
 }
 
-int genir_pcoprs1(int car, irdata *format, unsigned char *data, int bitlen,
-				  int repeat, unsigned char *buff)
+// buff is 240 byte fix
+
+int genir_pcoprs1(int car, int patcount, irdata *pat, unsigned char *buff)
 {
 	return 1;
 }
