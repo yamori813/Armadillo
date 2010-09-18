@@ -26,4 +26,4 @@ typedef struct _irdata {
 } irdata;
 
 int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int size);
-int genir_pcoprs1(int car, int patcount, irdata *pat, unsigned char *buff);
+int genir_pcoprs1(int patcount, irdata *pat, unsigned char *buff);

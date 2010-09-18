@@ -175,16 +175,16 @@
 	gen_size = 3;
 #endif
 
-#if 0
+#if 1
 	// Make MITSUBISHI LCD Display
 	unsigned char cmd[2];
-	/* Power
+	/* Power */
 	cmd[0] = 0x27;
 	cmd[1] = 0xc0;
-	 */
-	/* HDMI1 */
+	/* HDMI1
 	cmd[0] = 0x27;
 	cmd[1] = 0x74;
+	 */
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 2);
 	pat = patptr;
 	patptr->format.zero_h = 420;
@@ -209,10 +209,12 @@
 	patptr->data = cmd + 1;
 	patptr->bitlen = 8;
 	patptr->repeat = -1;
-	gen_size = genir_crossam2(0, 2, pat , cmddata, sizeof(cmddata));
+//	gen_size = genir_crossam2(0, 2, pat , cmddata, sizeof(cmddata));
+	gen_size = genir_pcoprs1(2, pat , cmddata);
+	pcoprs1_transfer(1, cmddata);
 #endif
 
-#if 1
+#if 0
 	// Make ONKYO CD
 	unsigned char cmd[4];
 	/* Eject
@@ -279,6 +281,7 @@
 	patptr->repeat = -1;
 	gen_size = genir_crossam2(1, 1, pat , cmddata, sizeof(cmddata));
 #endif
+	/*
 	int i;
 	for(i = 0; i < gen_size; ++i) {
 		printf("%02x ", cmddata[i]);
@@ -290,6 +293,7 @@
 	
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];
+	 */
 }
 
 - (IBAction)debugCrossam_8:(id)sender
@@ -322,12 +326,19 @@
 		}
 //		NSLog(@"MORI MORI Debug %02x %02x", data[0], data[1]);
 		int i, j;
-		for(j = 0; j < 15; ++j) {
+/*		for(j = 0; j < 15; ++j) {
 			for(i = 0; i < 16; ++i) {
 				printf("%02x ", data[j * 16 + i]);
 			}
 			printf("\n");
+		}*/
+/*
+		for(j = 0; j < 240; ++j) {
+			for(i = 0; i <8 ; ++i) {
+				printf("%d", (data[j] >> i) & 1);
+			}
 		}
+		printf("\n");*/
 	}
 	[waitTimer stopAnimation:self];
 	[waitTimer setHidden:YES];

@@ -207,9 +207,75 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 	return 3 + timecount * 6 + totalbit / 2 + 1;
 }
 
+int sethilobit(int pos, unsigned char *buff, int hi, int lo)
+{
+	int hibit, lobit;
+	hibit = hi / 100;
+	lobit = lo / 100;
+	int i;
+	for(i = 0; i < hibit; ++i) {
+		buff[pos / 8] |= 1 << (pos % 8);
+		++pos;
+	}
+	return pos + lobit;
+}
+
 // buff is 240 byte fix
 
-int genir_pcoprs1(int car, int patcount, irdata *pat, unsigned char *buff)
+int genir_pcoprs1(int patcount, irdata *pat, unsigned char *buff)
 {
+	int curbit = 0;
+	int i, j, k;
+	irdata *orgpat;
+	int orgpatcount;
+	orgpat = pat;
+	orgpatcount = patcount;
+	memset(buff, 0, 240);
+	for(k = 0;k < 2; ++k) {
+	pat = orgpat;
+	patcount = orgpatcount;
+	do {
+		// start bit
+		if(pat->format.start_h + pat->format.start_l != 0)
+			curbit = sethilobit(curbit, buff, pat->format.start_h,
+								pat->format.start_l);
+		// data bit
+		i = 0;
+		j = 0;
+		if(pat->bitlen) {
+			do {
+				if((pat->data[j] >> (7 - i) & 1) == 1) {
+					curbit = sethilobit(curbit, buff, pat->format.one_h, 
+										pat->format.one_l);
+				} else {
+					curbit = sethilobit(curbit, buff, pat->format.zero_h, 
+										pat->format.zero_l);
+				}
+				
+				if(i == 7) {
+					i = 0;
+					++j;
+				} else {
+					++i;
+				}
+			} while((j * 8 + i) != pat->bitlen);
+		}
+
+		// stop bit		
+		if(pat->format.stop_h + pat->format.stop_l != 0)
+			curbit = sethilobit(curbit, buff, pat->format.stop_h, 
+								pat->format.stop_l);
+		++pat;
+		--patcount;
+	} while(patcount);
+	}
+/*
+	for(j = 0; j < 240; ++j) {
+		for(i = 0; i < 8; ++i) {
+			printf("%d", (buff[j] >> i) & 1);
+		}
+	}
+	printf("\n");
+*/
 	return 1;
 }
