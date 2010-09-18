@@ -174,11 +174,17 @@
 	cmddata[2] = 0x11;
 	gen_size = 3;
 #endif
-#if 1
-	// Make MITSUBISHI LCD Display Power
+
+#if 0
+	// Make MITSUBISHI LCD Display
 	unsigned char cmd[2];
+	/* Power
 	cmd[0] = 0x27;
 	cmd[1] = 0xc0;
+	 */
+	/* HDMI1 */
+	cmd[0] = 0x27;
+	cmd[1] = 0x74;
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 2);
 	pat = patptr;
 	patptr->format.zero_h = 420;
@@ -204,14 +210,22 @@
 	patptr->bitlen = 8;
 	patptr->repeat = -1;
 	gen_size = genir_crossam2(0, 2, pat , cmddata, sizeof(cmddata));
-#endif	
-#if 0
-	// Make ONKYO CD Eject
+#endif
+
+#if 1
+	// Make ONKYO CD
 	unsigned char cmd[4];
+	/* Eject
 	cmd[0] = 0x4b;
 	cmd[1] = 0x34;
 	cmd[2] = 0xd0;
 	cmd[3] = 0x2f;
+	 */
+	/* Stop */
+	cmd[0] = 0x4b;
+	cmd[1] = 0x34;
+	cmd[2] = 0x38;
+	cmd[3] = 0xc7;
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 3);
 	pat = patptr;
 	patptr->format.zero_h = 480;
@@ -241,10 +255,15 @@
 #endif
 
 #if 0
-	// Make Sony TV Power
+	// Make Sony TV
 	unsigned char cmd[2];
+	/* Power */
 	cmd[0] = 0xa9;
 	cmd[1] = 0x00;
+	/* Input select
+	cmd[0] = 0xa5;
+	cmd[1] = 0x00;
+	*/
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
 	pat = patptr;
 	patptr->format.zero_h = 660;
