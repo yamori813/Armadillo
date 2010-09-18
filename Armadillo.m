@@ -173,12 +173,79 @@
 	cmddata[1] = 0xc0;
 	cmddata[2] = 0x11;
 	gen_size = 3;
-#else
+#endif
+#if 1
+	// Make MITSUBISHI LCD Display Power
+	unsigned char cmd[2];
+	cmd[0] = 0x27;
+	cmd[1] = 0xc0;
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 2);
+	pat = patptr;
+	patptr->format.zero_h = 420;
+	patptr->format.zero_l = 540;
+	patptr->format.one_h = 420;
+	patptr->format.one_l = 1490;
+	patptr->format.stop_h = 390;
+	patptr->format.stop_l = 3970;
+	patptr->format.start_h = 7870;
+	patptr->format.start_l = 3970;
+	patptr->data = cmd;
+	patptr->bitlen = 8;
+	++patptr;
+	patptr->format.zero_h = 420;
+	patptr->format.zero_l = 540;
+	patptr->format.one_h = 420;
+	patptr->format.one_l = 1490;
+	patptr->format.stop_h = 390;
+	patptr->format.stop_l = 20426;
+	patptr->format.start_h = 0;
+	patptr->format.start_l = 0;
+	patptr->data = cmd + 1;
+	patptr->bitlen = 8;
+	patptr->repeat = -1;
+	gen_size = genir_crossam2(0, 2, pat , cmddata, sizeof(cmddata));
+#endif	
+#if 0
+	// Make ONKYO CD Eject
+	unsigned char cmd[4];
+	cmd[0] = 0x4b;
+	cmd[1] = 0x34;
+	cmd[2] = 0xd0;
+	cmd[3] = 0x2f;
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 3);
+	pat = patptr;
+	patptr->format.zero_h = 480;
+	patptr->format.zero_l = 590;
+	patptr->format.one_h = 480;
+	patptr->format.one_l = 1700;
+	patptr->format.stop_h = 480;
+	patptr->format.stop_l = 41290;
+	patptr->format.start_h = 8900;
+	patptr->format.start_l = 4530;
+	patptr->data = cmd;
+	patptr->bitlen = 32;
+	++patptr;
+	patptr->format.stop_h = 480;
+	patptr->format.stop_l = 96130;
+	patptr->format.start_h = 8900;
+	patptr->format.start_l = 2280;
+	patptr->bitlen = 0;
+	++patptr;
+	patptr->format.stop_h = 480;
+	patptr->format.stop_l = 96130;
+	patptr->format.start_h = 8900;
+	patptr->format.start_l = 2280;
+	patptr->bitlen = 0;
+	patptr->repeat = 0;
+	gen_size = genir_crossam2(2, 3, pat , cmddata, sizeof(cmddata));
+#endif
+
+#if 0
 	// Make Sony TV Power
 	unsigned char cmd[2];
 	cmd[0] = 0xa9;
 	cmd[1] = 0x00;
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 2);
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
 	pat = patptr;
 	patptr->format.zero_h = 660;
 	patptr->format.zero_l = 540;
@@ -190,8 +257,8 @@
 	patptr->format.start_l = 525;
 	patptr->data = cmd;
 	patptr->bitlen = 12;
-	patptr->repeat = 2;
-	gen_size = genir_crossam2(2, 1, patptr , cmddata, sizeof(cmddata));
+	patptr->repeat = -1;
+	gen_size = genir_crossam2(1, 1, pat , cmddata, sizeof(cmddata));
 #endif
 	int i;
 	for(i = 0; i < gen_size; ++i) {
@@ -200,10 +267,10 @@
 			printf("\n");
 	}
 	printf("\n");
-//	crossam2_write(4,40, cmddata, gen_size);	
+	crossam2_write(4,40, cmddata, gen_size);	
 	
-//	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-//						   withObject:nil];
+	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_8:(id)sender
