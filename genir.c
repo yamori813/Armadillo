@@ -49,8 +49,10 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 	totalbit = 0;
 
 	timecount = 0;
+
 	buff[0] = 0;
-	buff[1] = 4;
+
+	// set career
 	if(car == 0)	// 40.3KHz
 		buff[2] = 0x1f;
 	else if(car == 1)	// 39.1KHz
@@ -63,7 +65,7 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 		buff[2] = 0x23;
 
 	do {
-		if(pat->format.zero_h + pat->format.zero_l != 0) {
+		if(pat->format.zero_h + pat->format.zero_l != 0 && pat->bitlen != 0) {
 			tpos = timepos(timecount, timearray, 
 						   pat->format.zero_h, pat->format.zero_l);
 			if(tpos == -1) {
@@ -75,7 +77,7 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 				zeropat = tpos;
 			}
 		}
-		if(pat->format.one_h + pat->format.one_l != 0) {
+		if(pat->format.one_h + pat->format.one_l != 0 && pat->bitlen != 0) {
 			tpos = timepos(timecount, timearray, 
 						   pat->format.one_h, pat->format.one_l);
 			if(tpos == -1) {
@@ -113,20 +115,25 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 		}
 
 		int i, j;
+		i = 0;
+		j = 0;
+		if(pat->format.start_h + pat->format.start_l != 0) {
+			if(totalbit % 2 == 0)
+				bitbuff[totalbit / 2] = startpat << 4;
+			else
+				bitbuff[totalbit / 2] |= startpat;
+			++totalbit;
+		}
 		if(pat->bitlen) {
-			i = 0;
-			j = 0;
-			if(pat->format.start_h + pat->format.start_l != 0) {
-				bitbuff[totalbit + (j * 8 + i) / 2] = startpat << 4;
-			}
 			do {
-				if((j * 8 + i + 1) % 2 == 0)
-					bitbuff[totalbit + (j * 8 + i + 1) / 2] = (pat->data[j] >> (7 - i) & 1) ? onepat << 4 : zeropat;
+				if(totalbit % 2 == 0)
+					bitbuff[totalbit / 2] = (pat->data[j] >> (7 - i) & 1) ? onepat << 4 : zeropat;
 				else
-					bitbuff[totalbit + (j * 8 + i + 1) / 2] |= (pat->data[j] >> (7 - i) & 1) ? onepat : zeropat;
+					bitbuff[totalbit / 2] |= (pat->data[j] >> (7 - i) & 1) ? onepat : zeropat;
 				//		printf("%d ", (data[j] >> (7 - i) & 1));
-				
-				if(i == 8) {
+				++totalbit;
+
+				if(i == 7) {
 					i = 0;
 					++j;
 				} else {
@@ -134,46 +141,65 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 				}
 			} while((j * 8 + i) != pat->bitlen);
 		}
-		totalbit += j * 8 + i + 1;
 
 		if(pat->format.stop_h + pat->format.stop_l != 0) {
 			if(totalbit % 2 == 0)
-				bitbuff[totalbit / 2 + 1] = stoppat << 4;
+				bitbuff[totalbit / 2] = stoppat << 4;
 			else
-				bitbuff[totalbit/ 2 ] |= stoppat;
+				bitbuff[totalbit / 2] |= stoppat;
 			++totalbit;
 		}
-
+		++pat;
 		--patcount;
 	} while(patcount);
 
-	if(totalbit % 2 == 0)
-		bitbuff[totalbit / 2] = 0xf << 4;
-	else
-		bitbuff[totalbit / 2] |= 0xf;
-	++totalbit;
-	if(totalbit % 2 == 0)
-		bitbuff[totalbit / 2] = 0xe << 4;
-	else
-		bitbuff[totalbit / 2] |= 0xe;
-	++totalbit;
-	if(totalbit% 2 == 0)
-		bitbuff[totalbit / 2] = 0;
-	else
-		bitbuff[totalbit / 2] |= 0;
-	++totalbit;
-	if(totalbit % 2 == 0)
-		bitbuff[totalbit / 2] = pat->bitlen + 2 << 4;
-	else
-		bitbuff[totalbit / 2] |= pat->bitlen + 2;
-	++totalbit;
+	// back to lst pattern
+	--pat;
 
+	// set control code
+	if(pat->repeat == 0) {
+		if(totalbit % 2 == 0)
+			bitbuff[totalbit / 2] = 0xf << 4;
+		else
+			bitbuff[totalbit / 2] |= 0xf;
+		++totalbit;
+		if(totalbit % 2 == 0)
+			bitbuff[totalbit / 2] = 0xf << 4;
+		else
+			bitbuff[totalbit / 2] |= 0xf;
+		++totalbit;
+	} else if(pat->repeat == -1) {
+		if(totalbit % 2 == 0)
+			bitbuff[totalbit / 2] = 0xf << 4;
+		else
+			bitbuff[totalbit / 2] |= 0xf;
+		++totalbit;
+		if(totalbit % 2 == 0)
+			bitbuff[totalbit / 2] = 0xe << 4;
+		else
+			bitbuff[totalbit / 2] |= 0xe;
+		++totalbit;
+		if(totalbit% 2 == 0)
+			bitbuff[totalbit / 2] = ((totalbit - 3) >> 4) << 4;
+		else
+			bitbuff[totalbit / 2] |= ((totalbit - 3) >> 4);
+		++totalbit;
+		if(totalbit % 2 == 0)
+			bitbuff[totalbit / 2] = (totalbit - 3) << 4;
+		else
+			bitbuff[totalbit / 2] |= (totalbit - 3);
+		++totalbit;
+	}
+
+	// copy signal time
 	int i;
 	for(i = 0; i < timecount; ++i) {
 		set3byte(buff + 3 + 6 * i, *(timearray + i * 2) * 10 / 4);
 		set3byte(buff + 3 + 6 * i + 3, *(timearray + i * 2 + 1) * 10 / 4);
 	}
+	buff[1] = timecount;
 
+	// copy bit data
 	if(totalbit % 2 == 0) {
 		memcpy(buff + 3 + timecount * 6, bitbuff, totalbit / 2);
 		return 3 + timecount * 6 + totalbit / 2;
