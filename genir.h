@@ -7,6 +7,10 @@
  *
  */
 
+
+#ifndef _GENIR_H_
+#define _GENIR_H_
+
 typedef struct _irtime {
 	int start_h;
 	int start_l;
@@ -27,3 +31,4 @@ typedef struct _irdata {
 
 int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int size);
 int genir_pcoprs1(int patcount, irdata *pat, unsigned char *buff);
+#endif
