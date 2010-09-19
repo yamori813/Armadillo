@@ -9,7 +9,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="57"/>
-			<integer value="372"/>
+			<integer value="520"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1472,7 +1472,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{20, 20}, {454, 89}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<string key="NSClassName">MyWaveView</string>
+							<string key="NSClassName">IrPatternView</string>
 						</object>
 					</object>
 					<string key="NSFrameSize">{494, 293}</string>
@@ -1487,8 +1487,8 @@
 			<object class="NSCustomObject" id="296392198">
 				<string key="NSClassName">Armadillo</string>
 			</object>
-			<object class="NSCustomObject" id="975845209">
-				<string key="NSClassName">MyWaveView</string>
+			<object class="NSCustomObject" id="657484481">
+				<string key="NSClassName">IrPatternView</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -3316,8 +3316,8 @@
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">521</int>
-						<reference key="object" ref="975845209"/>
+						<int key="objectID">523</int>
+						<reference key="object" ref="657484481"/>
 						<reference key="parent" ref="1049"/>
 					</object>
 				</object>
@@ -3549,7 +3549,7 @@
 					<string>517.IBPluginDependency</string>
 					<string>518.IBPluginDependency</string>
 					<string>520.IBPluginDependency</string>
-					<string>521.IBPluginDependency</string>
+					<string>523.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
 					<string>56.ImportedFromIB2</string>
 					<string>57.IBEditorWindowLastContentRect</string>
@@ -3865,7 +3865,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">522</int>
+			<int key="maxID">523</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3934,14 +3934,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">MyWaveView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">MyWaveView.h</string>
 					</object>
 				</object>
 			</object>

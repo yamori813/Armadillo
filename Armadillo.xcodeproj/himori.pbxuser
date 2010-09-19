@@ -285,18 +285,30 @@
 		fRef = 304125F4123EE28D00BDD47C /* genir.c */;
 	};
 	302DB86A124592EB006FD8CE /* MyWaveView.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = MyWaveView.m;
+		path = /Users/himori/Develop/Device/Armadillo/MyWaveView.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {597, 320}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 154}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 952}}";
+			sepNavSelRange = "{248, 13}";
+			sepNavVisRange = "{0, 310}";
 			sepNavWindowFrame = "{{1295, -285}, {996, 1080}}";
 		};
 	};
 	302DB86B124592EB006FD8CE /* MyWaveView.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MyWaveView.h;
+		path = /Users/himori/Develop/Device/Armadillo/MyWaveView.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {597, 320}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 67}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 952}}";
+			sepNavSelRange = "{197, 0}";
+			sepNavVisRange = "{0, 197}";
 			sepNavWindowFrame = "{{1295, -285}, {996, 1080}}";
 		};
 	};
@@ -319,7 +331,7 @@
 		fRef = 303509011233175700DDD914 /* Armadillo.h */;
 		name = "Armadillo.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 230;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 36;
@@ -329,7 +341,7 @@
 		fRef = 302DB86B124592EB006FD8CE /* MyWaveView.h */;
 		name = "MyWaveView.h: 1";
 		rLen = 0;
-		rLoc = 0;
+		rLoc = 130;
 		rType = 0;
 		vrLen = 67;
 		vrLoc = 0;
@@ -353,7 +365,7 @@
 		fRef = 303509011233175700DDD914 /* Armadillo.h */;
 		name = "Armadillo.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 230;
 		rType = 0;
 		vrLen = 484;
 		vrLoc = 36;
@@ -363,7 +375,7 @@
 		fRef = 302DB86B124592EB006FD8CE /* MyWaveView.h */;
 		name = "MyWaveView.h: 1";
 		rLen = 0;
-		rLoc = 0;
+		rLoc = 130;
 		rType = 0;
 		vrLen = 67;
 		vrLoc = 0;
@@ -373,7 +385,7 @@
 		fRef = 302DB86A124592EB006FD8CE /* MyWaveView.m */;
 		name = "MyWaveView.m: 1";
 		rLen = 0;
-		rLoc = 0;
+		rLoc = 130;
 		rType = 0;
 		vrLen = 154;
 		vrLoc = 0;
@@ -383,7 +395,7 @@
 		fRef = 302DB86B124592EB006FD8CE /* MyWaveView.h */;
 		name = "MyWaveView.h: 3";
 		rLen = 0;
-		rLoc = 55;
+		rLoc = 185;
 		rType = 0;
 		vrLen = 67;
 		vrLoc = 0;
@@ -440,18 +452,18 @@
 	};
 	303509011233175700DDD914 /* Armadillo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {597, 616}}";
-			sepNavSelRange = "{206, 0}";
-			sepNavVisRange = "{36, 484}";
+			sepNavIntBoundsRect = "{{0, 0}, {597, 756}}";
+			sepNavSelRange = "{230, 0}";
+			sepNavVisRange = "{36, 461}";
 			sepNavWindowFrame = "{{15, 91}, {996, 682}}";
 		};
 	};
 	303509021233175700DDD914 /* Armadillo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {684, 5782}}";
+			sepNavIntBoundsRect = "{{0, 0}, {684, 5796}}";
 			sepNavSelRange = "{6334, 23}";
 			sepNavVisRange = "{4672, 666}";
-			sepNavWindowFrame = "{{150, 72}, {996, 682}}";
+			sepNavWindowFrame = "{{187, 74}, {996, 682}}";
 		};
 	};
 	303509041233176500DDD914 /* crossam2.h */ = {
@@ -601,7 +613,7 @@
 		fRef = 303509011233175700DDD914 /* Armadillo.h */;
 		name = "Armadillo.h: 13";
 		rLen = 0;
-		rLoc = 439;
+		rLoc = 495;
 		rType = 0;
 		vrLen = 288;
 		vrLoc = 0;
@@ -616,9 +628,9 @@
 	};
 	304125F4123EE28D00BDD47C /* genir.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {633, 4018}}";
-			sepNavSelRange = "{6160, 0}";
-			sepNavVisRange = "{5300, 331}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 4032}}";
+			sepNavSelRange = "{6310, 2}";
+			sepNavVisRange = "{1858, 1570}";
 			sepNavWindowFrame = "{{1367, -280}, {996, 1080}}";
 		};
 	};
@@ -717,6 +729,21 @@
 		location = Armadillo;
 		modificationTime = 306497069.965893;
 		state = 1;
+	};
+	307EF1181245CC6100A021AD /* IrPatternView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {597, 320}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 115}";
+		};
+	};
+	307EF1191245CC6100A021AD /* IrPatternView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {937, 952}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 63}";
+			sepNavWindowFrame = "{{1295, -285}, {996, 1080}}";
+		};
 	};
 	30A509D3123B40410005B3E0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

@@ -9,14 +9,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "MyWaveView.h"
+#import "IrPatternView.h"
 
 #include "genir.h"
 
 @interface Armadillo : NSObject {
 	unsigned char data[240];
 	IBOutlet NSProgressIndicator *waitTimer;
-	IBOutlet MyWaveView *waveView;
+	IBOutlet IrPatternView *patView;
 	Boolean cancelReceive;
 	Boolean isSignal;
 	NSString *remoteName;

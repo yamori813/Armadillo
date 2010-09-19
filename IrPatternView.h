@@ -1,5 +1,5 @@
 /*
- *  MyWaveView.h
+ *  IrPatternView.h
  *  Armadillo
  *
  *  Created by H.M on 10/08/29.
@@ -9,7 +9,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MyWaveView : NSView {
+@interface IrPatternView : NSView {
 
 }
 

@@ -403,7 +403,6 @@
 
 - (IBAction)debugView_1:(id)sender
 {
-	[waveView morimoridebug];
 }
 
 @end

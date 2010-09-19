@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		302DB86C124592EB006FD8CE /* MyWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302DB86A124592EB006FD8CE /* MyWaveView.m */; };
 		303509031233175700DDD914 /* Armadillo.m in Sources */ = {isa = PBXBuildFile; fileRef = 303509021233175700DDD914 /* Armadillo.m */; };
 		303509061233176500DDD914 /* crossam2.c in Sources */ = {isa = PBXBuildFile; fileRef = 303509051233176500DDD914 /* crossam2.c */; };
 		3035090B1233177800DDD914 /* serial.c in Sources */ = {isa = PBXBuildFile; fileRef = 303509071233177800DDD914 /* serial.c */; };
 		3035090C1233177800DDD914 /* pcoprs1.c in Sources */ = {isa = PBXBuildFile; fileRef = 303509091233177800DDD914 /* pcoprs1.c */; };
 		30350A3F123317AA00DDD914 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30350A3E123317AA00DDD914 /* IOKit.framework */; };
 		304125F5123EE28D00BDD47C /* genir.c in Sources */ = {isa = PBXBuildFile; fileRef = 304125F4123EE28D00BDD47C /* genir.c */; };
+		307EF11A1245CC6100A021AD /* IrPatternView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307EF1191245CC6100A021AD /* IrPatternView.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -28,8 +28,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		302DB86A124592EB006FD8CE /* MyWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWaveView.m; sourceTree = "<group>"; };
-		302DB86B124592EB006FD8CE /* MyWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWaveView.h; sourceTree = "<group>"; };
 		303509011233175700DDD914 /* Armadillo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armadillo.h; sourceTree = "<group>"; };
 		303509021233175700DDD914 /* Armadillo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Armadillo.m; sourceTree = "<group>"; };
 		303509041233176500DDD914 /* crossam2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crossam2.h; sourceTree = "<group>"; };
@@ -41,6 +39,8 @@
 		30350A3E123317AA00DDD914 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		304125F3123EE28D00BDD47C /* genir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genir.h; sourceTree = "<group>"; };
 		304125F4123EE28D00BDD47C /* genir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = genir.c; sourceTree = "<group>"; };
+		307EF1181245CC6100A021AD /* IrPatternView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrPatternView.h; sourceTree = "<group>"; };
+		307EF1191245CC6100A021AD /* IrPatternView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrPatternView.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Armadillo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armadillo_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Armadillo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Armadillo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,10 +62,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				302DB86A124592EB006FD8CE /* MyWaveView.m */,
-				302DB86B124592EB006FD8CE /* MyWaveView.h */,
 				303509011233175700DDD914 /* Armadillo.h */,
 				303509021233175700DDD914 /* Armadillo.m */,
+				307EF1181245CC6100A021AD /* IrPatternView.h */,
+				307EF1191245CC6100A021AD /* IrPatternView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 				3035090B1233177800DDD914 /* serial.c in Sources */,
 				3035090C1233177800DDD914 /* pcoprs1.c in Sources */,
 				304125F5123EE28D00BDD47C /* genir.c in Sources */,
-				302DB86C124592EB006FD8CE /* MyWaveView.m in Sources */,
+				307EF11A1245CC6100A021AD /* IrPatternView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
