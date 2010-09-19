@@ -175,7 +175,7 @@
 	gen_size = 3;
 #endif
 
-#if 1
+#if 0
 	// Make MITSUBISHI LCD Display
 	unsigned char cmd[2];
 	/* Power */
@@ -256,7 +256,7 @@
 	gen_size = genir_crossam2(2, 3, pat , cmddata, sizeof(cmddata));
 #endif
 
-#if 0
+#if 1
 	// Make Sony TV
 	unsigned char cmd[2];
 	/* Power */
@@ -281,7 +281,6 @@
 	patptr->repeat = -1;
 	gen_size = genir_crossam2(1, 1, pat , cmddata, sizeof(cmddata));
 #endif
-	/*
 	int i;
 	for(i = 0; i < gen_size; ++i) {
 		printf("%02x ", cmddata[i]);
@@ -289,11 +288,11 @@
 			printf("\n");
 	}
 	printf("\n");
+
 	crossam2_write(4,40, cmddata, gen_size);	
 	
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];
-	 */
 }
 
 - (IBAction)debugCrossam_8:(id)sender
@@ -399,6 +398,12 @@
 
 	[waitTimer stopAnimation:self];
 	[waitTimer setHidden:YES];
+}
+
+
+- (IBAction)debugView_1:(id)sender
+{
+	[waveView morimoridebug];
 }
 
 @end

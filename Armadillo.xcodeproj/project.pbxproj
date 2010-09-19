@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		302DB86C124592EB006FD8CE /* MyWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 302DB86A124592EB006FD8CE /* MyWaveView.m */; };
 		303509031233175700DDD914 /* Armadillo.m in Sources */ = {isa = PBXBuildFile; fileRef = 303509021233175700DDD914 /* Armadillo.m */; };
 		303509061233176500DDD914 /* crossam2.c in Sources */ = {isa = PBXBuildFile; fileRef = 303509051233176500DDD914 /* crossam2.c */; };
 		3035090B1233177800DDD914 /* serial.c in Sources */ = {isa = PBXBuildFile; fileRef = 303509071233177800DDD914 /* serial.c */; };
@@ -27,6 +28,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		302DB86A124592EB006FD8CE /* MyWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWaveView.m; sourceTree = "<group>"; };
+		302DB86B124592EB006FD8CE /* MyWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWaveView.h; sourceTree = "<group>"; };
 		303509011233175700DDD914 /* Armadillo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armadillo.h; sourceTree = "<group>"; };
 		303509021233175700DDD914 /* Armadillo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Armadillo.m; sourceTree = "<group>"; };
 		303509041233176500DDD914 /* crossam2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crossam2.h; sourceTree = "<group>"; };
@@ -59,6 +62,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				302DB86A124592EB006FD8CE /* MyWaveView.m */,
+				302DB86B124592EB006FD8CE /* MyWaveView.h */,
 				303509011233175700DDD914 /* Armadillo.h */,
 				303509021233175700DDD914 /* Armadillo.m */,
 			);
@@ -201,6 +206,7 @@
 				3035090B1233177800DDD914 /* serial.c in Sources */,
 				3035090C1233177800DDD914 /* pcoprs1.c in Sources */,
 				304125F5123EE28D00BDD47C /* genir.c in Sources */,
+				302DB86C124592EB006FD8CE /* MyWaveView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

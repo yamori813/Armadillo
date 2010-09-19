@@ -9,11 +9,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "MyWaveView.h"
+
 #include "genir.h"
 
 @interface Armadillo : NSObject {
 	unsigned char data[240];
 	IBOutlet NSProgressIndicator *waitTimer;
+	IBOutlet MyWaveView *waveView;
 	Boolean cancelReceive;
 	Boolean isSignal;
 	NSString *remoteName;
@@ -37,5 +40,7 @@
 - (IBAction)debugPcoprs1_3:(id)sender;
 - (IBAction)debugPcoprs1_4:(id)sender;
 - (IBAction)debugPcoprs1_5:(id)sender;
+
+- (IBAction)debugView_1:(id)sender;
 
 @end
