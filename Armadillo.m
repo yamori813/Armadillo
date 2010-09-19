@@ -403,6 +403,30 @@
 
 - (IBAction)debugView_1:(id)sender
 {
+	// Make Sony TV
+	unsigned char *cmd = (unsigned char *)malloc(2);
+	/* Power */
+	cmd[0] = 0xa9;
+	cmd[1] = 0x00;
+	/* Input select
+	 cmd[0] = 0xa5;
+	 cmd[1] = 0x00;
+	 */
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
+	pat = patptr;
+	patptr->format.zero_h = 660;
+	patptr->format.zero_l = 540;
+	patptr->format.one_h = 1245;
+	patptr->format.one_l = 540;
+	patptr->format.stop_h = 0;
+	patptr->format.stop_l = 25100;
+	patptr->format.start_h = 2460;
+	patptr->format.start_l = 525;
+	patptr->data = cmd;
+	patptr->bitlen = 12;
+	patptr->repeat = -1;
+	[patView setIrPattern:1 pat:pat];
+	[patView setNeedsDisplay:YES];
 }
 
 @end

@@ -8,9 +8,15 @@
  */
 
 #import <Cocoa/Cocoa.h>
-#import <Foundation/Foundation.h>
+
+#include "genir.h"
 
 @interface IrPatternView : NSView {
+	CGContextRef gc;
+	int patcount;
+	irdata* pat;
 }
+
+- (void)setIrPattern:(int)count pat:(irdata*) thepat;
 
 @end
