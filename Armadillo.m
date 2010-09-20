@@ -173,9 +173,9 @@
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
 }
 
-- (void) readData
+- (void) readData:(NSString *)path
 {
-	NSData *result = [[NSData alloc] initWithContentsOfFile:@"/tmp/iremo.xml"];
+	NSData *result = [[NSData alloc] initWithContentsOfFile:path];
 	NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData:result];
 	[xmlParser setDelegate:self];
 	[xmlParser parse];
@@ -486,13 +486,6 @@
 		}
 	}
 
-	// load data from xml
-	remoFormat = (irtime *)malloc(sizeof(irtime));
-	remoData = [[NSMutableArray alloc] init];
-	[self readData];
-	for(i = 0; i < [remoData count]; ++i)
-		[dataSelect addItemWithTitle:[[remoData objectAtIndex:i] objectAtIndex:0]];
-	
 	pcoprs1_init((CFStringRef)portName);
 }
 
@@ -549,5 +542,30 @@
 	pcoprs1_transfer(1, cmddata);
 	[patView setIrPattern:1 pat:pat];
 	[patView setNeedsDisplay:YES];	
+}
+
+- (IBAction)debugPcoprs1_7:(id)sender
+{
+	NSOpenPanel *opPanel = [ NSOpenPanel openPanel ];
+	NSArray *imgTypes = [ NSArray arrayWithObjects : @"xml",nil ];
+	
+	int	 opRet;
+	
+	opRet = [ opPanel runModalForDirectory : NSHomeDirectory()
+									  file : @"Documents"
+									 types : imgTypes ];
+
+	if ( opRet == NSOKButton ) {
+		//NSLog([[[[NSArray alloc] initWithContentsOfFile:[opPanel filename]] autorelease] description]);
+		NSString *filepath = [opPanel filename];
+		// load data from xml
+		remoFormat = (irtime *)malloc(sizeof(irtime));
+		remoData = [[NSMutableArray alloc] init];
+		[self readData:filepath];
+		int i;
+		for(i = 0; i < [remoData count]; ++i)
+			[dataSelect addItemWithTitle:[[remoData objectAtIndex:i] objectAtIndex:0]];
+		
+	} 
 }
 @end
