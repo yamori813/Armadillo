@@ -1258,7 +1258,7 @@
 							<object class="NSButtonCell" key="NSCell" id="307924797">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Trens</string>
+								<string key="NSContents">Trans</string>
 								<reference key="NSSupport" ref="462498216"/>
 								<reference key="NSControlView" ref="35994417"/>
 								<int key="NSButtonFlags">-2038284033</int>
