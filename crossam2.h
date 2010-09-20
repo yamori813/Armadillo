@@ -21,3 +21,6 @@ void crossam2_pushkey(int dial, int key);
 void crossam2_version(char *verstr, int strsize);
 void crossam2_led(int ledon);
 
+int hex2Int(char *hexstr);
+
+

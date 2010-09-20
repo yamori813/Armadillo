@@ -119,13 +119,17 @@ int hex2Int(char *hexstr)
 	int result = 0;
 	if(hexstr[0] >= '0' && hexstr[0] <= '9')
 		result = ((int)hexstr[0] - '0') * 16;
-	else
+	else if(hexstr[0] >= 'a' && hexstr[0] <= 'f')
 		result = ((int)hexstr[0] - 'a' + 10) * 16;
+	else if(hexstr[0] >= 'A' && hexstr[0] <= 'F')
+		result = ((int)hexstr[0] - 'A' + 10) * 16;
 
 	if(hexstr[1] >= '0' && hexstr[1] <= '9')
 		result += (int)hexstr[1] - (int)'0';
-	else
+	else if(hexstr[1] >= 'a' && hexstr[1] <= 'f')
 		result += (int)hexstr[1] - (int)'a' + 10;
+	else if(hexstr[1] >= 'A' && hexstr[1] <= 'F')
+		result += (int)hexstr[1] - (int)'A' + 10;
 	
 	return result;
 }
