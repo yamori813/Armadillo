@@ -86,6 +86,19 @@
 
         signalValue = [[NSMutableString string] retain];
     }
+    if([elementName compare:@"code0_high"] == NSOrderedSame || 
+	   [elementName compare:@"code0_low"] == NSOrderedSame || 
+	   [elementName compare:@"code1_high"] == NSOrderedSame || 
+	   [elementName compare:@"code1_low"] == NSOrderedSame || 
+	   [elementName compare:@"header_high"] == NSOrderedSame || 
+	   [elementName compare:@"header_low"] == NSOrderedSame || 
+	   [elementName compare:@"stop_high"] == NSOrderedSame || 
+	   [elementName compare:@"stop_low"] == NSOrderedSame || 
+	   [elementName compare:@"bit_count"] == NSOrderedSame) {
+        isFormat = YES;
+        formatValue = [[NSMutableString alloc] init];
+    }
+	
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
@@ -93,11 +106,60 @@
     if(isSignal){
         [signalValue appendString:string];
     }
+    if(isFormat){
+        [formatValue appendString:string];
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qName
 {
+	
+	if([elementName compare:@"code0_high"] == NSOrderedSame) {
+		remoFormat->zero_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		[formatValue release];
+		isFormat = NO;
+	}
+	if([elementName compare:@"code0_low"] == NSOrderedSame) {
+		remoFormat->zero_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		[formatValue release];
+		isFormat = NO;
+	}
+	if([elementName compare:@"code1_high"] == NSOrderedSame) {
+		remoFormat->one_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		[formatValue release];
+		isFormat = NO;
+	}
+	if([elementName compare:@"code1_low"] == NSOrderedSame) {
+		remoFormat->one_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		[formatValue release];
+		isFormat = NO;
+	}
+	if([elementName compare:@"header_high"] == NSOrderedSame) {
+		remoFormat->start_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		[formatValue release];
+		isFormat = NO;
+	}
+	if([elementName compare:@"header_low"] == NSOrderedSame) {
+		remoFormat->start_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		[formatValue release];
+		isFormat = NO;
+	}
+	if([elementName compare:@"stop_high"] == NSOrderedSame) {
+		remoFormat->stop_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		[formatValue release];
+		isFormat = NO;
+	}
+	if([elementName compare:@"stop_low"] == NSOrderedSame) {
+		remoFormat->stop_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		[formatValue release];
+		isFormat = NO;
+	}
+	if([elementName compare:@"bit_count"] == NSOrderedSame) {
+		remoBits = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		[formatValue release];
+		isFormat = NO;
+	}
 	if([elementName compare:@"button"] == NSOrderedSame){
 		[buttonName release];
 		[buttonRepeatType release];
@@ -424,6 +486,8 @@
 		}
 	}
 
+	// load data from xml
+	remoFormat = (irtime *)malloc(sizeof(irtime));
 	remoData = [[NSMutableArray alloc] init];
 	[self readData];
 	for(i = 0; i < [remoData count]; ++i)
@@ -468,25 +532,17 @@
 	unsigned char cmddata[1024];
 	int gen_size;
 
-	// Make Sony PS2 (20bit)
+	// set value from xml
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
 	pat = patptr;
-	patptr->format.zero_h = 639;
-	patptr->format.zero_l = 552;
-	patptr->format.one_h = 1236;
-	patptr->format.one_l = 552;
-	patptr->format.stop_h = 0;
-	patptr->format.stop_l = 44714;
-	patptr->format.start_h = 2451;
-	patptr->format.start_l = 548;
-	/* Play */
+	patptr->format = *remoFormat;
 	NSString *theData = [[remoData objectAtIndex:[dataSelect indexOfSelectedItem]] objectAtIndex:1];
 	NSLog(@"%@ %d", theData, [theData length]);
 	int i;
 	for(i = 0; i < [theData length] / 2; ++i) {
 		patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
 	}
-	patptr->bitlen = 20;
+	patptr->bitlen = remoBits;
 	patptr->repeat = 4;
 	
 	gen_size = genir_pcoprs1(1, pat , cmddata);

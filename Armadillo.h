@@ -21,14 +21,18 @@
 	IBOutlet NSSegmentedControl *dialSelect;	
 	IBOutlet NSPopUpButton *dataSelect;
 	Boolean cancelReceive;
-	Boolean isSignal;
 	NSString *remoteName;
 	NSString *buttonName;
 	NSString *buttonRepeatType;
+	Boolean isSignal;
 	NSMutableString *signalValue;
 	irdata *pat;
 	NSArray *buttonItems;
 
+	Boolean isFormat;
+	NSMutableString *formatValue;
+	int remoBits;
+	irtime *remoFormat;
 	NSMutableArray *remoData;
 }
 
