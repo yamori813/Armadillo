@@ -33,6 +33,7 @@ CGRect convertToCGRect(NSRect inRect);
 		CGContextMoveToPoint(gc, OFFSETX + i * 50, 2);
 		CGContextAddLineToPoint(gc, OFFSETX + i * 50, 5);
 	}
+	CGContextStrokePath(gc);
 }
 
 - (int)addHiLoLine:(int)pos hi:(int)himsec lo:(int)lomsec
@@ -101,9 +102,10 @@ CGRect convertToCGRect(NSRect inRect);
 	CGContextFillRect(gc, convertToCGRect(rect));
 	CGContextStrokeRect(gc, convertToCGRect(rect));
 
+	[self drawScale];
+
 	if(patcount)
 	{
-		[self drawScale];
 		[self drawIrPattern:patcount pat:pat];
 	}
 }
