@@ -103,6 +103,7 @@
 		[buttonRepeatType release];
 	}
 	if([elementName compare:@"signal"] == NSOrderedSame){
+		[remoData addObject:[NSArray arrayWithObjects:buttonName, signalValue, nil]];
         isSignal = NO;
     }
 }
@@ -155,7 +156,6 @@
 		}
 	}
 
-//	[self readData];
 	crossam2_init((CFStringRef)portName);
 	for(i = 0; i < [buttonItems count]; ++i)
 		[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
@@ -192,7 +192,10 @@
 {
 	unsigned char crossam_data[128];
 	int read_size;
-	read_size = crossam2_read(4,40, crossam_data, sizeof(crossam_data));
+	read_size = crossam2_read([dialSelect selectedSegment],
+							  [buttonItems indexOfObject:[[buttonSelect selectedItem] title]],
+							  crossam_data, sizeof(crossam_data));
+
 	int i;
 	for(i = 0; i < read_size; ++i) {
 		printf("%02x ", crossam_data[i]);
@@ -310,7 +313,7 @@
 #endif
 
 #if 1
-	// Make Sony TV
+	// Make Sony TV (12bit)
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
 	pat = patptr;
 	patptr->format.zero_h = 660;
@@ -334,6 +337,7 @@
 	[patView setIrPattern:1 pat:pat];
 	[patView setNeedsDisplay:YES];
 #endif
+
 	int i;
 	for(i = 0; i < gen_size; ++i) {
 		printf("%02x ", cmddata[i]);
@@ -419,6 +423,11 @@
 			break;
 		}
 	}
+
+	remoData = [[NSMutableArray alloc] init];
+	[self readData];
+	for(i = 0; i < [remoData count]; ++i)
+		[dataSelect addItemWithTitle:[[remoData objectAtIndex:i] objectAtIndex:0]];
 	
 	pcoprs1_init((CFStringRef)portName);
 }
@@ -452,5 +461,37 @@
 
 	[waitTimer stopAnimation:self];
 	[waitTimer setHidden:YES];
+}
+
+- (IBAction)debugPcoprs1_6:(id)sender
+{
+	unsigned char cmddata[1024];
+	int gen_size;
+
+	// Make Sony PS2 (20bit)
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
+	pat = patptr;
+	patptr->format.zero_h = 639;
+	patptr->format.zero_l = 552;
+	patptr->format.one_h = 1236;
+	patptr->format.one_l = 552;
+	patptr->format.stop_h = 0;
+	patptr->format.stop_l = 44714;
+	patptr->format.start_h = 2451;
+	patptr->format.start_l = 548;
+	/* Play */
+	NSString *theData = [[remoData objectAtIndex:[dataSelect indexOfSelectedItem]] objectAtIndex:1];
+	NSLog(@"%@ %d", theData, [theData length]);
+	int i;
+	for(i = 0; i < [theData length] / 2; ++i) {
+		patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+	}
+	patptr->bitlen = 20;
+	patptr->repeat = 4;
+	
+	gen_size = genir_pcoprs1(1, pat , cmddata);
+	pcoprs1_transfer(1, cmddata);
+	[patView setIrPattern:1 pat:pat];
+	[patView setNeedsDisplay:YES];	
 }
 @end

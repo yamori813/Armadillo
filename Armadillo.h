@@ -19,6 +19,7 @@
 	IBOutlet IrPatternView *patView;
 	IBOutlet NSPopUpButton *buttonSelect;
 	IBOutlet NSSegmentedControl *dialSelect;	
+	IBOutlet NSPopUpButton *dataSelect;
 	Boolean cancelReceive;
 	Boolean isSignal;
 	NSString *remoteName;
@@ -27,6 +28,8 @@
 	NSMutableString *signalValue;
 	irdata *pat;
 	NSArray *buttonItems;
+
+	NSMutableArray *remoData;
 }
 
 - (IBAction)debugCrossam_1:(id)sender;
@@ -43,5 +46,6 @@
 - (IBAction)debugPcoprs1_3:(id)sender;
 - (IBAction)debugPcoprs1_4:(id)sender;
 - (IBAction)debugPcoprs1_5:(id)sender;
+- (IBAction)debugPcoprs1_6:(id)sender;
 
 @end

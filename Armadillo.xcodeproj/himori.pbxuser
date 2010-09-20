@@ -1,5 +1,12 @@
 // !$*UTF8*$!
 {
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {597, 297}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 45}";
+		};
+	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 303508E01233169A00DDD914 /* Armadillo */;
@@ -174,33 +181,33 @@
 	};
 	303509011233175700DDD914 /* Armadillo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 672}}";
-			sepNavSelRange = "{592, 11}";
-			sepNavVisRange = "{36, 963}";
-			sepNavWindowFrame = "{{15, 91}, {996, 682}}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 728}}";
+			sepNavSelRange = "{1207, 0}";
+			sepNavVisRange = "{154, 1072}";
+			sepNavWindowFrame = "{{199, 81}, {996, 682}}";
 		};
 	};
 	303509021233175700DDD914 /* Armadillo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {597, 6532}}";
-			sepNavSelRange = "{7385, 0}";
-			sepNavVisRange = "{4454, 523}";
-			sepNavWindowFrame = "{{187, 74}, {996, 682}}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 6930}}";
+			sepNavSelRange = "{8826, 0}";
+			sepNavVisRange = "{3174, 1267}";
+			sepNavWindowFrame = "{{328, 70}, {996, 682}}";
 		};
 	};
 	303509041233176500DDD914 /* crossam2.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 554}}";
-			sepNavSelRange = "{261, 0}";
-			sepNavVisRange = "{0, 607}";
+			sepNavIntBoundsRect = "{{0, 0}, {597, 378}}";
+			sepNavSelRange = "{611, 7}";
+			sepNavVisRange = "{32, 604}";
 			sepNavWindowFrame = "{{15, 91}, {996, 682}}";
 		};
 	};
 	303509051233176500DDD914 /* crossam2.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 3780}}";
-			sepNavSelRange = "{4468, 6}";
-			sepNavVisRange = "{3859, 835}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 3920}}";
+			sepNavSelRange = "{2255, 26}";
+			sepNavVisRange = "{1869, 1055}";
 			sepNavWindowFrame = "{{264, 71}, {996, 682}}";
 		};
 	};
@@ -325,7 +332,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 53";
 		rLen = 0;
-		rLoc = 10383;
+		rLoc = 11016;
 		rType = 0;
 		vrLen = 365;
 		vrLoc = 310;
@@ -335,7 +342,7 @@
 		fRef = 303509011233175700DDD914 /* Armadillo.h */;
 		name = "Armadillo.h: 13";
 		rLen = 0;
-		rLoc = 605;
+		rLoc = 670;
 		rType = 0;
 		vrLen = 288;
 		vrLoc = 0;
@@ -350,9 +357,9 @@
 	};
 	304125F4123EE28D00BDD47C /* genir.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 4032}}";
-			sepNavSelRange = "{923, 0}";
-			sepNavVisRange = "{0, 1283}";
+			sepNavIntBoundsRect = "{{0, 0}, {597, 4130}}";
+			sepNavSelRange = "{4894, 0}";
+			sepNavVisRange = "{4625, 474}";
 			sepNavWindowFrame = "{{1367, -280}, {996, 1080}}";
 		};
 	};
@@ -361,7 +368,7 @@
 		fRef = 303509051233176500DDD914 /* crossam2.c */;
 		name = "crossam2.c: 143";
 		rLen = 0;
-		rLoc = 2847;
+		rLoc = 3112;
 		rType = 0;
 		vrLen = 562;
 		vrLoc = 2736;
@@ -449,7 +456,7 @@
 		ignoreCount = 0;
 		lineNumber = 76;
 		location = Armadillo;
-		modificationTime = 306497069.965893;
+		modificationTime = 306655777.503073;
 		state = 1;
 	};
 	307EF1181245CC6100A021AD /* IrPatternView.h */ = {
@@ -462,9 +469,9 @@
 	};
 	307EF1191245CC6100A021AD /* IrPatternView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {654, 1554}}";
+			sepNavIntBoundsRect = "{{0, 0}, {654, 1638}}";
 			sepNavSelRange = "{1684, 13}";
-			sepNavVisRange = "{1337, 481}";
+			sepNavVisRange = "{1312, 604}";
 			sepNavWindowFrame = "{{1295, -285}, {996, 1080}}";
 		};
 	};
@@ -555,7 +562,8 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 61;
-		modificationTime = 306631435.9198861;
+		location = Armadillo;
+		modificationTime = 306655777.630601;
 		state = 1;
 	};
 	30A509D3123B40410005B3E0 /* PBXTextBookmark */ = {
@@ -623,7 +631,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 261";
 		rLen = 0;
-		rLoc = 7385;
+		rLoc = 7922;
 		rType = 0;
 		vrLen = 695;
 		vrLoc = 4643;
@@ -657,7 +665,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 260";
 		rLen = 0;
-		rLoc = 7385;
+		rLoc = 7922;
 		rType = 0;
 		vrLen = 658;
 		vrLoc = 4680;
@@ -667,7 +675,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 311";
 		rLen = 0;
-		rLoc = 7385;
+		rLoc = 7922;
 		rType = 0;
 		vrLen = 525;
 		vrLoc = 4452;
