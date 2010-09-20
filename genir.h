@@ -24,7 +24,7 @@ typedef struct _irtime {
 
 typedef struct _irdata {
 	irtime format;
-	unsigned char *data;
+	unsigned char data[32];
 	int bitlen;
 	int repeat;
 } irdata;

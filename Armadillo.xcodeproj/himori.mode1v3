@@ -202,47 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>30B88AE21246D8A0002CC27A</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>IrPatternView.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>30B88AE31246D8A0002CC27A</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>IrPatternView.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>30B88AEC1246D943002CC27A</string>
-						<key>history</key>
-						<array>
-							<string>30B88ADA1246D7BC002CC27A</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {996, 983}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>1295 -229 996 1024 1280 -280 1920 1080 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>30B88AED1246D943002CC27A</string>
+				<string>30B88B391246E816002CC27A</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>Armadillo.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -250,16 +210,16 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>30B88AEE1246D943002CC27A</string>
+						<string>30B88B3A1246E816002CC27A</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>Armadillo.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>30B88AEF1246D943002CC27A</string>
+						<string>30B88B3F1246E862002CC27A</string>
 						<key>history</key>
 						<array>
-							<string>30B88AE51246D8B5002CC27A</string>
+							<string>30B88B351246E7EC002CC27A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -276,6 +236,46 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>187 130 996 626 0 0 1280 778 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>30B88AF71246DBFA002CC27A</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>IrPatternView.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>30B88AF81246DBFA002CC27A</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>IrPatternView.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>30B88B401246E862002CC27A</string>
+						<key>history</key>
+						<array>
+							<string>30B88B0F1246DF8F002CC27A</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {996, 983}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>1295 -229 996 1024 1280 -280 1920 1080 </string>
 			</dict>
 		</dict>
 	</array>
@@ -364,7 +364,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 512}}</string>
+							<string>{{0, 7}, {186, 512}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -385,7 +385,7 @@
 							<real>164</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>370 129 866 571 0 0 1280 778 </string>
+						<string>184 134 866 571 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -401,7 +401,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>IrPatternView.m</string>
+								<string>Armadillo.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -409,11 +409,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>IrPatternView.m</string>
+										<string>Armadillo.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>30B88AEB1246D943002CC27A</string>
+										<string>30B88B3E1246E862002CC27A</string>
 										<key>history</key>
 										<array>
 											<string>30350B1D123324B500DDD914</string>
@@ -428,10 +428,10 @@
 											<string>302DB7D31244ECCE006FD8CE</string>
 											<string>307EF17F1246CC4700A021AD</string>
 											<string>307EF1811246CC4700A021AD</string>
-											<string>307EF1841246CC4700A021AD</string>
 											<string>307EF1B51246CCCA00A021AD</string>
-											<string>30B88ADE1246D8A0002CC27A</string>
-											<string>30B88ADF1246D8A0002CC27A</string>
+											<string>30B88B041246DF8F002CC27A</string>
+											<string>30B88B051246DF8F002CC27A</string>
+											<string>30B88B061246DF8F002CC27A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -452,6 +452,10 @@
 											<string>307EF18C1246CC4700A021AD</string>
 											<string>307EF1971246CC4700A021AD</string>
 											<string>30B88AE01246D8A0002CC27A</string>
+											<string>30B88B071246DF8F002CC27A</string>
+											<string>30B88B081246DF8F002CC27A</string>
+											<string>30B88B091246DF8F002CC27A</string>
+											<string>30B88B0A1246DF8F002CC27A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -465,7 +469,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {658, 352}}</string>
 								<key>RubberWindowFrame</key>
-								<string>370 129 866 571 0 0 1280 778 </string>
+								<string>184 134 866 571 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -485,7 +489,7 @@
 								<key>Frame</key>
 								<string>{{0, 357}, {658, 173}}</string>
 								<key>RubberWindowFrame</key>
-								<string>370 129 866 571 0 0 1280 778 </string>
+								<string>184 134 866 571 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -647,13 +651,13 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>30350B121233248800DDD914</string>
-		<string>/Users/himori/Develop/Device/Armadillo/Armadillo.xcodeproj</string>
+		<string>30B88AF71246DBFA002CC27A</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>30B88AED1246D943002CC27A</string>
-		<string>30B88AE21246D8A0002CC27A</string>
+		<string>/Users/himori/Develop/Device/Armadillo/Armadillo.xcodeproj</string>
+		<string>30B88B391246E816002CC27A</string>
 	</array>
 	<key>WindowString</key>
-	<string>370 129 866 571 0 0 1280 778 </string>
+	<string>184 134 866 571 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

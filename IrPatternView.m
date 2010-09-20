@@ -14,7 +14,7 @@
 #define OFFSETX 10
 #define OFFSETY 10
 #define HEIGHT 50
-
+#define SCALE 100
 
 CGRect convertToCGRect(NSRect inRect);
 
@@ -29,8 +29,8 @@ CGRect convertToCGRect(NSRect inRect);
 - (int)addHiLoLine:(int)pos hi:(int)himsec lo:(int)lomsec
 {
 	int hisize, losize;
-	hisize = himsec / 100;
-	losize = lomsec / 100;
+	hisize = himsec / SCALE;
+	losize = lomsec / SCALE;
     CGContextSetLineCap(gc,kCGLineCapButt);
     CGContextMoveToPoint(gc, OFFSETX + pos, OFFSETY);
 	if(himsec != 0) {

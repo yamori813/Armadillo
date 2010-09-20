@@ -41,6 +41,4 @@
 - (IBAction)debugPcoprs1_4:(id)sender;
 - (IBAction)debugPcoprs1_5:(id)sender;
 
-- (IBAction)debugView_1:(id)sender;
-
 @end

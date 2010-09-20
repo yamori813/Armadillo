@@ -177,14 +177,6 @@
 
 #if 0
 	// Make MITSUBISHI LCD Display
-	unsigned char cmd[2];
-	/* Power */
-	cmd[0] = 0x27;
-	cmd[1] = 0xc0;
-	/* HDMI1
-	cmd[0] = 0x27;
-	cmd[1] = 0x74;
-	 */
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 2);
 	pat = patptr;
 	patptr->format.zero_h = 420;
@@ -195,7 +187,7 @@
 	patptr->format.stop_l = 3970;
 	patptr->format.start_h = 7870;
 	patptr->format.start_l = 3970;
-	patptr->data = cmd;
+	patptr->data[0] = 0x27;
 	patptr->bitlen = 8;
 	++patptr;
 	patptr->format.zero_h = 420;
@@ -206,28 +198,23 @@
 	patptr->format.stop_l = 20426;
 	patptr->format.start_h = 0;
 	patptr->format.start_l = 0;
-	patptr->data = cmd + 1;
+	//	patptr->data = cmd + 1;
+	/* Power */
+	patptr->data[0] = 0xc0;
+	/* HDMI1
+	patptr->data[0] = 0x74;
+	 */
 	patptr->bitlen = 8;
 	patptr->repeat = -1;
-//	gen_size = genir_crossam2(0, 2, pat , cmddata, sizeof(cmddata));
-	gen_size = genir_pcoprs1(2, pat , cmddata);
-	pcoprs1_transfer(1, cmddata);
+	gen_size = genir_crossam2(0, 2, pat , cmddata, sizeof(cmddata));
+//	gen_size = genir_pcoprs1(2, pat , cmddata);
+//	pcoprs1_transfer(1, cmddata);
+	[patView setIrPattern:2 pat:pat];
+	[patView setNeedsDisplay:YES];
 #endif
 
 #if 0
 	// Make ONKYO CD
-	unsigned char cmd[4];
-	/* Eject
-	cmd[0] = 0x4b;
-	cmd[1] = 0x34;
-	cmd[2] = 0xd0;
-	cmd[3] = 0x2f;
-	 */
-	/* Stop */
-	cmd[0] = 0x4b;
-	cmd[1] = 0x34;
-	cmd[2] = 0x38;
-	cmd[3] = 0xc7;
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 3);
 	pat = patptr;
 	patptr->format.zero_h = 480;
@@ -238,7 +225,17 @@
 	patptr->format.stop_l = 41290;
 	patptr->format.start_h = 8900;
 	patptr->format.start_l = 4530;
-	patptr->data = cmd;
+	/* Eject */
+	patptr->data[0] = 0x4b;
+	patptr->data[1] = 0x34;
+	patptr->data[2] = 0xd0;
+	patptr->data[3] = 0x2f;
+	/* Stop
+	patptr->data[0] = 0x4b;
+	patptr->data[1] = 0x34;
+	patptr->data[2] = 0x38;
+	patptr->data[3] = 0xc7;
+	*/
 	patptr->bitlen = 32;
 	++patptr;
 	patptr->format.stop_h = 480;
@@ -254,18 +251,12 @@
 	patptr->bitlen = 0;
 	patptr->repeat = 0;
 	gen_size = genir_crossam2(2, 3, pat , cmddata, sizeof(cmddata));
+	[patView setIrPattern:1 pat:pat];
+	[patView setNeedsDisplay:YES];
 #endif
 
 #if 1
 	// Make Sony TV
-	unsigned char cmd[2];
-	/* Power */
-	cmd[0] = 0xa9;
-	cmd[1] = 0x00;
-	/* Input select
-	cmd[0] = 0xa5;
-	cmd[1] = 0x00;
-	*/
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
 	pat = patptr;
 	patptr->format.zero_h = 660;
@@ -276,10 +267,18 @@
 	patptr->format.stop_l = 25100;
 	patptr->format.start_h = 2460;
 	patptr->format.start_l = 525;
-	patptr->data = cmd;
+	/* Power */
+	patptr->data[0] = 0xa9;
+	patptr->data[1] = 0x00;
+	/* Input select
+	patptr->data[0]= 0xa5;
+	patptr->data[1]= 0x00;
+	 */
 	patptr->bitlen = 12;
 	patptr->repeat = -1;
 	gen_size = genir_crossam2(1, 1, pat , cmddata, sizeof(cmddata));
+	[patView setIrPattern:1 pat:pat];
+	[patView setNeedsDisplay:YES];
 #endif
 	int i;
 	for(i = 0; i < gen_size; ++i) {
@@ -399,34 +398,4 @@
 	[waitTimer stopAnimation:self];
 	[waitTimer setHidden:YES];
 }
-
-
-- (IBAction)debugView_1:(id)sender
-{
-	// Make Sony TV
-	unsigned char *cmd = (unsigned char *)malloc(2);
-	/* Power */
-	cmd[0] = 0xa9;
-	cmd[1] = 0x00;
-	/* Input select
-	 cmd[0] = 0xa5;
-	 cmd[1] = 0x00;
-	 */
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
-	pat = patptr;
-	patptr->format.zero_h = 660;
-	patptr->format.zero_l = 540;
-	patptr->format.one_h = 1245;
-	patptr->format.one_l = 540;
-	patptr->format.stop_h = 0;
-	patptr->format.stop_l = 25100;
-	patptr->format.start_h = 2460;
-	patptr->format.start_l = 525;
-	patptr->data = cmd;
-	patptr->bitlen = 12;
-	patptr->repeat = -1;
-	[patView setIrPattern:1 pat:pat];
-	[patView setNeedsDisplay:YES];
-}
-
 @end
