@@ -556,7 +556,6 @@
 									 types : imgTypes ];
 
 	if ( opRet == NSOKButton ) {
-		//NSLog([[[[NSArray alloc] initWithContentsOfFile:[opPanel filename]] autorelease] description]);
 		NSString *filepath = [opPanel filename];
 		// load data from xml
 		remoFormat = (irtime *)malloc(sizeof(irtime));
