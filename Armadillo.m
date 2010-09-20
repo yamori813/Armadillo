@@ -14,6 +14,56 @@
 
 @implementation Armadillo
 
+- (id)init {
+    self = [super init];
+	buttonItems = [[NSArray alloc] initWithObjects:
+				   @"チャンネル1",
+				   @"チャンネル2",
+				   @"チャンネル3",
+				   @"チャンネル4",
+				   @"チャンネル5",
+				   @"チャンネル6",
+				   @"チャンネル7",
+				   @"チャンネル8",
+				   @"チャンネル9",
+				   @"チャンネル10",
+				   @"チャンネル11",
+				   @"チャンネル12",
+				   @"カーソル左",
+				   @"カーソル右",
+				   @"カーソル上",
+				   @"カーソル下",
+				   @"ファンクション1",
+				   @"ファンクション2",
+				   @"ファンクション3",
+				   @"ファンクション4",
+				   @"ファンクション5",
+				   @"ファンクション6",
+				   @"ファンクション7",
+				   @"ファンクション8",
+				   @"ファンクション9",
+				   @"ファンクション10",
+				   @"ファンクション11",
+				   @"ファンクション12",
+				   @"ファンクション13",
+				   @"ファンクション14",
+				   @"ボリューム上",
+				   @"ボリューム下",
+				   @"一時停止",
+				   @"巻き戻し",
+				   @"再生",
+				   @"早送り",
+				   @"記録",
+				   @"前へ",
+				   @"停止",
+				   @"次へ",
+				   @"電源", nil];
+	
+    if (self) {
+    }
+    return self;
+}
+
 // parser for as follow site data
 // http://www.256byte.com/remocon/iremo_db.php
 
@@ -107,6 +157,8 @@
 
 //	[self readData];
 	crossam2_init((CFStringRef)portName);
+	for(i = 0; i < [buttonItems count]; ++i)
+		[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
 
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];
@@ -167,6 +219,8 @@
 {
 	unsigned char cmddata[1024];
 	int gen_size;
+	NSLog(@"%d %d", [dialSelect selectedSegment], 
+		  [buttonItems indexOfObject:[[buttonSelect selectedItem] title]]);
 #if 0
 	// Preset Sony TV Power
 	cmddata[0] = 0x00;
@@ -296,7 +350,8 @@
 
 - (IBAction)debugCrossam_8:(id)sender
 {
-	crossam2_pushkey(0,40);
+	crossam2_pushkey([dialSelect selectedSegment],
+					 [buttonItems indexOfObject:[[buttonSelect selectedItem] title]]);
 	
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];

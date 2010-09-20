@@ -17,6 +17,8 @@
 	unsigned char data[240];
 	IBOutlet NSProgressIndicator *waitTimer;
 	IBOutlet IrPatternView *patView;
+	IBOutlet NSPopUpButton *buttonSelect;
+	IBOutlet NSSegmentedControl *dialSelect;	
 	Boolean cancelReceive;
 	Boolean isSignal;
 	NSString *remoteName;
@@ -24,6 +26,7 @@
 	NSString *buttonRepeatType;
 	NSMutableString *signalValue;
 	irdata *pat;
+	NSArray *buttonItems;
 }
 
 - (IBAction)debugCrossam_1:(id)sender;
