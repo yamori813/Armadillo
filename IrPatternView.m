@@ -13,7 +13,7 @@
 
 #define OFFSETX 10
 #define OFFSETY 10
-#define HEIGHT 50
+#define HEIGHT 60
 #define SCALE 100
 
 CGRect convertToCGRect(NSRect inRect);
@@ -24,6 +24,15 @@ CGRect convertToCGRect(NSRect inRect);
 		patcount = 0;
     }
     return self;
+}
+
+- (void)drawScale
+{
+	int i;
+	for(i = 0; i < 10; ++i) {
+		CGContextMoveToPoint(gc, OFFSETX + i * 50, 2);
+		CGContextAddLineToPoint(gc, OFFSETX + i * 50, 5);
+	}
 }
 
 - (int)addHiLoLine:(int)pos hi:(int)himsec lo:(int)lomsec
@@ -93,6 +102,7 @@ CGRect convertToCGRect(NSRect inRect);
 
 	if(patcount)
 	{
+		[self drawScale];
 		[self drawIrPattern:patcount pat:pat];
 	}
 }
