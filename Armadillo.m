@@ -522,7 +522,7 @@
 
 - (IBAction)debugPcoprs1_6:(id)sender
 {
-	unsigned char cmddata[1024];
+	unsigned char cmddata[240];
 	int gen_size;
 
 	// set value from xml
@@ -536,10 +536,13 @@
 		patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
 	}
 	patptr->bitlen = remoBits;
-	patptr->repeat = 4;
-	
+	patptr->repeat = -1;
+
+	// generate and send data
 	gen_size = genir_pcoprs1(1, pat , cmddata);
 	pcoprs1_transfer(1, cmddata);
+
+	// draw pattern
 	[patView setIrPattern:1 pat:pat];
 	[patView setNeedsDisplay:YES];	
 }
