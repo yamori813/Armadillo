@@ -256,7 +256,6 @@
 	read_size = crossam2_read([dialSelect selectedSegment],
 							  [buttonItems indexOfObject:[[buttonSelect selectedItem] title]],
 							  crossam_data, sizeof(crossam_data));
-
 	int i;
 	for(i = 0; i < read_size; ++i) {
 		printf("%02x ", crossam_data[i]);
@@ -264,7 +263,8 @@
 			printf("\n");
 	}
 	printf("\n");
-	
+//	crossam2_dump(crossam_data);
+
 	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
 						   withObject:nil];
 }
