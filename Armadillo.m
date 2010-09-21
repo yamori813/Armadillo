@@ -221,32 +221,23 @@
 	for(i = 0; i < [buttonItems count]; ++i)
 		[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
 
-	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-						   withObject:nil];
+//	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
+//						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_2:(id)sender
 {
 	crossam2_protectoff();
-
-	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_3:(id)sender
 {
 	crossam2_led(1);
-
-	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_4:(id)sender
 {
 	crossam2_led(0);
-
-	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_5:(id)sender
@@ -264,9 +255,6 @@
 	}
 	printf("\n");
 //	crossam2_dump(crossam_data);
-
-	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_6:(id)sender
@@ -274,9 +262,6 @@
 	char str[1024];
 	crossam2_version(str, sizeof(str));
 	NSLog(@"Version : %s", str);
-	
-	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_7:(id)sender
@@ -408,18 +393,12 @@
 	printf("\n");
 
 	crossam2_write(4,40, cmddata, gen_size);	
-	
-	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_8:(id)sender
 {
 	crossam2_pushkey([dialSelect selectedSegment],
 					 [buttonItems indexOfObject:[[buttonSelect selectedItem] title]]);
-	
-	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-						   withObject:nil];
 }
 
 //
