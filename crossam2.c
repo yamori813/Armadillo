@@ -288,6 +288,8 @@ int crossam2_init(CFStringRef devname)
 
 	sioinit();
 
+	usleep(200*1000);
+
 	// wake up from sleep
 	crossam2_sendcr();
 
