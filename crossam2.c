@@ -314,17 +314,24 @@ void crossam2_dump(unsigned char *buff)
 
 	allsize = buff[0] + buff[1] * 0x100;
 	ttsize = buff[3];
-	for(i = 0; i < ttsize; ++i) {
-		mark = *((buff + 5) + i * 6)
+	if(ttsize >= 0x80) {
+		for(i = 3; i < allsize; ++i) {
+			printf("%02x", buff[i]);
+		}
+		printf("\n");
+	} else {
+		for(i = 0; i < ttsize; ++i) {
+			mark = *((buff + 5) + i * 6)
 			+ *((buff + 6) + i * 6) * 0x100 + *((buff + 7) + i * 6) * 0x10000;
-		space = *((buff + 8) + i * 6)
+			space = *((buff + 8) + i * 6)
 			+ *((buff + 9) + i * 6) * 0x100 + *((buff + 10) + i * 6) * 0x10000;
-//		printf("%d %d\n", mark, space);
-		printf("%8.1fus %8.1fus\n", (float)mark * 4 / 10, (float)space * 4 / 10);
+			//		printf("%d %d\n", mark, space);
+			printf("%8.1fus %8.1fus\n", (float)mark * 4 / 10, (float)space * 4 / 10);
+		}
+		printf("\n");
+		for(i = 5 + ttsize * 6; i < allsize; ++i) {
+			printf("%02x", buff[i]);
+		}
+		printf("\n");
 	}
-	printf("\n");
-	for(i = 5 + ttsize * 6; i < allsize; ++i) {
-		printf("%02x", buff[i]);
-	}
-	printf("\n");
 }
