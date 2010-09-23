@@ -14,6 +14,8 @@
 		3035090C1233177800DDD914 /* pcoprs1.c in Sources */ = {isa = PBXBuildFile; fileRef = 303509091233177800DDD914 /* pcoprs1.c */; };
 		30350A3F123317AA00DDD914 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30350A3E123317AA00DDD914 /* IOKit.framework */; };
 		304125F5123EE28D00BDD47C /* genir.c in Sources */ = {isa = PBXBuildFile; fileRef = 304125F4123EE28D00BDD47C /* genir.c */; };
+		304B8FEF124B7CA30076FC99 /* bitbang.c in Sources */ = {isa = PBXBuildFile; fileRef = 304B8FEE124B7CA30076FC99 /* bitbang.c */; };
+		304B9002124B80BF0076FC99 /* libftd2xx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 304B9001124B80BF0076FC99 /* libftd2xx.dylib */; };
 		307EF11A1245CC6100A021AD /* IrPatternView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307EF1191245CC6100A021AD /* IrPatternView.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -39,6 +41,11 @@
 		30350A3E123317AA00DDD914 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		304125F3123EE28D00BDD47C /* genir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genir.h; sourceTree = "<group>"; };
 		304125F4123EE28D00BDD47C /* genir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = genir.c; sourceTree = "<group>"; };
+		304B8FED124B7CA30076FC99 /* bitbang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitbang.h; sourceTree = "<group>"; };
+		304B8FEE124B7CA30076FC99 /* bitbang.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitbang.c; sourceTree = "<group>"; };
+		304B8FF3124B7D9D0076FC99 /* ftd2xx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftd2xx.h; sourceTree = "<group>"; };
+		304B8FF8124B7E2F0076FC99 /* WinTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinTypes.h; sourceTree = "<group>"; };
+		304B9001124B80BF0076FC99 /* libftd2xx.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libftd2xx.dylib; path = ../FT_D2XX_Lib/D2XX/Samples/D2XX_Samples_MPSSE/libftd2xx.dylib; sourceTree = SOURCE_ROOT; };
 		307EF1181245CC6100A021AD /* IrPatternView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrPatternView.h; sourceTree = "<group>"; };
 		307EF1191245CC6100A021AD /* IrPatternView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrPatternView.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Armadillo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armadillo_Prefix.pch; sourceTree = "<group>"; };
@@ -53,6 +60,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				30350A3F123317AA00DDD914 /* IOKit.framework in Frameworks */,
+				304B9002124B80BF0076FC99 /* libftd2xx.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +124,10 @@
 				304125F4123EE28D00BDD47C /* genir.c */,
 				3035090A1233177800DDD914 /* serial.h */,
 				303509071233177800DDD914 /* serial.c */,
+				304B8FF8124B7E2F0076FC99 /* WinTypes.h */,
+				304B8FF3124B7D9D0076FC99 /* ftd2xx.h */,
+				304B8FED124B7CA30076FC99 /* bitbang.h */,
+				304B8FEE124B7CA30076FC99 /* bitbang.c */,
 				303509081233177800DDD914 /* pcoprs1.h */,
 				303509091233177800DDD914 /* pcoprs1.c */,
 				303509041233176500DDD914 /* crossam2.h */,
@@ -129,6 +141,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				304B9001124B80BF0076FC99 /* libftd2xx.dylib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -207,6 +220,7 @@
 				3035090C1233177800DDD914 /* pcoprs1.c in Sources */,
 				304125F5123EE28D00BDD47C /* genir.c in Sources */,
 				307EF11A1245CC6100A021AD /* IrPatternView.m in Sources */,
+				304B8FEF124B7CA30076FC99 /* bitbang.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +259,10 @@
 				GCC_PREFIX_HEADER = Armadillo_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../FT_D2XX_Lib/D2XX/Samples/D2XX_Samples_MPSSE\"",
+				);
 				PRODUCT_NAME = Armadillo;
 			};
 			name = Debug;
@@ -259,6 +277,10 @@
 				GCC_PREFIX_HEADER = Armadillo_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../FT_D2XX_Lib/D2XX/Samples/D2XX_Samples_MPSSE\"",
+				);
 				PRODUCT_NAME = Armadillo;
 			};
 			name = Release;
