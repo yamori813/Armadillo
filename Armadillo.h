@@ -53,4 +53,6 @@
 - (IBAction)debugPcoprs1_6:(id)sender;
 - (IBAction)debugPcoprs1_7:(id)sender;
 
+- (IBAction)debugBitbang1_1:(id)sender;
+- (IBAction)debugBitbang1_2:(id)sender;
 @end

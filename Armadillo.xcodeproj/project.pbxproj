@@ -15,12 +15,26 @@
 		30350A3F123317AA00DDD914 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30350A3E123317AA00DDD914 /* IOKit.framework */; };
 		304125F5123EE28D00BDD47C /* genir.c in Sources */ = {isa = PBXBuildFile; fileRef = 304125F4123EE28D00BDD47C /* genir.c */; };
 		304B8FEF124B7CA30076FC99 /* bitbang.c in Sources */ = {isa = PBXBuildFile; fileRef = 304B8FEE124B7CA30076FC99 /* bitbang.c */; };
-		304B9002124B80BF0076FC99 /* libftd2xx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 304B9001124B80BF0076FC99 /* libftd2xx.dylib */; };
+		3077A5C4124BA37B00B2556D /* libftd2xx.0.1.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */; };
+		3077A5C6124BA38B00B2556D /* libftd2xx.0.1.7.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */; };
 		307EF11A1245CC6100A021AD /* IrPatternView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307EF1191245CC6100A021AD /* IrPatternView.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30DE5B8F124B8DE700D7F231 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3077A5C6124BA38B00B2556D /* libftd2xx.0.1.7.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -45,7 +59,7 @@
 		304B8FEE124B7CA30076FC99 /* bitbang.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitbang.c; sourceTree = "<group>"; };
 		304B8FF3124B7D9D0076FC99 /* ftd2xx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftd2xx.h; sourceTree = "<group>"; };
 		304B8FF8124B7E2F0076FC99 /* WinTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinTypes.h; sourceTree = "<group>"; };
-		304B9001124B80BF0076FC99 /* libftd2xx.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libftd2xx.dylib; path = ../FT_D2XX_Lib/D2XX/Samples/D2XX_Samples_MPSSE/libftd2xx.dylib; sourceTree = SOURCE_ROOT; };
+		3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libftd2xx.0.1.7.dylib; sourceTree = "<group>"; };
 		307EF1181245CC6100A021AD /* IrPatternView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrPatternView.h; sourceTree = "<group>"; };
 		307EF1191245CC6100A021AD /* IrPatternView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrPatternView.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Armadillo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armadillo_Prefix.pch; sourceTree = "<group>"; };
@@ -60,7 +74,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				30350A3F123317AA00DDD914 /* IOKit.framework in Frameworks */,
-				304B9002124B80BF0076FC99 /* libftd2xx.dylib in Frameworks */,
+				3077A5C4124BA37B00B2556D /* libftd2xx.0.1.7.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +155,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				304B9001124B80BF0076FC99 /* libftd2xx.dylib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -152,10 +165,19 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30DE5B90124B8E0E00D7F231 /* My Frameworks */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30DE5B90124B8E0E00D7F231 /* My Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */,
+			);
+			name = "My Frameworks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +190,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				30DE5B8F124B8DE700D7F231 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -262,6 +285,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../FT_D2XX_Lib/D2XX/Samples/D2XX_Samples_MPSSE\"",
+					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = Armadillo;
 			};
@@ -280,6 +304,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../FT_D2XX_Lib/D2XX/Samples/D2XX_Samples_MPSSE\"",
+					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = Armadillo;
 			};

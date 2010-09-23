@@ -10,6 +10,7 @@
 #include "serial.h"
 #include "crossam2.h"
 #include "pcoprs1.h"
+#include "bitbang.h"
 #import "Armadillo.h"
 
 @implementation Armadillo
@@ -549,4 +550,41 @@
 		
 	} 
 }
+
+- (IBAction)debugBitbang1_1:(id)sender
+{
+	bitbang_init();
+}
+
+- (IBAction)debugBitbang1_2:(id)sender
+{
+	unsigned char cmddata[1024*32];
+	int gen_size;
+	// Make Sony TV (12bit)
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
+	pat = patptr;
+	patptr->format.zero_h = 660;
+	patptr->format.zero_l = 540;
+	patptr->format.one_h = 1245;
+	patptr->format.one_l = 540;
+	patptr->format.stop_h = 0;
+	patptr->format.stop_l = 25100;
+	patptr->format.start_h = 2460;
+	patptr->format.start_l = 525;
+	/* Power */
+	patptr->data[0] = 0xa9;
+	patptr->data[1] = 0x00;
+	/* Input select
+	 patptr->data[0]= 0xa5;
+	 patptr->data[1]= 0x00;
+	 */
+	patptr->bitlen = 12;
+	patptr->repeat = 2;
+	gen_size = genir_bitbang(1, pat , cmddata, sizeof(cmddata));
+	[patView setIrPattern:1 pat:pat];
+	[patView setNeedsDisplay:YES];
+	printf("genir_bitbang size = %d\n",gen_size);
+	bitbang_transfer(gen_size, cmddata);
+}
+
 @end

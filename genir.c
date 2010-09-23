@@ -285,3 +285,90 @@ int genir_pcoprs1(int patcount, irdata *pat, unsigned char *buff)
 */
 	return 1;
 }
+
+
+int sebitbang(int pos, unsigned char *buff, int hi, int lo)
+{
+	int hibit, lobit;
+	hibit = hi / 25;
+	lobit = lo / 25;
+	int i;
+	for(i = 0; i < hibit; ++i) {
+		buff[pos++] = 0x01;
+		buff[pos++] = 0x01;
+		buff[pos++] = 0x00;
+		buff[pos++] = 0x00;
+		buff[pos++] = 0x00;
+	}
+	for(i = 0; i < lobit; ++i) {
+		buff[pos++] = 0x00;
+		buff[pos++] = 0x00;
+		buff[pos++] = 0x00;
+		buff[pos++] = 0x00;
+		buff[pos++] = 0x00;
+	}
+	return pos;
+}
+
+int genir_bitbang(int patcount, irdata *pat, unsigned char *buff, int size)
+{
+	int curbit = 0;
+	int i, j, k;
+	int rep;
+	irdata *orgpat;
+	int orgpatcount;
+	orgpat = pat;
+	orgpatcount = patcount;
+	memset(buff, 0, 240);
+	rep = (orgpat + patcount - 1)->repeat;
+	k = 0;
+	do {
+		pat = orgpat;
+		patcount = orgpatcount;
+		do {
+			// start bit
+			if(pat->format.start_h + pat->format.start_l != 0)
+				curbit = sebitbang(curbit, buff, pat->format.start_h,
+									pat->format.start_l);
+			// data bit
+			i = 0;
+			j = 0;
+			if(pat->bitlen) {
+				do {
+					if((pat->data[j] >> (7 - i) & 1) == 1) {
+						curbit = sebitbang(curbit, buff, pat->format.one_h, 
+											pat->format.one_l);
+					} else {
+						curbit = sebitbang(curbit, buff, pat->format.zero_h, 
+											pat->format.zero_l);
+					}
+					
+					if(i == 7) {
+						i = 0;
+						++j;
+					} else {
+						++i;
+					}
+				} while((j * 8 + i) != pat->bitlen);
+			}
+			
+			// stop bit		
+			if(pat->format.stop_h + pat->format.stop_l != 0)
+				curbit = sebitbang(curbit, buff, pat->format.stop_h, 
+									pat->format.stop_l);
+			++pat;
+			--patcount;
+		} while(patcount);
+		++k;
+	} while(k < rep);
+	/*
+	 for(j = 0; j < 240; ++j) {
+	 for(i = 0; i < 8; ++i) {
+	 printf("%d", (buff[j] >> i) & 1);
+	 }
+	 }
+	 printf("\n");
+	 */
+	return curbit;
+	
+}

@@ -7,6 +7,8 @@
  *
  */
 
+#include "ftd2xx.h"
+
 #include "bitbang.h"
 
 #include <stdio.h>

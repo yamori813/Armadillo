@@ -7,4 +7,5 @@
  *
  */
 
-#include "ftd2xx.h"
+int bitbang_init();
+int bitbang_transfer(int size, unsigned char *data);
