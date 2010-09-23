@@ -61,7 +61,7 @@ int crossam2_readline(char *data, int datasize)
 	while(1) {
 		FD_ZERO(&sio_fd);
 		FD_SET(crossam2_port, &sio_fd);
-		wtime.tv_sec = 2;
+		wtime.tv_sec = 1;
 		wtime.tv_usec = 0;
 		select(crossam2_port + 1, &sio_fd, 0, 0, &wtime);
 		if(!FD_ISSET(crossam2_port, &sio_fd)) {
@@ -158,6 +158,10 @@ int crossam2_write(int dial, int key, unsigned char *data, int datasize)
 	
 	char outbytes[128];
 	int i;
+	// wake up from sleep
+	crossam2_sendcr();	
+	usleep(200*1000);
+	
 	sprintf(outbytes, "/W%d,%d %d", dial, key, datasize);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
@@ -180,6 +184,10 @@ int crossam2_read(int dial, int key, unsigned char *data, int datasize)
 	char outbytes[128];
 	int lineCount = 0;
 	int dataSize;
+	// wake up from sleep
+	crossam2_sendcr();	
+	usleep(200*1000);
+	
 	sprintf(outbytes, "/R%d,%d", dial, key);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
@@ -213,6 +221,9 @@ void crossam2_version(char *verstr, int strsize)
 	char outbytes[128];
 	char inbytes[128];
 	verstr[0] = 0x00;
+	// wake up from sleep
+	crossam2_sendcr();	
+	usleep(200*1000);
 	strcpy(outbytes, "/V");
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
@@ -226,7 +237,9 @@ void crossam2_version(char *verstr, int strsize)
 void crossam2_led(int ledon)
 {
 	char outbytes[128];
-	
+	// wake up from sleep
+	crossam2_sendcr();	
+	usleep(200*1000);	
 	sprintf(outbytes, "/P%d", ledon);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
@@ -236,7 +249,9 @@ void crossam2_led(int ledon)
 void crossam2_pushkey(int dial, int key)
 {
 	char outbytes[128];
-
+	// wake up from sleep
+	crossam2_sendcr();	
+	usleep(200*1000);	
 	sprintf(outbytes, "/T%d,%d", dial, key);
 	int cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
@@ -251,12 +266,15 @@ void crossam2_pushkey(int dial, int key)
 int crossam2_check()
 {
 	char outbytes[128];
+	// wake up from sleep
+	crossam2_sendcr();	
+	usleep(200*1000);
 	
 	outbytes[0] = '/';
 	outbytes[1] = 'C';
 	outbytes[2] = 0x0d;
 	crossam2_writedata(outbytes, 3);
-		
+
 	char inbytes[128];
 	if(crossam2_readline(inbytes, sizeof(inbytes)) == 0) {
 		return 0;
@@ -269,6 +287,16 @@ void crossam2_sendcr()
 	char outbytes[128];
 	outbytes[0] = 0x0d;
 	write(crossam2_port, outbytes, 1);
+}
+
+int crossam2_patch()
+{
+	char inbytes[128];
+	if(crossam2_readline(inbytes, sizeof(inbytes)) == 0) {
+		return 0;
+	} else
+		return 1;
+	crossam2_writedata((char *)PatchData, sizeof(PatchData));
 }
 
 int crossam2_init(CFStringRef devname)
@@ -287,11 +315,6 @@ int crossam2_init(CFStringRef devname)
 	tcflush(crossam2_port, TCIOFLUSH);
 
 	sioinit();
-
-	usleep(200*1000);
-
-	// wake up from sleep
-	crossam2_sendcr();
 
 	usleep(200*1000);
 
