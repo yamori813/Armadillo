@@ -254,7 +254,8 @@
 			printf("\n");
 	}
 	printf("\n");
-//	crossam2_dump(crossam_data);
+	if(read_size)
+		crossam2_dump(crossam_data);
 }
 
 - (IBAction)debugCrossam_6:(id)sender
