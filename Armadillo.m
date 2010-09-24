@@ -563,8 +563,10 @@
 #if 1
 	// Apple remote
 	// http://www.ez0.net/2007/11/appleremoteの赤外線信号を解析してみた/
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
+	// http://www2.renesas.com/faq/ja/mi_com/f_com_remo.html
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 2);
 	pat = patptr;
+	// read code
 	patptr->format.zero_h = 560;
 	patptr->format.zero_l = 560;
 	patptr->format.one_h = 560;
@@ -579,8 +581,19 @@
 	patptr->data[2] = 0xa0;
 	patptr->data[3] = 0xe9;
 	patptr->bitlen = 32;
-	patptr->repeat = 2;
-	gen_size = genir_bitbang(1, pat , cmddata, sizeof(cmddata));
+	++patptr;
+	// repet code
+	patptr->format.zero_h = 560;
+	patptr->format.zero_l = 560;
+	patptr->format.one_h = 560;
+	patptr->format.one_l = 1690;
+	patptr->format.stop_h = 560;
+	patptr->format.stop_l = 10000;
+	patptr->format.start_h = 9000;
+	patptr->format.start_l = 2250;
+	patptr->bitlen = 0;
+	patptr->repeat = 1;	
+	gen_size = genir_bitbang(2, pat , cmddata, sizeof(cmddata));
 	[patView setIrPattern:1 pat:pat];
 	[patView setNeedsDisplay:YES];
 #else	
