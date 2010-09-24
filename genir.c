@@ -295,7 +295,7 @@ int sebitbang(int pos, unsigned char *buff, int hi, int lo)
 	int i;
 	for(i = 0; i < hibit; ++i) {
 		buff[pos++] = 0x01;
-		buff[pos++] = 0x01;
+		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
