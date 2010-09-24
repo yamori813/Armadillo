@@ -560,6 +560,30 @@
 {
 	unsigned char cmddata[1024*32];
 	int gen_size;
+#if 1
+	// Apple remote
+	// http://www.ez0.net/2007/11/appleremoteの赤外線信号を解析してみた/
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
+	pat = patptr;
+	patptr->format.zero_h = 560;
+	patptr->format.zero_l = 560;
+	patptr->format.one_h = 560;
+	patptr->format.one_l = 1690;
+	patptr->format.stop_h = 560;
+	patptr->format.stop_l = 10000;
+	patptr->format.start_h = 9000;
+	patptr->format.start_l = 4500;
+	/* Play */
+	patptr->data[0] = 0x77;
+	patptr->data[1] = 0xe1;
+	patptr->data[2] = 0xa0;
+	patptr->data[3] = 0xe9;
+	patptr->bitlen = 32;
+	patptr->repeat = 2;
+	gen_size = genir_bitbang(1, pat , cmddata, sizeof(cmddata));
+	[patView setIrPattern:1 pat:pat];
+	[patView setNeedsDisplay:YES];
+#else	
 	// Make Sony TV (12bit)
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
 	pat = patptr;
@@ -583,6 +607,7 @@
 	gen_size = genir_bitbang(1, pat , cmddata, sizeof(cmddata));
 	[patView setIrPattern:1 pat:pat];
 	[patView setNeedsDisplay:YES];
+#endif
 	printf("genir_bitbang size = %d\n",gen_size);
 	bitbang_transfer(gen_size, cmddata);
 }
