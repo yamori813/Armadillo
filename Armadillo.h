@@ -24,16 +24,24 @@
 	NSString *remoteName;
 	NSString *buttonName;
 	NSString *buttonRepeatType;
+	NSString *codePat;
+	NSString *framePat;
 	Boolean isSignal;
+	Boolean inPat;
+	Boolean inFrame;
 	NSMutableString *signalValue;
 	irdata *pat;
 	NSArray *buttonItems;
 
 	Boolean isFormat;
 	NSMutableString *formatValue;
-	int remoBits;
-	irtime *remoFormat;
-	NSMutableArray *remoData;
+	int remoCodeCount;
+	int remoFrameCount;
+	irtime *remoCode[4];
+	irtime *remoFrame[4];
+	int remoBits[4];
+	NSMutableArray *signalArray;
+	NSMutableDictionary *remoData;
 }
 
 - (IBAction)debugCrossam_1:(id)sender;

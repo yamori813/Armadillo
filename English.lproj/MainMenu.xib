@@ -8,8 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="57"/>
 			<integer value="372"/>
+			<integer value="57"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1553,7 +1553,7 @@
 						<object class="NSPopUpButton" id="536196791">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{280, 119}, {161, 26}}</string>
+							<string key="NSFrame">{{387, 119}, {161, 26}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSPopUpButtonCell" key="NSCell" id="1047204847">
@@ -1605,7 +1605,7 @@
 						<object class="NSButton" id="697675458">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{384, 215}, {96, 32}}</string>
+							<string key="NSFrame">{{277, 116}, {96, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="626105332">
@@ -3005,14 +3005,14 @@
 							<reference ref="532529988"/>
 							<reference ref="271122945"/>
 							<reference ref="585574094"/>
-							<reference ref="241509414"/>
-							<reference ref="536196791"/>
 							<reference ref="866141249"/>
 							<reference ref="1059798249"/>
-							<reference ref="697675458"/>
 							<reference ref="577257616"/>
 							<reference ref="490120029"/>
 							<reference ref="493835166"/>
+							<reference ref="536196791"/>
+							<reference ref="241509414"/>
+							<reference ref="697675458"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>

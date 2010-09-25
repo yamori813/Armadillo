@@ -69,20 +69,37 @@
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser
 {
+	inPat = NO;
+	inFrame = NO;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-    if([elementName compare:@"remote"] == NSOrderedSame){
+    if([elementName compare:@"pat"] == NSOrderedSame){
+		if(inPat)
+			remoCode[remoCodeCount] = (irtime *)malloc(sizeof(irtime));
+		else if(inFrame)
+			remoFrame[remoFrameCount] = (irtime *)malloc(sizeof(irtime));
+	}
+    if([elementName compare:@"code_pat"] == NSOrderedSame){
+		inPat = YES;
+	}
+    if([elementName compare:@"frame_pat"] == NSOrderedSame){
+		inFrame = YES;
+	}
+	if([elementName compare:@"remote"] == NSOrderedSame){
 		remoteName = [[NSMutableString alloc] initWithString:[attributeDict objectForKey:@"name"]];
 	}
     if([elementName compare:@"button"] == NSOrderedSame){
 		buttonName = [[NSMutableString alloc] initWithString:[attributeDict objectForKey:@"name"]];
 		buttonRepeatType = [[NSMutableString alloc] initWithString:[attributeDict objectForKey:@"repeat_type"]];
+		signalArray = [[NSMutableArray alloc] init];
 	}
     if([elementName compare:@"signal"] == NSOrderedSame){
         isSignal = YES;
+		codePat = [[NSMutableString alloc] initWithString:[attributeDict objectForKey:@"code_pat"]];
+		framePat = [[NSMutableString alloc] initWithString:[attributeDict objectForKey:@"frame_pat"]];
 
         signalValue = [[NSMutableString string] retain];
     }
@@ -114,59 +131,77 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qName
 {
-	
+    if([elementName compare:@"pat"] == NSOrderedSame){
+		if(inPat)
+			++remoCodeCount;
+		else if(inFrame)
+			++remoFrameCount;
+	}
+    if([elementName compare:@"code_pat"] == NSOrderedSame){
+		inPat = NO;
+	}
+    if([elementName compare:@"frame_pat"] == NSOrderedSame){
+		inFrame = NO;
+	}
 	if([elementName compare:@"code0_high"] == NSOrderedSame) {
-		remoFormat->zero_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		remoCode[remoCodeCount]->zero_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
 		[formatValue release];
 		isFormat = NO;
 	}
 	if([elementName compare:@"code0_low"] == NSOrderedSame) {
-		remoFormat->zero_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		remoCode[remoCodeCount]->zero_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
 		[formatValue release];
 		isFormat = NO;
 	}
 	if([elementName compare:@"code1_high"] == NSOrderedSame) {
-		remoFormat->one_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		remoCode[remoCodeCount]->one_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
 		[formatValue release];
 		isFormat = NO;
 	}
 	if([elementName compare:@"code1_low"] == NSOrderedSame) {
-		remoFormat->one_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		remoCode[remoCodeCount]->one_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
 		[formatValue release];
 		isFormat = NO;
 	}
 	if([elementName compare:@"header_high"] == NSOrderedSame) {
-		remoFormat->start_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		remoFrame[remoFrameCount]->start_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
 		[formatValue release];
 		isFormat = NO;
 	}
 	if([elementName compare:@"header_low"] == NSOrderedSame) {
-		remoFormat->start_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		remoFrame[remoFrameCount]->start_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
 		[formatValue release];
 		isFormat = NO;
 	}
 	if([elementName compare:@"stop_high"] == NSOrderedSame) {
-		remoFormat->stop_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		remoFrame[remoFrameCount]->stop_h = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
 		[formatValue release];
 		isFormat = NO;
 	}
 	if([elementName compare:@"stop_low"] == NSOrderedSame) {
-		remoFormat->stop_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		remoFrame[remoFrameCount]->stop_l = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
 		[formatValue release];
 		isFormat = NO;
 	}
 	if([elementName compare:@"bit_count"] == NSOrderedSame) {
-		remoBits = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
+		remoBits[remoFrameCount] = atoi((char *)[formatValue cStringUsingEncoding:NSASCIIStringEncoding]);
 		[formatValue release];
 		isFormat = NO;
 	}
 	if([elementName compare:@"button"] == NSOrderedSame){
+		if([buttonName length] && [remoData objectForKey:buttonName] == nil) {
+//			NSLog(@"%@ %@", buttonName, signalArray);
+			[remoData setObject:signalArray forKey:buttonName];
+		}
 		[buttonName release];
 		[buttonRepeatType release];
 	}
 	if([elementName compare:@"signal"] == NSOrderedSame){
-		[remoData addObject:[NSArray arrayWithObjects:buttonName, signalValue, nil]];
-        isSignal = NO;
+		[signalArray addObject:buttonRepeatType];
+		[signalArray addObject:codePat];
+		[signalArray addObject:framePat];
+		[signalArray addObject:signalValue];
+		isSignal = NO;
     }
 }
 
@@ -508,14 +543,15 @@
 	// set value from xml
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
 	pat = patptr;
-	patptr->format = *remoFormat;
-	NSString *theData = [[remoData objectAtIndex:[dataSelect indexOfSelectedItem]] objectAtIndex:1];
+//	patptr->format = *remoFormat[0];
+//	NSString *theData = [[remoData objectAtIndex:[dataSelect indexOfSelectedItem]] objectAtIndex:1];
+	NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:0];
 	NSLog(@"%@ %d", theData, [theData length]);
 	int i;
 	for(i = 0; i < [theData length] / 2; ++i) {
 		patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
 	}
-	patptr->bitlen = remoBits;
+	patptr->bitlen = remoBits[0];
 	patptr->repeat = -1;
 
 	// generate and send data
@@ -541,13 +577,16 @@
 	if ( opRet == NSOKButton ) {
 		NSString *filepath = [opPanel filename];
 		// load data from xml
-		remoFormat = (irtime *)malloc(sizeof(irtime));
-		remoData = [[NSMutableArray alloc] init];
+//		remoFormat = (irtime *)malloc(sizeof(irtime));
+		remoCodeCount = 0;
+		remoFrameCount = 0;
+		remoData = [[NSMutableDictionary alloc] init];
 		[self readData:filepath];
-		int i;
-		for(i = 0; i < [remoData count]; ++i)
-			[dataSelect addItemWithTitle:[[remoData objectAtIndex:i] objectAtIndex:0]];
-		
+//		int i;
+//		for(i = 0; i < [remoData count]; ++i)
+//			[dataSelect addItemWithTitle:[[remoData objectAtIndex:i] objectAtIndex:0]];
+		for (id key in remoData)
+			[dataSelect addItemWithTitle:key];
 	} 
 }
 
@@ -558,9 +597,43 @@
 
 - (IBAction)debugBitbang1_2:(id)sender
 {
-	unsigned char cmddata[1024*32];
+	unsigned char cmddata[1024*128];
 	int gen_size;
-#if 1
+	int signalcount, codeIndex, frameIndex;
+	int i, j;
+
+	signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
+	pat = patptr;
+	for(j = 0; j < signalcount; ++j) {
+		// set value from xml
+		codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
+								  cStringUsingEncoding:NSASCIIStringEncoding]);
+		frameIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 2)]
+								  cStringUsingEncoding:NSASCIIStringEncoding]);
+		patptr->format.start_h = remoFrame[frameIndex]->start_h;
+		patptr->format.start_l = remoFrame[frameIndex]->start_l;
+		patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
+		patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
+		patptr->format.zero_h = remoCode[codeIndex]->zero_h;
+		patptr->format.zero_l = remoCode[codeIndex]->zero_l;
+		patptr->format.one_h = remoCode[codeIndex]->one_h;
+		patptr->format.one_l = remoCode[codeIndex]->one_l;
+		NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
+		for(i = 0; i < [theData length] / 2; ++i) {
+			patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+		}
+		patptr->bitlen = remoBits[frameIndex];
+		NSLog(@"%d %d %@ %d %d", codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
+		patptr->repeat = 1;
+		++patptr;
+	}
+
+	// generate and send data
+	gen_size = genir_bitbang(signalcount, pat , cmddata, sizeof(cmddata));
+	[patView setIrPattern:1 pat:pat];
+	[patView setNeedsDisplay:YES];
+#if 0
 	// Apple remote
 	// http://www.ez0.net/2007/11/appleremoteの赤外線信号を解析してみた/
 	// http://www2.renesas.com/faq/ja/mi_com/f_com_remo.html
@@ -596,7 +669,8 @@
 	gen_size = genir_bitbang(2, pat , cmddata, sizeof(cmddata));
 	[patView setIrPattern:1 pat:pat];
 	[patView setNeedsDisplay:YES];
-#else	
+#endif
+#if 0
 	// Make Sony TV (12bit)
 	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
 	pat = patptr;
