@@ -611,8 +611,9 @@
 			patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
 		}
 		patptr->bitlen = remoBits[frameIndex];
-		NSLog(@"%d %d %@ %d %d", codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
-		patptr->repeat = 1;
+		patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
+									   cStringUsingEncoding:NSASCIIStringEncoding]);
+		NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
 		++patptr;
 	}
 
