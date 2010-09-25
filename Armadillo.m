@@ -221,16 +221,6 @@
 // Crossam2 Debug code
 //
 
-- (void) timerTask
-{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	[waitTimer setHidden:NO];
-	[waitTimer startAnimation:self];
-	sleep(10);
-	[waitTimer stopAnimation:self];
-	[waitTimer setHidden:YES];
-}
-
 - (IBAction)debugCrossam_1:(id)sender
 {
 	NSMutableArray *ifList;
@@ -256,9 +246,6 @@
 	crossam2_init((CFStringRef)portName);
 	for(i = 0; i < [buttonItems count]; ++i)
 		[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
-
-//	[NSThread detachNewThreadSelector:@selector(timerTask) toTarget:self
-//						   withObject:nil];
 }
 
 - (IBAction)debugCrossam_2:(id)sender
