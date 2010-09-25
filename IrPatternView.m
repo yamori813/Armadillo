@@ -100,7 +100,7 @@ CGRect convertToCGRect(NSRect inRect);
     
 	CGContextSetGrayFillColor(gc, 1.0, 1.0);
 	CGContextFillRect(gc, convertToCGRect(rect));
-	CGContextStrokeRect(gc, convertToCGRect(rect));
+//	CGContextStrokeRect(gc, convertToCGRect(rect));
 
 	[self drawScale];
 

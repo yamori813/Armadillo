@@ -202,24 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>308E422C124D75D900BE3991</string>
+				<string>308E4355124DE76100BE3991</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>Armadillo.h</string>
+				<string>IrPatternView.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>308E422D124D75D900BE3991</string>
+						<string>308E4356124DE76100BE3991</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>Armadillo.h</string>
+						<string>IrPatternView.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>308E434C124DA82A00BE3991</string>
+						<string>308E4369124DEACC00BE3991</string>
 						<key>history</key>
 						<array>
-							<string>308E4223124D740900BE3991</string>
+							<string>308E4363124DEAA500BE3991</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -231,11 +231,11 @@
 			<key>Geometry</key>
 			<dict>
 				<key>Frame</key>
-				<string>{{0, 20}, {996, 585}}</string>
+				<string>{{0, 20}, {996, 983}}</string>
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>207 138 996 626 0 0 1280 778 </string>
+				<string>1295 -229 996 1024 1280 -280 1920 1080 </string>
 			</dict>
 		</dict>
 	</array>
@@ -320,13 +320,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>24</integer>
-									<integer>21</integer>
+									<integer>5</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 2}, {245, 512}}</string>
+							<string>{{0, 0}, {245, 512}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -375,7 +375,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>308E434B124DA82A00BE3991</string>
+										<string>308E4368124DEACC00BE3991</string>
 										<key>history</key>
 										<array>
 											<string>30350B1D123324B500DDD914</string>
@@ -623,12 +623,11 @@
 	<array>
 		<string>308E4211124D64C800BE3991</string>
 		<string>308E4212124D64C800BE3991</string>
-		<string>308E41FF124D627300BE3991</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/himori/Develop/Device/Armadillo/Armadillo.xcodeproj</string>
 		<string>30350B121233248800DDD914</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>308E422C124D75D900BE3991</string>
+		<string>/Users/himori/Develop/Device/Armadillo/Armadillo.xcodeproj</string>
+		<string>308E4355124DE76100BE3991</string>
 	</array>
 	<key>WindowString</key>
 	<string>163 170 866 571 0 0 1280 778 </string>
@@ -977,7 +976,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {507, 846}}</string>
 								<key>RubberWindowFrame</key>
-								<string>2651 -190 507 887 1280 -280 1920 1080 </string>
+								<string>2556 -180 507 887 1280 -280 1920 1080 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1006,7 +1005,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>2651 -190 507 887 1280 -280 1920 1080 </string>
+			<string>2556 -180 507 887 1280 -280 1920 1080 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
