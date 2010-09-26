@@ -37,7 +37,7 @@
 
 	IBOutlet IrPatternView *patView;
 
-	Boolean cancelReceive;
+	Boolean isPcoprs1Receive;
 	NSString *remoteName;
 	NSString *buttonName;
 	NSString *buttonRepeatType;
@@ -71,6 +71,7 @@
 - (IBAction)pcoprs1Init:(id)sender;
 - (IBAction)pcoprs1Trans:(id)sender;
 - (IBAction)pcoprs1LED:(id)sender;
+- (IBAction)pcoprs1Recv:(id)sender;
 
 - (IBAction)ftbitbangInit:(id)sender;
 - (IBAction)ftbitbangTrans:(id)sender;

@@ -60,6 +60,7 @@
 					   @"停止",
 					   @"次へ",
 					   @"電源", nil];
+		isPcoprs1Receive = NO;
     }
     return self;
 }
@@ -257,7 +258,7 @@
 			for(i = 0; i < [buttonItems count]; ++i)
 				[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
 		} else {
-//			crossam2_patch();
+			crossam2_patch();
 		}
 	}
 }
@@ -285,13 +286,6 @@
 	printf("\n");
 	if(read_size)
 		crossam2_dump(crossam_data);
-}
-
-- (IBAction)debugCrossam_6:(id)sender
-{
-	char str[1024];
-	crossam2_version(str, sizeof(str));
-	NSLog(@"Version : %s", str);
 }
 
 - (IBAction)crossam2Write:(id)sender
@@ -374,7 +368,7 @@
 	
 	if(pcoprs1_receive_start()) {
 		while(pcoprs1_receive_data(data) == 0) {
-			if(cancelReceive == YES)
+			if(isPcoprs1Receive == NO)
 				break;
 		}
 //		NSLog(@"MORI MORI Debug %02x %02x", data[0], data[1]);
@@ -393,6 +387,8 @@
 		}
 		printf("\n");*/
 	}
+	[pcoprs1RecvButton setTitle:@"Recv"];
+
 	[waitTimer stopAnimation:self];
 	[waitTimer setHidden:YES];
 }
@@ -426,7 +422,7 @@
 		[pcoprs1InitButton setEnabled: NO];
 		[pcoprs1TransButton setEnabled: YES];
 		[pcoprs1LEDButton setEnabled: YES];
-//		[pcoprs1RecvButton setEnabled: YES];
+		[pcoprs1RecvButton setEnabled: YES];
 	}
 }
 
@@ -437,22 +433,17 @@
 
 - (IBAction)pcoprs1Recv:(id)sender
 {
-	[waitTimer setHidden:NO];
-	[waitTimer startAnimation:self];
-	cancelReceive = NO;
-	
-	[NSThread detachNewThreadSelector:@selector(receiveTask) toTarget:self
+	if(isPcoprs1Receive == NO) {
+		[waitTimer setHidden:NO];
+		[waitTimer startAnimation:self];
+		isPcoprs1Receive = YES;	
+		[NSThread detachNewThreadSelector:@selector(receiveTask) toTarget:self
 						   withObject:nil];
-}
-
-- (IBAction)debugPcoprs1_5:(id)sender
-{
-	cancelReceive = YES;
-
-	pcoprs1_receive_cancel();
-
-	[waitTimer stopAnimation:self];
-	[waitTimer setHidden:YES];
+		[pcoprs1RecvButton setTitle:@"Cancel"];
+	} else {
+		isPcoprs1Receive = NO;
+		pcoprs1_receive_cancel();
+	}
 }
 
 - (IBAction)pcoprs1Trans:(id)sender
