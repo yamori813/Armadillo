@@ -20,6 +20,8 @@ int crossam2_read(int dial, int key, unsigned char *data, int datasize);
 void crossam2_pushkey(int dial, int key);
 void crossam2_version(char *verstr, int strsize);
 void crossam2_led(int ledon);
+int crossam2_patch();
+
 void crossam2_dump(unsigned char *buff);
 
 int hex2Int(char *hexstr);

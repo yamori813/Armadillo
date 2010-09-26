@@ -336,15 +336,10 @@ void crossam2_sendcr()
 
 int crossam2_patch()
 {
-	char inbytes[128];
-	int i, readsize;
-	printf("mori mori crossam2_patch");
 	if(crossam2_waitgo()) {
-		printf("mori mori go");
 		crossam2_writedata((char *)PatchData, sizeof(PatchData));
 		return 1;
 	}
-	printf("mori mori error");
 	return 0;
 }
 
