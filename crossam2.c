@@ -362,13 +362,15 @@ int crossam2_init(CFStringRef devname)
 
 	sioinit();
 
-	usleep(1000*1000);
+	usleep(400*1000);
 
-	if(crossam2_check() == 0) {
-		return 0;
+	// retry two times
+	int i;
+	for(i = 0; i < 2; ++i) {
+		if(crossam2_check() == 1)
+			return 1;
 	}
-	else
-		return 1;
+	return 0;
 }
 
 void crossam2_close()
