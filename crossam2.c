@@ -241,7 +241,6 @@ int crossam2_read(int dial, int key, unsigned char *data, int datasize)
 	crossam2_writedata(outbytes, cmdlen+1);
 	char inbytes[128];
 	while(crossam2_readline(inbytes, sizeof(inbytes)) != 0) {
-		printf("mori mori %s\n", inbytes);
 		if(strcmp(inbytes, "Ng") == 0)
 			return 0;
 		else {
