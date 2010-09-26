@@ -15,11 +15,30 @@
 
 @interface Armadillo : NSObject {
 	unsigned char data[240];
-	IBOutlet NSProgressIndicator *waitTimer;
-	IBOutlet IrPatternView *patView;
+	IBOutlet NSButton *crossam2InitButton;
+	IBOutlet NSButton *crossam2ProtectButton;
+	IBOutlet NSButton *crossam2WriteButton;
+	IBOutlet NSButton *crossam2PushButton;
+	IBOutlet NSButton *crossam2LEDOffButton;
+	IBOutlet NSButton *crossam2LEDOnButton;
+	IBOutlet NSButton *crossam2ReadButton;
+	IBOutlet NSButton *crossam2VersionButton;
 	IBOutlet NSPopUpButton *buttonSelect;
 	IBOutlet NSSegmentedControl *dialSelect;	
+
+	IBOutlet NSButton *pcoprs1InitButton;
+	IBOutlet NSButton *pcoprs1TransButton;
+	IBOutlet NSButton *pcoprs1LEDButton;
+	IBOutlet NSButton *pcoprs1RecvButton;
+
+	IBOutlet NSButton *ftbitbangInitButton;
+	IBOutlet NSButton *ftbitbangTransButton;
+
+	IBOutlet NSProgressIndicator *waitTimer;
 	IBOutlet NSPopUpButton *dataSelect;
+
+	IBOutlet IrPatternView *patView;
+
 	Boolean cancelReceive;
 	NSString *remoteName;
 	NSString *buttonName;
@@ -44,23 +63,21 @@
 	NSMutableDictionary *remoData;
 }
 
-- (IBAction)debugCrossam_1:(id)sender;
-- (IBAction)debugCrossam_2:(id)sender;
-- (IBAction)debugCrossam_3:(id)sender;
-- (IBAction)debugCrossam_4:(id)sender;
-- (IBAction)debugCrossam_5:(id)sender;
-- (IBAction)debugCrossam_6:(id)sender;
-- (IBAction)debugCrossam_7:(id)sender;
-- (IBAction)debugCrossam_8:(id)sender;
+- (IBAction)crossam2Init:(id)sender;
+- (IBAction)crossam2LEDOn:(id)sender;
+- (IBAction)crossam2LEDOff:(id)sender;
+- (IBAction)crossam2Protect:(id)sender;
+- (IBAction)crossam2Push:(id)sender;
+- (IBAction)crossam2Write:(id)sender;
 
-- (IBAction)debugPcoprs1_1:(id)sender;
-- (IBAction)debugPcoprs1_2:(id)sender;
-- (IBAction)debugPcoprs1_3:(id)sender;
-- (IBAction)debugPcoprs1_4:(id)sender;
-- (IBAction)debugPcoprs1_5:(id)sender;
-- (IBAction)debugPcoprs1_6:(id)sender;
-- (IBAction)debugPcoprs1_7:(id)sender;
+- (IBAction)pcoprs1Init:(id)sender;
+- (IBAction)pcoprs1Trans:(id)sender;
+- (IBAction)pcoprs1LED:(id)sender;
 
-- (IBAction)debugBitbang1_1:(id)sender;
-- (IBAction)debugBitbang1_2:(id)sender;
+- (IBAction)ftbitbangInit:(id)sender;
+- (IBAction)ftbitbangTrans:(id)sender;
+
+// 
+
+- (IBAction)xmlLoad:(id)sender;
 @end

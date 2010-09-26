@@ -221,10 +221,11 @@
 // Crossam2 Debug code
 //
 
-- (IBAction)debugCrossam_1:(id)sender
+- (IBAction)crossam2Init:(id)sender
 {
 	NSMutableArray *ifList;
 	NSMutableString *portName;
+	portName = nil;
 	// get serial port name list
     ifList = [[ NSMutableArray alloc ] init];
     io_iterator_t	serialPortIterator;
@@ -243,22 +244,35 @@
 		}
 	}
 
-	crossam2_init((CFStringRef)portName);
-	for(i = 0; i < [buttonItems count]; ++i)
-		[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
+	[crossam2LEDOffButton setEnabled: YES];
+	[crossam2LEDOnButton setEnabled: YES];
+	if(portName != nil) {
+		if(crossam2_init((CFStringRef)portName)) {
+			[crossam2InitButton setEnabled: NO];
+			[crossam2ProtectButton setEnabled: YES];
+			[crossam2WriteButton setEnabled: YES];
+			[crossam2PushButton setEnabled: YES];
+			[buttonSelect setEnabled: YES];
+			[dialSelect setEnabled: YES];
+			for(i = 0; i < [buttonItems count]; ++i)
+				[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
+		} else {
+			crossam2_patch();
+		}
+	}
 }
 
-- (IBAction)debugCrossam_2:(id)sender
+- (IBAction)crossam2Protect:(id)sender
 {
 	crossam2_protectoff();
 }
 
-- (IBAction)debugCrossam_3:(id)sender
+- (IBAction)crossam2LEDOn:(id)sender
 {
 	crossam2_led(1);
 }
 
-- (IBAction)debugCrossam_4:(id)sender
+- (IBAction)crossam2LEDOff:(id)sender
 {
 	crossam2_led(0);
 }
@@ -419,7 +433,7 @@
 	crossam2_write(4,40, cmddata, gen_size);	
 }
 
-- (IBAction)debugCrossam_8:(id)sender
+- (IBAction)crossam2Push:(id)sender
 {
 	crossam2_pushkey([dialSelect selectedSegment],
 					 [buttonItems indexOfObject:[[buttonSelect selectedItem] title]]);
@@ -465,11 +479,13 @@
 	[waitTimer setHidden:YES];
 }
 
+//
 
-- (IBAction)debugPcoprs1_1:(id)sender
+- (IBAction)pcoprs1Init:(id)sender
 {
 	NSMutableArray *ifList;
 	NSMutableString *portName;
+	portName = nil;
 	// get serial port name list
     ifList = [[ NSMutableArray alloc ] init];
     io_iterator_t	serialPortIterator;
@@ -488,10 +504,20 @@
 		}
 	}
 
-	pcoprs1_init((CFStringRef)portName);
+	if(portName != nil && pcoprs1_init((CFStringRef)portName)) {
+		[pcoprs1InitButton setEnabled: NO];
+		[pcoprs1TransButton setEnabled: YES];
+		[pcoprs1LEDButton setEnabled: YES];
+//		[pcoprs1RecvButton setEnabled: YES];
+	}
 }
 
-- (IBAction)debugPcoprs1_2:(id)sender
+- (IBAction)pcoprs1LED:(id)sender
+{
+	pcoprs1_led();
+}
+
+- (IBAction)pcoprs1Recv:(id)sender
 {
 	[waitTimer setHidden:NO];
 	[waitTimer startAnimation:self];
@@ -499,17 +525,6 @@
 	
 	[NSThread detachNewThreadSelector:@selector(receiveTask) toTarget:self
 						   withObject:nil];
-}
-
-- (IBAction)debugPcoprs1_3:(id)sender
-{
-	[NSThread detachNewThreadSelector:@selector(transferTask) toTarget:self
-						   withObject:nil];
-}
-	
-- (IBAction)debugPcoprs1_4:(id)sender
-{
-	pcoprs1_led();
 }
 
 - (IBAction)debugPcoprs1_5:(id)sender
@@ -522,35 +537,111 @@
 	[waitTimer setHidden:YES];
 }
 
-- (IBAction)debugPcoprs1_6:(id)sender
+- (IBAction)pcoprs1Trans:(id)sender
 {
+
 	unsigned char cmddata[240];
 	int gen_size;
 
-	// set value from xml
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
-	pat = patptr;
-//	patptr->format = *remoFormat[0];
-//	NSString *theData = [[remoData objectAtIndex:[dataSelect indexOfSelectedItem]] objectAtIndex:1];
-	NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:0];
-	NSLog(@"%@ %d", theData, [theData length]);
-	int i;
-	for(i = 0; i < [theData length] / 2; ++i) {
-		patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+	int signalcount, codeIndex, frameIndex;
+	int i, j;
+	if(remoCodeCount) {
+		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
+		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
+		pat = patptr;
+		for(j = 0; j < signalcount; ++j) {
+			// set value from xml
+			codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
+									  cStringUsingEncoding:NSASCIIStringEncoding]);
+			frameIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 2)]
+									   cStringUsingEncoding:NSASCIIStringEncoding]);
+			patptr->format.start_h = remoFrame[frameIndex]->start_h;
+			patptr->format.start_l = remoFrame[frameIndex]->start_l;
+			patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
+			patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
+			patptr->format.zero_h = remoCode[codeIndex]->zero_h;
+			patptr->format.zero_l = remoCode[codeIndex]->zero_l;
+			patptr->format.one_h = remoCode[codeIndex]->one_h;
+			patptr->format.one_l = remoCode[codeIndex]->one_l;
+			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
+			for(i = 0; i < [theData length] / 2; ++i) {
+				patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+			}
+			patptr->bitlen = remoBits[frameIndex];
+			patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
+										   cStringUsingEncoding:NSASCIIStringEncoding]);
+			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
+			++patptr;
+		}
+		
+		// generate and send data
+		gen_size = genir_pcoprs1(signalcount, pat , cmddata);
+		[patView setIrPattern:1 pat:pat];
+		[patView setNeedsDisplay:YES];
+		printf("genir_bitbang size = %d\n",gen_size);
+		pcoprs1_transfer(gen_size, cmddata);
+	} else {
+		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
 	}
-	patptr->bitlen = remoBits[0];
-	patptr->repeat = -1;
-
-	// generate and send data
-	gen_size = genir_pcoprs1(1, pat , cmddata);
-	pcoprs1_transfer(1, cmddata);
-
-	// draw pattern
-	[patView setIrPattern:1 pat:pat];
-	[patView setNeedsDisplay:YES];	
 }
 
-- (IBAction)debugPcoprs1_7:(id)sender
+// 
+
+- (IBAction)ftbitbangInit:(id)sender
+{
+	if(bitbang_init()) {
+		[ftbitbangInitButton setEnabled: NO];
+		[ftbitbangTransButton setEnabled: YES];
+	}
+}
+
+- (IBAction)ftbitbangTrans:(id)sender
+{
+	unsigned char cmddata[1024*128];
+	int gen_size;
+	int signalcount, codeIndex, frameIndex;
+	int i, j;
+	if(remoCodeCount) {
+		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
+		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
+		pat = patptr;
+		for(j = 0; j < signalcount; ++j) {
+			// set value from xml
+			codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
+									  cStringUsingEncoding:NSASCIIStringEncoding]);
+			frameIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 2)]
+									   cStringUsingEncoding:NSASCIIStringEncoding]);
+			patptr->format.start_h = remoFrame[frameIndex]->start_h;
+			patptr->format.start_l = remoFrame[frameIndex]->start_l;
+			patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
+			patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
+			patptr->format.zero_h = remoCode[codeIndex]->zero_h;
+			patptr->format.zero_l = remoCode[codeIndex]->zero_l;
+			patptr->format.one_h = remoCode[codeIndex]->one_h;
+			patptr->format.one_l = remoCode[codeIndex]->one_l;
+			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
+			for(i = 0; i < [theData length] / 2; ++i) {
+				patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+			}
+			patptr->bitlen = remoBits[frameIndex];
+			patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
+										   cStringUsingEncoding:NSASCIIStringEncoding]);
+			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
+			++patptr;
+		}
+		
+		// generate and send data
+		gen_size = genir_bitbang(signalcount, pat , cmddata, sizeof(cmddata));
+		[patView setIrPattern:1 pat:pat];
+		[patView setNeedsDisplay:YES];
+		printf("genir_bitbang size = %d\n",gen_size);
+		bitbang_transfer(gen_size, cmddata);
+	} else {
+		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
+	}
+}
+
+- (IBAction)xmlLoad:(id)sender
 {
 	NSOpenPanel *opPanel = [ NSOpenPanel openPanel ];
 	NSArray *imgTypes = [ NSArray arrayWithObjects : @"xml",nil ];
@@ -560,131 +651,18 @@
 	opRet = [ opPanel runModalForDirectory : NSHomeDirectory()
 									  file : @"Documents"
 									 types : imgTypes ];
-
+	
 	if ( opRet == NSOKButton ) {
 		NSString *filepath = [opPanel filename];
 		// load data from xml
-//		remoFormat = (irtime *)malloc(sizeof(irtime));
 		remoCodeCount = 0;
 		remoFrameCount = 0;
 		remoData = [[NSMutableDictionary alloc] init];
 		[self readData:filepath];
-//		int i;
-//		for(i = 0; i < [remoData count]; ++i)
-//			[dataSelect addItemWithTitle:[[remoData objectAtIndex:i] objectAtIndex:0]];
+
+		[dataSelect removeAllItems];
 		for (id key in remoData)
 			[dataSelect addItemWithTitle:key];
 	} 
 }
-
-- (IBAction)debugBitbang1_1:(id)sender
-{
-	bitbang_init();
-}
-
-- (IBAction)debugBitbang1_2:(id)sender
-{
-	unsigned char cmddata[1024*128];
-	int gen_size;
-	int signalcount, codeIndex, frameIndex;
-	int i, j;
-
-	signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
-	pat = patptr;
-	for(j = 0; j < signalcount; ++j) {
-		// set value from xml
-		codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
-								  cStringUsingEncoding:NSASCIIStringEncoding]);
-		frameIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 2)]
-								  cStringUsingEncoding:NSASCIIStringEncoding]);
-		patptr->format.start_h = remoFrame[frameIndex]->start_h;
-		patptr->format.start_l = remoFrame[frameIndex]->start_l;
-		patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
-		patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
-		patptr->format.zero_h = remoCode[codeIndex]->zero_h;
-		patptr->format.zero_l = remoCode[codeIndex]->zero_l;
-		patptr->format.one_h = remoCode[codeIndex]->one_h;
-		patptr->format.one_l = remoCode[codeIndex]->one_l;
-		NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
-		for(i = 0; i < [theData length] / 2; ++i) {
-			patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
-		}
-		patptr->bitlen = remoBits[frameIndex];
-		patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
-									   cStringUsingEncoding:NSASCIIStringEncoding]);
-		NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
-		++patptr;
-	}
-
-	// generate and send data
-	gen_size = genir_bitbang(signalcount, pat , cmddata, sizeof(cmddata));
-	[patView setIrPattern:1 pat:pat];
-	[patView setNeedsDisplay:YES];
-#if 0
-	// Apple remote
-	// http://www.ez0.net/2007/11/appleremoteの赤外線信号を解析してみた/
-	// http://www2.renesas.com/faq/ja/mi_com/f_com_remo.html
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 2);
-	pat = patptr;
-	// read code
-	patptr->format.zero_h = 560;
-	patptr->format.zero_l = 560;
-	patptr->format.one_h = 560;
-	patptr->format.one_l = 1690;
-	patptr->format.stop_h = 560;
-	patptr->format.stop_l = 10000;
-	patptr->format.start_h = 9000;
-	patptr->format.start_l = 4500;
-	/* Play */
-	patptr->data[0] = 0x77;
-	patptr->data[1] = 0xe1;
-	patptr->data[2] = 0xa0;
-	patptr->data[3] = 0xe9;
-	patptr->bitlen = 32;
-	++patptr;
-	// repet code
-	patptr->format.zero_h = 560;
-	patptr->format.zero_l = 560;
-	patptr->format.one_h = 560;
-	patptr->format.one_l = 1690;
-	patptr->format.stop_h = 560;
-	patptr->format.stop_l = 10000;
-	patptr->format.start_h = 9000;
-	patptr->format.start_l = 2250;
-	patptr->bitlen = 0;
-	patptr->repeat = 1;	
-	gen_size = genir_bitbang(2, pat , cmddata, sizeof(cmddata));
-	[patView setIrPattern:1 pat:pat];
-	[patView setNeedsDisplay:YES];
-#endif
-#if 0
-	// Make Sony TV (12bit)
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
-	pat = patptr;
-	patptr->format.zero_h = 660;
-	patptr->format.zero_l = 540;
-	patptr->format.one_h = 1245;
-	patptr->format.one_l = 540;
-	patptr->format.stop_h = 0;
-	patptr->format.stop_l = 25100;
-	patptr->format.start_h = 2460;
-	patptr->format.start_l = 525;
-	/* Power */
-	patptr->data[0] = 0xa9;
-	patptr->data[1] = 0x00;
-	/* Input select
-	 patptr->data[0]= 0xa5;
-	 patptr->data[1]= 0x00;
-	 */
-	patptr->bitlen = 12;
-	patptr->repeat = 2;
-	gen_size = genir_bitbang(1, pat , cmddata, sizeof(cmddata));
-	[patView setIrPattern:1 pat:pat];
-	[patView setNeedsDisplay:YES];
-#endif
-	printf("genir_bitbang size = %d\n",gen_size);
-	bitbang_transfer(gen_size, cmddata);
-}
-
 @end
