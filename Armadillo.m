@@ -244,40 +244,32 @@
 		}
 	}
 
-	[crossam2LEDOffButton setEnabled: YES];
-	[crossam2LEDOnButton setEnabled: YES];
 	if(portName != nil) {
 		if(crossam2_init((CFStringRef)portName)) {
+			crossam2_protectoff();
+			[crossam2LEDOnButton setEnabled: YES];
 			[crossam2InitButton setEnabled: NO];
-			[crossam2ProtectButton setEnabled: YES];
 			[crossam2WriteButton setEnabled: YES];
 			[crossam2PushButton setEnabled: YES];
+			[crossam2ReadButton setEnabled: YES];
 			[buttonSelect setEnabled: YES];
 			[dialSelect setEnabled: YES];
 			for(i = 0; i < [buttonItems count]; ++i)
 				[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
 		} else {
-			crossam2_patch();
+//			crossam2_patch();
 		}
 	}
-}
-
-- (IBAction)crossam2Protect:(id)sender
-{
-	crossam2_protectoff();
 }
 
 - (IBAction)crossam2LEDOn:(id)sender
 {
 	crossam2_led(1);
-}
-
-- (IBAction)crossam2LEDOff:(id)sender
-{
+	usleep(400*1000);
 	crossam2_led(0);
 }
 
-- (IBAction)debugCrossam_5:(id)sender
+- (IBAction)crossam2Read:(id)sender
 {
 	unsigned char crossam_data[128];
 	int read_size;
@@ -302,135 +294,61 @@
 	NSLog(@"Version : %s", str);
 }
 
-- (IBAction)debugCrossam_7:(id)sender
+- (IBAction)crossam2Write:(id)sender
 {
 	unsigned char cmddata[1024];
 	int gen_size;
+	int signalcount, codeIndex, frameIndex;
+	int i, j;
 	NSLog(@"%d %d", [dialSelect selectedSegment], 
 		  [buttonItems indexOfObject:[[buttonSelect selectedItem] title]]);
-#if 0
-	// Preset Sony TV Power
-	cmddata[0] = 0x00;
-	cmddata[1] = 0xc0;
-	cmddata[2] = 0x11;
-	gen_size = 3;
-#endif
 
-#if 0
-	// Make MITSUBISHI LCD Display
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 2);
-	pat = patptr;
-	patptr->format.zero_h = 420;
-	patptr->format.zero_l = 540;
-	patptr->format.one_h = 420;
-	patptr->format.one_l = 1490;
-	patptr->format.stop_h = 390;
-	patptr->format.stop_l = 3970;
-	patptr->format.start_h = 7870;
-	patptr->format.start_l = 3970;
-	patptr->data[0] = 0x27;
-	patptr->bitlen = 8;
-	++patptr;
-	patptr->format.zero_h = 420;
-	patptr->format.zero_l = 540;
-	patptr->format.one_h = 420;
-	patptr->format.one_l = 1490;
-	patptr->format.stop_h = 390;
-	patptr->format.stop_l = 20426;
-	patptr->format.start_h = 0;
-	patptr->format.start_l = 0;
-	//	patptr->data = cmd + 1;
-	/* Power */
-	patptr->data[0] = 0xc0;
-	/* HDMI1
-	patptr->data[0] = 0x74;
-	 */
-	patptr->bitlen = 8;
-	patptr->repeat = -1;
-	gen_size = genir_crossam2(0, 2, pat , cmddata, sizeof(cmddata));
-//	gen_size = genir_pcoprs1(2, pat , cmddata);
-//	pcoprs1_transfer(1, cmddata);
-	[patView setIrPattern:2 pat:pat];
-	[patView setNeedsDisplay:YES];
-#endif
-
-#if 0
-	// Make ONKYO CD
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 3);
-	pat = patptr;
-	patptr->format.zero_h = 480;
-	patptr->format.zero_l = 590;
-	patptr->format.one_h = 480;
-	patptr->format.one_l = 1700;
-	patptr->format.stop_h = 480;
-	patptr->format.stop_l = 41290;
-	patptr->format.start_h = 8900;
-	patptr->format.start_l = 4530;
-	/* Eject */
-	patptr->data[0] = 0x4b;
-	patptr->data[1] = 0x34;
-	patptr->data[2] = 0xd0;
-	patptr->data[3] = 0x2f;
-	/* Stop
-	patptr->data[0] = 0x4b;
-	patptr->data[1] = 0x34;
-	patptr->data[2] = 0x38;
-	patptr->data[3] = 0xc7;
-	*/
-	patptr->bitlen = 32;
-	++patptr;
-	patptr->format.stop_h = 480;
-	patptr->format.stop_l = 96130;
-	patptr->format.start_h = 8900;
-	patptr->format.start_l = 2280;
-	patptr->bitlen = 0;
-	++patptr;
-	patptr->format.stop_h = 480;
-	patptr->format.stop_l = 96130;
-	patptr->format.start_h = 8900;
-	patptr->format.start_l = 2280;
-	patptr->bitlen = 0;
-	patptr->repeat = 0;
-	gen_size = genir_crossam2(2, 3, pat , cmddata, sizeof(cmddata));
-	[patView setIrPattern:1 pat:pat];
-	[patView setNeedsDisplay:YES];
-#endif
-
-#if 1
-	// Make Sony TV (12bit)
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * 1);
-	pat = patptr;
-	patptr->format.zero_h = 660;
-	patptr->format.zero_l = 540;
-	patptr->format.one_h = 1245;
-	patptr->format.one_l = 540;
-	patptr->format.stop_h = 0;
-	patptr->format.stop_l = 25100;
-	patptr->format.start_h = 2460;
-	patptr->format.start_l = 525;
-	/* Power */
-	patptr->data[0] = 0xa9;
-	patptr->data[1] = 0x00;
-	/* Input select
-	patptr->data[0]= 0xa5;
-	patptr->data[1]= 0x00;
-	 */
-	patptr->bitlen = 12;
-	patptr->repeat = -1;
-	gen_size = genir_crossam2(1, 1, pat , cmddata, sizeof(cmddata));
-	[patView setIrPattern:1 pat:pat];
-	[patView setNeedsDisplay:YES];
-#endif
-
-	int i;
-	for(i = 0; i < gen_size; ++i) {
-		printf("%02x ", cmddata[i]);
-		if((i + 1) % 16 == 0)
-			printf("\n");
+	if(remoCodeCount) {
+		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
+		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
+		pat = patptr;
+		for(j = 0; j < signalcount; ++j) {
+			// set value from xml
+			codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
+									  cStringUsingEncoding:NSASCIIStringEncoding]);
+			frameIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 2)]
+									   cStringUsingEncoding:NSASCIIStringEncoding]);
+			patptr->format.start_h = remoFrame[frameIndex]->start_h;
+			patptr->format.start_l = remoFrame[frameIndex]->start_l;
+			patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
+			patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
+			patptr->format.zero_h = remoCode[codeIndex]->zero_h;
+			patptr->format.zero_l = remoCode[codeIndex]->zero_l;
+			patptr->format.one_h = remoCode[codeIndex]->one_h;
+			patptr->format.one_l = remoCode[codeIndex]->one_l;
+			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
+			for(i = 0; i < [theData length] / 2; ++i) {
+				patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+			}
+			patptr->bitlen = remoBits[frameIndex];
+			patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
+										   cStringUsingEncoding:NSASCIIStringEncoding]);
+			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
+			++patptr;
+		}
+		
+		// generate and send data
+		gen_size = genir_crossam2(1, signalcount, pat , cmddata, sizeof(cmddata));
+		int i;
+		for(i = 0; i < gen_size; ++i) {
+			printf("%02x ", cmddata[i]);
+			if((i + 1) % 16 == 0)
+				printf("\n");
+		}
+		printf("\n");
+		[patView setIrPattern:1 pat:pat];
+		[patView setNeedsDisplay:YES];
+		crossam2_write([dialSelect selectedSegment],[buttonItems indexOfObject:[[buttonSelect selectedItem] title]], cmddata, gen_size);	
+	} else {
+		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
 	}
-	printf("\n");
 
-	crossam2_write(4,40, cmddata, gen_size);	
+
 }
 
 - (IBAction)crossam2Push:(id)sender

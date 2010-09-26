@@ -8,8 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="57"/>
 			<integer value="582"/>
+			<integer value="57"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1309,7 +1309,7 @@
 											<object class="NSButton" id="24972207">
 												<reference key="NSNextResponder" ref="110889379"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{542, 41}, {96, 32}}</string>
+												<string key="NSFrame">{{328, 41}, {96, 32}}</string>
 												<reference key="NSSuperview" ref="110889379"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="95279201">
@@ -1326,30 +1326,10 @@
 													<int key="NSPeriodicInterval">25</int>
 												</object>
 											</object>
-											<object class="NSButton" id="790700898">
-												<reference key="NSNextResponder" ref="110889379"/>
-												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{432, 41}, {96, 32}}</string>
-												<reference key="NSSuperview" ref="110889379"/>
-												<bool key="NSEnabled">YES</bool>
-												<object class="NSButtonCell" key="NSCell" id="999748653">
-													<int key="NSCellFlags">604110336</int>
-													<int key="NSCellFlags2">134217728</int>
-													<string key="NSContents">LED Off</string>
-													<reference key="NSSupport" ref="462498216"/>
-													<reference key="NSControlView" ref="790700898"/>
-													<int key="NSButtonFlags">-2038284033</int>
-													<int key="NSButtonFlags2">129</int>
-													<string key="NSAlternateContents"/>
-													<string key="NSKeyEquivalent"/>
-													<int key="NSPeriodicDelay">200</int>
-													<int key="NSPeriodicInterval">25</int>
-												</object>
-											</object>
 											<object class="NSButton" id="789720668">
 												<reference key="NSNextResponder" ref="110889379"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{218, 41}, {96, 32}}</string>
+												<string key="NSFrame">{{114, 41}, {96, 32}}</string>
 												<reference key="NSSuperview" ref="110889379"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="938693254">
@@ -1369,7 +1349,7 @@
 											<object class="NSButton" id="343464134">
 												<reference key="NSNextResponder" ref="110889379"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{320, 41}, {96, 32}}</string>
+												<string key="NSFrame">{{221, 41}, {96, 32}}</string>
 												<reference key="NSSuperview" ref="110889379"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="438740338">
@@ -1452,26 +1432,6 @@
 													</object>
 													<int key="NSSelectedSegment">4</int>
 													<int key="NSSegmentStyle">1</int>
-												</object>
-											</object>
-											<object class="NSButton" id="775797036">
-												<reference key="NSNextResponder" ref="110889379"/>
-												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{115, 41}, {96, 32}}</string>
-												<reference key="NSSuperview" ref="110889379"/>
-												<bool key="NSEnabled">YES</bool>
-												<object class="NSButtonCell" key="NSCell" id="820137557">
-													<int key="NSCellFlags">604110336</int>
-													<int key="NSCellFlags2">134217728</int>
-													<string key="NSContents">Protect</string>
-													<reference key="NSSupport" ref="462498216"/>
-													<reference key="NSControlView" ref="775797036"/>
-													<int key="NSButtonFlags">-2038284033</int>
-													<int key="NSButtonFlags2">129</int>
-													<string key="NSAlternateContents"/>
-													<string key="NSKeyEquivalent"/>
-													<int key="NSPeriodicDelay">200</int>
-													<int key="NSPeriodicInterval">25</int>
 												</object>
 											</object>
 											<object class="NSPopUpButton" id="585574094">
@@ -2360,35 +2320,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">crossam2ProtectButton</string>
-						<reference key="source" ref="296392198"/>
-						<reference key="destination" ref="775797036"/>
-					</object>
-					<int key="connectionID">640</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">crossam2WriteButton</string>
-						<reference key="source" ref="296392198"/>
-						<reference key="destination" ref="789720668"/>
-					</object>
-					<int key="connectionID">641</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">crossam2PushButton</string>
 						<reference key="source" ref="296392198"/>
 						<reference key="destination" ref="343464134"/>
 					</object>
 					<int key="connectionID">642</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">crossam2LEDOffButton</string>
-						<reference key="source" ref="296392198"/>
-						<reference key="destination" ref="790700898"/>
-					</object>
-					<int key="connectionID">643</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2440,27 +2376,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">crossam2LEDOff:</string>
-						<reference key="source" ref="296392198"/>
-						<reference key="destination" ref="790700898"/>
-					</object>
-					<int key="connectionID">650</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">crossam2LEDOn:</string>
 						<reference key="source" ref="296392198"/>
 						<reference key="destination" ref="24972207"/>
 					</object>
 					<int key="connectionID">651</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">crossam2Protect:</string>
-						<reference key="source" ref="296392198"/>
-						<reference key="destination" ref="775797036"/>
-					</object>
-					<int key="connectionID">653</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -2477,6 +2397,22 @@
 						<reference key="destination" ref="343464134"/>
 					</object>
 					<int key="connectionID">655</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">crossam2WriteButton</string>
+						<reference key="source" ref="296392198"/>
+						<reference key="destination" ref="789720668"/>
+					</object>
+					<int key="connectionID">656</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">crossam2Read:</string>
+						<reference key="source" ref="296392198"/>
+						<reference key="destination" ref="939424189"/>
+					</object>
+					<int key="connectionID">657</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3478,14 +3414,12 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="498057351"/>
 							<reference ref="490312857"/>
-							<reference ref="775797036"/>
-							<reference ref="789720668"/>
 							<reference ref="24972207"/>
-							<reference ref="343464134"/>
-							<reference ref="790700898"/>
 							<reference ref="585574094"/>
 							<reference ref="939424189"/>
 							<reference ref="955188126"/>
+							<reference ref="789720668"/>
+							<reference ref="343464134"/>
 						</object>
 						<reference key="parent" ref="994590101"/>
 					</object>
@@ -3635,20 +3569,6 @@
 						<reference key="parent" ref="24972207"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">606</int>
-						<reference key="object" ref="790700898"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="999748653"/>
-						</object>
-						<reference key="parent" ref="110889379"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">615</int>
-						<reference key="object" ref="999748653"/>
-						<reference key="parent" ref="790700898"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">609</int>
 						<reference key="object" ref="789720668"/>
 						<object class="NSMutableArray" key="children">
@@ -3718,20 +3638,6 @@
 						<int key="objectID">613</int>
 						<reference key="object" ref="424064179"/>
 						<reference key="parent" ref="498057351"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">604</int>
-						<reference key="object" ref="775797036"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="820137557"/>
-						</object>
-						<reference key="parent" ref="110889379"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">617</int>
-						<reference key="object" ref="820137557"/>
-						<reference key="parent" ref="775797036"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">619</int>
@@ -4012,9 +3918,7 @@
 					<string>601.IBPluginDependency</string>
 					<string>602.IBPluginDependency</string>
 					<string>603.IBPluginDependency</string>
-					<string>604.IBPluginDependency</string>
 					<string>605.IBPluginDependency</string>
-					<string>606.IBPluginDependency</string>
 					<string>607.IBPluginDependency</string>
 					<string>608.IBPluginDependency</string>
 					<string>609.IBPluginDependency</string>
@@ -4023,9 +3927,7 @@
 					<string>612.IBPluginDependency</string>
 					<string>613.IBPluginDependency</string>
 					<string>614.IBPluginDependency</string>
-					<string>615.IBPluginDependency</string>
 					<string>616.IBPluginDependency</string>
-					<string>617.IBPluginDependency</string>
 					<string>618.IBPluginDependency</string>
 					<string>619.IBPluginDependency</string>
 					<string>619.IBSegmentedControlTracker.RoundRobinState</string>
@@ -4302,10 +4204,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="0"/>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4356,7 +4254,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">655</int>
+			<int key="maxID">657</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4371,8 +4269,8 @@
 							<string>crossam2Init:</string>
 							<string>crossam2LEDOff:</string>
 							<string>crossam2LEDOn:</string>
-							<string>crossam2Protect:</string>
 							<string>crossam2Push:</string>
+							<string>crossam2Read:</string>
 							<string>crossam2Write:</string>
 							<string>ftbitbangInit:</string>
 							<string>ftbitbangTrans:</string>
@@ -4405,7 +4303,6 @@
 							<string>crossam2InitButton</string>
 							<string>crossam2LEDOffButton</string>
 							<string>crossam2LEDOnButton</string>
-							<string>crossam2ProtectButton</string>
 							<string>crossam2PushButton</string>
 							<string>crossam2ReadButton</string>
 							<string>crossam2VersionButton</string>
@@ -4424,7 +4321,6 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSPopUpButton</string>
-							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>

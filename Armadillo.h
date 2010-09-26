@@ -16,10 +16,8 @@
 @interface Armadillo : NSObject {
 	unsigned char data[240];
 	IBOutlet NSButton *crossam2InitButton;
-	IBOutlet NSButton *crossam2ProtectButton;
 	IBOutlet NSButton *crossam2WriteButton;
 	IBOutlet NSButton *crossam2PushButton;
-	IBOutlet NSButton *crossam2LEDOffButton;
 	IBOutlet NSButton *crossam2LEDOnButton;
 	IBOutlet NSButton *crossam2ReadButton;
 	IBOutlet NSButton *crossam2VersionButton;
@@ -66,9 +64,9 @@
 - (IBAction)crossam2Init:(id)sender;
 - (IBAction)crossam2LEDOn:(id)sender;
 - (IBAction)crossam2LEDOff:(id)sender;
-- (IBAction)crossam2Protect:(id)sender;
 - (IBAction)crossam2Push:(id)sender;
 - (IBAction)crossam2Write:(id)sender;
+- (IBAction)crossam2Read:(id)sender;
 
 - (IBAction)pcoprs1Init:(id)sender;
 - (IBAction)pcoprs1Trans:(id)sender;
