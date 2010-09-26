@@ -155,7 +155,7 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 	--pat;
 
 	// set control code
-	if(pat->repeat == 0) {
+	if(pat->repeat == 0 || pat->repeat == 1) {
 		if(totalbit % 2 == 0)
 			bitbuff[totalbit / 2] = 0xf << 4;
 		else
@@ -166,7 +166,8 @@ int genir_crossam2(int car, int patcount, irdata *pat, unsigned char *buff, int 
 		else
 			bitbuff[totalbit / 2] |= 0xf;
 		++totalbit;
-	} else if(pat->repeat == -1) {
+//	} else if(pat->repeat == -1) {
+	} else {
 		if(totalbit % 2 == 0)
 			bitbuff[totalbit / 2] = 0xf << 4;
 		else
