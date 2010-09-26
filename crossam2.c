@@ -315,7 +315,7 @@ int crossam2_check()
 	char outbytes[128];
 	// wake up from sleep
 	crossam2_sendcr();	
-	usleep(500*1000);
+	usleep(200*1000);
 	
 	outbytes[0] = '/';
 	outbytes[1] = 'C';
@@ -362,7 +362,7 @@ int crossam2_init(CFStringRef devname)
 
 	sioinit();
 
-	usleep(400*1000);
+	usleep(500*1000);
 
 	if(crossam2_check() == 0) {
 		return 0;
