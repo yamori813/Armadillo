@@ -160,7 +160,9 @@ void crossam2_protectoff()
 {
 	char outbytes[128];
 	int cmdlen;
-	strcpy(outbytes, "/HAL Laboratory INC.");
+	crossam2_sendcr();	
+	usleep(200*1000);
+	strcpy(outbytes, "/HA Laboratory INC.");
 	cmdlen = strlen(outbytes);
 	outbytes[cmdlen] = 0x0d;
 	crossam2_writedata(outbytes, cmdlen+1);
@@ -239,6 +241,7 @@ int crossam2_read(int dial, int key, unsigned char *data, int datasize)
 	crossam2_writedata(outbytes, cmdlen+1);
 	char inbytes[128];
 	while(crossam2_readline(inbytes, sizeof(inbytes)) != 0) {
+		printf("mori mori %s\n", inbytes);
 		if(strcmp(inbytes, "Ng") == 0)
 			return 0;
 		else {
