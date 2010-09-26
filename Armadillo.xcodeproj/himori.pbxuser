@@ -423,6 +423,39 @@
 			308E4364124DEAA500BE3991 /* PBXTextBookmark */ = 308E4364124DEAA500BE3991 /* PBXTextBookmark */;
 			308E4368124DEACC00BE3991 /* PBXTextBookmark */ = 308E4368124DEACC00BE3991 /* PBXTextBookmark */;
 			308E4369124DEACC00BE3991 /* PBXTextBookmark */ = 308E4369124DEACC00BE3991 /* PBXTextBookmark */;
+			308E4373124DF07600BE3991 /* PBXTextBookmark */ = 308E4373124DF07600BE3991 /* PBXTextBookmark */;
+			308E4374124DF07600BE3991 /* PBXTextBookmark */ = 308E4374124DF07600BE3991 /* PBXTextBookmark */;
+			308E4375124DF07600BE3991 /* PBXTextBookmark */ = 308E4375124DF07600BE3991 /* PBXTextBookmark */;
+			308E4376124DF07600BE3991 /* PBXTextBookmark */ = 308E4376124DF07600BE3991 /* PBXTextBookmark */;
+			308E437D124E076700BE3991 /* PBXBookmark */ = 308E437D124E076700BE3991 /* PBXBookmark */;
+			308E437F124E07AF00BE3991 /* PBXTextBookmark */ = 308E437F124E07AF00BE3991 /* PBXTextBookmark */;
+			308E4382124E07AF00BE3991 /* PBXTextBookmark */ = 308E4382124E07AF00BE3991 /* PBXTextBookmark */;
+			308E4383124E07AF00BE3991 /* PBXTextBookmark */ = 308E4383124E07AF00BE3991 /* PBXTextBookmark */;
+			308E4388124E17AF00BE3991 /* PBXTextBookmark */ = 308E4388124E17AF00BE3991 /* PBXTextBookmark */;
+			308E4389124E17AF00BE3991 /* PBXTextBookmark */ = 308E4389124E17AF00BE3991 /* PBXTextBookmark */;
+			308E438A124E17AF00BE3991 /* PBXTextBookmark */ = 308E438A124E17AF00BE3991 /* PBXTextBookmark */;
+			308E438B124E17AF00BE3991 /* PBXTextBookmark */ = 308E438B124E17AF00BE3991 /* PBXTextBookmark */;
+			308E438D124E182E00BE3991 /* PBXTextBookmark */ = 308E438D124E182E00BE3991 /* PBXTextBookmark */;
+			308E438E124E182E00BE3991 /* PBXTextBookmark */ = 308E438E124E182E00BE3991 /* PBXTextBookmark */;
+			308E438F124E182E00BE3991 /* PBXTextBookmark */ = 308E438F124E182E00BE3991 /* PBXTextBookmark */;
+			308E4397124EBDCD00BE3991 /* PBXBookmark */ = 308E4397124EBDCD00BE3991 /* PBXBookmark */;
+			308E439A124EBE1300BE3991 /* PBXTextBookmark */ = 308E439A124EBE1300BE3991 /* PBXTextBookmark */;
+			308E439B124EBE1300BE3991 /* PBXTextBookmark */ = 308E439B124EBE1300BE3991 /* PBXTextBookmark */;
+			308E439C124EBE1300BE3991 /* PBXTextBookmark */ = 308E439C124EBE1300BE3991 /* PBXTextBookmark */;
+			308E439F124EBE1300BE3991 /* PBXTextBookmark */ = 308E439F124EBE1300BE3991 /* PBXTextBookmark */;
+			308E43A1124EBE2300BE3991 /* PBXTextBookmark */ = 308E43A1124EBE2300BE3991 /* PBXTextBookmark */;
+			308E43A2124EBE2300BE3991 /* PBXTextBookmark */ = 308E43A2124EBE2300BE3991 /* PBXTextBookmark */;
+			308E43A4124EBE3500BE3991 /* PBXTextBookmark */ = 308E43A4124EBE3500BE3991 /* PBXTextBookmark */;
+			308E43A5124EBE3500BE3991 /* PBXTextBookmark */ = 308E43A5124EBE3500BE3991 /* PBXTextBookmark */;
+			308E43A7124EBE3F00BE3991 /* PBXTextBookmark */ = 308E43A7124EBE3F00BE3991 /* PBXTextBookmark */;
+			308E43A8124EBE3F00BE3991 /* PBXTextBookmark */ = 308E43A8124EBE3F00BE3991 /* PBXTextBookmark */;
+			308E43AC124EC1F300BE3991 /* PBXTextBookmark */ = 308E43AC124EC1F300BE3991 /* PBXTextBookmark */;
+			308E43AD124EC1F300BE3991 /* PBXTextBookmark */ = 308E43AD124EC1F300BE3991 /* PBXTextBookmark */;
+			308E43AE124EC1F300BE3991 /* PBXTextBookmark */ = 308E43AE124EC1F300BE3991 /* PBXTextBookmark */;
+			308E43AF124EC1F300BE3991 /* PBXTextBookmark */ = 308E43AF124EC1F300BE3991 /* PBXTextBookmark */;
+			308E43B0124EC1F300BE3991 /* PBXTextBookmark */ = 308E43B0124EC1F300BE3991 /* PBXTextBookmark */;
+			308E43B2124EC30900BE3991 /* PBXTextBookmark */ = 308E43B2124EC30900BE3991 /* PBXTextBookmark */;
+			308E43B3124EC30900BE3991 /* PBXTextBookmark */ = 308E43B3124EC30900BE3991 /* PBXTextBookmark */;
 			30A509D7123B40410005B3E0 = 30A509D7123B40410005B3E0 /* PBXTextBookmark */;
 			30A8CCFD124B9A8600AEDA87 = 30A8CCFD124B9A8600AEDA87 /* PBXTextBookmark */;
 			30A8CCFE124B9A8600AEDA87 = 30A8CCFE124B9A8600AEDA87 /* PBXTextBookmark */;
@@ -500,9 +533,9 @@
 	};
 	303509021233175700DDD914 /* Armadillo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {690, 10402}}";
-			sepNavSelRange = "{3817, 0}";
-			sepNavVisRange = "{3838, 562}";
+			sepNavIntBoundsRect = "{{0, 0}, {690, 9450}}";
+			sepNavSelRange = "{6408, 0}";
+			sepNavVisRange = "{3560, 857}";
 			sepNavWindowFrame = "{{1537, -118}, {996, 682}}";
 		};
 	};
@@ -516,9 +549,9 @@
 	};
 	303509051233176500DDD914 /* crossam2.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {538, 5054}}";
+			sepNavIntBoundsRect = "{{0, 0}, {538, 5096}}";
 			sepNavSelRange = "{7821, 0}";
-			sepNavVisRange = "{5843, 411}";
+			sepNavVisRange = "{5843, 412}";
 			sepNavWindowFrame = "{{248, 67}, {996, 682}}";
 		};
 	};
@@ -643,7 +676,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 53";
 		rLen = 0;
-		rLoc = 14054;
+		rLoc = 13734;
 		rType = 0;
 		vrLen = 365;
 		vrLoc = 310;
@@ -668,7 +701,7 @@
 	};
 	304125F4123EE28D00BDD47C /* genir.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {633, 5474}}";
+			sepNavIntBoundsRect = "{{0, 0}, {633, 5488}}";
 			sepNavSelRange = "{6656, 0}";
 			sepNavVisRange = "{6491, 234}";
 			sepNavWindowFrame = "{{1367, -280}, {996, 1080}}";
@@ -966,7 +999,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 587;
 		vrLoc = 13953;
@@ -1000,8 +1033,8 @@
 	};
 	307EF1181245CC6100A021AD /* IrPatternView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 952}}";
-			sepNavSelRange = "{72, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {538, 322}}";
+			sepNavSelRange = "{205, 6}";
 			sepNavVisRange = "{0, 324}";
 			sepNavWindowFrame = "{{1444, -285}, {996, 1080}}";
 		};
@@ -1009,8 +1042,8 @@
 	307EF1191245CC6100A021AD /* IrPatternView.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {937, 1708}}";
-			sepNavSelRange = "{2408, 0}";
-			sepNavVisRange = "{990, 1742}";
+			sepNavSelRange = "{460, 0}";
+			sepNavVisRange = "{159, 1669}";
 			sepNavWindowFrame = "{{1295, -285}, {996, 1080}}";
 		};
 	};
@@ -1110,7 +1143,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 611;
 		vrLoc = 14540;
@@ -1140,7 +1173,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 14540;
@@ -1154,7 +1187,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 671;
 		vrLoc = 14465;
@@ -1164,7 +1197,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 594";
 		rLen = 0;
-		rLoc = 17788;
+		rLoc = 17641;
 		rType = 0;
 		vrLen = 1010;
 		vrLoc = 14409;
@@ -1194,7 +1227,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 14465;
@@ -1204,7 +1237,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 582";
 		rLen = 0;
-		rLoc = 18251;
+		rLoc = 18104;
 		rType = 0;
 		vrLen = 965;
 		vrLoc = 14367;
@@ -1214,7 +1247,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 14482;
@@ -1224,7 +1257,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 566";
 		rLen = 0;
-		rLoc = 17788;
+		rLoc = 17641;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 14350;
@@ -1234,7 +1267,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 669;
 		vrLoc = 14465;
@@ -1244,7 +1277,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 576";
 		rLen = 0;
-		rLoc = 18129;
+		rLoc = 17982;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 14409;
@@ -1254,7 +1287,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 669;
 		vrLoc = 14465;
@@ -1264,7 +1297,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 575";
 		rLen = 0;
-		rLoc = 18116;
+		rLoc = 17969;
 		rType = 0;
 		vrLen = 1083;
 		vrLoc = 14409;
@@ -1274,7 +1307,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 670;
 		vrLoc = 14465;
@@ -1284,7 +1317,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 575";
 		rLen = 0;
-		rLoc = 18116;
+		rLoc = 17969;
 		rType = 0;
 		vrLen = 1084;
 		vrLoc = 14409;
@@ -1294,7 +1327,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 670;
 		vrLoc = 14465;
@@ -1304,7 +1337,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 580";
 		rLen = 0;
-		rLoc = 18220;
+		rLoc = 18073;
 		rType = 0;
 		vrLen = 1084;
 		vrLoc = 14409;
@@ -1314,7 +1347,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 670;
 		vrLoc = 14465;
@@ -1324,7 +1357,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 582";
 		rLen = 0;
-		rLoc = 18252;
+		rLoc = 18105;
 		rType = 0;
 		vrLen = 1084;
 		vrLoc = 14409;
@@ -1334,7 +1367,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 612;
 		vrLoc = 14465;
@@ -1344,7 +1377,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 591";
 		rLen = 0;
-		rLoc = 18252;
+		rLoc = 18105;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 14938;
@@ -1354,7 +1387,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 612;
 		vrLoc = 14465;
@@ -1364,7 +1397,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 598";
 		rLen = 0;
-		rLoc = 18277;
+		rLoc = 18130;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 14938;
@@ -1374,7 +1407,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 620;
 		vrLoc = 14465;
@@ -1384,7 +1417,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 596";
 		rLen = 0;
-		rLoc = 18252;
+		rLoc = 18105;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 14610;
@@ -1394,7 +1427,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 672;
 		vrLoc = 14465;
@@ -1404,7 +1437,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 583";
 		rLen = 0;
-		rLoc = 18593;
+		rLoc = 18446;
 		rType = 0;
 		vrLen = 1078;
 		vrLoc = 14539;
@@ -1414,7 +1447,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 674;
 		vrLoc = 14465;
@@ -1424,7 +1457,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 566";
 		rLen = 0;
-		rLoc = 17841;
+		rLoc = 17694;
 		rType = 0;
 		vrLen = 940;
 		vrLoc = 14302;
@@ -1448,7 +1481,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 648;
 		vrLoc = 14459;
@@ -1458,7 +1491,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 648;
 		vrLoc = 14459;
@@ -1478,7 +1511,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 648;
 		vrLoc = 14459;
@@ -1488,7 +1521,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 582";
 		rLen = 0;
-		rLoc = 18252;
+		rLoc = 18105;
 		rType = 0;
 		vrLen = 984;
 		vrLoc = 14348;
@@ -1498,7 +1531,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 671;
 		vrLoc = 14459;
@@ -1508,7 +1541,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 584";
 		rLen = 0;
-		rLoc = 18566;
+		rLoc = 18419;
 		rType = 0;
 		vrLen = 1012;
 		vrLoc = 14348;
@@ -1518,7 +1551,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 629;
 		vrLoc = 14459;
@@ -1528,7 +1561,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 591";
 		rLen = 0;
-		rLoc = 18491;
+		rLoc = 18344;
 		rType = 0;
 		vrLen = 1063;
 		vrLoc = 14975;
@@ -1538,7 +1571,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 629;
 		vrLoc = 14459;
@@ -1548,7 +1581,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 588";
 		rLen = 0;
-		rLoc = 18426;
+		rLoc = 18279;
 		rType = 0;
 		vrLen = 1121;
 		vrLoc = 14668;
@@ -1558,7 +1591,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 609;
 		vrLoc = 14459;
@@ -1568,7 +1601,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 585";
 		rLen = 0;
-		rLoc = 18278;
+		rLoc = 18131;
 		rType = 0;
 		vrLen = 1099;
 		vrLoc = 14668;
@@ -1578,7 +1611,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 613;
 		vrLoc = 14459;
@@ -1588,7 +1621,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 585";
 		rLen = 0;
-		rLoc = 18277;
+		rLoc = 18130;
 		rType = 0;
 		vrLen = 984;
 		vrLoc = 14348;
@@ -1598,7 +1631,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 613;
 		vrLoc = 14459;
@@ -1608,7 +1641,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 594";
 		rLen = 0;
-		rLoc = 18543;
+		rLoc = 18396;
 		rType = 0;
 		vrLen = 1128;
 		vrLoc = 14539;
@@ -1618,7 +1651,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 708;
 		vrLoc = 14781;
@@ -1628,7 +1661,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 249";
 		rLen = 11;
-		rLoc = 8301;
+		rLoc = 7981;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 0;
@@ -1638,7 +1671,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 580";
 		rLen = 0;
-		rLoc = 17649;
+		rLoc = 17502;
 		rType = 0;
 		vrLen = 1066;
 		vrLoc = 14099;
@@ -1648,7 +1681,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 512";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 14727;
@@ -1668,7 +1701,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 514";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 15013;
@@ -1750,7 +1783,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 518";
 		rLen = 0;
-		rLoc = 14624;
+		rLoc = 14304;
 		rType = 0;
 		vrLen = 984;
 		vrLoc = 12907;
@@ -1810,7 +1843,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 577";
 		rLen = 0;
-		rLoc = 16240;
+		rLoc = 15920;
 		rType = 0;
 		vrLen = 1222;
 		vrLoc = 14482;
@@ -1932,7 +1965,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 528";
 		rLen = 0;
-		rLoc = 14393;
+		rLoc = 14073;
 		rType = 0;
 		vrLen = 1333;
 		vrLoc = 14892;
@@ -2012,7 +2045,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 604";
 		rLen = 0;
-		rLoc = 16240;
+		rLoc = 15920;
 		rType = 0;
 		vrLen = 1374;
 		vrLoc = 15261;
@@ -2092,7 +2125,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 550";
 		rLen = 0;
-		rLoc = 15066;
+		rLoc = 14746;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 14389;
@@ -2132,7 +2165,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 575";
 		rLen = 0;
-		rLoc = 15762;
+		rLoc = 15442;
 		rType = 0;
 		vrLen = 1014;
 		vrLoc = 14389;
@@ -2162,7 +2195,7 @@
 		comments = "error: syntax error before 'Comp'";
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		rLen = 1;
-		rLoc = 565;
+		rLoc = 552;
 		rType = 1;
 	};
 	308E4280124D87D900BE3991 /* PBXTextBookmark */ = {
@@ -2180,7 +2213,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 548";
 		rLen = 0;
-		rLoc = 15066;
+		rLoc = 14746;
 		rType = 0;
 		vrLen = 1110;
 		vrLoc = 13838;
@@ -2220,7 +2253,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 548";
 		rLen = 0;
-		rLoc = 15066;
+		rLoc = 14746;
 		rType = 0;
 		vrLen = 1088;
 		vrLoc = 14406;
@@ -2297,7 +2330,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 574";
 		rLen = 0;
-		rLoc = 15827;
+		rLoc = 15507;
 		rType = 0;
 		vrLen = 1076;
 		vrLoc = 14312;
@@ -2347,7 +2380,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 572";
 		rLen = 0;
-		rLoc = 15827;
+		rLoc = 15507;
 		rType = 0;
 		vrLen = 1192;
 		vrLoc = 14770;
@@ -2497,7 +2530,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 600";
 		rLen = 0;
-		rLoc = 16240;
+		rLoc = 15920;
 		rType = 0;
 		vrLen = 1427;
 		vrLoc = 15591;
@@ -2547,7 +2580,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 603";
 		rLen = 0;
-		rLoc = 16240;
+		rLoc = 15920;
 		rType = 0;
 		vrLen = 1367;
 		vrLoc = 15357;
@@ -2597,7 +2630,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 610";
 		rLen = 0;
-		rLoc = 17159;
+		rLoc = 16839;
 		rType = 0;
 		vrLen = 1739;
 		vrLoc = 15652;
@@ -2647,7 +2680,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 615";
 		rLen = 0;
-		rLoc = 17446;
+		rLoc = 17026;
 		rType = 0;
 		vrLen = 1819;
 		vrLoc = 15767;
@@ -2697,7 +2730,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 685";
 		rLen = 0;
-		rLoc = 19407;
+		rLoc = 19260;
 		rType = 0;
 		vrLen = 1028;
 		vrLoc = 18110;
@@ -2797,7 +2830,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 615";
 		rLen = 0;
-		rLoc = 17466;
+		rLoc = 17201;
 		rType = 0;
 		vrLen = 1741;
 		vrLoc = 15934;
@@ -2847,7 +2880,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 607";
 		rLen = 0;
-		rLoc = 16947;
+		rLoc = 16627;
 		rType = 0;
 		vrLen = 1738;
 		vrLoc = 15919;
@@ -2897,7 +2930,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 614";
 		rLen = 0;
-		rLoc = 17370;
+		rLoc = 17026;
 		rType = 0;
 		vrLen = 1508;
 		vrLoc = 16392;
@@ -3155,7 +3188,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 705";
 		rLen = 0;
-		rLoc = 19407;
+		rLoc = 19260;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 18579;
@@ -3205,7 +3238,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 634";
 		rLen = 0;
-		rLoc = 17466;
+		rLoc = 17201;
 		rType = 0;
 		vrLen = 1734;
 		vrLoc = 16351;
@@ -3255,7 +3288,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 699";
 		rLen = 0;
-		rLoc = 19407;
+		rLoc = 19260;
 		rType = 0;
 		vrLen = 964;
 		vrLoc = 18480;
@@ -3305,7 +3338,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 699";
 		rLen = 0;
-		rLoc = 19407;
+		rLoc = 19260;
 		rType = 0;
 		vrLen = 964;
 		vrLoc = 18480;
@@ -3373,7 +3406,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 699";
 		rLen = 0;
-		rLoc = 19407;
+		rLoc = 19260;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 18219;
@@ -3423,7 +3456,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 699";
 		rLen = 0;
-		rLoc = 19407;
+		rLoc = 19260;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 18219;
@@ -3473,7 +3506,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 628";
 		rLen = 0;
-		rLoc = 17466;
+		rLoc = 17201;
 		rType = 0;
 		vrLen = 1808;
 		vrLoc = 16026;
@@ -3523,7 +3556,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 699";
 		rLen = 0;
-		rLoc = 19407;
+		rLoc = 19260;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 18417;
@@ -3573,7 +3606,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 628";
 		rLen = 0;
-		rLoc = 17466;
+		rLoc = 17201;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 16890;
@@ -3623,7 +3656,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 633";
 		rLen = 0;
-		rLoc = 17548;
+		rLoc = 17401;
 		rType = 0;
 		vrLen = 1833;
 		vrLoc = 16026;
@@ -3697,7 +3730,7 @@
 		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
 		name = "IrPatternView.m: 103";
 		rLen = 0;
-		rLoc = 2351;
+		rLoc = 2363;
 		rType = 0;
 		vrLen = 1765;
 		vrLoc = 909;
@@ -3717,7 +3750,7 @@
 		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
 		name = "IrPatternView.m: 102";
 		rLen = 0;
-		rLoc = 2302;
+		rLoc = 2314;
 		rType = 0;
 		vrLen = 1763;
 		vrLoc = 909;
@@ -3737,7 +3770,7 @@
 		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
 		name = "IrPatternView.m: 102";
 		rLen = 0;
-		rLoc = 2303;
+		rLoc = 2315;
 		rType = 0;
 		vrLen = 1684;
 		vrLoc = 990;
@@ -3747,7 +3780,7 @@
 		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
 		name = "IrPatternView.m: 102";
 		rLen = 0;
-		rLoc = 2302;
+		rLoc = 2314;
 		rType = 0;
 		vrLen = 1782;
 		vrLoc = 990;
@@ -3767,7 +3800,7 @@
 		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
 		name = "IrPatternView.m: 101";
 		rLen = 25;
-		rLoc = 2261;
+		rLoc = 2273;
 		rType = 0;
 		vrLen = 1782;
 		vrLoc = 990;
@@ -3777,7 +3810,7 @@
 		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
 		name = "IrPatternView.m: 103";
 		rLen = 0;
-		rLoc = 2349;
+		rLoc = 2361;
 		rType = 0;
 		vrLen = 1841;
 		vrLoc = 990;
@@ -3797,10 +3830,328 @@
 		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
 		name = "IrPatternView.m: 103";
 		rLen = 0;
-		rLoc = 2349;
+		rLoc = 2361;
 		rType = 0;
 		vrLen = 1742;
 		vrLoc = 990;
+	};
+	308E4373124DF07600BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+		name = "crossam2.c: 360";
+		rLen = 0;
+		rLoc = 7821;
+		rType = 0;
+		vrLen = 412;
+		vrLoc = 5843;
+	};
+	308E4374124DF07600BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509051233176500DDD914 /* crossam2.c */;
+		name = "crossam2.c: 360";
+		rLen = 0;
+		rLoc = 7821;
+		rType = 0;
+		vrLen = 412;
+		vrLoc = 5843;
+	};
+	308E4375124DF07600BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 204";
+		rLen = 0;
+		rLoc = 6408;
+		rType = 0;
+		vrLen = 834;
+		vrLoc = 3795;
+	};
+	308E4376124DF07600BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 115";
+		rLen = 15;
+		rLoc = 2696;
+		rType = 0;
+		vrLen = 1603;
+		vrLoc = 1175;
+	};
+	308E437D124E076700BE3991 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+	};
+	308E437F124E07AF00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 204";
+		rLen = 0;
+		rLoc = 6408;
+		rType = 0;
+		vrLen = 817;
+		vrLoc = 3795;
+	};
+	308E4382124E07AF00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 616";
+		rLen = 0;
+		rLoc = 17321;
+		rType = 0;
+		vrLen = 1818;
+		vrLoc = 15706;
+	};
+	308E4383124E07AF00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 115";
+		rLen = 15;
+		rLoc = 2696;
+		rType = 0;
+		vrLen = 1603;
+		vrLoc = 1175;
+	};
+	308E4388124E17AF00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 204";
+		rLen = 0;
+		rLoc = 6408;
+		rType = 0;
+		vrLen = 711;
+		vrLoc = 3706;
+	};
+	308E4389124E17AF00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 616";
+		rLen = 0;
+		rLoc = 17321;
+		rType = 0;
+		vrLen = 1847;
+		vrLoc = 15706;
+	};
+	308E438A124E17AF00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 615";
+		rLen = 0;
+		rLoc = 17026;
+		rType = 0;
+		vrLen = 1916;
+		vrLoc = 15706;
+	};
+	308E438B124E17AF00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 115";
+		rLen = 15;
+		rLoc = 2696;
+		rType = 0;
+		vrLen = 1603;
+		vrLoc = 1175;
+	};
+	308E438D124E182E00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 204";
+		rLen = 0;
+		rLoc = 6408;
+		rType = 0;
+		vrLen = 711;
+		vrLoc = 3706;
+	};
+	308E438E124E182E00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 616";
+		rLen = 0;
+		rLoc = 17248;
+		rType = 0;
+		vrLen = 1792;
+		vrLoc = 15572;
+	};
+	308E438F124E182E00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 115";
+		rLen = 15;
+		rLoc = 2696;
+		rType = 0;
+		vrLen = 1603;
+		vrLoc = 1175;
+	};
+	308E4397124EBDCD00BE3991 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+	};
+	308E439A124EBE1300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 204";
+		rLen = 0;
+		rLoc = 6408;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 3560;
+	};
+	308E439B124EBE1300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 204";
+		rLen = 0;
+		rLoc = 6408;
+		rType = 0;
+		vrLen = 857;
+		vrLoc = 3560;
+	};
+	308E439C124EBE1300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 76";
+		rLen = 13;
+		rLoc = 1722;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1889;
+	};
+	308E439F124EBE1300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 104";
+		rLen = 0;
+		rLoc = 2412;
+		rType = 0;
+		vrLen = 1671;
+		vrLoc = 1142;
+	};
+	308E43A1124EBE2300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 76";
+		rLen = 13;
+		rLoc = 1722;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1889;
+	};
+	308E43A2124EBE2300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 101";
+		rLen = 0;
+		rLoc = 2272;
+		rType = 0;
+		vrLen = 1671;
+		vrLoc = 1142;
+	};
+	308E43A4124EBE3500BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 76";
+		rLen = 13;
+		rLoc = 1722;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 1889;
+	};
+	308E43A5124EBE3500BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 101";
+		rLen = 0;
+		rLoc = 2272;
+		rType = 0;
+		vrLen = 1671;
+		vrLoc = 1142;
+	};
+	308E43A7124EBE3F00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 76";
+		rLen = 13;
+		rLoc = 1722;
+		rType = 0;
+		vrLen = 573;
+		vrLoc = 1889;
+	};
+	308E43A8124EBE3F00BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 101";
+		rLen = 0;
+		rLoc = 2272;
+		rType = 0;
+		vrLen = 1672;
+		vrLoc = 1142;
+	};
+	308E43AC124EC1F300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 76";
+		rLen = 13;
+		rLoc = 1722;
+		rType = 0;
+		vrLen = 574;
+		vrLoc = 1889;
+	};
+	308E43AD124EC1F300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 76";
+		rLen = 13;
+		rLoc = 1722;
+		rType = 0;
+		vrLen = 574;
+		vrLoc = 1889;
+	};
+	308E43AE124EC1F300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1181245CC6100A021AD /* IrPatternView.h */;
+		name = "IrPatternView.h: 14";
+		rLen = 6;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 324;
+		vrLoc = 0;
+	};
+	308E43AF124EC1F300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 101";
+		rLen = 0;
+		rLoc = 2272;
+		rType = 0;
+		vrLen = 1673;
+		vrLoc = 1142;
+	};
+	308E43B0124EC1F300BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 108";
+		rLen = 0;
+		rLoc = 2447;
+		rType = 0;
+		vrLen = 1671;
+		vrLoc = 1142;
+	};
+	308E43B2124EC30900BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1181245CC6100A021AD /* IrPatternView.h */;
+		name = "IrPatternView.h: 14";
+		rLen = 6;
+		rLoc = 205;
+		rType = 0;
+		vrLen = 324;
+		vrLoc = 0;
+	};
+	308E43B3124EC30900BE3991 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
+		name = "IrPatternView.m: 32";
+		rLen = 0;
+		rLoc = 460;
+		rType = 0;
+		vrLen = 1669;
+		vrLoc = 159;
 	};
 	30A509D7123B40410005B3E0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3817,7 +4168,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 511";
 		rLen = 0;
-		rLoc = 14412;
+		rLoc = 14092;
 		rType = 0;
 		vrLen = 702;
 		vrLoc = 12997;
@@ -3880,7 +4231,7 @@
 		fRef = 307EF1191245CC6100A021AD /* IrPatternView.m */;
 		name = "IrPatternView.m: 76";
 		rLen = 13;
-		rLoc = 1710;
+		rLoc = 1722;
 		rType = 0;
 		vrLen = 544;
 		vrLoc = 1889;

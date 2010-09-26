@@ -29,7 +29,7 @@ CGRect convertToCGRect(NSRect inRect);
 - (void)drawScale
 {
 	int i;
-	for(i = 0; i < 10; ++i) {
+	for(i = 0; i < 1200 - 10 / 50; ++i) {
 		CGContextMoveToPoint(gc, OFFSETX + i * 50, 2);
 		CGContextAddLineToPoint(gc, OFFSETX + i * 50, 5);
 	}
@@ -106,6 +106,7 @@ CGRect convertToCGRect(NSRect inRect);
 
 	if(patcount)
 	{
+		[self setFrame:NSMakeRect(0,0,1200,86)];
 		[self drawIrPattern:patcount pat:pat];
 	}
 }

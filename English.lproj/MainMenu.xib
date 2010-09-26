@@ -1668,7 +1668,7 @@
 										<object class="NSCustomView" id="915513216">
 											<reference key="NSNextResponder" ref="360642534"/>
 											<int key="NSvFlags">274</int>
-											<string key="NSFrameSize">{1000, 86}</string>
+											<string key="NSFrameSize">{653, 86}</string>
 											<reference key="NSSuperview" ref="360642534"/>
 											<string key="NSClassName">IrPatternView</string>
 										</object>
@@ -1694,17 +1694,16 @@
 									<int key="NSvFlags">256</int>
 									<string key="NSFrame">{{1, 87}, {653, 15}}</string>
 									<reference key="NSSuperview" ref="93558250"/>
-									<bool key="NSEnabled">YES</bool>
 									<int key="NSsFlags">1</int>
 									<reference key="NSTarget" ref="93558250"/>
 									<string key="NSAction">_doScroller:</string>
-									<double key="NSPercent">6.530000e-01</double>
+									<double key="NSPercent">9.984710e-01</double>
 								</object>
 							</object>
 							<string key="NSFrame">{{20, 20}, {655, 103}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSNextKeyView" ref="360642534"/>
-							<int key="NSsFlags">162</int>
+							<int key="NSsFlags">34</int>
 							<reference key="NSVScroller" ref="303490981"/>
 							<reference key="NSHScroller" ref="201460501"/>
 							<reference key="NSContentView" ref="360642534"/>
@@ -4341,7 +4340,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">562</int>
+			<int key="maxID">566</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
