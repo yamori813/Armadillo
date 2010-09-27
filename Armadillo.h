@@ -20,7 +20,6 @@
 	IBOutlet NSButton *crossam2PushButton;
 	IBOutlet NSButton *crossam2LEDOnButton;
 	IBOutlet NSButton *crossam2ReadButton;
-	IBOutlet NSButton *crossam2VersionButton;
 	IBOutlet NSPopUpButton *buttonSelect;
 	IBOutlet NSSegmentedControl *dialSelect;	
 

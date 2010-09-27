@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>309B54351250DCAA00EDA358</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Armadillo.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>309B54361250DCAA00EDA358</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Armadillo.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>309B54B012514EA300EDA358</string>
+						<key>history</key>
+						<array>
+							<string>309B54A212514E8500EDA358</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {996, 585}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>1537 -62 996 626 1280 -280 1920 1080 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -279,7 +320,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -334,7 +375,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3038489D12500A1100920F3A</string>
+										<string>309B54AD12514EA300EDA358</string>
 										<key>history</key>
 										<array>
 											<string>30350B1D123324B500DDD914</string>
@@ -358,7 +399,7 @@
 											<string>30704579124F17CA00C31F62</string>
 											<string>30355D22124F36B900FE89E9</string>
 											<string>30355D88124F414800FE89E9</string>
-											<string>30384865125007BC00920F3A</string>
+											<string>309B54A112514E8500EDA358</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -441,9 +482,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>30384867125007BC00920F3A</string>
+				<string>309B54AE12514EA300EDA358</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>30384868125007BC00920F3A</string>
+				<string>309B54AF12514EA300EDA358</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -577,12 +618,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>303848911250096900920F3A</string>
-		<string>303848921250096900920F3A</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>30350B121233248800DDD914</string>
+		<string>309B54351250DCAA00EDA358</string>
 		<string>/Users/himori/Develop/Device/Armadillo/Armadillo.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>163 171 866 571 0 0 1280 778 </string>
@@ -606,7 +646,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Armadillo.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -623,8 +663,6 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -664,7 +702,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>30350B121233248800DDD914</string>
-				<string>3038486E125007BC00920F3A</string>
+				<string>309B54B112514EA300EDA358</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -675,7 +713,7 @@
 			<key>WindowToolGUID</key>
 			<string>30350B121233248800DDD914</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -784,13 +822,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>3038486F125007BC00920F3A</string>
+				<string>309B54B212514EA300EDA358</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>30384870125007BC00920F3A</string>
-				<string>30384871125007BC00920F3A</string>
-				<string>30384872125007BC00920F3A</string>
-				<string>30384873125007BC00920F3A</string>
-				<string>30384874125007BC00920F3A</string>
+				<string>309B54B312514EA300EDA358</string>
+				<string>309B54B412514EA300EDA358</string>
+				<string>309B54B512514EA300EDA358</string>
+				<string>309B54B612514EA300EDA358</string>
+				<string>309B54B712514EA300EDA358</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -917,6 +955,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -952,7 +992,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>30384875125007BC00920F3A</string>
+				<string>309B54B812514EA300EDA358</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -962,7 +1002,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
