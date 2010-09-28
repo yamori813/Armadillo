@@ -8,8 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="578"/>
 			<integer value="57"/>
-			<integer value="582"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1375,7 +1375,7 @@
 												<object class="NSSegmentedCell" key="NSCell" id="140795549">
 													<int key="NSCellFlags">604110336</int>
 													<int key="NSCellFlags2">0</int>
-													<object class="NSFont" key="NSSupport">
+													<object class="NSFont" key="NSSupport" id="265065751">
 														<string key="NSName">LucidaGrande</string>
 														<double key="NSSize">1.300000e+01</double>
 														<int key="NSfFlags">16</int>
@@ -1539,6 +1539,41 @@
 													<string key="NSKeyEquivalent"/>
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
+												</object>
+											</object>
+											<object class="NSSegmentedControl" id="865277377">
+												<reference key="NSNextResponder" ref="341167311"/>
+												<int key="NSvFlags">268</int>
+												<string key="NSFrame">{{464, 26}, {125, 24}}</string>
+												<reference key="NSSuperview" ref="341167311"/>
+												<bool key="NSEnabled">YES</bool>
+												<object class="NSSegmentedCell" key="NSCell" id="282007011">
+													<int key="NSCellFlags">-2080244224</int>
+													<int key="NSCellFlags2">0</int>
+													<reference key="NSSupport" ref="265065751"/>
+													<reference key="NSControlView" ref="865277377"/>
+													<object class="NSMutableArray" key="NSSegmentImages">
+														<bool key="EncodedWithXMLCoder">YES</bool>
+														<object class="NSSegmentItem">
+															<string key="NSSegmentItemLabel">1</string>
+															<bool key="NSSegmentItemSelected">YES</bool>
+															<int key="NSSegmentItemImageScaling">0</int>
+														</object>
+														<object class="NSSegmentItem">
+															<string key="NSSegmentItemLabel">2</string>
+															<int key="NSSegmentItemTag">1</int>
+															<int key="NSSegmentItemImageScaling">0</int>
+														</object>
+														<object class="NSSegmentItem">
+															<string key="NSSegmentItemLabel">3</string>
+															<int key="NSSegmentItemImageScaling">0</int>
+														</object>
+														<object class="NSSegmentItem">
+															<string key="NSSegmentItemLabel">4</string>
+															<int key="NSSegmentItemImageScaling">0</int>
+														</object>
+													</object>
+													<int key="NSSegmentStyle">1</int>
 												</object>
 											</object>
 										</object>
@@ -2393,6 +2428,14 @@
 						<reference key="destination" ref="866141249"/>
 					</object>
 					<int key="connectionID">659</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">pcopes1LEDSelect</string>
+						<reference key="source" ref="296392198"/>
+						<reference key="destination" ref="865277377"/>
+					</object>
+					<int key="connectionID">662</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3384,6 +3427,7 @@
 							<reference ref="798049976"/>
 							<reference ref="775083853"/>
 							<reference ref="175715973"/>
+							<reference ref="865277377"/>
 						</object>
 						<reference key="parent" ref="655261704"/>
 					</object>
@@ -3646,6 +3690,20 @@
 						<reference key="object" ref="866141249"/>
 						<reference key="parent" ref="694768526"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">660</int>
+						<reference key="object" ref="865277377"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="282007011"/>
+						</object>
+						<reference key="parent" ref="341167311"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">661</int>
+						<reference key="object" ref="282007011"/>
+						<reference key="parent" ref="865277377"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -3896,6 +3954,8 @@
 					<string>619.IBSegmentedControlTracker.RoundRobinState</string>
 					<string>619.IBSegmentedControlTracker.WasGrowing</string>
 					<string>620.IBPluginDependency</string>
+					<string>660.IBPluginDependency</string>
+					<string>661.IBPluginDependency</string>
 					<string>72.IBPluginDependency</string>
 					<string>72.ImportedFromIB2</string>
 					<string>73.IBPluginDependency</string>
@@ -4169,6 +4229,8 @@
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
@@ -4215,7 +4277,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">659</int>
+			<int key="maxID">662</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4267,13 +4329,13 @@
 							<string>crossam2LEDOnButton</string>
 							<string>crossam2PushButton</string>
 							<string>crossam2ReadButton</string>
-							<string>crossam2VersionButton</string>
 							<string>crossam2WriteButton</string>
 							<string>dataSelect</string>
 							<string>dialSelect</string>
 							<string>ftbitbangInitButton</string>
 							<string>ftbitbangTransButton</string>
 							<string>patView</string>
+							<string>pcopes1LEDSelect</string>
 							<string>pcoprs1InitButton</string>
 							<string>pcoprs1LEDButton</string>
 							<string>pcoprs1RecvButton</string>
@@ -4288,12 +4350,12 @@
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
-							<string>NSButton</string>
 							<string>NSPopUpButton</string>
 							<string>NSSegmentedControl</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>IrPatternView</string>
+							<string>NSSegmentedControl</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
