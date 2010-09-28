@@ -132,7 +132,7 @@ int pcoprs1_transfer(int chnnel, unsigned char *data)
 			return 0;
 	}
 
-	tmpbuff[0] = 0x30 | chnnel;
+	tmpbuff[0] = 0x30 | (chnnel & 0x03);
 	write(pcoprs1_port, tmpbuff, 1);
 	
 	while(1) {
