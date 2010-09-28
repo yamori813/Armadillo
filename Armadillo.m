@@ -24,8 +24,9 @@
 
 	int val;
 	do {
-		
-		val = appleremote_getevent();
+		@synchronized(self) {
+			val = appleremote_getevent();
+		}
 //		if(val == 1)
 //			[self ftbitbangTrans:self];
 		if(val != 0)
