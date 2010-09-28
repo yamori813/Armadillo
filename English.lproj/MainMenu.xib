@@ -8,8 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="578"/>
-			<integer value="57"/>
+			<integer value="568"/>
+			<integer value="81"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1235,13 +1235,13 @@
 						<object class="NSButton" id="808029728">
 							<reference key="NSNextResponder" ref="694768526"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{186, 131}, {96, 32}}</string>
+							<string key="NSFrame">{{187, 130}, {96, 32}}</string>
 							<reference key="NSSuperview" ref="694768526"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="415062277">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">Load</string>
+								<string key="NSContents">Open</string>
 								<reference key="NSSupport" ref="462498216"/>
 								<reference key="NSControlView" ref="808029728"/>
 								<int key="NSButtonFlags">-2038284033</int>
@@ -1959,14 +1959,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">openDocument:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="722745758"/>
-					</object>
-					<int key="connectionID">374</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">addFontTrait:</string>
 						<reference key="source" ref="755631768"/>
 						<reference key="destination" ref="305399458"/>
@@ -2436,6 +2428,14 @@
 						<reference key="destination" ref="865277377"/>
 					</object>
 					<int key="connectionID">662</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">xmlLoad:</string>
+						<reference key="source" ref="296392198"/>
+						<reference key="destination" ref="722745758"/>
+					</object>
+					<int key="connectionID">663</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3345,10 +3345,10 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="244921220"/>
-							<reference ref="808029728"/>
 							<reference ref="418451716"/>
 							<reference ref="866141249"/>
 							<reference ref="173341414"/>
+							<reference ref="808029728"/>
 						</object>
 						<reference key="parent" ref="140873218"/>
 					</object>
@@ -3972,6 +3972,7 @@
 					<string>79.ImportedFromIB2</string>
 					<string>80.IBPluginDependency</string>
 					<string>80.ImportedFromIB2</string>
+					<string>81.IBEditorWindowLastContentRect</string>
 					<string>81.IBPluginDependency</string>
 					<string>81.ImportedFromIB2</string>
 					<string>81.editorWindowContentRectSynchronizationRect</string>
@@ -4246,6 +4247,7 @@
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
+					<string>{{425, 57}, {199, 203}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>{{145, 474}, {199, 203}}</string>
@@ -4277,7 +4279,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">662</int>
+			<int key="maxID">663</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
