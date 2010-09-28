@@ -65,7 +65,6 @@
 
 - (IBAction)crossam2Init:(id)sender;
 - (IBAction)crossam2LEDOn:(id)sender;
-- (IBAction)crossam2LEDOff:(id)sender;
 - (IBAction)crossam2Push:(id)sender;
 - (IBAction)crossam2Write:(id)sender;
 - (IBAction)crossam2Read:(id)sender;
