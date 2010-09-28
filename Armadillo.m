@@ -19,16 +19,30 @@
 
 - (void) appleRemote
 {
-	appleremote_open();
-	int i, val;
-	for(i = 0; i < 100; ++i) {
+	NSAutoreleasePool* pool;
+    pool = [[NSAutoreleasePool alloc]init];
+
+	int val;
+	do {
 		
 		val = appleremote_getevent();
+//		if(val == 1)
+//			[self ftbitbangTrans:self];
 		if(val != 0)
 			printf("MORI MORI Debug %d\n", val);
 		sleep(1);
+	} while(appleremoteStat == 1);
+
+	[pool release];
+	[NSThread exit];
+}
+
+- (void)dealloc {
+	if(appleremoteStat) {
+		appleremoteStat = 0;
+		appleremote_close();
 	}
-	appleremote_close();
+	[super dealloc];
 }
 
 - (id)init {
@@ -76,9 +90,14 @@
 					   @"停止",
 					   @"次へ",
 					   @"電源", nil];
-		isPcoprs1Receive = NO;		
-		[NSThread detachNewThreadSelector:@selector(appleRemote) toTarget:self
+		isPcoprs1Receive = NO;
+		if(appleremote_open()) {
+			appleremoteStat = 1;
+			[NSThread detachNewThreadSelector:@selector(appleRemote) toTarget:self
 							   withObject:nil];
+		} else {
+			appleremoteStat = 0;
+		}
 		remoData = nil;
     }
     return self;

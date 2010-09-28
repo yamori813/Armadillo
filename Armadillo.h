@@ -59,6 +59,8 @@
 	int remoBits[4];
 	NSMutableArray *signalArray;
 	NSMutableDictionary *remoData;
+
+	int appleremoteStat;
 }
 
 - (IBAction)crossam2Init:(id)sender;
