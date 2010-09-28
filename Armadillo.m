@@ -277,7 +277,10 @@
 			for(i = 0; i < [buttonItems count]; ++i)
 				[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
 		} else {
-			crossam2_patch();
+			if  (NSRunAlertPanel( @"クロッサムが確認できません" , @"クロッサムを初期化しますか？初期化する場合はOKボタンを押した後にクロッサムの"
+								  "RECボタンとPowerボタンを押した後ファンクション14を押してください。" , @"OK" , @"Cancel" , NULL ) == NSOKButton) {
+				crossam2_patch();
+			}
 		}
 	}
 }
