@@ -510,7 +510,7 @@
 		[patView setIrPattern:1 pat:pat];
 		[patView setNeedsDisplay:YES];
 		printf("genir_bitbang size = %d\n",gen_size);
-		pcoprs1_transfer([pcopes1LEDSelect selectedSegment], cmddata);
+		pcoprs1_transfer([pcopes1LEDSelect selectedSegment]+1, cmddata);
 	} else {
 		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
 	}
