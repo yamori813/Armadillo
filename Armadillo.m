@@ -79,6 +79,7 @@
 		isPcoprs1Receive = NO;		
 		[NSThread detachNewThreadSelector:@selector(appleRemote) toTarget:self
 							   withObject:nil];
+		remoData = nil;
     }
     return self;
 }
@@ -568,6 +569,10 @@
 	}
 }
 
+//
+//
+//
+
 - (IBAction)xmlLoad:(id)sender
 {
 	NSOpenPanel *opPanel = [ NSOpenPanel openPanel ];
@@ -584,7 +589,10 @@
 		// load data from xml
 		remoCodeCount = 0;
 		remoFrameCount = 0;
-		remoData = [[NSMutableDictionary alloc] init];
+		if(remoData == nil)
+			remoData = [[NSMutableDictionary alloc] init];
+		else
+			[remoData removeAllObjects];
 		[self readData:filepath];
 
 		[dataSelect removeAllItems];
