@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="Dictionary">
+	<suite name="ArmadilloSuite">
+		<command name="test" code="Arma" id="test">
+			<cocoa name="ArmadilloTest"/>
+			<direct-parameter type="text"/>
+		</command>
+	</suite>
+</dictionary>

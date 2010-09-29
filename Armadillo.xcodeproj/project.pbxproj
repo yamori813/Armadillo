@@ -18,6 +18,7 @@
 		3077A5C4124BA37B00B2556D /* libftd2xx.0.1.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */; };
 		3077A5C6124BA38B00B2556D /* libftd2xx.0.1.7.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */; };
 		307EF11A1245CC6100A021AD /* IrPatternView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307EF1191245CC6100A021AD /* IrPatternView.m */; };
+		309B4D8B1253F2A400F8CE75 /* ArmadilloSuite.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 309B4D8A1253F2A400F8CE75 /* ArmadilloSuite.sdef */; };
 		309B55C71251E2F300EDA358 /* appleremote.c in Sources */ = {isa = PBXBuildFile; fileRef = 309B55C61251E2F300EDA358 /* appleremote.c */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -63,6 +64,7 @@
 		3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libftd2xx.0.1.7.dylib; sourceTree = "<group>"; };
 		307EF1181245CC6100A021AD /* IrPatternView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrPatternView.h; sourceTree = "<group>"; };
 		307EF1191245CC6100A021AD /* IrPatternView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrPatternView.m; sourceTree = "<group>"; };
+		309B4D8A1253F2A400F8CE75 /* ArmadilloSuite.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.sdef; path = ArmadilloSuite.sdef; sourceTree = "<group>"; };
 		309B55C51251E2F300EDA358 /* appleremote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appleremote.h; sourceTree = "<group>"; };
 		309B55C61251E2F300EDA358 /* appleremote.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = appleremote.c; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Armadillo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armadillo_Prefix.pch; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				309B4D8A1253F2A400F8CE75 /* ArmadilloSuite.sdef */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -231,6 +234,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				309B4D8B1253F2A400F8CE75 /* ArmadilloSuite.sdef in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
