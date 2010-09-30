@@ -22,9 +22,11 @@
 	<string>1.0</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
+	<key>OSAScriptingDefinition</key>
+	<string>ArmadilloSuite.sdef</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
+	<string>ArmadilloApp</string>
 </dict>
 </plist>
