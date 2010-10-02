@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 @end
 @implementation ArmadilloApp
 -(void)ArmadilloTest:(NSScriptCommand*)command {
-	printf("MORI MORI AppleScript");
+	NSLog(@"MORI MORI AppleScript");
 	/*
 	NSDictionary*	theArgs = [command evaluatedArguments];
 	NSString*		encodeString = [theArgs objectForKey:@"textWith"];
