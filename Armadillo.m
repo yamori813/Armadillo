@@ -100,6 +100,8 @@
 			appleremoteStat = 0;
 		}
 		remoData = nil;
+
+		[NSApp setArmaObj:self];
     }
     return self;
 }

@@ -8,16 +8,26 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "Armadillo.h"
+
 int main(int argc, char *argv[])
 {
     return NSApplicationMain(argc,  (const char **) argv);
 }
 
 @interface ArmadilloApp : NSApplication
+Armadillo *arma;
 @end
 @implementation ArmadilloApp
+-(void)setArmaObj:(Armadillo *)theobj
+{
+	NSLog(@"MORI MORI NSApp");
+	arma = theobj;
+}
+
 -(void)ArmadilloTest:(NSScriptCommand*)command {
 	NSLog(@"MORI MORI AppleScript");
+	[arma ftbitbangInit:nil];
 	/*
 	NSDictionary*	theArgs = [command evaluatedArguments];
 	NSString*		encodeString = [theArgs objectForKey:@"textWith"];
