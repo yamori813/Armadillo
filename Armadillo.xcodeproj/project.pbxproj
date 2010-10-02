@@ -139,6 +139,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				309B55C51251E2F300EDA358 /* appleremote.h */,
+				309B55C61251E2F300EDA358 /* appleremote.c */,
 				304125F3123EE28D00BDD47C /* genir.h */,
 				304125F4123EE28D00BDD47C /* genir.c */,
 				3035090A1233177800DDD914 /* serial.h */,
@@ -153,8 +155,6 @@
 				303509051233176500DDD914 /* crossam2.c */,
 				32CA4F630368D1EE00C91783 /* Armadillo_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				309B55C51251E2F300EDA358 /* appleremote.h */,
-				309B55C61251E2F300EDA358 /* appleremote.c */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
