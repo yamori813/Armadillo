@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
-<dictionary title="Dictionary">
-	<suite name="ArmadilloSuite">
-		<command name="test" code="Arma" id="test">
-			<cocoa name="ArmadilloTest"/>
-			<direct-parameter type="text"/>
-		</command>
+<dictionary title="Armadillo Dictionary">
+	<suite name="Armadillo Suite" code="aRma" description="The Armadillo suite">
+		<class name="application" code="capp" description="An application&apos;s top level scripting object.">
+			<cocoa class="NSApplication"/>
+			<responds-to command="armadillotest">
+				<cocoa method="ArmadilloTest:"/>
+			</responds-to>
+		</class>
+		<command name="armadillotest" code="armaTest"/>
 	</suite>
 </dictionary>
