@@ -57,6 +57,7 @@
 		30350A3E123317AA00DDD914 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		304125F3123EE28D00BDD47C /* genir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genir.h; sourceTree = "<group>"; };
 		304125F4123EE28D00BDD47C /* genir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = genir.c; sourceTree = "<group>"; };
+		304264E212581884004E83A2 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		304B8FED124B7CA30076FC99 /* bitbang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitbang.h; sourceTree = "<group>"; };
 		304B8FEE124B7CA30076FC99 /* bitbang.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitbang.c; sourceTree = "<group>"; };
 		304B8FF3124B7D9D0076FC99 /* ftd2xx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftd2xx.h; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 				303509041233176500DDD914 /* crossam2.h */,
 				303509051233176500DDD914 /* crossam2.c */,
 				32CA4F630368D1EE00C91783 /* Armadillo_Prefix.pch */,
+				304264E212581884004E83A2 /* main.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";

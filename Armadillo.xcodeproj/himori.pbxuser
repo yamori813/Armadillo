@@ -12,7 +12,6 @@
 		activeExecutable = 303508E01233169A00DDD914 /* Armadillo */;
 		activeTarget = 8D1107260486CEB800E47090 /* Armadillo */;
 		addToTargets = (
-			8D1107260486CEB800E47090 /* Armadillo */,
 		);
 		breakpoints = (
 			3052A6A612384C72004BBCEB /* crossam2.c:140 */,
@@ -265,6 +264,37 @@
 			304264DB12581630004E83A2 /* PBXTextBookmark */ = 304264DB12581630004E83A2 /* PBXTextBookmark */;
 			304264DC12581630004E83A2 /* PBXTextBookmark */ = 304264DC12581630004E83A2 /* PBXTextBookmark */;
 			304264DD12581630004E83A2 /* PBXTextBookmark */ = 304264DD12581630004E83A2 /* PBXTextBookmark */;
+			304264E812581902004E83A2 /* PBXTextBookmark */ = 304264E812581902004E83A2 /* PBXTextBookmark */;
+			304264EB12581902004E83A2 /* PBXTextBookmark */ = 304264EB12581902004E83A2 /* PBXTextBookmark */;
+			304264EC12581902004E83A2 /* PBXTextBookmark */ = 304264EC12581902004E83A2 /* PBXTextBookmark */;
+			304264ED12581902004E83A2 /* PBXTextBookmark */ = 304264ED12581902004E83A2 /* PBXTextBookmark */;
+			304264EE12581902004E83A2 /* PBXTextBookmark */ = 304264EE12581902004E83A2 /* PBXTextBookmark */;
+			304264F212581921004E83A2 /* PBXTextBookmark */ = 304264F212581921004E83A2 /* PBXTextBookmark */;
+			304264F312581921004E83A2 /* PBXTextBookmark */ = 304264F312581921004E83A2 /* PBXTextBookmark */;
+			304264F412581921004E83A2 /* PBXTextBookmark */ = 304264F412581921004E83A2 /* PBXTextBookmark */;
+			304264F512581921004E83A2 /* PBXTextBookmark */ = 304264F512581921004E83A2 /* PBXTextBookmark */;
+			304264F612581921004E83A2 /* PBXTextBookmark */ = 304264F612581921004E83A2 /* PBXTextBookmark */;
+			304264F71258196F004E83A2 /* PBXBookmark */ = 304264F71258196F004E83A2 /* PBXBookmark */;
+			304264F91258197C004E83A2 /* PBXTextBookmark */ = 304264F91258197C004E83A2 /* PBXTextBookmark */;
+			304264FC1258197C004E83A2 /* PBXTextBookmark */ = 304264FC1258197C004E83A2 /* PBXTextBookmark */;
+			304264FD1258197C004E83A2 /* PBXTextBookmark */ = 304264FD1258197C004E83A2 /* PBXTextBookmark */;
+			304264FE1258197C004E83A2 /* PBXTextBookmark */ = 304264FE1258197C004E83A2 /* PBXTextBookmark */;
+			304264FF1258197C004E83A2 /* PBXTextBookmark */ = 304264FF1258197C004E83A2 /* PBXTextBookmark */;
+			30426503125819E2004E83A2 /* PBXTextBookmark */ = 30426503125819E2004E83A2 /* PBXTextBookmark */;
+			30426504125819E2004E83A2 /* PBXTextBookmark */ = 30426504125819E2004E83A2 /* PBXTextBookmark */;
+			30426505125819E2004E83A2 /* PBXTextBookmark */ = 30426505125819E2004E83A2 /* PBXTextBookmark */;
+			30426506125819E2004E83A2 /* PBXTextBookmark */ = 30426506125819E2004E83A2 /* PBXTextBookmark */;
+			30426507125819E2004E83A2 /* PBXTextBookmark */ = 30426507125819E2004E83A2 /* PBXTextBookmark */;
+			30426508125819E4004E83A2 /* PBXBookmark */ = 30426508125819E4004E83A2 /* PBXBookmark */;
+			3042650E12581A17004E83A2 /* PBXTextBookmark */ = 3042650E12581A17004E83A2 /* PBXTextBookmark */;
+			3042650F12581A17004E83A2 /* PBXTextBookmark */ = 3042650F12581A17004E83A2 /* PBXTextBookmark */;
+			3042651012581A17004E83A2 /* PBXTextBookmark */ = 3042651012581A17004E83A2 /* PBXTextBookmark */;
+			3042651312581A17004E83A2 /* PBXTextBookmark */ = 3042651312581A17004E83A2 /* PBXTextBookmark */;
+			3042651412581A17004E83A2 /* PBXTextBookmark */ = 3042651412581A17004E83A2 /* PBXTextBookmark */;
+			3042651512581A17004E83A2 /* PBXTextBookmark */ = 3042651512581A17004E83A2 /* PBXTextBookmark */;
+			3042651B12581A78004E83A2 /* PBXTextBookmark */ = 3042651B12581A78004E83A2 /* PBXTextBookmark */;
+			3042651C12581A78004E83A2 /* PBXTextBookmark */ = 3042651C12581A78004E83A2 /* PBXTextBookmark */;
+			3042651D12581A78004E83A2 /* PBXTextBookmark */ = 3042651D12581A78004E83A2 /* PBXTextBookmark */;
 			3042870412481EF300CD83F9 = 3042870412481EF300CD83F9 /* PBXTextBookmark */;
 			3042871812481EF300CD83F9 = 3042871812481EF300CD83F9 /* PBXTextBookmark */;
 			304B9028124B82340076FC99 = 304B9028124B82340076FC99 /* PBXTextBookmark */;
@@ -318,9 +348,9 @@
 	};
 	29B97316FDCFA39411CA2CEA /* main.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {538, 574}}";
+			sepNavIntBoundsRect = "{{0, 0}, {538, 392}}";
 			sepNavSelRange = "{31, 85}";
-			sepNavVisRange = "{0, 371}";
+			sepNavVisRange = "{0, 459}";
 			sepNavWindowFrame = "{{183, 80}, {996, 682}}";
 		};
 	};
@@ -373,17 +403,17 @@
 	};
 	303509011233175700DDD914 /* Armadillo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 1148}}";
-			sepNavSelRange = "{1431, 0}";
-			sepNavVisRange = "{913, 875}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 1162}}";
+			sepNavSelRange = "{751, 8}";
+			sepNavVisRange = "{301, 1067}";
 			sepNavWindowFrame = "{{1869, 5}, {996, 682}}";
 		};
 	};
 	303509021233175700DDD914 /* Armadillo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 9574}}";
-			sepNavSelRange = "{2156, 101}";
-			sepNavVisRange = "{1597, 718}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 9532}}";
+			sepNavSelRange = "{1958, 0}";
+			sepNavVisRange = "{0, 856}";
 			sepNavWindowFrame = "{{1453, -38}, {996, 682}}";
 		};
 	};
@@ -524,7 +554,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 53";
 		rLen = 0;
-		rLoc = 15467;
+		rLoc = 15354;
 		rType = 0;
 		vrLen = 365;
 		vrLoc = 310;
@@ -610,7 +640,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 17";
 		rLen = 0;
-		rLoc = 345;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 2810;
@@ -667,7 +697,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 32";
 		rLen = 0;
-		rLoc = 1130;
+		rLoc = 1045;
 		rType = 0;
 		vrLen = 810;
 		vrLoc = 0;
@@ -677,7 +707,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 21";
 		rLen = 0;
-		rLoc = 422;
+		rLoc = 337;
 		rType = 0;
 		vrLen = 852;
 		vrLoc = 36;
@@ -687,7 +717,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 17";
 		rLen = 0;
-		rLoc = 345;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 2810;
@@ -707,7 +737,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 21";
 		rLen = 0;
-		rLoc = 422;
+		rLoc = 337;
 		rType = 0;
 		vrLen = 852;
 		vrLoc = 36;
@@ -737,7 +767,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 17";
 		rLen = 0;
-		rLoc = 345;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 1039;
 		vrLoc = 2810;
@@ -757,7 +787,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 17";
 		rLen = 0;
-		rLoc = 345;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 1039;
 		vrLoc = 2810;
@@ -797,7 +827,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 17";
 		rLen = 0;
-		rLoc = 345;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 1039;
 		vrLoc = 2810;
@@ -817,7 +847,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 17";
 		rLen = 0;
-		rLoc = 345;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 1039;
 		vrLoc = 2810;
@@ -1031,7 +1061,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 633";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 849;
 		vrLoc = 3438;
@@ -1051,7 +1081,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 633";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 849;
 		vrLoc = 3438;
@@ -1285,7 +1315,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 104";
 		rLen = 0;
-		rLoc = 2341;
+		rLoc = 2229;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 1583;
@@ -1339,7 +1369,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 30";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 870;
 		vrLoc = 0;
@@ -1369,7 +1399,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 104";
 		rLen = 0;
-		rLoc = 2315;
+		rLoc = 2229;
 		rType = 0;
 		vrLen = 926;
 		vrLoc = 1583;
@@ -1419,7 +1449,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 30";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 870;
 		vrLoc = 0;
@@ -1428,8 +1458,8 @@
 		isa = PBXTextBookmark;
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 22";
-		rLen = 10;
-		rLoc = 408;
+		rLen = 0;
+		rLoc = 312;
 		rType = 0;
 		vrLen = 872;
 		vrLoc = 0;
@@ -1449,7 +1479,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 104";
 		rLen = 0;
-		rLoc = 2334;
+		rLoc = 2229;
 		rType = 0;
 		vrLen = 812;
 		vrLoc = 1552;
@@ -1519,7 +1549,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 653";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 1196;
 		vrLoc = 3264;
@@ -1529,7 +1559,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 104";
 		rLen = 0;
-		rLoc = 2334;
+		rLoc = 2229;
 		rType = 0;
 		vrLen = 1009;
 		vrLoc = 1583;
@@ -1539,7 +1569,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 38";
 		rLen = 0;
-		rLoc = 665;
+		rLoc = 580;
 		rType = 0;
 		vrLen = 770;
 		vrLoc = 466;
@@ -1566,7 +1596,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 651";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 3251;
@@ -1576,7 +1606,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 36";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 572;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 238;
@@ -1603,7 +1633,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 651";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 3251;
@@ -1613,7 +1643,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 36";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 572;
 		rType = 0;
 		vrLen = 833;
 		vrLoc = 238;
@@ -1633,7 +1663,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 651";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3565;
@@ -1643,7 +1673,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 47";
 		rLen = 0;
-		rLoc = 1005;
+		rLoc = 920;
 		rType = 0;
 		vrLen = 828;
 		vrLoc = 466;
@@ -1667,7 +1697,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 651";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3565;
@@ -1677,7 +1707,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 32";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 14;
@@ -1687,7 +1717,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 34";
 		rLen = 14;
-		rLoc = 611;
+		rLoc = 526;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 396;
@@ -1707,7 +1737,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 651";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3565;
@@ -1717,7 +1747,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 32";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 14;
@@ -1727,7 +1757,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 34";
 		rLen = 14;
-		rLoc = 611;
+		rLoc = 526;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 396;
@@ -1751,7 +1781,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 651";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3565;
@@ -1761,7 +1791,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 32";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 889;
 		vrLoc = 3;
@@ -1771,7 +1801,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 34";
 		rLen = 14;
-		rLoc = 611;
+		rLoc = 526;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 396;
@@ -1791,7 +1821,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 651";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3565;
@@ -1801,7 +1831,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 33";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 888;
 		vrLoc = 3;
@@ -1811,7 +1841,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 34";
 		rLen = 14;
-		rLoc = 611;
+		rLoc = 526;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 396;
@@ -1831,7 +1861,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 651";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3565;
@@ -1841,7 +1871,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 33";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 888;
 		vrLoc = 3;
@@ -1851,7 +1881,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 34";
 		rLen = 14;
-		rLoc = 611;
+		rLoc = 526;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 396;
@@ -1871,7 +1901,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 652";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3565;
@@ -1881,7 +1911,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 652";
 		rLen = 0;
-		rLoc = 20087;
+		rLoc = 19974;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3565;
@@ -1901,7 +1931,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 32";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 888;
 		vrLoc = 3;
@@ -1911,7 +1941,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 32";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 888;
 		vrLoc = 3;
@@ -1920,7 +1950,7 @@
 		isa = PBXTextBookmark;
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		rLen = 1;
-		rLoc = 572;
+		rLoc = 566;
 		rType = 1;
 	};
 	304264CA12580BD8004E83A2 /* PBXTextBookmark */ = {
@@ -1928,7 +1958,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 574";
 		rLen = 38;
-		rLoc = 17198;
+		rLoc = 17085;
 		rType = 0;
 		vrLen = 1834;
 		vrLoc = 17086;
@@ -1968,7 +1998,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 32";
 		rLen = 0;
-		rLoc = 709;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 888;
 		vrLoc = 3;
@@ -1978,7 +2008,7 @@
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
 		name = "main.m: 32";
 		rLen = 0;
-		rLoc = 509;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 3;
@@ -1988,7 +2018,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 575";
 		rLen = 0;
-		rLoc = 17238;
+		rLoc = 17125;
 		rType = 0;
 		vrLen = 1820;
 		vrLoc = 17049;
@@ -1998,7 +2028,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 110";
 		rLen = 101;
-		rLoc = 2156;
+		rLoc = 2071;
 		rType = 0;
 		vrLen = 718;
 		vrLoc = 1597;
@@ -2028,7 +2058,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 110";
 		rLen = 101;
-		rLoc = 2156;
+		rLoc = 2071;
 		rType = 0;
 		vrLen = 718;
 		vrLoc = 1597;
@@ -2042,6 +2072,309 @@
 		rType = 0;
 		vrLen = 875;
 		vrLoc = 913;
+	};
+	304264E212581884004E83A2 /* main.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {543, 342}}";
+			sepNavSelRange = "{163, 8}";
+			sepNavVisRange = "{0, 197}";
+			sepNavWindowFrame = "{{1617, 31}, {602, 470}}";
+		};
+	};
+	304264E812581902004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 370;
+		vrLoc = 0;
+	};
+	304264EB12581902004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 304264E212581884004E83A2 /* main.h */;
+		rLen = 0;
+		rLoc = 197;
+		rType = 0;
+	};
+	304264EC12581902004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 304264E212581884004E83A2 /* main.h */;
+		name = "main.h: 13";
+		rLen = 0;
+		rLoc = 191;
+		rType = 0;
+		vrLen = 197;
+		vrLoc = 0;
+	};
+	304264ED12581902004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 110";
+		rLen = 101;
+		rLoc = 2071;
+		rType = 0;
+		vrLen = 751;
+		vrLoc = 1597;
+	};
+	304264EE12581902004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 63";
+		rLen = 0;
+		rLoc = 1431;
+		rType = 0;
+		vrLen = 876;
+		vrLoc = 913;
+	};
+	304264F212581921004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 352;
+		vrLoc = 0;
+	};
+	304264F312581921004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 304264E212581884004E83A2 /* main.h */;
+		name = "main.h: 11";
+		rLen = 0;
+		rLoc = 172;
+		rType = 0;
+		vrLen = 197;
+		vrLoc = 0;
+	};
+	304264F412581921004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 63";
+		rLen = 0;
+		rLoc = 1431;
+		rType = 0;
+		vrLen = 876;
+		vrLoc = 913;
+	};
+	304264F512581921004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 32";
+		rLen = 8;
+		rLoc = 751;
+		rType = 0;
+		vrLen = 1026;
+		vrLoc = 301;
+	};
+	304264F612581921004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 110";
+		rLen = 101;
+		rLoc = 2071;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 1597;
+	};
+	304264F71258196F004E83A2 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+	};
+	304264F91258197C004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 352;
+		vrLoc = 0;
+	};
+	304264FC1258197C004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 23";
+		rLen = 0;
+		rLoc = 312;
+		rType = 0;
+		vrLen = 630;
+		vrLoc = 0;
+	};
+	304264FD1258197C004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 304264E212581884004E83A2 /* main.h */;
+		name = "main.h: 11";
+		rLen = 0;
+		rLoc = 172;
+		rType = 0;
+		vrLen = 197;
+		vrLoc = 0;
+	};
+	304264FE1258197C004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 32";
+		rLen = 8;
+		rLoc = 751;
+		rType = 0;
+		vrLen = 1026;
+		vrLoc = 301;
+	};
+	304264FF1258197C004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 110";
+		rLen = 101;
+		rLoc = 2071;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 1597;
+	};
+	30426503125819E2004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 401;
+		vrLoc = 0;
+	};
+	30426504125819E2004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 21";
+		rLen = 0;
+		rLoc = 312;
+		rType = 0;
+		vrLen = 569;
+		vrLoc = 0;
+	};
+	30426505125819E2004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 119;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 569;
+		vrLoc = 0;
+	};
+	30426506125819E2004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 32";
+		rLen = 8;
+		rLoc = 751;
+		rType = 0;
+		vrLen = 1026;
+		vrLoc = 301;
+	};
+	30426507125819E2004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 110";
+		rLen = 101;
+		rLoc = 2071;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 1597;
+	};
+	30426508125819E4004E83A2 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 304264E212581884004E83A2 /* main.h */;
+	};
+	3042650E12581A17004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 401;
+		vrLoc = 0;
+	};
+	3042650F12581A17004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 110";
+		rLen = 101;
+		rLoc = 2071;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 1597;
+	};
+	3042651012581A17004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 111";
+		rLen = 0;
+		rLoc = 2228;
+		rType = 0;
+		vrLen = 901;
+		vrLoc = 1866;
+	};
+	3042651312581A17004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 304264E212581884004E83A2 /* main.h */;
+		name = "main.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 197;
+		vrLoc = 0;
+	};
+	3042651412581A17004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 119;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 569;
+		vrLoc = 0;
+	};
+	3042651512581A17004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 32";
+		rLen = 8;
+		rLoc = 751;
+		rType = 0;
+		vrLen = 1026;
+		vrLoc = 301;
+	};
+	3042651B12581A78004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 459;
+		vrLoc = 0;
+	};
+	3042651C12581A78004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 100";
+		rLen = 0;
+		rLoc = 1958;
+		rType = 0;
+		vrLen = 856;
+		vrLoc = 0;
+	};
+	3042651D12581A78004E83A2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 32";
+		rLen = 8;
+		rLoc = 751;
+		rType = 0;
+		vrLen = 1067;
+		vrLoc = 301;
 	};
 	3042870412481EF300CD83F9 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2420,7 +2753,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 18";
 		rLen = 9;
-		rLoc = 362;
+		rLoc = 277;
 		rType = 0;
 		vrLen = 648;
 		vrLoc = 0;
@@ -2430,7 +2763,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 17";
 		rLen = 0;
-		rLoc = 345;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 1102;
 		vrLoc = 2747;
@@ -2440,7 +2773,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 32";
 		rLen = 0;
-		rLoc = 1130;
+		rLoc = 1045;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 0;
@@ -2455,7 +2788,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 17";
 		rLen = 0;
-		rLoc = 345;
+		rLoc = 261;
 		rType = 0;
 		vrLen = 1219;
 		vrLoc = 2855;

@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>304264DC12581630004E83A2</string>
+						<string>3042651C12581A78004E83A2</string>
 						<key>history</key>
 						<array>
-							<string>304264D8125814CC004E83A2</string>
+							<string>3042650F12581A17004E83A2</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -256,10 +256,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>304264DD12581630004E83A2</string>
+						<string>3042651D12581A78004E83A2</string>
 						<key>history</key>
 						<array>
-							<string>304264CB12580BD8004E83A2</string>
+							<string>304264F412581921004E83A2</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -366,7 +366,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 20}, {245, 512}}</string>
+							<string>{{0, 0}, {245, 512}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -415,7 +415,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>304264DB12581630004E83A2</string>
+										<string>3042651B12581A78004E83A2</string>
 										<key>history</key>
 										<array>
 											<string>30350B1D123324B500DDD914</string>
@@ -681,15 +681,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>304264B11258069F004E83A2</string>
+		<string>3042651112581A17004E83A2</string>
 		<string>3042649F1257F7B6004E83A2</string>
 		<string>304264A01257F7B6004E83A2</string>
 		<string>30350B121233248800DDD914</string>
-		<string>304264801257F3E8004E83A2</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>304264801257F3E8004E83A2</string>
 		<string>3042647C1257F3E8004E83A2</string>
 		<string>/Users/himori/Develop/Device/Armadillo/Armadillo.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>16 193 866 571 0 0 1280 778 </string>

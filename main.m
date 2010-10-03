@@ -10,23 +10,14 @@
 
 #import "Armadillo.h"
 
+#import "main.h"
+
 int main(int argc, char *argv[])
 {
     return NSApplicationMain(argc,  (const char **) argv);
 }
 
-@interface ArmadilloApp : NSApplication {
-	Armadillo *arma;
-}
--(void)setArmaObj:(Armadillo *)theobj;
-@end
-
 @implementation ArmadilloApp
--(void)setArmaObj:(Armadillo *)theobj
-{
-	arma = theobj;
-}
-
 -(void)ArmadilloTest:(NSScriptCommand*)command {
 // this code crash on write data to usb
 //	[arma ftbitbangTrans:self];

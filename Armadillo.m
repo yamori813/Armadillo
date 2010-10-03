@@ -14,10 +14,6 @@
 #include "appleremote.h"
 #import "Armadillo.h"
 
-@interface ArmadilloApp : NSApplication
--(void)setArmaObj:(Armadillo *)theobj;
-@end
-
 @implementation Armadillo
 
 - (void) appleRemote
@@ -113,8 +109,6 @@
 			appleremoteStat = 0;
 		}
 		remoData = nil;
-
-		[NSApp setArmaObj:self];
     }
     return self;
 }
