@@ -15,28 +15,24 @@ int main(int argc, char *argv[])
     return NSApplicationMain(argc,  (const char **) argv);
 }
 
-@interface ArmadilloApp : NSApplication
-Armadillo *arma;
+@interface ArmadilloApp : NSApplication {
+	Armadillo *arma;
+}
+-(void)setArmaObj:(Armadillo *)theobj;
 @end
+
 @implementation ArmadilloApp
 -(void)setArmaObj:(Armadillo *)theobj
 {
-	NSLog(@"MORI MORI NSApp");
 	arma = theobj;
 }
 
 -(void)ArmadilloTest:(NSScriptCommand*)command {
-	NSLog(@"MORI MORI AppleScript");
-	[arma ftbitbangInit:nil];
-	/*
-	NSDictionary*	theArgs = [command evaluatedArguments];
-	NSString*		encodeString = [theArgs objectForKey:@"textWith"];
-	NSData *sjisData = [ encodeString dataUsingEncoding: 
-						NSShiftJISStringEncoding ];
-	
-	[[NSNotificationCenter defaultCenter] postNotificationName: 
-	 @"ServiceNotificaiton" object: sjisData];
-*/
+// this code crash on write data to usb
+//	[arma ftbitbangTrans:self];
+// this is workaround code
+	[NSThread detachNewThreadSelector:@selector(ftbitbangTrans:) toTarget:arma
+						   withObject:nil];
 }
 
 @end

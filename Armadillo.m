@@ -14,6 +14,9 @@
 #include "appleremote.h"
 #import "Armadillo.h"
 
+@interface ArmadilloApp : NSApplication
+-(void)setArmaObj:(Armadillo *)theobj;
+@end
 
 @implementation Armadillo
 
@@ -27,11 +30,21 @@
 		@synchronized(self) {
 			val = appleremote_getevent();
 		}
-//		if(val == 1)
-//			[self ftbitbangTrans:self];
-		if(val != 0)
-			printf("MORI MORI Debug %d\n", val);
-		sleep(1);
+		if(val == 1 && [ftbitbangTransButton isEnabled] == YES)
+			[self ftbitbangTrans:self];
+		int numItem, curItem;
+		numItem = [dataSelect numberOfItems];
+		if(numItem)
+			curItem = [dataSelect indexOfSelectedItem];
+		if(val == 2 && numItem != 0 && curItem != 0) {
+			--curItem;
+			[dataSelect selectItemAtIndex:curItem];
+		}
+		if(val == 3 && numItem != 0 && curItem != numItem - 1) {
+			++curItem;
+			[dataSelect selectItemAtIndex:curItem];
+		}
+		usleep(100*1000);
 	} while(appleremoteStat == 1);
 
 	[pool release];
@@ -108,6 +121,7 @@
 
 // parser for as follow site data
 // http://www.256byte.com/remocon/iremo_db.php
+//
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser
 {
@@ -260,7 +274,7 @@
 }
 
 //
-// Crossam2 Debug code
+// Crossam2 code
 //
 
 - (IBAction)crossam2Init:(id)sender
@@ -396,7 +410,7 @@
 }
 
 //
-// PC-OP-RS1 Debug code
+// PC-OP-RS1 code
 //
 
 - (void) transferTask
@@ -545,6 +559,8 @@
 }
 
 // 
+// FT Bit Bang code
+//
 
 - (IBAction)ftbitbangInit:(id)sender
 {
@@ -601,7 +617,7 @@
 }
 
 //
-//
+// Load XML IR data file
 //
 
 - (IBAction)xmlLoad:(id)sender
