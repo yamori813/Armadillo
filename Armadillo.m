@@ -40,7 +40,7 @@
 			++curItem;
 			[dataSelect selectItemAtIndex:curItem];
 		}
-		usleep(100*1000);
+		usleep(500*1000);
 	} while(appleremoteStat == 1);
 
 	[pool release];
