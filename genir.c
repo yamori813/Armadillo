@@ -273,7 +273,7 @@ int genir_pcoprs1(int patcount, irdata *pat, unsigned char *buff)
 			--patcount;
 		} while(patcount);
 		++k;
-		if(rep == -1)
+		if(k == 1 && (rep == -1 || curbit * rep > 240 * 8))
 			rep = 240 * 8 / curbit;
 	} while(k < rep);
 /*
