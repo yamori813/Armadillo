@@ -8,8 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="567"/>
 			<integer value="29"/>
-			<integer value="568"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1788,6 +1788,14 @@
 					</object>
 					<int key="connectionID">664</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">mainWindow</string>
+						<reference key="source" ref="296392198"/>
+						<reference key="destination" ref="140873218"/>
+					</object>
+					<int key="connectionID">665</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3095,7 +3103,7 @@
 					<reference ref="9"/>
 					<string>{{1905, 455}, {695, 291}}</string>
 					<string>{{1905, 455}, {695, 291}}</string>
-					<boolean value="YES"/>
+					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{293, 77}, {235, 183}}</string>
@@ -3192,7 +3200,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">664</int>
+			<int key="maxID">665</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3247,6 +3255,7 @@
 							<string>dialSelect</string>
 							<string>ftbitbangInitButton</string>
 							<string>ftbitbangTransButton</string>
+							<string>mainWindow</string>
 							<string>patView</string>
 							<string>pcopes1LEDSelect</string>
 							<string>pcoprs1InitButton</string>
@@ -3267,6 +3276,7 @@
 							<string>NSSegmentedControl</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
+							<string>NSWindow</string>
 							<string>IrPatternView</string>
 							<string>NSSegmentedControl</string>
 							<string>NSButton</string>

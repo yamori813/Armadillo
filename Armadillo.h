@@ -37,6 +37,8 @@
 
 	IBOutlet IrPatternView *patView;
 
+	IBOutlet NSWindow *mainWindow;
+	
 	Boolean isPcoprs1Receive;
 	NSString *remoteName;
 	NSString *buttonName;

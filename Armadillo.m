@@ -641,4 +641,42 @@
 			[dataSelect addItemWithTitle:key];
 	} 
 }
+
+//
+// for prefernce
+//
+
+- (void) getPrefernce
+{
+	CFStringRef appName = CFSTR("Armadillo");
+	CFStringRef windowFrameKey = CFSTR("Window Frame");
+	CFStringRef value;
+	
+	value = CFPreferencesCopyAppValue(windowFrameKey, appName);
+	if(value) {
+		[ mainWindow setFrameFromString: (NSString *)value ];
+		CFRelease(value);
+	}
+}
+
+- (void) savePrefernce
+{
+	CFStringRef appName = CFSTR("Armadillo");
+	CFStringRef windowFrameKey = CFSTR("Window Frame");
+	CFPreferencesSetAppValue(windowFrameKey, (CFStringRef)[ mainWindow 
+														   stringWithSavedFrame], appName);
+	(void)CFPreferencesAppSynchronize(appName);
+}
+
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+	[self getPrefernce];
+
+	[ mainWindow makeKeyAndOrderFront:nil];
+}
+
+- (void) applicationWillTerminate:(NSNotification *)aNotification
+{
+	[self savePrefernce];
+}
 @end
