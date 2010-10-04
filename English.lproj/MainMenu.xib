@@ -1796,6 +1796,14 @@
 					</object>
 					<int key="connectionID">665</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">tabView</string>
+						<reference key="source" ref="296392198"/>
+						<reference key="destination" ref="173341414"/>
+					</object>
+					<int key="connectionID">666</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3200,7 +3208,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">665</int>
+			<int key="maxID">666</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3262,6 +3270,7 @@
 							<string>pcoprs1LEDButton</string>
 							<string>pcoprs1RecvButton</string>
 							<string>pcoprs1TransButton</string>
+							<string>tabView</string>
 							<string>waitTimer</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -3283,6 +3292,7 @@
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
+							<string>NSTabView</string>
 							<string>NSProgressIndicator</string>
 						</object>
 					</object>

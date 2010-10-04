@@ -38,6 +38,7 @@
 	IBOutlet IrPatternView *patView;
 
 	IBOutlet NSWindow *mainWindow;
+	IBOutlet NSTabView *tabView;
 	
 	Boolean isPcoprs1Receive;
 	NSString *remoteName;

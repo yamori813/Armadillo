@@ -156,6 +156,22 @@
 			309B55D81251E5B500EDA358 = 309B55D81251E5B500EDA358 /* PBXTextBookmark */;
 			309B56771252067A00EDA358 = 309B56771252067A00EDA358 /* PBXTextBookmark */;
 			309C0B95125892F20069B489 = 309C0B95125892F20069B489 /* PBXTextBookmark */;
+			309C0BC21259FB990069B489 /* PBXBookmark */ = 309C0BC21259FB990069B489 /* PBXBookmark */;
+			309C0BCB1259FDB90069B489 /* PBXTextBookmark */ = 309C0BCB1259FDB90069B489 /* PBXTextBookmark */;
+			309C0BD01259FDB90069B489 /* PBXTextBookmark */ = 309C0BD01259FDB90069B489 /* PBXTextBookmark */;
+			309C0BD31259FDB90069B489 /* PBXTextBookmark */ = 309C0BD31259FDB90069B489 /* PBXTextBookmark */;
+			309C0BD41259FDB90069B489 /* PBXTextBookmark */ = 309C0BD41259FDB90069B489 /* PBXTextBookmark */;
+			309C0BE31259FECE0069B489 /* PBXTextBookmark */ = 309C0BE31259FECE0069B489 /* PBXTextBookmark */;
+			309C0BE41259FECE0069B489 /* PBXTextBookmark */ = 309C0BE41259FECE0069B489 /* PBXTextBookmark */;
+			309C0BE51259FECE0069B489 /* PBXTextBookmark */ = 309C0BE51259FECE0069B489 /* PBXTextBookmark */;
+			309C0BEA1259FF680069B489 /* PBXTextBookmark */ = 309C0BEA1259FF680069B489 /* PBXTextBookmark */;
+			309C0BEB1259FF680069B489 /* PBXTextBookmark */ = 309C0BEB1259FF680069B489 /* PBXTextBookmark */;
+			309C0BEC1259FF680069B489 /* PBXTextBookmark */ = 309C0BEC1259FF680069B489 /* PBXTextBookmark */;
+			309C0BF01259FFFD0069B489 /* PBXTextBookmark */ = 309C0BF01259FFFD0069B489 /* PBXTextBookmark */;
+			309C0BF11259FFFD0069B489 /* PBXTextBookmark */ = 309C0BF11259FFFD0069B489 /* PBXTextBookmark */;
+			309C0BF21259FFFD0069B489 /* PBXTextBookmark */ = 309C0BF21259FFFD0069B489 /* PBXTextBookmark */;
+			309C0BF8125A00250069B489 /* PBXTextBookmark */ = 309C0BF8125A00250069B489 /* PBXTextBookmark */;
+			309C0BF9125A00250069B489 /* PBXTextBookmark */ = 309C0BF9125A00250069B489 /* PBXTextBookmark */;
 			30A509D7123B40410005B3E0 = 30A509D7123B40410005B3E0 /* PBXTextBookmark */;
 			30BB6A73124B92200097CA70 = 30BB6A73124B92200097CA70 /* PBXTextBookmark */;
 			30BB96EB12529A5600FE11F1 = 30BB96EB12529A5600FE11F1 /* PBXTextBookmark */;
@@ -169,7 +185,7 @@
 	};
 	29B97316FDCFA39411CA2CEA /* main.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {538, 420}}";
+			sepNavIntBoundsRect = "{{0, 0}, {538, 392}}";
 			sepNavSelRange = "{31, 85}";
 			sepNavVisRange = "{0, 432}";
 			sepNavWindowFrame = "{{183, 80}, {996, 682}}";
@@ -224,17 +240,17 @@
 	};
 	303509011233175700DDD914 /* Armadillo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 1162}}";
-			sepNavSelRange = "{751, 8}";
-			sepNavVisRange = "{301, 1067}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 1218}}";
+			sepNavSelRange = "{991, 9}";
+			sepNavVisRange = "{301, 1047}";
 			sepNavWindowFrame = "{{1869, 5}, {996, 682}}";
 		};
 	};
 	303509021233175700DDD914 /* Armadillo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {937, 9714}}";
-			sepNavSelRange = "{905, 0}";
-			sepNavVisRange = "{382, 865}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 9844}}";
+			sepNavSelRange = "{20151, 12}";
+			sepNavVisRange = "{19970, 1258}";
 			sepNavWindowFrame = "{{1426, -69}, {996, 682}}";
 		};
 	};
@@ -385,7 +401,7 @@
 		fRef = 303509011233175700DDD914 /* Armadillo.h */;
 		name = "Armadillo.h: 13";
 		rLen = 0;
-		rLoc = 1472;
+		rLoc = 1536;
 		rType = 0;
 		vrLen = 288;
 		vrLoc = 0;
@@ -403,7 +419,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 165;
-		modificationTime = 307760122.945715;
+		modificationTime = 307887540.952513;
 		state = 2;
 	};
 	30355D88124F414800FE89E9 /* PBXTextBookmark */ = {
@@ -426,9 +442,9 @@
 	};
 	304125F4123EE28D00BDD47C /* genir.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {538, 5222}}";
-			sepNavSelRange = "{4926, 0}";
-			sepNavVisRange = "{3, 380}";
+			sepNavIntBoundsRect = "{{0, 0}, {937, 5250}}";
+			sepNavSelRange = "{5026, 13}";
+			sepNavVisRange = "{6748, 1359}";
 			sepNavWindowFrame = "{{1367, -280}, {996, 1080}}";
 		};
 	};
@@ -507,7 +523,7 @@
 		fRef = 303509021233175700DDD914 /* Armadillo.m */;
 		name = "Armadillo.m: 652";
 		rLen = 0;
-		rLoc = 19974;
+		rLoc = 21395;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 3565;
@@ -684,7 +700,7 @@
 		ignoreCount = 0;
 		lineNumber = 140;
 		location = Armadillo;
-		modificationTime = 307760126.422385;
+		modificationTime = 307887543.230601;
 		state = 1;
 	};
 	307CEA851256A7A6001AEA92 /* PBXTextBookmark */ = {
@@ -811,7 +827,7 @@
 		ignoreCount = 0;
 		lineNumber = 62;
 		location = Armadillo;
-		modificationTime = 307760126.477121;
+		modificationTime = 307887543.343692;
 		state = 1;
 	};
 	3082E02C12477A5A00A68411 /* PBXTextBookmark */ = {
@@ -932,6 +948,160 @@
 		rType = 0;
 		vrLen = 432;
 		vrLoc = 0;
+	};
+	309C0BC21259FB990069B489 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+	};
+	309C0BCB1259FDB90069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 401;
+		vrLoc = 0;
+	};
+	309C0BD01259FDB90069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 675";
+		rLen = 0;
+		rLoc = 21091;
+		rType = 0;
+		vrLen = 1086;
+		vrLoc = 19967;
+	};
+	309C0BD31259FDB90069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 41";
+		rLen = 9;
+		rLoc = 991;
+		rType = 0;
+		vrLen = 1047;
+		vrLoc = 301;
+	};
+	309C0BD41259FDB90069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 41";
+		rLen = 9;
+		rLoc = 991;
+		rType = 0;
+		vrLen = 1027;
+		vrLoc = 301;
+	};
+	309C0BE31259FECE0069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 401;
+		vrLoc = 0;
+	};
+	309C0BE41259FECE0069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 675";
+		rLen = 0;
+		rLoc = 20972;
+		rType = 0;
+		vrLen = 1160;
+		vrLoc = 19967;
+	};
+	309C0BE51259FECE0069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 41";
+		rLen = 9;
+		rLoc = 991;
+		rType = 0;
+		vrLen = 1027;
+		vrLoc = 301;
+	};
+	309C0BEA1259FF680069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 432;
+		vrLoc = 0;
+	};
+	309C0BEB1259FF680069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 661";
+		rLen = 11;
+		rLoc = 20358;
+		rType = 0;
+		vrLen = 1169;
+		vrLoc = 19925;
+	};
+	309C0BEC1259FF680069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 41";
+		rLen = 9;
+		rLoc = 991;
+		rType = 0;
+		vrLen = 1047;
+		vrLoc = 301;
+	};
+	309C0BF01259FFFD0069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 401;
+		vrLoc = 0;
+	};
+	309C0BF11259FFFD0069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509021233175700DDD914 /* Armadillo.m */;
+		name = "Armadillo.m: 665";
+		rLen = 0;
+		rLoc = 20498;
+		rType = 0;
+		vrLen = 1139;
+		vrLoc = 20256;
+	};
+	309C0BF21259FFFD0069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 41";
+		rLen = 9;
+		rLoc = 991;
+		rType = 0;
+		vrLen = 1027;
+		vrLoc = 301;
+	};
+	309C0BF8125A00250069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 5";
+		rLen = 85;
+		rLoc = 31;
+		rType = 0;
+		vrLen = 432;
+		vrLoc = 0;
+	};
+	309C0BF9125A00250069B489 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 303509011233175700DDD914 /* Armadillo.h */;
+		name = "Armadillo.h: 41";
+		rLen = 9;
+		rLoc = 991;
+		rType = 0;
+		vrLen = 1047;
+		vrLoc = 301;
 	};
 	30A509D7123B40410005B3E0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

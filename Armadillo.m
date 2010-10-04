@@ -650,12 +650,21 @@
 {
 	CFStringRef appName = CFSTR("Armadillo");
 	CFStringRef windowFrameKey = CFSTR("Window Frame");
-	CFStringRef value;
+	CFStringRef tabSelectedKey = CFSTR("Tab Selected");
+	CFStringRef strvalue;
 	
-	value = CFPreferencesCopyAppValue(windowFrameKey, appName);
-	if(value) {
-		[ mainWindow setFrameFromString: (NSString *)value ];
-		CFRelease(value);
+	strvalue = CFPreferencesCopyAppValue(windowFrameKey, appName);
+	if(strvalue) {
+		[ mainWindow setFrameFromString: (NSString *)strvalue ];
+		CFRelease(strvalue);
+	}
+	CFNumberRef numvalue;
+	numvalue = CFPreferencesCopyAppValue(tabSelectedKey, appName);
+	if(numvalue) {
+		int ret;
+		CFNumberGetValue(numvalue, kCFNumberIntType, &ret);
+		[ tabView selectTabViewItemAtIndex: ret ];
+		CFRelease(numvalue);
 	}
 }
 
@@ -663,8 +672,12 @@
 {
 	CFStringRef appName = CFSTR("Armadillo");
 	CFStringRef windowFrameKey = CFSTR("Window Frame");
+	CFStringRef tabSelectedKey = CFSTR("Tab Selected");
 	CFPreferencesSetAppValue(windowFrameKey, (CFStringRef)[ mainWindow 
 														   stringWithSavedFrame], appName);
+	int selectIndex = [ tabView indexOfTabViewItem: [tabView selectedTabViewItem]];
+	CFNumberRef numRef = CFNumberCreate(NULL, kCFNumberIntType, &selectIndex);
+	CFPreferencesSetAppValue(tabSelectedKey, numRef, appName);
 	(void)CFPreferencesAppSynchronize(appName);
 }
 

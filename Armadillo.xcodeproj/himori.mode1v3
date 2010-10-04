@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>309C0BD11259FDB90069B489</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Armadillo.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>309C0BD21259FDB90069B489</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Armadillo.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>309C0BF9125A00250069B489</string>
+						<key>history</key>
+						<array>
+							<string>309C0BD31259FDB90069B489</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {996, 585}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>1869 61 996 626 1280 -280 1920 1080 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -279,7 +320,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -334,7 +375,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>309C0B95125892F20069B489</string>
+										<string>309C0BF8125A00250069B489</string>
 										<key>history</key>
 										<array>
 											<string>30350B1D123324B500DDD914</string>
@@ -362,7 +403,7 @@
 											<string>3042641F12570DCC004E83A2</string>
 											<string>304264301257161E004E83A2</string>
 											<string>304264C412580BD8004E83A2</string>
-											<string>3042651E12581B02004E83A2</string>
+											<string>309C0B95125892F20069B489</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -449,9 +490,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>309C0B96125892F20069B489</string>
+				<string>309C0BCC1259FDB90069B489</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>309C0B97125892F20069B489</string>
+				<string>309C0BCD1259FDB90069B489</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -585,9 +626,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>309C0BDE1259FDB90069B489</string>
+		<string>309C0BDF1259FDB90069B489</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>30350B121233248800DDD914</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>30350B121233248800DDD914</string>
+		<string>309C0BD11259FDB90069B489</string>
 		<string>/Users/himori/Develop/Device/Armadillo/Armadillo.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -668,7 +712,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>30350B121233248800DDD914</string>
-				<string>309C0B82125869450069B489</string>
+				<string>309C0BD51259FDB90069B489</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -788,13 +832,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>309C0B83125869450069B489</string>
+				<string>309C0BD61259FDB90069B489</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>309C0B84125869450069B489</string>
-				<string>309C0B85125869450069B489</string>
-				<string>309C0B86125869450069B489</string>
-				<string>309C0B87125869450069B489</string>
-				<string>309C0B88125869450069B489</string>
+				<string>309C0BD71259FDB90069B489</string>
+				<string>309C0BD81259FDB90069B489</string>
+				<string>309C0BD91259FDB90069B489</string>
+				<string>309C0BDA1259FDB90069B489</string>
+				<string>309C0BDB1259FDB90069B489</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -956,7 +1000,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>309C0B89125869450069B489</string>
+				<string>309C0BDC1259FDB90069B489</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
