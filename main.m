@@ -18,6 +18,14 @@ int main(int argc, char *argv[])
 }
 
 @implementation ArmadilloApp
+- (id)init {
+    self = [super init];
+    if (self) {
+		armadilloVers = [NSString stringWithString:@"0.1"];
+	}
+	return self;
+}
+
 -(void)ArmadilloTest:(NSScriptCommand*)command {
 // this code crash on write data to usb
 //	[arma ftbitbangTrans:self];
@@ -25,5 +33,4 @@ int main(int argc, char *argv[])
 	[NSThread detachNewThreadSelector:@selector(ftbitbangTrans:) toTarget:arma
 						   withObject:nil];
 }
-
 @end

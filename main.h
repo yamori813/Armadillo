@@ -8,6 +8,7 @@
 
 @interface ArmadilloApp : NSApplication {
 	IBOutlet Armadillo *arma;
+	NSString *armadilloVers;
 }
 @end
 
