@@ -26,10 +26,10 @@ CGRect convertToCGRect(NSRect inRect);
     return self;
 }
 
-- (void)drawScale
+- (void)drawScale:(int) width
 {
 	int i;
-	for(i = 0; i < 1200 - 10 / 50; ++i) {
+	for(i = 0; i < width - 10 / 50; ++i) {
 		CGContextMoveToPoint(gc, OFFSETX + i * 50, 2);
 		CGContextAddLineToPoint(gc, OFFSETX + i * 50, 5);
 	}
@@ -58,7 +58,7 @@ CGRect convertToCGRect(NSRect inRect);
 	patcount = count;
 }
 
-- (void)drawIrPattern:(int)count pat:(irdata*) thepat
+- (int)drawIrPattern:(int)count pat:(irdata*) thepat
 {
 	int nextpos;
 	int i, j;
@@ -91,8 +91,9 @@ CGRect convertToCGRect(NSRect inRect);
 		--count;
 	} while(count);
     CGContextStrokePath(gc);
+	
+	return nextpos;
 }
-
 
 - (void)drawRect:(NSRect)rect
 {
@@ -102,12 +103,17 @@ CGRect convertToCGRect(NSRect inRect);
 	CGContextFillRect(gc, convertToCGRect(rect));
 //	CGContextStrokeRect(gc, convertToCGRect(rect));
 
-	[self drawScale];
-
 	if(patcount)
 	{
-		[self setFrame:NSMakeRect(0,0,1200,86)];
-		[self drawIrPattern:patcount pat:pat];
+		int linelen = [self drawIrPattern:patcount pat:pat];
+		if(linelen + OFFSETX > 653) {
+			[self setFrame:NSMakeRect(0,0,linelen + OFFSETX * 2,86)];
+			[self drawScale:linelen + OFFSETX * 2];
+		}
+		else {
+			[self setFrame:NSMakeRect(0,0,653,86)];
+			[self drawScale:653];
+		}
 	}
 }
 
