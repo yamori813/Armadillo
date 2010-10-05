@@ -322,6 +322,8 @@ int genir_bitbang(int patcount, irdata *pat, unsigned char *buff, int size)
 	orgpatcount = patcount;
 	memset(buff, 0, 240);
 	rep = (orgpat + patcount - 1)->repeat;
+	if(rep == -1)
+		rep = 4;
 	k = 0;
 	do {
 		pat = orgpat;
@@ -361,6 +363,8 @@ int genir_bitbang(int patcount, irdata *pat, unsigned char *buff, int size)
 			--patcount;
 		} while(patcount);
 		++k;
+		if(k == 1 && curbit * rep > size)
+			rep = size / curbit;
 	} while(k < rep);
 	/*
 	 for(j = 0; j < 240; ++j) {
