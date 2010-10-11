@@ -20,6 +20,32 @@ FT_HANDLE ftHandle = NULL;
 int bitbang_init()
 {
 	FT_STATUS	ftStatus;
+	DWORD numDevs;
+	char *BufPtrs[5];  // pointer to array of 3 pointers 
+	char Buffer1[64];  // buffer for description of first device  
+	char Buffer2[64];  // buffer for description of second device 
+	char Buffer3[64];  // buffer for description of second device 
+	char Buffer4[64];  // buffer for description of second device 
+
+	// initialize the array of pointers 
+	BufPtrs[0] = Buffer1; 
+	BufPtrs[1] = Buffer2; 
+	BufPtrs[2] = Buffer3; 
+	BufPtrs[3] = Buffer4; 
+	BufPtrs[4] = NULL;  // last entry should be NULL 
+	
+	ftStatus = FT_ListDevices(BufPtrs,&numDevs,FT_LIST_ALL|FT_OPEN_BY_DESCRIPTION);  
+	if (ftStatus == FT_OK) {
+		int i;
+		for(i = 0; i < numDevs; ++i)
+			printf("FT Device: %s\n", BufPtrs[i]);
+		// FT_ListDevices OK, product descriptions are in Buffer1 and Buffer2, and  
+		// numDevs contains the number of devices connected 
+	} 
+	else { 
+		// FT_ListDevices failed 
+	}
+	
 	ftStatus = FT_Open(0, &ftHandle);
 	if(ftStatus != FT_OK) {
 		/* 
