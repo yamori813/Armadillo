@@ -484,8 +484,8 @@
 			   val[i][0] > val[i][1] * 16 / 10) {
 				printf("maybe sony\n");
 				signaltype = 1;
-				// strip stop bit
-				--blocklen;
+				// no stop bit
+				++blocklen;
 				break;
 			}
 			if(val[i][0] + val[i][1] < 30 &&
@@ -517,31 +517,31 @@
 		}
 		for(i = 1; i < blocklen; ++i) {
 			if(signaltype == 1) {
-				if(val[i][0] + val[i][1] < 30 &&
-				   val[i][0] > val[i][1] * 16 / 10) {
-					cmd[j / 8] |= 1 << (7 - j % 8);
+				if(i == blocklen - 1) {
+					if(val[i][0] > val[i-1][1] * 16 / 10)
+						cmd[j / 8] |= 1 << (7 - j % 8);
+				} else {
+					if(val[i][0] > val[i][1] * 16 / 10)
+						cmd[j / 8] |= 1 << (7 - j % 8);
 				}
 				++j;
 			}
 			if(signaltype == 2) {
-				if(val[i][0] + val[i][1] < 30 &&
-				   val[i][0] * 16 / 10 < val[i][1] ) {
+				if(val[i][0] * 16 / 10 < val[i][1] ) {
 					cmd[j / 8] |= 1 << (7 - j % 8);
 				}
 				++j;
 			}
 			if(signaltype == 3) {
 				if(i % 9 != 0) {
-				if(val[i][0] + val[i][1] < 30 &&
-				   val[i][0] * 16 / 10 < val[i][1] ) {
-					cmd[j / 8] |= 1 << (7 - j % 8);
-				}
-				++j;
+					if(val[i][0] * 16 / 10 < val[i][1] ) {
+						cmd[j / 8] |= 1 << (7 - j % 8);
+					}
+					++j;
 				}
 			}
 			if(signaltype == 4) {
-				if(val[i][0] + val[i][1] < 30 &&
-				   val[i][0] * 16 / 10 < val[i][1] ) {
+				if(val[i][0] * 16 / 10 < val[i][1] ) {
 					cmd[j / 8] |= 1 << (7 - j % 8);
 				}
 				++j;
