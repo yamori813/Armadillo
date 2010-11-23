@@ -427,23 +427,135 @@
 				break;
 		}
 //		NSLog(@"MORI MORI Debug %02x %02x", data[0], data[1]);
-/*		int i, j;
-		for(j = 0; j < 15; ++j) {
+		int i, j, k;
+/*		for(j = 0; j < 15; ++j) {
 			for(i = 0; i < 16; ++i) {
 				printf("%02x ", data[j * 16 + i]);
 			}
 			printf("\n");
 		}*/
-/*
+		int lastbit = 1;
+		int bitcount = 0;
+		int onecount;
+		int val[128][2];
+		k = 0;
 		for(j = 0; j < 240; ++j) {
 			for(i = 0; i <8 ; ++i) {
-				printf("%d", (data[j] >> i) & 1);
+				if(((data[j] >> i) & 1) != lastbit) {
+					if(lastbit == 1) {
+						onecount = bitcount;
+					} else {
+						if(k < 128) {
+//							printf("%d %d %d\n", k, onecount, bitcount);
+							val[k][0] = onecount;
+							val[k][1] = bitcount;
+							++k;
+						}
+					}
+					bitcount = 1;
+				} else {
+					++bitcount;
+				}
+				lastbit = (data[j] >> i) & 1;
 			}
 		}
-		printf("\n");*/
+
+		int blocklen;
+		// check block length
+		for(i = 1; i < k; ++i) {
+			if(val[i][0] + val[i][1] > 100) {
+				blocklen = i;
+				printf("bitblock length %d\n", blocklen);
+				break;				
+			}
+		}
+
+		// byte block check
+		int hasByteBlock = 0;
+		if(val[9][0] * 4 < val[9][1]) {
+			hasByteBlock = 1;
+			printf("hasByteBlock true\n");
+		}
+
+		// check signal type
+		int signaltype;
+		for(i = 1; i < blocklen; ++i) {
+			if(val[i][0] + val[i][1] < 30 &&
+			   val[i][0] > val[i][1] * 16 / 10) {
+				printf("maybe sony\n");
+				signaltype = 1;
+				// strip stop bit
+				--blocklen;
+				break;
+			}
+			if(val[i][0] + val[i][1] < 30 &&
+			   val[i][0] * 16 / 10 < val[i][1]) {
+				if(hasByteBlock == 1) {
+					printf("maybe mitsubishi\n");
+					signaltype = 3;
+					break;
+				} else if(blocklen == 33) {
+					printf("maybe nec\n");
+					signaltype = 2;
+					break;
+				} else if(blocklen == 49) {
+					printf("maybe sharp\n");
+					signaltype = 4;
+					break;
+				} else {
+					printf("unkown type\n");
+					signaltype = 0;
+					break;
+				}
+			}
+		}
+
+		unsigned char cmd[8];
+		j = 0;
+		for(i = 0; i < sizeof(cmd); ++i) {
+			cmd[i] = 0;
+		}
+		for(i = 1; i < blocklen; ++i) {
+			if(signaltype == 1) {
+				if(val[i][0] + val[i][1] < 30 &&
+				   val[i][0] > val[i][1] * 16 / 10) {
+					cmd[j / 8] |= 1 << (7 - j % 8);
+				}
+				++j;
+			}
+			if(signaltype == 2) {
+				if(val[i][0] + val[i][1] < 30 &&
+				   val[i][0] * 16 / 10 < val[i][1] ) {
+					cmd[j / 8] |= 1 << (7 - j % 8);
+				}
+				++j;
+			}
+			if(signaltype == 3) {
+				if(i % 9 != 0) {
+				if(val[i][0] + val[i][1] < 30 &&
+				   val[i][0] * 16 / 10 < val[i][1] ) {
+					cmd[j / 8] |= 1 << (7 - j % 8);
+				}
+				++j;
+				}
+			}
+			if(signaltype == 4) {
+				if(val[i][0] + val[i][1] < 30 &&
+				   val[i][0] * 16 / 10 < val[i][1] ) {
+					cmd[j / 8] |= 1 << (7 - j % 8);
+				}
+				++j;
+			}
+		}
+		printf("bit length: %d\n", j);
+		for(i = 0; i < (j + 7)/ 8; ++i) {
+			printf("%02x ", cmd[i]);
+		}
+		printf("\n");
 	}
 	[pcoprs1RecvButton setTitle:@"Recv"];
-
+	isPcoprs1Receive = NO;
+	
 	[waitTimer stopAnimation:self];
 	[waitTimer setHidden:YES];
 
