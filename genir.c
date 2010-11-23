@@ -295,18 +295,25 @@ int sebitbang(int pos, unsigned char *buff, int hi, int lo)
 	lobit = lo / 25;
 	int i;
 	for(i = 0; i < hibit; ++i) {
+		/*
 		buff[pos++] = 0x01;
 		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
+		 */
+		buff[pos] = 0x01;
+		pos += 5;
 	}
 	for(i = 0; i < lobit; ++i) {
+		/*
 		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
 		buff[pos++] = 0x00;
+		 */
+		pos += 5;
 	}
 	return pos;
 }
@@ -320,7 +327,7 @@ int genir_bitbang(int patcount, irdata *pat, unsigned char *buff, int size)
 	int orgpatcount;
 	orgpat = pat;
 	orgpatcount = patcount;
-	memset(buff, 0, 240);
+	memset(buff, 0, size);
 	rep = (orgpat + patcount - 1)->repeat;
 	if(rep == -1)
 		rep = 4;
