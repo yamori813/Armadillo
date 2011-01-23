@@ -7,12 +7,24 @@
 			<responds-to command="armadillotest">
 				<cocoa method="ArmadilloTest:"/>
 			</responds-to>
+			<responds-to command="loadxml">
+				<cocoa method="loadxml:"/>
+			</responds-to>
+			<responds-to command="sendcommand">
+				<cocoa method="sendcommand:"/>
+			</responds-to>
 			<property name="version" code="vers" description="The version of the application." type="text" access="r"> 
 				<cocoa key="armadilloVers"/>
 			</property>
 		</class>
-		<command name="armadillotest" code="armaTest">
+		<command name="armadillotest" code="armaTest"/>
+		<command name="loadxml" code="armaLoad">
 			<direct-parameter description="file path">
+				<type type="text"/>
+			</direct-parameter>
+		</command>
+		<command name="sendcommand" code="armaSend">
+			<direct-parameter description="command name">
 				<type type="text"/>
 			</direct-parameter>
 		</command>

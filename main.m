@@ -30,6 +30,29 @@ int main(int argc, char *argv[])
 // this code crash on write data to usb
 //	[arma ftbitbangTrans:self];
 // this is workaround code
+	// Required parameter.
+	[NSThread detachNewThreadSelector:@selector(ftbitbangTrans:) toTarget:arma
+						   withObject:nil];
+}
+
+-(void)loadxml:(NSScriptCommand*)command {
+	// this code crash on write data to usb
+	//	[arma ftbitbangTrans:self];
+	// this is workaround code
+	// Required parameter.
+	id directParameter = [command directParameter];
+	NSLog(@"directParameter = %@", directParameter);
+	[NSThread detachNewThreadSelector:@selector(ftbitbangTrans:) toTarget:arma
+						   withObject:nil];
+}
+
+-(void)sendcommand:(NSScriptCommand*)command {
+	// this code crash on write data to usb
+	//	[arma ftbitbangTrans:self];
+	// this is workaround code
+	// Required parameter.
+	id directParameter = [command directParameter];
+	NSLog(@"directParameter = %@", directParameter);
 	[NSThread detachNewThreadSelector:@selector(ftbitbangTrans:) toTarget:arma
 						   withObject:nil];
 }
