@@ -729,13 +729,11 @@
 - (IBAction)xmlLoad:(id)sender
 {
 	NSOpenPanel *opPanel = [ NSOpenPanel openPanel ];
-	NSArray *imgTypes = [ NSArray arrayWithObjects : @"xml",nil ];
+	NSArray *xmlTypes = [ NSArray arrayWithObjects : @"xml",nil ];
 	
 	int	 opRet;
-	
-	opRet = [ opPanel runModalForDirectory : NSHomeDirectory()
-									  file : @"Documents"
-									 types : imgTypes ];
+
+	opRet = [ opPanel runModalForTypes : xmlTypes];
 	
 	if ( opRet == NSOKButton ) {
 		NSString *filepath = [opPanel filename];
