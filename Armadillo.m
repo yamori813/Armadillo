@@ -109,6 +109,7 @@
 			appleremoteStat = 0;
 		}
 		remoData = nil;
+		xmlFilePath = nil;
     }
     return self;
 }
@@ -736,7 +737,8 @@
 	opRet = [ opPanel runModalForTypes : xmlTypes];
 	
 	if ( opRet == NSOKButton ) {
-		NSString *filepath = [opPanel filename];
+//		xmlFilePath = [opPanel filename];
+		xmlFilePath = [[NSString stringWithString:[opPanel filename]] retain];
 		// load data from xml
 		remoCodeCount = 0;
 		remoFrameCount = 0;
@@ -744,7 +746,7 @@
 			remoData = [[NSMutableDictionary alloc] init];
 		else
 			[remoData removeAllObjects];
-		[self readData:filepath];
+		[self readData:xmlFilePath];
 
 		[dataSelect removeAllItems];
 		for (id key in remoData)
@@ -761,6 +763,7 @@
 	CFStringRef appName = CFSTR("Armadillo");
 	CFStringRef windowFrameKey = CFSTR("Window Frame");
 	CFStringRef tabSelectedKey = CFSTR("Tab Selected");
+	CFStringRef xmlFileKey = CFSTR("XML File");
 	CFStringRef strvalue;
 	
 	strvalue = CFPreferencesCopyAppValue(windowFrameKey, appName);
@@ -776,6 +779,23 @@
 		[ tabView selectTabViewItemAtIndex: ret ];
 		CFRelease(numvalue);
 	}
+	strvalue = CFPreferencesCopyAppValue(xmlFileKey, appName);
+	if(strvalue) {
+		xmlFilePath = [NSString stringWithString:(NSString *)strvalue];
+		// load data from xml
+		remoCodeCount = 0;
+		remoFrameCount = 0;
+		if(remoData == nil)
+			remoData = [[NSMutableDictionary alloc] init];
+		else
+			[remoData removeAllObjects];
+		[self readData:xmlFilePath];
+		
+		[dataSelect removeAllItems];
+		for (id key in remoData)
+			[dataSelect addItemWithTitle:key];
+		CFRelease(strvalue);
+	}
 }
 
 - (void) savePrefernce
@@ -783,11 +803,14 @@
 	CFStringRef appName = CFSTR("Armadillo");
 	CFStringRef windowFrameKey = CFSTR("Window Frame");
 	CFStringRef tabSelectedKey = CFSTR("Tab Selected");
+	CFStringRef xmlFileKey = CFSTR("XML File");
 	CFPreferencesSetAppValue(windowFrameKey, (CFStringRef)[ mainWindow 
 														   stringWithSavedFrame], appName);
 	int selectIndex = [ tabView indexOfTabViewItem: [tabView selectedTabViewItem]];
 	CFNumberRef numRef = CFNumberCreate(NULL, kCFNumberIntType, &selectIndex);
 	CFPreferencesSetAppValue(tabSelectedKey, numRef, appName);
+	if(xmlFilePath != nil)
+		CFPreferencesSetAppValue(xmlFileKey, (CFStringRef)xmlFilePath, appName);
 	(void)CFPreferencesAppSynchronize(appName);
 }
 

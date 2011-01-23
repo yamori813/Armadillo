@@ -39,7 +39,8 @@
 
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSTabView *tabView;
-	
+	NSString *xmlFilePath;
+
 	Boolean isPcoprs1Receive;
 	NSString *remoteName;
 	NSString *buttonName;
