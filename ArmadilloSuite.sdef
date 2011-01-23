@@ -11,6 +11,11 @@
 				<cocoa key="armadilloVers"/>
 			</property>
 		</class>
-		<command name="armadillotest" code="armaTest"/>
+		<command name="armadillotest" code="armaTest">
+			<cocoa class="DirectParameterCommand"/>
+			<direct-parameter description="file path">
+				<type type="text"/>
+			</direct-parameter>
+		</command>
 	</suite>
 </dictionary>
