@@ -758,7 +758,7 @@
 // apple script method
 //
 
-- (BOOL) loadxml:(NSString *)path
+- (BOOL) openxml:(NSString *)path
 {
 	NSLog(@"loadxml = %@", path);
 	// Todo add file check
@@ -784,7 +784,7 @@
 	return YES;
 }
 
-- (BOOL) sendcommand:(NSString *)command
+- (BOOL) transftbitbang:(NSString *)command
 {
 	NSLog(@"sendcommand = %@", command);	
 	return YES;

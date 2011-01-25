@@ -7,27 +7,27 @@
 			<responds-to command="armadillotest">
 				<cocoa method="ArmadilloTest:"/>
 			</responds-to>
-			<responds-to command="loadxml">
-				<cocoa method="loadxml:"/>
+			<responds-to command="openxml">
+				<cocoa method="openxml:"/>
 			</responds-to>
 			<responds-to command="initftbitbang">
 				<cocoa method="initftbitbang:"/>
 			</responds-to>
-			<responds-to command="sendcommand">
-				<cocoa method="sendcommand:"/>
+			<responds-to command="transftbitbang">
+				<cocoa method="transftbitbang:"/>
 			</responds-to>
 			<property name="version" code="vers" description="The version of the application." type="text" access="r"> 
 				<cocoa key="armadilloVers"/>
 			</property>
 		</class>
 		<command name="armadillotest" code="armaTest"/>
-		<command name="loadxml" code="armaLoad">
+		<command name="openxml" code="armaLoad">
 			<direct-parameter description="file path">
 				<type type="text"/>
 			</direct-parameter>
 		</command>
 		<command name="initftbitbang" code="armaSend"/>
-		<command name="sendcommand" code="armaSend">
+		<command name="transftbitbang" code="armaSend">
 			<direct-parameter description="command name">
 				<type type="text"/>
 			</direct-parameter>

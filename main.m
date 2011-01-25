@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
 						   withObject:nil];
 }
 
--(void)loadxml:(NSScriptCommand*)command {
+-(void)openxml:(NSScriptCommand*)command {
 	id directParameter = [command directParameter];
-	[NSThread detachNewThreadSelector:@selector(loadxml:) toTarget:arma
+	[NSThread detachNewThreadSelector:@selector(openxml:) toTarget:arma
 						   withObject:directParameter];
 }
 
@@ -46,9 +46,9 @@ int main(int argc, char *argv[])
 						   withObject:nil];
 }
 
--(void)sendcommand:(NSScriptCommand*)command {
+-(void)transftbitbang:(NSScriptCommand*)command {
 	id directParameter = [command directParameter];
-	[NSThread detachNewThreadSelector:@selector(sendcommand:) toTarget:arma
+	[NSThread detachNewThreadSelector:@selector(transftbitbang:) toTarget:arma
 						   withObject:directParameter];
 }
 @end
