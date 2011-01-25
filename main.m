@@ -41,9 +41,9 @@ int main(int argc, char *argv[])
 	// this is workaround code
 	// Required parameter.
 	id directParameter = [command directParameter];
-	NSLog(@"directParameter = %@", directParameter);
-	[NSThread detachNewThreadSelector:@selector(ftbitbangTrans:) toTarget:arma
-						   withObject:nil];
+//	NSLog(@"directParameter = %@", directParameter);
+	[NSThread detachNewThreadSelector:@selector(loadxml:) toTarget:arma
+						   withObject:directParameter];
 }
 
 -(void)sendcommand:(NSScriptCommand*)command {
@@ -52,8 +52,8 @@ int main(int argc, char *argv[])
 	// this is workaround code
 	// Required parameter.
 	id directParameter = [command directParameter];
-	NSLog(@"directParameter = %@", directParameter);
-	[NSThread detachNewThreadSelector:@selector(ftbitbangTrans:) toTarget:arma
-						   withObject:nil];
+//	NSLog(@"directParameter = %@", directParameter);
+	[NSThread detachNewThreadSelector:@selector(sendcommand:) toTarget:arma
+						   withObject:directParameter];
 }
 @end

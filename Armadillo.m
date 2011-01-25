@@ -755,6 +755,20 @@
 }
 
 //
+// apple script method
+//
+
+- (void) loadxml:(NSString *)path
+{
+	NSLog(@"loadxml = %@", path);
+}
+
+- (void) sendcommand:(NSString *)command
+{
+	NSLog(@"sendcommand = %@", command);	
+}
+
+//
 // for prefernce
 //
 
