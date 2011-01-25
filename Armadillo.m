@@ -758,14 +758,36 @@
 // apple script method
 //
 
-- (void) loadxml:(NSString *)path
+- (BOOL) loadxml:(NSString *)path
 {
 	NSLog(@"loadxml = %@", path);
+	// Todo add file check
+	xmlFilePath = [[NSString stringWithString:path] retain];
+	// load data from xml
+	remoCodeCount = 0;
+	remoFrameCount = 0;
+	if(remoData == nil)
+		remoData = [[NSMutableDictionary alloc] init];
+	else
+		[remoData removeAllObjects];
+	[self readData:xmlFilePath];
+	
+	[dataSelect removeAllItems];
+	for (id key in remoData)
+		[dataSelect addItemWithTitle:key];
+	return YES;
 }
 
-- (void) sendcommand:(NSString *)command
+- (BOOL) initftbitbang
+{
+	NSLog(@"initftbitbang");	
+	return YES;
+}
+
+- (BOOL) sendcommand:(NSString *)command
 {
 	NSLog(@"sendcommand = %@", command);	
+	return YES;
 }
 
 //

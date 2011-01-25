@@ -10,6 +10,9 @@
 			<responds-to command="loadxml">
 				<cocoa method="loadxml:"/>
 			</responds-to>
+			<responds-to command="initftbitbang">
+				<cocoa method="initftbitbang:"/>
+			</responds-to>
 			<responds-to command="sendcommand">
 				<cocoa method="sendcommand:"/>
 			</responds-to>
@@ -23,6 +26,7 @@
 				<type type="text"/>
 			</direct-parameter>
 		</command>
+		<command name="initftbitbang" code="armaSend"/>
 		<command name="sendcommand" code="armaSend">
 			<direct-parameter description="command name">
 				<type type="text"/>

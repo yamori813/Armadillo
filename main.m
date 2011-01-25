@@ -36,23 +36,18 @@ int main(int argc, char *argv[])
 }
 
 -(void)loadxml:(NSScriptCommand*)command {
-	// this code crash on write data to usb
-	//	[arma ftbitbangTrans:self];
-	// this is workaround code
-	// Required parameter.
 	id directParameter = [command directParameter];
-//	NSLog(@"directParameter = %@", directParameter);
 	[NSThread detachNewThreadSelector:@selector(loadxml:) toTarget:arma
 						   withObject:directParameter];
 }
 
+-(void)initftbitbang:(NSScriptCommand*)command {
+	[NSThread detachNewThreadSelector:@selector(initftbitbang:) toTarget:arma
+						   withObject:nil];
+}
+
 -(void)sendcommand:(NSScriptCommand*)command {
-	// this code crash on write data to usb
-	//	[arma ftbitbangTrans:self];
-	// this is workaround code
-	// Required parameter.
 	id directParameter = [command directParameter];
-//	NSLog(@"directParameter = %@", directParameter);
 	[NSThread detachNewThreadSelector:@selector(sendcommand:) toTarget:arma
 						   withObject:directParameter];
 }
