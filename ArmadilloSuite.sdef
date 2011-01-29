@@ -21,13 +21,13 @@
 			</property>
 		</class>
 		<command name="armadillotest" code="armaTest"/>
-		<command name="openxml" code="armaLoad">
+		<command name="openxml" code="armaOpen">
 			<direct-parameter description="file path">
 				<type type="text"/>
 			</direct-parameter>
 		</command>
-		<command name="initftbitbang" code="armaSend"/>
-		<command name="transftbitbang" code="armaSend">
+		<command name="initftbitbang" code="armaInFT"/>
+		<command name="transftbitbang" code="armaTrFT">
 			<direct-parameter description="command name">
 				<type type="text"/>
 			</direct-parameter>
