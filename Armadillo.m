@@ -347,8 +347,8 @@
 	int gen_size;
 	int signalcount, codeIndex, frameIndex;
 	int i, j;
-	NSLog(@"%d %d", [dialSelect selectedSegment], 
-		  [buttonItems indexOfObject:[[buttonSelect selectedItem] title]]);
+//	NSLog(@"%d %d", [dialSelect selectedSegment], 
+//		  [buttonItems indexOfObject:[[buttonSelect selectedItem] title]]);
 
 	if(remoCodeCount) {
 		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
@@ -375,7 +375,7 @@
 			patptr->bitlen = remoBits[frameIndex];
 			patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
 										   cStringUsingEncoding:NSASCIIStringEncoding]);
-			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
+//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
 			++patptr;
 		}
 		
@@ -650,7 +650,7 @@
 			patptr->bitlen = remoBits[frameIndex];
 			patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
 										   cStringUsingEncoding:NSASCIIStringEncoding]);
-			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
+//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
 			++patptr;
 		}
 		
@@ -708,7 +708,7 @@
 			patptr->bitlen = remoBits[frameIndex];
 			patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
 										   cStringUsingEncoding:NSASCIIStringEncoding]);
-			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
+//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
 			++patptr;
 		}
 		
@@ -760,7 +760,7 @@
 
 - (void) openxml:(NSString *)path
 {
-	NSLog(@"loadxml = %@", path);
+//	NSLog(@"loadxml = %@", path);
 	NSAutoreleasePool* pool;
 	pool = [[NSAutoreleasePool alloc]init];
 	// Todo add file check
@@ -829,7 +829,7 @@
 			patptr->bitlen = remoBits[frameIndex];
 			patptr->repeat = atoi((char *)[[[remoData objectForKey:command] objectAtIndex:(j * 4 + 0)]
 										   cStringUsingEncoding:NSASCIIStringEncoding]);
-			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
+//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
 			++patptr;
 		}
 		
