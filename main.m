@@ -37,18 +37,30 @@ int main(int argc, char *argv[])
 
 -(void)openxml:(NSScriptCommand*)command {
 	id directParameter = [command directParameter];
-	[NSThread detachNewThreadSelector:@selector(openxml:) toTarget:arma
-						   withObject:directParameter];
+//	[NSThread detachNewThreadSelector:@selector(openxml:) toTarget:arma
+//						   withObject:directParameter];
+	NSThread *theThread = [[NSThread alloc] initWithTarget:arma selector:@selector(openxml:) object:directParameter];
+	[theThread start];
+	while([theThread isFinished] == NO)
+		sleep(1);
 }
 
 -(void)initftbitbang:(NSScriptCommand*)command {
-	[NSThread detachNewThreadSelector:@selector(initftbitbang:) toTarget:arma
-						   withObject:nil];
+//	[NSThread detachNewThreadSelector:@selector(initftbitbang:) toTarget:arma
+//						   withObject:nil];
+	NSThread *theThread = [[NSThread alloc] initWithTarget:arma selector:@selector(initftbitbang:) object:nil];
+	[theThread start];
+	while([theThread isFinished] == NO)
+		sleep(1);
 }
 
 -(void)transftbitbang:(NSScriptCommand*)command {
 	id directParameter = [command directParameter];
-	[NSThread detachNewThreadSelector:@selector(transftbitbang:) toTarget:arma
-						   withObject:directParameter];
+//	[NSThread detachNewThreadSelector:@selector(transftbitbang:) toTarget:arma
+//						   withObject:directParameter];
+	NSThread *theThread = [[NSThread alloc] initWithTarget:arma selector:@selector(transftbitbang:) object:directParameter];
+	[theThread start];
+	while([theThread isFinished] == NO)
+		sleep(1);
 }
 @end
