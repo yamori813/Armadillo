@@ -29,7 +29,7 @@ CGRect convertToCGRect(NSRect inRect);
 - (void)drawScale:(int) width
 {
 	int i;
-	for(i = 0; i < width - 10 / 50; ++i) {
+	for(i = 0; i < (width - 10) / 50; ++i) {
 		CGContextMoveToPoint(gc, OFFSETX + i * 50, 2);
 		CGContextAddLineToPoint(gc, OFFSETX + i * 50, 5);
 	}
