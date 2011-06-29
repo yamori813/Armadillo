@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>307A9199131B053F00C304DB</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Armadillo.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>307A919A131B053F00C304DB</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Armadillo.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>307A919B131B053F00C304DB</string>
+						<key>history</key>
+						<array>
+							<string>307A9193131B04D200C304DB</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {996, 585}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>1875 -130 996 626 1280 -280 1920 1080 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -279,6 +320,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>3</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -304,7 +347,7 @@
 							<real>223</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>75 196 866 571 0 0 1280 778 </string>
+						<string>94 142 866 571 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -320,7 +363,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ArmadilloSuite.sdef</string>
+								<string>IrPatternView.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +371,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ArmadilloSuite.sdef</string>
+										<string>IrPatternView.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>302FC2C612F46BC8004C33CB</string>
+										<string>307A9196131B053F00C304DB</string>
 										<key>history</key>
 										<array>
 											<string>30350B1D123324B500DDD914</string>
@@ -358,14 +401,14 @@
 											<string>304244D4129B974900C9F557</string>
 											<string>30424528129BEF2100C9F557</string>
 											<string>30E18F8B12EC584C007E9650</string>
-											<string>30AC331312ECE0900047BC36</string>
 											<string>30AC331512ECE0900047BC36</string>
-											<string>30AC331612ECE0900047BC36</string>
 											<string>300F7D6112ECEC1000870746</string>
-											<string>300F7D6212ECEC1000870746</string>
-											<string>307B5A1A12F4172C005E9A48</string>
 											<string>307B5A1B12F4172C005E9A48</string>
-											<string>307B5A5612F46B50005E9A48</string>
+											<string>302FC2D512F485E4004C33CB</string>
+											<string>305EB59A12F5B0CC00911828</string>
+											<string>3094EA711305663B00B35E6A</string>
+											<string>307A9194131B053F00C304DB</string>
+											<string>30AC331312ECE0900047BC36</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -400,6 +443,7 @@
 											<string>309C0C14125A75E10069B489</string>
 											<string>30749C57125A8FAE00ACF637</string>
 											<string>30749C59125A8FAE00ACF637</string>
+											<string>307A9195131B053F00C304DB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -413,7 +457,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {599, 352}}</string>
 								<key>RubberWindowFrame</key>
-								<string>75 196 866 571 0 0 1280 778 </string>
+								<string>94 142 866 571 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -433,7 +477,7 @@
 								<key>Frame</key>
 								<string>{{0, 357}, {599, 173}}</string>
 								<key>RubberWindowFrame</key>
-								<string>75 196 866 571 0 0 1280 778 </string>
+								<string>94 142 866 571 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -457,9 +501,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>302FC2C712F46BC8004C33CB</string>
+				<string>307A9197131B053F00C304DB</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>302FC2C812F46BC8004C33CB</string>
+				<string>307A9198131B053F00C304DB</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -593,14 +637,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>30350B121233248800DDD914</string>
-		<string>30D8981E123D100F00B489E6</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/himori/Develop/Device/Armadillo/Armadillo.xcodeproj</string>
+		<string>307A9199131B053F00C304DB</string>
 	</array>
 	<key>WindowString</key>
-	<string>75 196 866 571 0 0 1280 778 </string>
+	<string>94 142 866 571 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -677,7 +718,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>30350B121233248800DDD914</string>
-				<string>302FC2C912F46BC8004C33CB</string>
+				<string>305EB58D12F5B01A00911828</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -797,13 +838,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>302FC2B512F46BC0004C33CB</string>
+				<string>30071BE61305587800737B58</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>302FC2B612F46BC0004C33CB</string>
-				<string>302FC2B712F46BC0004C33CB</string>
-				<string>302FC2B812F46BC0004C33CB</string>
-				<string>302FC2B912F46BC0004C33CB</string>
-				<string>302FC2BA12F46BC0004C33CB</string>
+				<string>30071BE71305587800737B58</string>
+				<string>30071BE81305587800737B58</string>
+				<string>30071BE91305587800737B58</string>
+				<string>30071BEA1305587800737B58</string>
+				<string>30071BEB1305587800737B58</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -812,7 +853,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -957,7 +998,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>302FC2CA12F46BC8004C33CB</string>
+				<string>305EB59412F5B01A00911828</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

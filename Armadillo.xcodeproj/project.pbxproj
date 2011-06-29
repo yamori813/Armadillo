@@ -15,14 +15,14 @@
 		30350A3F123317AA00DDD914 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30350A3E123317AA00DDD914 /* IOKit.framework */; };
 		304125F5123EE28D00BDD47C /* genir.c in Sources */ = {isa = PBXBuildFile; fileRef = 304125F4123EE28D00BDD47C /* genir.c */; };
 		304B8FEF124B7CA30076FC99 /* bitbang.c in Sources */ = {isa = PBXBuildFile; fileRef = 304B8FEE124B7CA30076FC99 /* bitbang.c */; };
-		3077A5C4124BA37B00B2556D /* libftd2xx.0.1.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */; };
-		3077A5C6124BA38B00B2556D /* libftd2xx.0.1.7.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */; };
 		307EF11A1245CC6100A021AD /* IrPatternView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307EF1191245CC6100A021AD /* IrPatternView.m */; };
 		309B4D8B1253F2A400F8CE75 /* ArmadilloSuite.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 309B4D8A1253F2A400F8CE75 /* ArmadilloSuite.sdef */; };
 		309B55C71251E2F300EDA358 /* appleremote.c in Sources */ = {isa = PBXBuildFile; fileRef = 309B55C61251E2F300EDA358 /* appleremote.c */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		F51708EB13BA964800BDFA84 /* libftd2xx.1.0.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F51708EA13BA964800BDFA84 /* libftd2xx.1.0.4.dylib */; };
+		F51708FE13BA96F000BDFA84 /* libftd2xx.1.0.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = F51708EA13BA964800BDFA84 /* libftd2xx.1.0.4.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,7 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3077A5C6124BA38B00B2556D /* libftd2xx.0.1.7.dylib in CopyFiles */,
+				F51708FE13BA96F000BDFA84 /* libftd2xx.1.0.4.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +71,7 @@
 		32CA4F630368D1EE00C91783 /* Armadillo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armadillo_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Armadillo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Armadillo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51708EA13BA964800BDFA84 /* libftd2xx.1.0.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libftd2xx.1.0.4.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +81,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				30350A3F123317AA00DDD914 /* IOKit.framework in Frameworks */,
-				3077A5C4124BA37B00B2556D /* libftd2xx.0.1.7.dylib in Frameworks */,
+				F51708EB13BA964800BDFA84 /* libftd2xx.1.0.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */,
+				F51708EA13BA964800BDFA84 /* libftd2xx.1.0.4.dylib */,
 			);
 			name = "My Frameworks";
 			sourceTree = "<group>";
@@ -197,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Armadillo" */;
 			buildPhases = (
+				F515C2AF13BBDBA60057E626 /* ShellScript */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
@@ -248,6 +251,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F515C2AF13BBDBA60057E626 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -id @executable_path/../Frameworks/libftd2xx.1.0.4.dylib libftd2xx.1.0.4.dylib";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
