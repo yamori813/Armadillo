@@ -749,8 +749,14 @@
 		[self readData:xmlFilePath];
 
 		[dataSelect removeAllItems];
-		for (id key in remoData)
+//		for (id key in remoData)
+//			[dataSelect addItemWithTitle:key];
+		NSEnumerator *enumerator = [remoData keyEnumerator];
+		id key;
+		
+		while ((key = [enumerator nextObject])) {
 			[dataSelect addItemWithTitle:key];
+		}
 	} 
 }
 
@@ -775,8 +781,15 @@
 	[self readData:xmlFilePath];
 	
 	[dataSelect removeAllItems];
-	for (id key in remoData)
+//	for (id key in remoData)
+//		[dataSelect addItemWithTitle:key];
+	NSEnumerator *enumerator = [remoData keyEnumerator];
+	id key;
+	
+	while ((key = [enumerator nextObject])) {
 		[dataSelect addItemWithTitle:key];
+	}
+	
 	[pool release];
 	[NSThread exit];
 }
@@ -883,8 +896,15 @@
 		[self readData:xmlFilePath];
 		
 		[dataSelect removeAllItems];
-		for (id key in remoData)
+//		for (id key in remoData)
+//			[dataSelect addItemWithTitle:key];
+		NSEnumerator *enumerator = [remoData keyEnumerator];
+		id key;
+		
+		while ((key = [enumerator nextObject])) {
 			[dataSelect addItemWithTitle:key];
+		}
+		
 		CFRelease(strvalue);
 	}
 }
