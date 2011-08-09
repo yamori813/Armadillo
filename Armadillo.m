@@ -925,6 +925,24 @@
 	(void)CFPreferencesAppSynchronize(appName);
 }
 
+- (IBAction)disclosureControls:sender
+{
+    NSRect frame = [mainWindow frame];
+	switch([sender state]) {
+        case NSOnState:
+			frame.size.height += 120;
+			frame.origin.y -= 120;
+            break;
+        case NSOffState:
+			frame.size.height -= 120;
+			frame.origin.y += 120;
+            break;
+        default:
+            break;
+    }
+    [mainWindow setFrame:frame display:YES animate:YES];
+}
+
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	[self getPrefernce];

@@ -84,4 +84,7 @@
 // 
 
 - (IBAction)xmlLoad:(id)sender;
+
+- (IBAction)disclosureControls:sender;
+
 @end
