@@ -274,27 +274,11 @@
 
 - (IBAction)crossam2Init:(id)sender
 {
-	NSMutableArray *ifList;
-	NSMutableString *portName;
-	portName = nil;
-	// get serial port name list
-    ifList = [[ NSMutableArray alloc ] init];
-    io_iterator_t	serialPortIterator;
-    FindModems(&serialPortIterator);
-    GetModemPath(serialPortIterator, (CFMutableArrayRef)ifList);
-    IOObjectRelease(serialPortIterator);	// Release the iterator.
 	int i;
-	for(i =0; i < [ ifList count]; ++i) {
-		NSRange range;
-		range = [[ifList objectAtIndex:i] rangeOfString:@"F5U103"];
-		if (range.location != NSNotFound) {
-			//			NSLog(@"MORI MORI port %@\n", [ifList objectAtIndex:i]);
-			portName = [[ NSMutableString alloc ] init];
-			[portName setString:[ifList objectAtIndex:i]];
-			break;
-		}
-	}
-
+	NSString *portName;
+	portName = nil;
+	portName = [[pcoprs1DevSelect selectedItem] title];
+	
 	if(portName != nil) {
 		if(crossam2_init((CFStringRef)portName)) {
 			crossam2_protectoff();
@@ -568,26 +552,9 @@
 
 - (IBAction)pcoprs1Init:(id)sender
 {
-	NSMutableArray *ifList;
-	NSMutableString *portName;
+	NSString *portName;
 	portName = nil;
-	// get serial port name list
-    ifList = [[ NSMutableArray alloc ] init];
-    io_iterator_t	serialPortIterator;
-    FindModems(&serialPortIterator);
-    GetModemPath(serialPortIterator, (CFMutableArrayRef)ifList);
-    IOObjectRelease(serialPortIterator);	// Release the iterator.
-	int i;
-	for(i =0; i < [ ifList count]; ++i) {
-		NSRange range;
-		range = [[ifList objectAtIndex:i] rangeOfString:@"OPRS"];
-		if (range.location != NSNotFound) {
-			//			NSLog(@"MORI MORI port %@\n", [ifList objectAtIndex:i]);
-			portName = [[ NSMutableString alloc ] init];
-			[portName setString:[ifList objectAtIndex:i]];
-			break;
-		}
-	}
+	portName = [[pcoprs1DevSelect selectedItem] title];
 
 	if(portName != nil && pcoprs1_init((CFStringRef)portName)) {
 		[pcoprs1InitButton setEnabled: NO];
@@ -947,6 +914,27 @@
 {
 	[self getPrefernce];
 
+	NSMutableArray *ifList = [[ NSMutableArray alloc ] init];
+	
+    io_iterator_t	serialPortIterator;
+    FindModems(&serialPortIterator);
+    GetModemPath(serialPortIterator, (CFMutableArrayRef)ifList);
+    IOObjectRelease(serialPortIterator);	// Release the iterator.
+	
+    // add device path to menu
+	
+//    [ crossam2DevSelect removeAllItems ];
+//    [ pcoprs1DevSelect removeAllItems ];
+    if([ ifList count]) {
+        [ crossam2DevSelect addItemsWithTitles : ifList];
+        [ crossam2DevSelect setEnabled : true];
+        [ pcoprs1DevSelect addItemsWithTitles : ifList];
+        [ pcoprs1DevSelect setEnabled : true];
+    } else {
+        [ crossam2DevSelect setEnabled : false];
+        [ pcoprs1DevSelect setEnabled : false];
+    }
+	
 	[ mainWindow makeKeyAndOrderFront:nil];
 }
 

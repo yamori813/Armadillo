@@ -22,12 +22,14 @@
 	IBOutlet NSButton *crossam2ReadButton;
 	IBOutlet NSPopUpButton *buttonSelect;
 	IBOutlet NSSegmentedControl *dialSelect;
+	IBOutlet NSPopUpButton *crossam2DevSelect;
 
 	IBOutlet NSButton *pcoprs1InitButton;
 	IBOutlet NSButton *pcoprs1TransButton;
 	IBOutlet NSButton *pcoprs1LEDButton;
 	IBOutlet NSButton *pcoprs1RecvButton;
 	IBOutlet NSSegmentedControl *pcopes1LEDSelect;
+	IBOutlet NSPopUpButton *pcoprs1DevSelect;
 
 	IBOutlet NSButton *ftbitbangInitButton;
 	IBOutlet NSButton *ftbitbangTransButton;

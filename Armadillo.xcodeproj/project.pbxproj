@@ -16,13 +16,14 @@
 		304125F5123EE28D00BDD47C /* genir.c in Sources */ = {isa = PBXBuildFile; fileRef = 304125F4123EE28D00BDD47C /* genir.c */; };
 		304B8FEF124B7CA30076FC99 /* bitbang.c in Sources */ = {isa = PBXBuildFile; fileRef = 304B8FEE124B7CA30076FC99 /* bitbang.c */; };
 		307EF11A1245CC6100A021AD /* IrPatternView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307EF1191245CC6100A021AD /* IrPatternView.m */; };
-		309B4D8B1253F2A400F8CE75 /* ArmadilloSuite.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 309B4D8A1253F2A400F8CE75 /* ArmadilloSuite.sdef */; };
 		309B55C71251E2F300EDA358 /* appleremote.c in Sources */ = {isa = PBXBuildFile; fileRef = 309B55C61251E2F300EDA358 /* appleremote.c */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		F535846C13F094E8005C41BD /* libftd2xx.0.1.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */; };
 		F535847913F09576005C41BD /* libftd2xx.0.1.7.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3077A5C3124BA37B00B2556D /* libftd2xx.0.1.7.dylib */; };
+		F5C2182213F29D8000C676FF /* ArmadilloSuite.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = F5C2180613F291CC00C676FF /* ArmadilloSuite.scriptSuite */; };
+		F5C2182313F29D8000C676FF /* ArmadilloSuite.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = F5C2180713F291CC00C676FF /* ArmadilloSuite.scriptTerminology */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +73,8 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Armadillo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Armadillo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F535846813F0944C005C41BD /* libftd2xx.1.0.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libftd2xx.1.0.4.dylib; path = ../FT_D2XX_Lib.1.0.4/D2XX/bin/10.4/libftd2xx.1.0.4.dylib; sourceTree = SOURCE_ROOT; };
+		F5C2180613F291CC00C676FF /* ArmadilloSuite.scriptSuite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.scriptSuite; path = ArmadilloSuite.scriptSuite; sourceTree = "<group>"; };
+		F5C2180713F291CC00C676FF /* ArmadilloSuite.scriptTerminology */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.scriptTerminology; path = ArmadilloSuite.scriptTerminology; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F5C2180613F291CC00C676FF /* ArmadilloSuite.scriptSuite */,
+				F5C2180713F291CC00C676FF /* ArmadilloSuite.scriptTerminology */,
 				309B4D8A1253F2A400F8CE75 /* ArmadilloSuite.sdef */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -246,7 +251,8 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
-				309B4D8B1253F2A400F8CE75 /* ArmadilloSuite.sdef in Resources */,
+				F5C2182213F29D8000C676FF /* ArmadilloSuite.scriptSuite in Resources */,
+				F5C2182313F29D8000C676FF /* ArmadilloSuite.scriptTerminology in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
