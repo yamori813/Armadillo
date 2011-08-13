@@ -852,7 +852,7 @@
 	}
 	strvalue = CFPreferencesCopyAppValue(xmlFileKey, appName);
 	if(strvalue) {
-		xmlFilePath = [NSString stringWithString:(NSString *)strvalue];
+		xmlFilePath = [[NSString stringWithString:(NSString *)strvalue] retain];
 		// load data from xml
 		remoCodeCount = 0;
 		remoFrameCount = 0;
