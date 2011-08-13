@@ -728,14 +728,14 @@
 }
 
 //
-// apple script thread method
+// apple script support method
 //
 
 - (void) openxml:(NSString *)path
 {
 //	NSLog(@"loadxml = %@", path);
-	NSAutoreleasePool* pool;
-	pool = [[NSAutoreleasePool alloc]init];
+//	NSAutoreleasePool* pool;
+//	pool = [[NSAutoreleasePool alloc]init];
 	// Todo add file check
 	xmlFilePath = [[NSString stringWithString:path] retain];
 	// load data from xml
@@ -757,72 +757,23 @@
 		[dataSelect addItemWithTitle:key];
 	}
 	
-	[pool release];
-	[NSThread exit];
+//	[pool release];
+//	[NSThread exit];
 }
 
-- (void) initftbitbang:(id)dummy
+- (void) setTab:(int)tab
 {
-//	NSLog(@"initftbitbang");
-	NSAutoreleasePool* pool;
-	pool = [[NSAutoreleasePool alloc]init];
-	if([ftbitbangInitButton isEnabled] ==YES && bitbang_init()) {
-		[ftbitbangInitButton setEnabled: NO];
-		[ftbitbangTransButton setEnabled: YES];
-	}
-	[pool release];
-	[NSThread exit];
+	[ tabView selectTabViewItemAtIndex: tab ];	
 }
 
-- (void) transftbitbang:(NSString *)command
+- (int) getTab
 {
-	NSAutoreleasePool* pool;
-	pool = [[NSAutoreleasePool alloc]init];
-//	NSLog(@"sendcommand = %@", command);
-	unsigned char cmddata[1024*128];
-	int gen_size;
-	int signalcount, codeIndex, frameIndex;
-	int i, j;
-	if(remoCodeCount) {
-		// ToDo: add check
-		signalcount = [[remoData objectForKey:command] count] / 4;
-		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
-		pat = patptr;
-		for(j = 0; j < signalcount; ++j) {
-			// set value from xml
-			codeIndex = atoi((char *)[[[remoData objectForKey:command] objectAtIndex:(j * 4 + 1)]
-									  cStringUsingEncoding:NSASCIIStringEncoding]);
-			frameIndex = atoi((char *)[[[remoData objectForKey:command] objectAtIndex:(j * 4 + 2)]
-									   cStringUsingEncoding:NSASCIIStringEncoding]);
-			patptr->format.start_h = remoFrame[frameIndex]->start_h;
-			patptr->format.start_l = remoFrame[frameIndex]->start_l;
-			patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
-			patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
-			patptr->format.zero_h = remoCode[codeIndex]->zero_h;
-			patptr->format.zero_l = remoCode[codeIndex]->zero_l;
-			patptr->format.one_h = remoCode[codeIndex]->one_h;
-			patptr->format.one_l = remoCode[codeIndex]->one_l;
-			NSString *theData = [[remoData objectForKey:command] objectAtIndex:(j * 4 + 3)];
-			for(i = 0; i < [theData length] / 2; ++i) {
-				patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
-			}
-			patptr->bitlen = remoBits[frameIndex];
-			patptr->repeat = atoi((char *)[[[remoData objectForKey:command] objectAtIndex:(j * 4 + 0)]
-										   cStringUsingEncoding:NSASCIIStringEncoding]);
-//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
-			++patptr;
-		}
-		
-		// generate and send data
-		gen_size = genir_bitbang(signalcount, pat , cmddata, sizeof(cmddata));
-		[patView setIrPattern:1 pat:pat];
-		[patView setNeedsDisplay:YES];
-		printf("genir_bitbang size = %d\n",gen_size);
-		bitbang_transfer(gen_size, cmddata);
-	}
-	
-	[pool release];
-	[NSThread exit];
+	return [ tabView indexOfTabViewItem: [tabView selectedTabViewItem]];
+}
+
+- (void) setCommand:(NSString *)command
+{
+	[ dataSelect selectItemWithTitle:command ];	
 }
 
 //

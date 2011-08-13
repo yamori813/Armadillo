@@ -87,6 +87,13 @@
 
 - (IBAction)xmlLoad:(id)sender;
 
+//
+
+- (void) openxml:(NSString *)path;
+- (void) setTab:(int)tab;
+- (int) getTab;
+- (void) setCommand:(NSString *)command;
+
 - (IBAction)disclosureControls:sender;
 
 @end

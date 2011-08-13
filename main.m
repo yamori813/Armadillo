@@ -37,30 +37,34 @@ int main(int argc, char *argv[])
 
 -(void)openxml:(NSScriptCommand*)command {
 	id directParameter = [command directParameter];
-//	[NSThread detachNewThreadSelector:@selector(openxml:) toTarget:arma
-//						   withObject:directParameter];
-	NSThread *theThread = [[NSThread alloc] initWithTarget:arma selector:@selector(openxml:) object:directParameter];
-	[theThread start];
-	while([theThread isFinished] == NO)
-		sleep(1);
+	[NSThread detachNewThreadSelector:@selector(openxml:) toTarget:arma
+						   withObject:directParameter];
 }
 
--(void)initftbitbang:(NSScriptCommand*)command {
-//	[NSThread detachNewThreadSelector:@selector(initftbitbang:) toTarget:arma
-//						   withObject:nil];
-	NSThread *theThread = [[NSThread alloc] initWithTarget:arma selector:@selector(initftbitbang:) object:nil];
-	[theThread start];
-	while([theThread isFinished] == NO)
-		sleep(1);
+-(void)usedevice:(NSScriptCommand*)command {
+	NSString *directParameter = [command directParameter];
+	if([directParameter compare:@"Crossam2"] == NSOrderedSame) {
+		[arma setTab:0];
+	} else if([directParameter compare:@"PC-OP-RS1"] == NSOrderedSame) {
+		[arma setTab:1];
+		[arma pcoprs1Init:nil];
+	} else {
+		[arma setTab:2];
+		[arma ftbitbangInit:nil];
+	}
 }
 
--(void)transftbitbang:(NSScriptCommand*)command {
+-(void)commandsend:(NSScriptCommand*)command {
 	id directParameter = [command directParameter];
+	[arma setCommand:directParameter];
+	int tab = [arma getTab];
+	if(tab == 0) {
+	} else if(tab == 1) {
+		[arma pcoprs1Trans:nil];
+	} else {
+		[arma ftbitbangTrans:nil];
+	}
 //	[NSThread detachNewThreadSelector:@selector(transftbitbang:) toTarget:arma
 //						   withObject:directParameter];
-	NSThread *theThread = [[NSThread alloc] initWithTarget:arma selector:@selector(transftbitbang:) object:directParameter];
-	[theThread start];
-	while([theThread isFinished] == NO)
-		sleep(1);
 }
 @end
