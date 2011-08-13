@@ -920,7 +920,7 @@
     FindModems(&serialPortIterator);
     GetModemPath(serialPortIterator, (CFMutableArrayRef)ifList);
     IOObjectRelease(serialPortIterator);	// Release the iterator.
-	
+	NSLog(@"%@", ifList);
     // add device path to menu
 	
 //    [ crossam2DevSelect removeAllItems ];
