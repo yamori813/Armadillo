@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="567"/>
 			<integer value="29"/>
-			<integer value="579"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -709,7 +709,7 @@
 				<string key="NSWindowTitle">Armadillo</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSWindowContentMaxSize">{598, 311}</string>
 				<object class="NSView" key="NSWindowView" id="694768526">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -1330,7 +1330,7 @@
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
-				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSMaxSize">{598, 333}</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -3062,6 +3062,10 @@
 					<string>567.IBPluginDependency</string>
 					<string>567.IBWindowTemplateEditedContentRect</string>
 					<string>567.NSWindowTemplate.visibleAtLaunch</string>
+					<string>567.windowTemplate.hasMaxSize</string>
+					<string>567.windowTemplate.hasMinSize</string>
+					<string>567.windowTemplate.maxSize</string>
+					<string>567.windowTemplate.minSize</string>
 					<string>568.IBPluginDependency</string>
 					<string>569.IBPluginDependency</string>
 					<string>569.IBViewBoundsToFrameTransform</string>
@@ -3259,7 +3263,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{525, 802}, {197, 73}}</string>
-					<string>{{434, 208}, {362, 20}}</string>
+					<string>{{291, 208}, {362, 20}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{74, 862}</string>
@@ -3293,10 +3297,14 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{51, 383}, {598, 311}}</string>
+					<string>{{51, 384}, {598, 311}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{51, 383}, {598, 311}}</string>
+					<string>{{51, 384}, {598, 311}}</string>
 					<boolean value="NO"/>
+					<boolean value="YES"/>
+					<boolean value="NO"/>
+					<string>{598, 311}</string>
+					<string>{100, 100}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSAffineTransform">

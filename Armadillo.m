@@ -782,9 +782,11 @@
 
 - (void) getPrefernce
 {
-	CFStringRef appName = CFSTR("Armadillo");
+	CFStringRef appName = CFSTR("jp.ddo.ellington.Armadillo");
 	CFStringRef windowFrameKey = CFSTR("Window Frame");
 	CFStringRef tabSelectedKey = CFSTR("Tab Selected");
+	CFStringRef crossamPortKey = CFSTR("Crossam2 Port");
+	CFStringRef pcoprs1PortKey = CFSTR("PC-OP-RS1 Port");
 	CFStringRef xmlFileKey = CFSTR("XML File");
 	CFStringRef strvalue;
 	
@@ -801,6 +803,17 @@
 		[ tabView selectTabViewItemAtIndex: ret ];
 		CFRelease(numvalue);
 	}
+	strvalue = CFPreferencesCopyAppValue(crossamPortKey, appName);
+	if(strvalue) {
+		[ crossam2DevSelect selectItemWithTitle: (NSString *)strvalue ];
+		CFRelease(strvalue);
+	}
+	strvalue = CFPreferencesCopyAppValue(pcoprs1PortKey, appName);
+	if(strvalue) {
+		[ pcoprs1DevSelect selectItemWithTitle: (NSString *)strvalue ];
+		CFRelease(strvalue);
+	}
+	
 	strvalue = CFPreferencesCopyAppValue(xmlFileKey, appName);
 	if(strvalue) {
 		xmlFilePath = [[NSString stringWithString:(NSString *)strvalue] retain];
@@ -829,15 +842,22 @@
 
 - (void) savePrefernce
 {
-	CFStringRef appName = CFSTR("Armadillo");
+	CFStringRef appName = CFSTR("jp.ddo.ellington.Armadillo");
 	CFStringRef windowFrameKey = CFSTR("Window Frame");
 	CFStringRef tabSelectedKey = CFSTR("Tab Selected");
+	CFStringRef crossamPortKey = CFSTR("Crossam2 Port");
+	CFStringRef pcoprs1PortKey = CFSTR("PC-OP-RS1 Port");
 	CFStringRef xmlFileKey = CFSTR("XML File");
 	CFPreferencesSetAppValue(windowFrameKey, (CFStringRef)[ mainWindow 
 														   stringWithSavedFrame], appName);
 	int selectIndex = [ tabView indexOfTabViewItem: [tabView selectedTabViewItem]];
 	CFNumberRef numRef = CFNumberCreate(NULL, kCFNumberIntType, &selectIndex);
 	CFPreferencesSetAppValue(tabSelectedKey, numRef, appName);
+	CFPreferencesSetAppValue(crossamPortKey, (CFStringRef)[ crossam2DevSelect  
+														   titleOfSelectedItem], appName);
+	CFPreferencesSetAppValue(pcoprs1PortKey, (CFStringRef)[ pcoprs1DevSelect  
+														   titleOfSelectedItem], appName);
+
 	if(xmlFilePath != nil)
 		CFPreferencesSetAppValue(xmlFileKey, (CFStringRef)xmlFilePath, appName);
 	(void)CFPreferencesAppSynchronize(appName);
