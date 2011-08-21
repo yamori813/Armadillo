@@ -37,6 +37,7 @@
 	IBOutlet NSProgressIndicator *waitTimer;
 	IBOutlet NSPopUpButton *dataSelect;
 
+	IBOutlet NSButton *disclosureButton;
 	IBOutlet IrPatternView *patView;
 
 	IBOutlet NSWindow *mainWindow;

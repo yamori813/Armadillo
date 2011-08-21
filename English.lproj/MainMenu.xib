@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="567"/>
 			<integer value="29"/>
+			<integer value="567"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1912,6 +1912,14 @@
 					</object>
 					<int key="connectionID">683</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">disclosureButton</string>
+						<reference key="source" ref="296392198"/>
+						<reference key="destination" ref="963736027"/>
+					</object>
+					<int key="connectionID">684</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3413,7 +3421,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">683</int>
+			<int key="maxID">684</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3543,6 +3551,7 @@
 							<string>crossam2WriteButton</string>
 							<string>dataSelect</string>
 							<string>dialSelect</string>
+							<string>disclosureButton</string>
 							<string>ftbitbangInitButton</string>
 							<string>ftbitbangTransButton</string>
 							<string>mainWindow</string>
@@ -3567,6 +3576,7 @@
 							<string>NSButton</string>
 							<string>NSPopUpButton</string>
 							<string>NSSegmentedControl</string>
+							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSWindow</string>
@@ -3594,6 +3604,7 @@
 							<string>crossam2WriteButton</string>
 							<string>dataSelect</string>
 							<string>dialSelect</string>
+							<string>disclosureButton</string>
 							<string>ftbitbangInitButton</string>
 							<string>ftbitbangTransButton</string>
 							<string>mainWindow</string>
@@ -3644,6 +3655,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">dialSelect</string>
 								<string key="candidateClassName">NSSegmentedControl</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">disclosureButton</string>
+								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">ftbitbangInitButton</string>

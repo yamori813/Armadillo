@@ -785,6 +785,7 @@
 	CFStringRef appName = CFSTR("jp.ddo.ellington.Armadillo");
 	CFStringRef windowFrameKey = CFSTR("Window Frame");
 	CFStringRef tabSelectedKey = CFSTR("Tab Selected");
+	CFStringRef patternDisplayKey = CFSTR("Pattern Display");
 	CFStringRef crossamPortKey = CFSTR("Crossam2 Port");
 	CFStringRef pcoprs1PortKey = CFSTR("PC-OP-RS1 Port");
 	CFStringRef xmlFileKey = CFSTR("XML File");
@@ -801,6 +802,19 @@
 		int ret;
 		CFNumberGetValue(numvalue, kCFNumberIntType, &ret);
 		[ tabView selectTabViewItemAtIndex: ret ];
+		CFRelease(numvalue);
+	}
+	numvalue = CFPreferencesCopyAppValue(patternDisplayKey, appName);
+	if(numvalue) {
+		int ret;
+		CFNumberGetValue(numvalue, kCFNumberIntType, &ret);
+		if(ret == 0) {
+			[disclosureButton setIntValue:ret];
+			NSRect frame = [mainWindow frame];
+			frame.size.height -= 120;
+//			frame.origin.y += 120;
+			[mainWindow setFrame:frame display:NO animate:NO];
+		}
 		CFRelease(numvalue);
 	}
 	strvalue = CFPreferencesCopyAppValue(crossamPortKey, appName);
@@ -845,14 +859,26 @@
 	CFStringRef appName = CFSTR("jp.ddo.ellington.Armadillo");
 	CFStringRef windowFrameKey = CFSTR("Window Frame");
 	CFStringRef tabSelectedKey = CFSTR("Tab Selected");
+	CFStringRef patternDisplayKey = CFSTR("Pattern Display");
 	CFStringRef crossamPortKey = CFSTR("Crossam2 Port");
 	CFStringRef pcoprs1PortKey = CFSTR("PC-OP-RS1 Port");
 	CFStringRef xmlFileKey = CFSTR("XML File");
 	CFPreferencesSetAppValue(windowFrameKey, (CFStringRef)[ mainWindow 
 														   stringWithSavedFrame], appName);
-	int selectIndex = [ tabView indexOfTabViewItem: [tabView selectedTabViewItem]];
-	CFNumberRef numRef = CFNumberCreate(NULL, kCFNumberIntType, &selectIndex);
-	CFPreferencesSetAppValue(tabSelectedKey, numRef, appName);
+	int intnum = [ tabView indexOfTabViewItem: [tabView selectedTabViewItem]];
+	CFNumberRef numRef = CFNumberCreate(NULL, kCFNumberIntType, &intnum);
+	if(numRef) {
+		CFPreferencesSetAppValue(tabSelectedKey, numRef, appName);
+		CFRelease(numRef);
+	}
+
+	intnum = [ disclosureButton intValue];
+	numRef = CFNumberCreate(NULL, kCFNumberIntType, &intnum);
+	if(numRef) {
+		CFPreferencesSetAppValue(patternDisplayKey, numRef, appName);
+		CFRelease(numRef);
+	}
+	
 	CFPreferencesSetAppValue(crossamPortKey, (CFStringRef)[ crossam2DevSelect  
 														   titleOfSelectedItem], appName);
 	CFPreferencesSetAppValue(pcoprs1PortKey, (CFStringRef)[ pcoprs1DevSelect  
