@@ -817,15 +817,19 @@
 		}
 		CFRelease(numvalue);
 	}
-	strvalue = CFPreferencesCopyAppValue(crossamPortKey, appName);
-	if(strvalue) {
-		[ crossam2DevSelect selectItemWithTitle: (NSString *)strvalue ];
-		CFRelease(strvalue);
+	if([crossam2DevSelect numberOfItems] != 0) {
+		strvalue = CFPreferencesCopyAppValue(crossamPortKey, appName);
+		if(strvalue) {
+			[ crossam2DevSelect selectItemWithTitle: (NSString *)strvalue ];
+			CFRelease(strvalue);
+		}
 	}
-	strvalue = CFPreferencesCopyAppValue(pcoprs1PortKey, appName);
-	if(strvalue) {
-		[ pcoprs1DevSelect selectItemWithTitle: (NSString *)strvalue ];
-		CFRelease(strvalue);
+	if([pcoprs1DevSelect numberOfItems] != 0) {
+		strvalue = CFPreferencesCopyAppValue(pcoprs1PortKey, appName);
+		if(strvalue) {
+			[ pcoprs1DevSelect selectItemWithTitle: (NSString *)strvalue ];
+			CFRelease(strvalue);
+		}
 	}
 	
 	strvalue = CFPreferencesCopyAppValue(xmlFileKey, appName);
