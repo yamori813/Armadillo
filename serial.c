@@ -36,7 +36,8 @@ kern_return_t FindModems(io_iterator_t *matchingServices)
         CFDictionarySetValue(classesToMatch,
                              CFSTR(kIOSerialBSDTypeKey),
 //                             CFSTR(kIOSerialBSDModemType));
-							 CFSTR(kIOSerialBSDRS232Type));
+//							 CFSTR(kIOSerialBSDRS232Type));
+							 CFSTR(kIOSerialBSDAllTypes));
     }
 
     kernResult = IOServiceGetMatchingServices(masterPort, classesToMatch, matchingServices);    
