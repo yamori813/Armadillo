@@ -935,6 +935,8 @@
         [ pcoprs1DevSelect addItemsWithTitles : ifList];
         [ pcoprs1DevSelect setEnabled : true];
     } else {
+        [ crossam2InitButton setEnabled : false];
+        [ pcoprs1InitButton setEnabled : false];
         [ crossam2DevSelect setEnabled : false];
         [ pcoprs1DevSelect setEnabled : false];
     }
