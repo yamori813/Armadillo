@@ -26,14 +26,15 @@ int bitbang_list(CFMutableArrayRef interfaceList)
 	char *farstBuf;
 	ftStatus = FT_ListDevices(&numDevs, NULL, FT_LIST_NUMBER_ONLY);  
 	if (ftStatus == FT_OK) {
-		BufPtrs = (char **)malloc(numDevs * sizeof(char *));
-		farstBuf =(char *)malloc(numDevs * sizeof(char *)); 
+		BufPtrs = (char **)malloc((numDevs + 1)* sizeof(char *));
+		farstBuf =(char *)malloc(numDevs * 64); 
 		int i;
 		TmpPtrs = BufPtrs;
 		for(i = 0;i < numDevs; ++i) {
 			
 			*TmpPtrs++ = farstBuf + 64 * i;
 		}
+		*TmpPtrs = NULL;
 	} 
 	else { 
 		// FT_ListDevices failed 
