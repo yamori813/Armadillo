@@ -17,36 +17,56 @@
 // Globals
 FT_HANDLE ftHandle = NULL;
 
-int bitbang_init()
+int bitbang_list(CFMutableArrayRef interfaceList)
 {
 	FT_STATUS	ftStatus;
 	DWORD numDevs;
-	char *BufPtrs[5];  // pointer to array of 3 pointers 
-	char Buffer1[64];  // buffer for description of first device  
-	char Buffer2[64];  // buffer for description of second device 
-	char Buffer3[64];  // buffer for description of second device 
-	char Buffer4[64];  // buffer for description of second device 
-
-	// initialize the array of pointers 
-	BufPtrs[0] = Buffer1; 
-	BufPtrs[1] = Buffer2; 
-	BufPtrs[2] = Buffer3; 
-	BufPtrs[3] = Buffer4; 
-	BufPtrs[4] = NULL;  // last entry should be NULL 
-	
+	char **BufPtrs;  // pointer to array of 3 pointers 
+	char **TmpPtrs;  // pointer to array of 3 pointers 
+	char *farstBuf;
+	ftStatus = FT_ListDevices(&numDevs, NULL, FT_LIST_NUMBER_ONLY);  
+	if (ftStatus == FT_OK) {
+		BufPtrs = (char **)malloc(numDevs * sizeof(char *));
+		farstBuf =(char *)malloc(numDevs * sizeof(char *)); 
+		int i;
+		TmpPtrs = BufPtrs;
+		for(i = 0;i < numDevs; ++i) {
+			
+			*TmpPtrs++ = farstBuf + 64 * i;
+		}
+	} 
+	else { 
+		// FT_ListDevices failed 
+		return 0;
+	}
 	ftStatus = FT_ListDevices(BufPtrs,&numDevs,FT_LIST_ALL|FT_OPEN_BY_DESCRIPTION);  
 	if (ftStatus == FT_OK) {
 		int i;
-		for(i = 0; i < numDevs; ++i)
+		for(i = 0; i < numDevs; ++i) {
+			CFStringRef	ftDevCFString;
 			printf("FT Device: %s\n", BufPtrs[i]);
+			ftDevCFString = CFStringCreateWithCString(kCFAllocatorDefault,
+													  BufPtrs[i], kCFStringEncodingUTF8);
+			CFArrayAppendValue(interfaceList, ftDevCFString);
+		}
 		// FT_ListDevices OK, product descriptions are in Buffer1 and Buffer2, and  
 		// numDevs contains the number of devices connected 
 	} 
 	else { 
 		// FT_ListDevices failed 
+		return 0;
 	}
+	free(BufPtrs);
+	free(farstBuf);
+
+	return 1;
+}
+
+int bitbang_init(int iDev)
+{
+	FT_STATUS	ftStatus;
 	
-	ftStatus = FT_Open(0, &ftHandle);
+	ftStatus = FT_Open(iDev, &ftHandle);
 	if(ftStatus != FT_OK) {
 		/* 
 		 This can fail if the ftdi_sio driver is loaded

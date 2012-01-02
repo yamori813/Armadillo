@@ -31,6 +31,7 @@
 	IBOutlet NSSegmentedControl *pcopes1LEDSelect;
 	IBOutlet NSPopUpButton *pcoprs1DevSelect;
 
+	IBOutlet NSPopUpButton *ftbitbangDevSelect;
 	IBOutlet NSButton *ftbitbangInitButton;
 	IBOutlet NSButton *ftbitbangTransButton;
 

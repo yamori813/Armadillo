@@ -638,7 +638,8 @@
 
 - (IBAction)ftbitbangInit:(id)sender
 {
-	if([ftbitbangInitButton isEnabled] ==YES && bitbang_init()) {
+	if([ftbitbangInitButton isEnabled] ==YES && 
+	   bitbang_init([ftbitbangDevSelect indexOfSelectedItem])) {
 		[ftbitbangInitButton setEnabled: NO];
 		[ftbitbangTransButton setEnabled: YES];
 	}
@@ -916,10 +917,12 @@
 	[self getPrefernce];
 
 	NSMutableArray *ifList = [[ NSMutableArray alloc ] init];
+	NSMutableArray *ftList = [[ NSMutableArray alloc ] init];
 	
     io_iterator_t	serialPortIterator;
     FindModems(&serialPortIterator);
     GetModemPath(serialPortIterator, (CFMutableArrayRef)ifList);
+    bitbang_list((CFMutableArrayRef)ftList);
     IOObjectRelease(serialPortIterator);	// Release the iterator.
 	NSLog(@"%@", ifList);
     // add device path to menu
@@ -934,6 +937,13 @@
     } else {
         [ crossam2DevSelect setEnabled : false];
         [ pcoprs1DevSelect setEnabled : false];
+    }
+    if([ ftList count]) {
+        [ ftbitbangDevSelect addItemsWithTitles : ftList];
+        [ ftbitbangDevSelect setEnabled : true];
+    } else {
+        [ ftbitbangInitButton setEnabled : false];
+        [ ftbitbangDevSelect setEnabled : false];
     }
 	
 	[ mainWindow makeKeyAndOrderFront:nil];
