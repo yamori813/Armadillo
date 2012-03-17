@@ -266,6 +266,7 @@
 	[xmlParser setDelegate:self];
 	[xmlParser parse];
 	[xmlParser release];
+	[fileName setStringValue:[path lastPathComponent]];
 }
 
 //

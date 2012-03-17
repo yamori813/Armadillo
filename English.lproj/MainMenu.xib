@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="588"/>
 			<integer value="29"/>
+			<integer value="568"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1358,6 +1358,30 @@
 								<int key="NSPeriodicInterval">25</int>
 							</object>
 						</object>
+						<object class="NSTextField" id="652582542">
+							<reference key="NSNextResponder" ref="694768526"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{67, 132}, {169, 17}}</string>
+							<reference key="NSSuperview" ref="694768526"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSTextFieldCell" key="NSCell" id="246316198">
+								<int key="NSCellFlags">68288064</int>
+								<int key="NSCellFlags2">272630784</int>
+								<string key="NSContents">Label</string>
+								<reference key="NSSupport" ref="462498216"/>
+								<reference key="NSControlView" ref="652582542"/>
+								<reference key="NSBackgroundColor" ref="76416147"/>
+								<object class="NSColor" key="NSTextColor">
+									<int key="NSColorSpace">6</int>
+									<string key="NSCatalogName">System</string>
+									<string key="NSColorName">controlTextColor</string>
+									<object class="NSColor" key="NSColor">
+										<int key="NSColorSpace">3</int>
+										<bytes key="NSWhite">MAA</bytes>
+									</object>
+								</object>
+							</object>
+						</object>
 					</object>
 					<string key="NSFrameSize">{598, 284}</string>
 					<reference key="NSSuperview"/>
@@ -1961,6 +1985,14 @@
 					</object>
 					<int key="connectionID">688</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">fileName</string>
+						<reference key="source" ref="296392198"/>
+						<reference key="destination" ref="652582542"/>
+					</object>
+					<int key="connectionID">691</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -2538,6 +2570,7 @@
 							<reference ref="808029728"/>
 							<reference ref="866141249"/>
 							<reference ref="244921220"/>
+							<reference ref="652582542"/>
 						</object>
 						<reference key="parent" ref="140873218"/>
 					</object>
@@ -2985,6 +3018,20 @@
 						<reference key="object" ref="363127215"/>
 						<reference key="parent" ref="801592226"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">689</int>
+						<reference key="object" ref="652582542"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="246316198"/>
+						</object>
+						<reference key="parent" ref="694768526"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">690</int>
+						<reference key="object" ref="246316198"/>
+						<reference key="parent" ref="652582542"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -3207,6 +3254,8 @@
 					<string>686.IBPluginDependency</string>
 					<string>687.IBEditorWindowLastContentRect</string>
 					<string>687.IBPluginDependency</string>
+					<string>689.IBPluginDependency</string>
+					<string>690.IBPluginDependency</string>
 					<string>72.IBPluginDependency</string>
 					<string>72.ImportedFromIB2</string>
 					<string>73.IBPluginDependency</string>
@@ -3467,6 +3516,8 @@
 					<string>{{204, 601}, {142, 4}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -3510,7 +3561,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">688</int>
+			<int key="maxID">691</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3641,6 +3692,7 @@
 							<string>dataSelect</string>
 							<string>dialSelect</string>
 							<string>disclosureButton</string>
+							<string>fileName</string>
 							<string>ftbitbangDevSelect</string>
 							<string>ftbitbangInitButton</string>
 							<string>ftbitbangTransButton</string>
@@ -3667,6 +3719,7 @@
 							<string>NSPopUpButton</string>
 							<string>NSSegmentedControl</string>
 							<string>NSButton</string>
+							<string>NSTextField</string>
 							<string>NSPopUpButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
@@ -3696,6 +3749,7 @@
 							<string>dataSelect</string>
 							<string>dialSelect</string>
 							<string>disclosureButton</string>
+							<string>fileName</string>
 							<string>ftbitbangDevSelect</string>
 							<string>ftbitbangInitButton</string>
 							<string>ftbitbangTransButton</string>
@@ -3751,6 +3805,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">disclosureButton</string>
 								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">fileName</string>
+								<string key="candidateClassName">NSTextField</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">ftbitbangDevSelect</string>
@@ -4464,6 +4522,22 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">AppKit.framework/Headers/NSText.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSTextField</string>
+					<string key="superclassName">NSControl</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSTextField.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSTextFieldCell</string>
+					<string key="superclassName">NSActionCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSTextFieldCell.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
