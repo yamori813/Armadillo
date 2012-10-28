@@ -1,33 +1,41 @@
 /*++
 
-Copyright (c) 2001-2003  Future Technology Devices International Ltd.
-
-Module Name:
-
-    ftd2xx.h
-
-Abstract:
-
-    Native USB interface for FTDI FT8U232/245/2232C
-    FTD2XX library definitions
-
-Environment:
-
-    kernel & user mode
-
-Revision History:
-
-    	13/03/01    	awm     	Created.
-	13/01/03	awm		Added device information support.
-	19/03/03	awm		Added FT_W32_CancelIo.
-	12/06/03	awm		Added FT_StopInTask and FT_RestartInTask.
-	18/09/03	awm		Added FT_SetResetPipeRetryCount.
-	10/10/03	awm		Added FT_ResetPort.
-	  /03/04	st		modified for linux users
-	12/10/04	st		added FT_SetVIDPID
-
-	
---*/
+ Copyright (c) 2001-2011 Future Technology Devices International Limited
+ 
+ THIS SOFTWARE IS PROVIDED BY FUTURE TECHNOLOGY DEVICES INTERNATIONAL LIMITED "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+ FUTURE TECHNOLOGY DEVICES INTERNATIONAL LIMITED BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ FTDI DRIVERS MAY BE USED ONLY IN CONJUNCTION WITH PRODUCTS BASED ON FTDI PARTS.
+ 
+ FTDI DRIVERS MAY BE DISTRIBUTED IN ANY FORM AS LONG AS LICENSE INFORMATION IS NOT MODIFIED.
+ 
+ IF A CUSTOM VENDOR ID AND/OR PRODUCT ID OR DESCRIPTION STRING ARE USED, IT IS THE
+ RESPONSIBILITY OF THE PRODUCT MANUFACTURER TO MAINTAIN ANY CHANGES AND SUBSEQUENT WHQL
+ RE-CERTIFICATION AS A RESULT OF MAKING THESE CHANGES.
+ 
+ 
+ Module Name:
+ 
+ ftd2xx.h
+ 
+ Abstract:
+ 
+ Native USB device driver for FTDI FT232x, FT245x, FT2232x and FT4232x devices
+ FTD2XX library definitions
+ 
+ Environment:
+ 
+ user mode 
+ 
+ 
+ --*/
 
 
 #ifndef FTD2XX_H
@@ -66,11 +74,8 @@ typedef struct _EVENT_HANDLE{
 	int iVar;
 } EVENT_HANDLE;
 
-typedef DWORD		 	*FT_HANDLE;
-//typedef unsigned int		 FT_HANDLE;
-//typedef struct ftdi_device *	FT_HANDLE;
-
-typedef ULONG			 FT_STATUS;
+typedef PVOID			FT_HANDLE;
+typedef ULONG			FT_STATUS;
 
 //
 // Device status
@@ -107,6 +112,7 @@ enum {
 
 #define FT_OPEN_BY_SERIAL_NUMBER    1
 #define FT_OPEN_BY_DESCRIPTION      2
+#define FT_OPEN_BY_LOCATION			4
 
 //
 // FT_ListDevices Flags (used in conjunction with FT_OpenEx Flags
@@ -114,7 +120,7 @@ enum {
 
 #define FT_LIST_NUMBER_ONLY			0x80000000
 #define FT_LIST_BY_INDEX			0x40000000
-#define FT_LIST_ALL				0x20000000
+#define FT_LIST_ALL					0x20000000
 
 #define FT_LIST_MASK (FT_LIST_NUMBER_ONLY|FT_LIST_BY_INDEX|FT_LIST_ALL)
 
@@ -143,15 +149,12 @@ enum {
 
 #define FT_BITS_8			(UCHAR) 8
 #define FT_BITS_7			(UCHAR) 7
-#define FT_BITS_6			(UCHAR) 6
-#define FT_BITS_5			(UCHAR) 5
 
 //
 // Stop Bits
 //
 
 #define FT_STOP_BITS_1		(UCHAR) 0
-#define FT_STOP_BITS_1_5	(UCHAR) 1
 #define FT_STOP_BITS_2		(UCHAR) 2
 
 //
@@ -185,9 +188,9 @@ enum {
 
 typedef void (*PFT_EVENT_HANDLER)(DWORD,DWORD);
 
-#define FT_EVENT_RXCHAR		    1
-#define FT_EVENT_MODEM_STATUS   2
-#define FT_EVENT_LINE_STATUS   4
+#define FT_EVENT_RXCHAR			1
+#define FT_EVENT_MODEM_STATUS	2
+#define FT_EVENT_LINE_STATUS	4
 
 //
 // Timeouts
@@ -210,8 +213,59 @@ enum {
 	FT_DEVICE_2232C,
 	FT_DEVICE_232R,
 	FT_DEVICE_2232H,
-	FT_DEVICE_4232H
+	FT_DEVICE_4232H,
+	FT_DEVICE_232H
  };
+
+//
+// Bit Modes
+//
+
+#define FT_BITMODE_RESET				0x00
+#define FT_BITMODE_ASYNC_BITBANG		0x01
+#define FT_BITMODE_MPSSE				0x02
+#define FT_BITMODE_SYNC_BITBANG			0x04
+#define FT_BITMODE_MCU_HOST				0x08
+#define FT_BITMODE_FAST_SERIAL			0x10
+#define FT_BITMODE_CBUS_BITBANG			0x20
+#define FT_BITMODE_SYNC_FIFO			0x40
+
+
+//
+// FT232R CBUS Options EEPROM values
+//
+
+#define FT_232R_CBUS_TXDEN				0x00	//	Tx Data Enable
+#define FT_232R_CBUS_PWRON				0x01	//	Power On
+#define FT_232R_CBUS_RXLED				0x02	//	Rx LED
+#define FT_232R_CBUS_TXLED				0x03	//	Tx LED
+#define FT_232R_CBUS_TXRXLED			0x04	//	Tx and Rx LED
+#define FT_232R_CBUS_SLEEP				0x05	//	Sleep
+#define FT_232R_CBUS_CLK48				0x06	//	48MHz clock
+#define FT_232R_CBUS_CLK24				0x07	//	24MHz clock
+#define FT_232R_CBUS_CLK12				0x08	//	12MHz clock
+#define FT_232R_CBUS_CLK6				0x09	//	6MHz clock
+#define FT_232R_CBUS_IOMODE				0x0A	//	IO Mode for CBUS bit-bang
+#define FT_232R_CBUS_BITBANG_WR			0x0B	//	Bit-bang write strobe
+#define FT_232R_CBUS_BITBANG_RD			0x0C	//	Bit-bang read strobe
+
+//
+// FT232H CBUS Options EEPROM values
+//
+
+#define FT_232H_CBUS_TRISTATE			0x00	//	Tristate
+#define FT_232H_CBUS_TXLED				0x01	//	Tx LED
+#define FT_232H_CBUS_RXLED				0x02	//	Rx LED
+#define FT_232H_CBUS_TXRXLED			0x03	//	Tx and Rx LED
+#define FT_232H_CBUS_PWREN				0x04	//	Power Enable
+#define FT_232H_CBUS_SLEEP				0x05	//	Sleep
+#define FT_232H_CBUS_DRIVE_0			0x06	//	Drive pin to logic 0
+#define FT_232H_CBUS_DRIVE_1			0x07	//	Drive pin to logic 1
+#define FT_232H_CBUS_IOMODE				0x08	//	IO Mode for CBUS bit-bang
+#define FT_232H_CBUS_TXDEN				0x09	//	Tx Data Enable
+#define FT_232H_CBUS_CLK30				0x0A	//	30MHz clock
+#define FT_232H_CBUS_CLK15				0x0B	//	15MHz clock
+#define FT_232H_CBUS_CLK7_5				0x0C	//	7.5MHz clock
 
 
 #ifdef __cplusplus
@@ -369,7 +423,13 @@ FT_STATUS WINAPI FT_GetQueueStatus(
     FT_HANDLE ftHandle,
 	DWORD *dwRxBytes
 	);
-
+	
+FTD2XX_API
+FT_STATUS WINAPI FT_GetQueueStatusEx(
+   FT_HANDLE ftHandle,
+   DWORD *dwRxBytes
+   );
+	
 FTD2XX_API
 FT_STATUS WINAPI FT_SetEventNotification(
     FT_HANDLE ftHandle,
@@ -445,6 +505,7 @@ typedef struct ft_program_data {
 								//			2 = FT232R extensions
 								//			3 = FT2232H extensions
 								//			4 = FT4232H extensions
+								//			5 = FT232H extensions
 	WORD VendorId;				// 0x0403
 	WORD ProductId;				// 0x6001
 	char *Manufacturer;			// "FTDI"
@@ -456,7 +517,7 @@ typedef struct ft_program_data {
 	WORD SelfPowered;			// 0 = bus powered, 1 = self powered
 	WORD RemoteWakeup;			// 0 = not capable, 1 = capable
 	//
-	// Rev4 (FT232BM) extensions
+	// Rev4 (FT232B) extensions
 	//
 	UCHAR Rev4;					// non-zero if Rev4 chip, zero otherwise
 	UCHAR IsoIn;				// non-zero if in endpoint is isochronous
@@ -466,7 +527,7 @@ typedef struct ft_program_data {
 	UCHAR USBVersionEnable;		// non-zero if chip uses USBVersion
 	WORD USBVersion;			// BCD (0x0200 => USB2)
 	//
-	// Rev 5 (FT2232C) extensions
+	// Rev 5 (FT2232) extensions
 	//
 	UCHAR Rev5;					// non-zero if Rev5 chip, zero otherwise
 	UCHAR IsoInA;				// non-zero if in endpoint is isochronous
@@ -560,10 +621,40 @@ typedef struct ft_program_data {
 	UCHAR BIsVCP8;				// non-zero if interface is to use VCP drivers
 	UCHAR CIsVCP8;				// non-zero if interface is to use VCP drivers
 	UCHAR DIsVCP8;				// non-zero if interface is to use VCP drivers
-
+	//
+	// Rev 9 (FT232H) Extensions
+	//
+	UCHAR PullDownEnableH;		// non-zero if pull down enabled
+	UCHAR SerNumEnableH;		// non-zero if serial number to be used
+	UCHAR ACSlowSlewH;			// non-zero if AC pins have slow slew
+	UCHAR ACSchmittInputH;		// non-zero if AC pins are Schmitt input
+	UCHAR ACDriveCurrentH;		// valid values are 4mA, 8mA, 12mA, 16mA
+	UCHAR ADSlowSlewH;			// non-zero if AD pins have slow slew
+	UCHAR ADSchmittInputH;		// non-zero if AD pins are Schmitt input
+	UCHAR ADDriveCurrentH;		// valid values are 4mA, 8mA, 12mA, 16mA
+	UCHAR Cbus0H;				// Cbus Mux control
+	UCHAR Cbus1H;				// Cbus Mux control
+	UCHAR Cbus2H;				// Cbus Mux control
+	UCHAR Cbus3H;				// Cbus Mux control
+	UCHAR Cbus4H;				// Cbus Mux control
+	UCHAR Cbus5H;				// Cbus Mux control
+	UCHAR Cbus6H;				// Cbus Mux control
+	UCHAR Cbus7H;				// Cbus Mux control
+	UCHAR Cbus8H;				// Cbus Mux control
+	UCHAR Cbus9H;				// Cbus Mux control
+	UCHAR IsFifoH;				// non-zero if interface is 245 FIFO
+	UCHAR IsFifoTarH;			// non-zero if interface is 245 FIFO CPU target
+	UCHAR IsFastSerH;			// non-zero if interface is Fast serial
+	UCHAR IsFT1248H;			// non-zero if interface is FT1248
+	UCHAR FT1248CpolH;			// FT1248 clock polarity - clock idle high (1) or clock idle low (0)
+	UCHAR FT1248LsbH;			// FT1248 data is LSB (1) or MSB (0)
+	UCHAR FT1248FlowControlH;	// FT1248 flow control enable
+	UCHAR IsVCPH;				// non-zero if interface is to use VCP drivers
+	UCHAR PowerSaveEnableH;		// non-zero if using ACBUS7 to save power for self-powered designs
+	
 } FT_PROGRAM_DATA, *PFT_PROGRAM_DATA;
 
-
+	
 FTD2XX_API
 FT_STATUS WINAPI FT_EE_Program(
     FT_HANDLE ftHandle,
@@ -658,6 +749,12 @@ FT_STATUS WINAPI FT_GetDeviceInfo(
 	PCHAR Description,
 	LPVOID Dummy
     );
+	
+FTD2XX_API
+FT_STATUS WINAPI FT_GetDeviceLocId(
+   FT_HANDLE ftHandle,
+   LPDWORD lpdwLocId
+   );
 
 FTD2XX_API
 FT_STATUS WINAPI FT_StopInTask(
@@ -679,7 +776,11 @@ FTD2XX_API
 FT_STATUS WINAPI FT_ResetPort(
     FT_HANDLE ftHandle
     );
-
+	
+FTD2XX_API
+FT_STATUS WINAPI FT_CyclePort(
+	FT_HANDLE ftHandle
+	);
 
 //
 // Win32-type functions
@@ -915,6 +1016,11 @@ FT_STATUS WINAPI FT_GetDeviceInfoDetail(
 	LPVOID lpDescription,
 	FT_HANDLE *pftHandle
 	);
+
+
+//
+// Version information
+//
 
 FTD2XX_API
 FT_STATUS WINAPI FT_GetDriverVersion(

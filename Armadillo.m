@@ -278,7 +278,7 @@
 	int i;
 	NSString *portName;
 	portName = nil;
-	portName = [[pcoprs1DevSelect selectedItem] title];
+	portName = [[crossam2DevSelect selectedItem] title];
 	
 	if(portName != nil) {
 		if(crossam2_init((CFStringRef)portName)) {
@@ -826,6 +826,7 @@
 			CFRelease(strvalue);
 		}
 	}
+	NSLog(@"MORI MORI");
 	if([pcoprs1DevSelect numberOfItems] != 0) {
 		strvalue = CFPreferencesCopyAppValue(pcoprs1PortKey, appName);
 		if(strvalue) {
@@ -915,8 +916,6 @@
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	[self getPrefernce];
-
 	NSMutableArray *ifList = [[ NSMutableArray alloc ] init];
 	NSMutableArray *ftList = [[ NSMutableArray alloc ] init];
 	
@@ -948,6 +947,8 @@
         [ ftbitbangInitButton setEnabled : false];
         [ ftbitbangDevSelect setEnabled : false];
     }
+	
+	[self getPrefernce];
 	
 	[ mainWindow makeKeyAndOrderFront:nil];
 }
