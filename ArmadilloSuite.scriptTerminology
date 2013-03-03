@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Classes</key>
+	<dict>
+		<key>NSApplication</key>
+		<dict>
+			<key>Attributes</key>
+			<dict>
+				<key>armadilloVers</key>
+				<dict>
+					<key>Description</key>
+					<string>The version of the application.</string>
+					<key>Name</key>
+					<string>version</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>An application's top level scripting object.</string>
+			<key>Name</key>
+			<string>application</string>
+			<key>PluralName</key>
+			<string>applications</string>
+		</dict>
+	</dict>
+	<key>Commands</key>
+	<dict>
+		<key>Armadillotest</key>
+		<dict>
+			<key>Name</key>
+			<string>armadillotest</string>
+		</dict>
+		<key>Commandsend</key>
+		<dict>
+			<key>Name</key>
+			<string>commandsend</string>
+			<key>UnnamedArgument</key>
+			<dict>
+				<key>Description</key>
+				<string>command name</string>
+			</dict>
+		</dict>
+		<key>Openxml</key>
+		<dict>
+			<key>Name</key>
+			<string>openxml</string>
+			<key>UnnamedArgument</key>
+			<dict>
+				<key>Description</key>
+				<string>file path</string>
+			</dict>
+		</dict>
+		<key>Usedevice</key>
+		<dict>
+			<key>Name</key>
+			<string>usedevice</string>
+			<key>UnnamedArgument</key>
+			<dict>
+				<key>Description</key>
+				<string>device name</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>The Armadillo suite</string>
+	<key>Name</key>
+	<string>Armadillo Suite</string>
+</dict>
+</plist>
