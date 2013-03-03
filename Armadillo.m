@@ -989,7 +989,7 @@
 	if([ftbitbangInitButton isEnabled] == NO)
 		bitbang_close();
 
-	if([remoconTransButton isEnabled] == NO)
+	if([remoconTransButton isEnabled] == YES)
 		remocon_close();
 
 	[self savePrefernce];
