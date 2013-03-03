@@ -214,7 +214,6 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				30DE5B8F124B8DE700D7F231 /* CopyFiles */,
-				F515C2AF13BBDBA60057E626 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -264,22 +263,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F515C2AF13BBDBA60057E626 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "install_name_tool -id @executable_path/../Frameworks/libftd2xx.1.0.4.dylib libftd2xx.1.0.4.dylib";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {

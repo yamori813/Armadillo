@@ -699,7 +699,7 @@
 	int signalcount;
 	int i, j;
 	if(remoCodeCount) {
-		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
+					signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
 		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
 		pat = patptr;
 //		for(j = 0; j < signalcount; ++j) {
