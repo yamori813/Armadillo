@@ -714,7 +714,7 @@
 			NSLog(@"%@", theData);
 //		}
 
-		transferremocon([theData length], 2, cmddata);
+		remocon_transfer([theData length], 2, cmddata);
 	} else {
 		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
 	}
@@ -975,7 +975,7 @@
         [ ftbitbangInitButton setEnabled : false];
         [ ftbitbangDevSelect setEnabled : false];
     }
-	if(openremocon()) {
+	if(remocon_init()) {
         [ remoconTransButton setEnabled : true];
 	}
 	
@@ -988,6 +988,9 @@
 {
 	if([ftbitbangInitButton isEnabled] == NO)
 		bitbang_close();
+
+	if([remoconTransButton isEnabled] == NO)
+		remocon_close();
 
 	[self savePrefernce];
 }
