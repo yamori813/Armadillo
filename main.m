@@ -48,9 +48,11 @@ int main(int argc, char *argv[])
 	} else if([directParameter compare:@"PC-OP-RS1"] == NSOrderedSame) {
 		[arma setTab:1];
 		[arma pcoprs1Init:nil];
-	} else {
+	} else if([directParameter compare:@"BitBang"] == NSOrderedSame) {
 		[arma setTab:2];
 		[arma ftbitbangInit:nil];
+	} else if([directParameter compare:@"REMOCON"] == NSOrderedSame) {
+		[arma setTab:3];
 	}
 }
 
@@ -61,8 +63,10 @@ int main(int argc, char *argv[])
 	if(tab == 0) {
 	} else if(tab == 1) {
 		[arma pcoprs1Trans:nil];
-	} else {
+	} else if(tab == 2) {
 		[arma ftbitbangTrans:nil];
+	} else if(tab == 3) {
+		[arma remoconTrans:nil];
 	}
 //	[NSThread detachNewThreadSelector:@selector(transftbitbang:) toTarget:arma
 //						   withObject:directParameter];

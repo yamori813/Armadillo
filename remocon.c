@@ -2,8 +2,8 @@
  *  remocon.c
  *  Armadillo
  *
- *  Created by hiroki on 13/03/03.
- *  Copyright 2013 __MyCompanyName__. All rights reserved.
+ *  Created by H.M on 13/03/03.
+ *  Copyright 2013 Hiroki Mori. All rights reserved.
  *
  * This code base on BtoIrRemoconMac.c
  *
