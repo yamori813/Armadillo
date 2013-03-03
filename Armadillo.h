@@ -35,6 +35,8 @@
 	IBOutlet NSButton *ftbitbangInitButton;
 	IBOutlet NSButton *ftbitbangTransButton;
 
+	IBOutlet NSButton *remoconTransButton;
+
 	IBOutlet NSProgressIndicator *waitTimer;
 	IBOutlet NSPopUpButton *dataSelect;
 	IBOutlet NSTextField *fileName;
@@ -85,6 +87,8 @@
 
 - (IBAction)ftbitbangInit:(id)sender;
 - (IBAction)ftbitbangTrans:(id)sender;
+
+- (IBAction)remoconTrans:(id)sender;
 
 // 
 

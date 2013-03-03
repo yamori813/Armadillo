@@ -11,6 +11,7 @@
 #include "crossam2.h"
 #include "pcoprs1.h"
 #include "bitbang.h"
+#include "remocon.h"
 #include "appleremote.h"
 #import "Armadillo.h"
 
@@ -692,6 +693,33 @@
 	}
 }
 
+- (IBAction)remoconTrans:(id)sender
+{
+	unsigned char cmddata[6];
+	int signalcount;
+	int i, j;
+	if(remoCodeCount) {
+		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
+		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
+		pat = patptr;
+//		for(j = 0; j < signalcount; ++j) {
+		j= 0;
+			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
+			for(i = 0; i < [theData length] / 2; ++i) {
+				unsigned char b = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+				// reverse bit
+				b = ((b * 0x0802LU & 0x22110LU) | (b * 0x8020LU & 0x88440LU)) * 0x10101LU >> 16; 
+				cmddata[i] = b;
+			}
+			NSLog(@"%@", theData);
+//		}
+
+		transferremocon([theData length], 2, cmddata);
+	} else {
+		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
+	}
+}
+
 //
 // Load XML IR data file
 //
@@ -947,6 +975,9 @@
         [ ftbitbangInitButton setEnabled : false];
         [ ftbitbangDevSelect setEnabled : false];
     }
+	if(openremocon()) {
+        [ remoconTransButton setEnabled : true];
+	}
 	
 	[self getPrefernce];
 	
