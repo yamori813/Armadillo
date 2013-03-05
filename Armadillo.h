@@ -36,6 +36,7 @@
 	IBOutlet NSButton *ftbitbangTransButton;
 
 	IBOutlet NSButton *remoconTransButton;
+	IBOutlet NSPopUpButton *remoconFormatSelect;
 
 	IBOutlet NSProgressIndicator *waitTimer;
 	IBOutlet NSPopUpButton *dataSelect;

@@ -714,7 +714,7 @@
 			NSLog(@"%@", theData);
 //		}
 
-		remocon_transfer([theData length], 2, cmddata);
+		remocon_transfer([theData length], [remoconFormatSelect indexOfSelectedItem]+1, cmddata);
 	} else {
 		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
 	}
