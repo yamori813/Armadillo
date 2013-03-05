@@ -112,6 +112,10 @@ void remocon_transfer(int len, int type, unsigned char *dat)
     buf[2] = len << 4 | type;
     memcpy(buf+3, dat, (len * 4 + 4) / 8);
 
+	for(int i = 0;i < 8; ++i) {
+		printf("%02x ", buf[i]);
+	}
+	printf("\n");
 	if (WriteToDevice(refDevice, buf, DEVICE_BUFSIZE) != kIOReturnSuccess) {
 		fprintf(stderr, "WriteToDevice: err\n");
 		goto DONE;

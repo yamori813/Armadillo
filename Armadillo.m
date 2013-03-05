@@ -697,24 +697,26 @@
 {
 	unsigned char cmddata[6];
 	int signalcount;
-	int i, j;
+	int i, j, len;
+	
 	if(remoCodeCount) {
 					signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
 		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
 		pat = patptr;
-//		for(j = 0; j < signalcount; ++j) {
-		j= 0;
+		len = 0;
+		for(j = 0; j < signalcount; ++j) {
 			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
 			for(i = 0; i < [theData length] / 2; ++i) {
-				unsigned char b = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
-				// reverse bit
-				b = ((b * 0x0802LU & 0x22110LU) | (b * 0x8020LU & 0x88440LU)) * 0x10101LU >> 16; 
-				cmddata[i] = b;
+				if(len < 6 && (remoBits[j] % 8) == 0) {
+					unsigned char b = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+					// reverse bit
+					b = ((b * 0x0802LU & 0x22110LU) | (b * 0x8020LU & 0x88440LU)) * 0x10101LU >> 16; 
+					cmddata[len] = b;
+					++len;
+				}
 			}
-			NSLog(@"%@", theData);
-//		}
-
-		remocon_transfer([theData length], [remoconFormatSelect indexOfSelectedItem]+1, cmddata);
+		}
+		remocon_transfer(len * 2, [remoconFormatSelect indexOfSelectedItem]+1, cmddata);
 	} else {
 		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
 	}
