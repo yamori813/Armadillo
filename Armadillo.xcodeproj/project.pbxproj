@@ -20,9 +20,9 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		F516A8D3171AC7EC00439A7F /* ArmadilloSuite.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = F5C2180713F291CC00C676FF /* ArmadilloSuite.scriptTerminology */; };
+		F516A8D4171AC7ED00439A7F /* ArmadilloSuite.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = F5C2180613F291CC00C676FF /* ArmadilloSuite.scriptSuite */; };
 		F530CF6716E3308F0058BEC5 /* remocon.c in Sources */ = {isa = PBXBuildFile; fileRef = F530CF6616E3308F0058BEC5 /* remocon.c */; };
-		F5C2182213F29D8000C676FF /* ArmadilloSuite.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = F5C2180613F291CC00C676FF /* ArmadilloSuite.scriptSuite */; };
-		F5C2182313F29D8000C676FF /* ArmadilloSuite.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = F5C2180713F291CC00C676FF /* ArmadilloSuite.scriptTerminology */; };
 		F5FDCCED163C96A90043C30A /* Armadillo.icns in Resources */ = {isa = PBXBuildFile; fileRef = F5FDCCEC163C96A90043C30A /* Armadillo.icns */; };
 		F5FDCCFA163C980B0043C30A /* libftd2xx.1.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FDCCF9163C980B0043C30A /* libftd2xx.1.1.0.dylib */; };
 		F5FDCD0A163C98DF0043C30A /* libftd2xx.1.1.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5FDCCF9163C980B0043C30A /* libftd2xx.1.1.0.dylib */; };
@@ -256,9 +256,9 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
-				F5C2182213F29D8000C676FF /* ArmadilloSuite.scriptSuite in Resources */,
-				F5C2182313F29D8000C676FF /* ArmadilloSuite.scriptTerminology in Resources */,
 				F5FDCCED163C96A90043C30A /* Armadillo.icns in Resources */,
+				F516A8D3171AC7EC00439A7F /* ArmadilloSuite.scriptTerminology in Resources */,
+				F516A8D4171AC7ED00439A7F /* ArmadilloSuite.scriptSuite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

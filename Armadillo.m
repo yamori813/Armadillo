@@ -394,6 +394,11 @@
 // PC-OP-RS1 code
 //
 
+- (void)setPort:(int)port
+{
+	[pcopes1LEDSelect setSelectedSegment:port];
+}
+
 - (void) transferTask
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];

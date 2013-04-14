@@ -1,40 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<!-- @version(10.4) -->
 <dictionary title="Armadillo Dictionary">
 	<suite name="Armadillo Suite" code="aRma" description="The Armadillo suite">
 		<class name="application" code="capp" description="An application&apos;s top level scripting object.">
 			<cocoa class="NSApplication"/>
-			<responds-to command="armadillotest">
-				<cocoa method="ArmadilloTest:"/>
-			</responds-to>
-			<responds-to command="openxml">
-				<cocoa method="openxml:"/>
-			</responds-to>
-			<responds-to command="usedevice">
-				<cocoa method="usedevice:"/>
-			</responds-to>
-			<responds-to command="commandsend">
-				<cocoa method="commandsend:"/>
-			</responds-to>
-			<property name="version" code="vers" description="The version of the application." type="text" access="r"> 
+			<property name="version" code="vers" description="The version of the application." type="text" access="r">
 				<cocoa key="armadilloVers"/>
 			</property>
+			<responds-to name="armadillotest">
+				<cocoa method="ArmadilloTest:"/>
+			</responds-to>
+			<responds-to name="openxml">
+				<cocoa method="openxml:"/>
+			</responds-to>
+			<responds-to name="usedevice">
+				<cocoa method="usedevice:"/>
+			</responds-to>
+			<responds-to name="commandsend">
+				<cocoa method="commandsend:"/>
+			</responds-to>
 		</class>
 		<command name="armadillotest" code="armaTest"/>
 		<command name="openxml" code="armaOpen">
-			<direct-parameter description="file path">
-				<type type="text"/>
-			</direct-parameter>
+			<direct-parameter description="file path" type="text"/>
 		</command>
 		<command name="usedevice" code="armaUsDv">
-			<direct-parameter description="device name">
-				<type type="text"/>
-			</direct-parameter>
+			<direct-parameter description="device name" type="text"/>
+			<parameter name="port" code="port" type="number" optional="yes"/>
 		</command>
 		<command name="commandsend" code="armaCmSd">
-			<direct-parameter description="command name">
-				<type type="text"/>
-			</direct-parameter>
+			<direct-parameter description="command name" type="text"/>
 		</command>
 	</suite>
 </dictionary>

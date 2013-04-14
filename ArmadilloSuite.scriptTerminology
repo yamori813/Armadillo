@@ -53,6 +53,14 @@
 		</dict>
 		<key>Usedevice</key>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>port</key>
+				<dict>
+					<key>Name</key>
+					<string>port</string>
+				</dict>
+			</dict>
 			<key>Name</key>
 			<string>usedevice</string>
 			<key>UnnamedArgument</key>

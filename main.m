@@ -43,11 +43,18 @@ int main(int argc, char *argv[])
 
 -(void)usedevice:(NSScriptCommand*)command {
 	NSString *directParameter = [command directParameter];
+	NSDictionary *args = [command arguments];
+
 	if([directParameter compare:@"Crossam2"] == NSOrderedSame) {
 		[arma setTab:0];
 	} else if([directParameter compare:@"PC-OP-RS1"] == NSOrderedSame) {
 		[arma setTab:1];
 		[arma pcoprs1Init:nil];
+		int port = [[args objectForKey:@"port"] intValue];
+		if(port > 0 && port <= 4) {
+			[arma setPort:(port-1)];
+		}
+		NSLog(@"MORI MORI Port %d", port);
 	} else if([directParameter compare:@"BitBang"] == NSOrderedSame) {
 		[arma setTab:2];
 		[arma ftbitbangInit:nil];
