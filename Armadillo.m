@@ -810,7 +810,9 @@
 
 - (void) setCommand:(NSString *)command
 {
-	[ dataSelect selectItemWithTitle:command ];	
+	if([dataSelect indexOfItemWithTitle:command] != -1) {
+		[ dataSelect selectItemWithTitle:command ];
+	}
 }
 
 //
