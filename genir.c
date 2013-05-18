@@ -291,8 +291,8 @@ int genir_pcoprs1(int patcount, irdata *pat, unsigned char *buff)
 int sebitbang(int pos, unsigned char *buff, int hi, int lo)
 {
 	int hibit, lobit;
-	hibit = hi / 25;
-	lobit = lo / 25;
+	hibit = hi / 23;
+	lobit = lo / 23;
 	int i;
 	for(i = 0; i < hibit; ++i) {
 		/*
