@@ -709,10 +709,12 @@
 		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
 		pat = patptr;
 		len = 0;
-		for(j = 0; j < signalcount; ++j) {
+		j = 0;
+//		for(j = 0; j < signalcount; ++j) {
 			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
+			NSLog(@"MORI MORI Debug %@ %d", theData, remoBits[0]);
 			for(i = 0; i < [theData length] / 2; ++i) {
-				if(len < 6 && (remoBits[j] % 8) == 0) {
+				if(len < 6) {
 					unsigned char b = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
 					// reverse bit
 					b = ((b * 0x0802LU & 0x22110LU) | (b * 0x8020LU & 0x88440LU)) * 0x10101LU >> 16; 
@@ -720,8 +722,47 @@
 					++len;
 				}
 			}
-		}
-		remocon_transfer(len * 2, [remoconFormatSelect indexOfSelectedItem]+1, cmddata);
+//		}
+		remocon_transfer(remoBits[0]/4, [remoconFormatSelect indexOfSelectedItem]+1, cmddata);
+	} else {
+		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
+	}
+}
+
+- (IBAction)btmsp430Open:(id)sender
+{
+	if(btmsp430 == nil)
+		btmsp430 = [[BTMSP430 alloc] init];
+
+	if ( [btmsp430 openSerialPortProfile] )
+	{
+		// if openSerialPortProfile is successful the connection is open or at
+		// least in the process of opening. So we disable the "Open" button. The
+		// button will be re-enabled if the open process fails or when the
+		// connection is closed.
+		[btmsp430OpenButton setEnabled:FALSE];
+		[btmsp430CloseButton setEnabled:TRUE];
+		[btmsp430TransButton setEnabled:TRUE];
+	}
+	
+}
+
+- (IBAction)btmsp430Close:(id)sender
+{
+	// The button did its job until we open a new connection we do not need to re-enable it:
+	[btmsp430CloseButton setEnabled:FALSE];
+	[btmsp430TransButton setEnabled:FALSE];
+	[btmsp430OpenButton setEnabled:TRUE];
+	
+	// Do the real work to close the connection:
+	[btmsp430 close];
+}
+
+- (IBAction)btmsp430Trans:(id)sender
+{
+	if(remoCodeCount) {
+		NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(3)];
+		[btmsp430 send:12 data:theData];
 	} else {
 		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
 	}

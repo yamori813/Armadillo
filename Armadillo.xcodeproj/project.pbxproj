@@ -23,9 +23,12 @@
 		F516A8D3171AC7EC00439A7F /* ArmadilloSuite.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = F5C2180713F291CC00C676FF /* ArmadilloSuite.scriptTerminology */; };
 		F516A8D4171AC7ED00439A7F /* ArmadilloSuite.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = F5C2180613F291CC00C676FF /* ArmadilloSuite.scriptSuite */; };
 		F530CF6716E3308F0058BEC5 /* remocon.c in Sources */ = {isa = PBXBuildFile; fileRef = F530CF6616E3308F0058BEC5 /* remocon.c */; };
+		F565A6631E13CF3200314E96 /* btmsp430.m in Sources */ = {isa = PBXBuildFile; fileRef = F565A6621E13CF3200314E96 /* btmsp430.m */; };
+		F565A69C1E13CF7500314E96 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F565A69A1E13CF7500314E96 /* IOBluetooth.framework */; };
+		F565A69D1E13CF7500314E96 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F565A69B1E13CF7500314E96 /* IOBluetoothUI.framework */; };
+		F599A9301E13CCE5002B2221 /* libftd2xx.1.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F599A92F1E13CCE5002B2221 /* libftd2xx.1.1.0.dylib */; };
+		F599A9351E13CCF1002B2221 /* libftd2xx.1.1.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = F599A92F1E13CCE5002B2221 /* libftd2xx.1.1.0.dylib */; };
 		F5FDCCED163C96A90043C30A /* Armadillo.icns in Resources */ = {isa = PBXBuildFile; fileRef = F5FDCCEC163C96A90043C30A /* Armadillo.icns */; };
-		F5FDCCFA163C980B0043C30A /* libftd2xx.1.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FDCCF9163C980B0043C30A /* libftd2xx.1.1.0.dylib */; };
-		F5FDCD0A163C98DF0043C30A /* libftd2xx.1.1.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = F5FDCCF9163C980B0043C30A /* libftd2xx.1.1.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F5FDCD0A163C98DF0043C30A /* libftd2xx.1.1.0.dylib in CopyFiles */,
+				F599A9351E13CCF1002B2221 /* libftd2xx.1.1.0.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +78,14 @@
 		8D1107320486CEB800E47090 /* Armadillo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Armadillo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F530CF6516E3308F0058BEC5 /* remocon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remocon.h; sourceTree = "<group>"; };
 		F530CF6616E3308F0058BEC5 /* remocon.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = remocon.c; sourceTree = "<group>"; };
+		F565A6611E13CF3200314E96 /* btmsp430.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = btmsp430.h; sourceTree = "<group>"; };
+		F565A6621E13CF3200314E96 /* btmsp430.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = btmsp430.m; sourceTree = "<group>"; };
+		F565A69A1E13CF7500314E96 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = /System/Library/Frameworks/IOBluetooth.framework; sourceTree = "<absolute>"; };
+		F565A69B1E13CF7500314E96 /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = /System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = "<absolute>"; };
+		F599A92F1E13CCE5002B2221 /* libftd2xx.1.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libftd2xx.1.1.0.dylib; sourceTree = "<group>"; };
 		F5C2180613F291CC00C676FF /* ArmadilloSuite.scriptSuite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.scriptSuite; path = ArmadilloSuite.scriptSuite; sourceTree = "<group>"; };
 		F5C2180713F291CC00C676FF /* ArmadilloSuite.scriptTerminology */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.scriptTerminology; path = ArmadilloSuite.scriptTerminology; sourceTree = "<group>"; };
 		F5FDCCEC163C96A90043C30A /* Armadillo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Armadillo.icns; sourceTree = "<group>"; };
-		F5FDCCF9163C980B0043C30A /* libftd2xx.1.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libftd2xx.1.1.0.dylib; path = ../FT_D2XX_Lib.1.1.0/D2XX/bin/10.4/libftd2xx.1.1.0.dylib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +95,9 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				30350A3F123317AA00DDD914 /* IOKit.framework in Frameworks */,
-				F5FDCCFA163C980B0043C30A /* libftd2xx.1.1.0.dylib in Frameworks */,
+				F599A9301E13CCE5002B2221 /* libftd2xx.1.1.0.dylib in Frameworks */,
+				F565A69C1E13CF7500314E96 /* IOBluetooth.framework in Frameworks */,
+				F565A69D1E13CF7500314E96 /* IOBluetoothUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +111,8 @@
 				303509021233175700DDD914 /* Armadillo.m */,
 				307EF1181245CC6100A021AD /* IrPatternView.h */,
 				307EF1191245CC6100A021AD /* IrPatternView.m */,
+				F565A6611E13CF3200314E96 /* btmsp430.h */,
+				F565A6621E13CF3200314E96 /* btmsp430.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -117,6 +128,8 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F565A69A1E13CF7500314E96 /* IOBluetooth.framework */,
+				F565A69B1E13CF7500314E96 /* IOBluetoothUI.framework */,
 				30350A3E123317AA00DDD914 /* IOKit.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
@@ -198,7 +211,7 @@
 		30DE5B90124B8E0E00D7F231 /* My Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F5FDCCF9163C980B0043C30A /* libftd2xx.1.1.0.dylib */,
+				F599A92F1E13CCE5002B2221 /* libftd2xx.1.1.0.dylib */,
 			);
 			name = "My Frameworks";
 			sourceTree = "<group>";
@@ -279,6 +292,7 @@
 				304B8FEF124B7CA30076FC99 /* bitbang.c in Sources */,
 				309B55C71251E2F300EDA358 /* appleremote.c in Sources */,
 				F530CF6716E3308F0058BEC5 /* remocon.c in Sources */,
+				F565A6631E13CF3200314E96 /* btmsp430.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

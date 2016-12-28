@@ -10,6 +10,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import "IrPatternView.h"
+#import "btmsp430.h"
 
 #include "genir.h"
 
@@ -38,6 +39,10 @@
 	IBOutlet NSButton *remoconTransButton;
 	IBOutlet NSPopUpButton *remoconFormatSelect;
 
+	IBOutlet NSButton *btmsp430OpenButton;
+	IBOutlet NSButton *btmsp430CloseButton;
+	IBOutlet NSButton *btmsp430TransButton;
+	
 	IBOutlet NSProgressIndicator *waitTimer;
 	IBOutlet NSPopUpButton *dataSelect;
 	IBOutlet NSTextField *fileName;
@@ -72,6 +77,8 @@
 	NSMutableArray *signalArray;
 	NSMutableDictionary *remoData;
 
+	BTMSP430 *btmsp430;
+	
 	int appleremoteStat;
 }
 
@@ -90,6 +97,10 @@
 - (IBAction)ftbitbangTrans:(id)sender;
 
 - (IBAction)remoconTrans:(id)sender;
+
+- (IBAction)btmsp430Open:(id)sender;
+- (IBAction)btmsp430Close:(id)sender;
+- (IBAction)btmsp430Trans:(id)sender;
 
 // 
 
