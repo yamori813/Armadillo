@@ -1,4 +1,3 @@
-
 /*
  *  Armadillo.h
  *  Armadillo
