@@ -373,8 +373,7 @@
 {
 	unsigned char cmddata[1024];
 	int gen_size;
-	int signalcount, codeIndex, frameIndex;
-	int i, j;
+	int signalcount;
 //	NSLog(@"%d %d", [dialSelect selectedSegment], 
 //		  [buttonItems indexOfObject:[[buttonSelect selectedItem] title]]);
 
@@ -433,7 +432,6 @@
 			if(isPcoprs1Receive == NO)
 				break;
 		}
-//		NSLog(@"MORI MORI Debug %02x %02x", data[0], data[1]);
 		int i, j, k;
 /*		for(j = 0; j < 15; ++j) {
 			for(i = 0; i < 16; ++i) {
@@ -612,8 +610,7 @@
 	unsigned char cmddata[240];
 	int gen_size;
 
-	int signalcount, codeIndex, frameIndex;
-	int i, j;
+	int signalcount;
 	if(remoCodeCount) {
 		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
 		pat = [self mkirdata:signalcount];
@@ -676,7 +673,6 @@
 		j = 0;
 //		for(j = 0; j < signalcount; ++j) {
 			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
-			NSLog(@"MORI MORI Debug %@ %d", theData, remoBits[0]);
 			for(i = 0; i < [theData length] / 2; ++i) {
 				if(len < 6) {
 					unsigned char b = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
@@ -734,7 +730,7 @@
 
 - (IBAction)irkitTrans:(id)sender
 {
-	unsigned char cmddata[1024*128];
+	char cmddata[1024*128];
 	int signalcount;
 	IRKit *ir;
 
@@ -929,7 +925,7 @@
 	
 	strvalue = CFPreferencesCopyAppValue(irkithostKey, appName);
 	if(strvalue) {
-		[irkitHost setStringValue:strvalue];
+		[irkitHost setStringValue:(NSString *)strvalue];
 		CFRelease(strvalue);
 	}
 }

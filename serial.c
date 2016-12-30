@@ -68,7 +68,6 @@ kern_return_t GetModemPath(io_iterator_t serialPortIterator, CFMutableArrayRef i
 
         if (bsdPathAsCFString)
         {
-//			printf("MORI MORI %s\n",CFStringGetCStringPtr(bsdPathAsCFString, kCFStringEncodingMacRoman));
 	    
             CFArrayAppendValue(interfaceList, bsdPathAsCFString);
         }

@@ -91,7 +91,6 @@ int crossam2_readline(char *data, int datasize)
 		if(allsize > 2 && data[allsize-2] == 0x0d &&
 		   data[allsize-1] == 0x0a) {
 			data[allsize-2] = 0x00;
-//			printf("MORI MORI Debug %s\n", data);
 			break;
 		}
 	}
@@ -120,7 +119,6 @@ int crossam2_waitgo()
 		}
 		read_size = read(crossam2_port, buff+allsize, sizeof(buff)-allsize);
 		allsize += read_size;
-		printf("MORI MORI read_size = %d\n", read_size);
 		if(buff[0] == 'G' && buff[1] == 'O') {
 			return 1;
 		}

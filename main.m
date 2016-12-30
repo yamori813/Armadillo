@@ -54,12 +54,15 @@ int main(int argc, char *argv[])
 		if(port > 0 && port <= 4) {
 			[arma setPort:(port-1)];
 		}
-		NSLog(@"MORI MORI Port %d", port);
 	} else if([directParameter compare:@"BitBang"] == NSOrderedSame) {
 		[arma setTab:2];
 		[arma ftbitbangInit:nil];
 	} else if([directParameter compare:@"REMOCON"] == NSOrderedSame) {
 		[arma setTab:3];
+	} else if([directParameter compare:@"BTMSP430"] == NSOrderedSame) {
+		[arma setTab:4];
+	} else if([directParameter compare:@"IRKit"] == NSOrderedSame) {
+		[arma setTab:5];
 	}
 }
 
@@ -74,6 +77,8 @@ int main(int argc, char *argv[])
 		[arma ftbitbangTrans:nil];
 	} else if(tab == 3) {
 		[arma remoconTrans:nil];
+	} else if(tab == 5) {
+		[arma irkitTrans:nil];
 	}
 //	[NSThread detachNewThreadSelector:@selector(transftbitbang:) toTarget:arma
 //						   withObject:directParameter];
