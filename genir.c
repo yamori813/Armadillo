@@ -384,3 +384,84 @@ int genir_bitbang(int patcount, irdata *pat, unsigned char *buff, int size)
 	return curbit;
 	
 }
+
+// if buffer over flow return -1
+
+int setirkit(char *buff, int size, int hilen, int lolen)
+{
+	char hilo[32];
+	int curlen;
+	sprintf(hilo, "%d,%d", hilen, lolen);
+	curlen = strlen(buff);
+	if(curlen + strlen(hilo) + 1 > size)
+		return -1;
+	if(curlen != 0)
+		strcat(buff, ",");	
+	strcat(buff, hilo);
+	return 0;
+}
+
+int genir_irkit(int patcount, irdata *pat,char *buff, int size)
+{
+	int err;
+	int i, j, k;
+	int rep;
+	irdata *orgpat;
+	int orgpatcount;
+	orgpat = pat;
+	orgpatcount = patcount;
+	memset(buff, 0, 240);
+	rep = (orgpat + patcount - 1)->repeat;
+	k = 0;
+	*buff = '\0';
+	do {
+		pat = orgpat;
+		patcount = orgpatcount;
+		do {
+			// start bit
+			if(pat->format.start_h + pat->format.start_l != 0) {
+				err = setirkit(buff, size, pat->format.start_h,
+							   pat->format.start_l);
+				if(err == -1)
+					return -1;
+			}
+			// data bit
+			i = 0;
+			j = 0;
+			if(pat->bitlen) {
+				do {
+					if((pat->data[j] >> (7 - i) & 1) == 1) {
+						err = setirkit(buff,  size, pat->format.one_h, 
+											pat->format.one_l);
+					} else {
+						err = setirkit(buff, size, pat->format.zero_h, 
+											pat->format.zero_l);
+					}
+					if(err == -1)
+						return -1;
+					
+					if(i == 7) {
+						i = 0;
+						++j;
+					} else {
+						++i;
+					}
+				} while((j * 8 + i) != pat->bitlen);
+			}
+			
+			// stop bit		
+			if(pat->format.stop_h + pat->format.stop_l != 0) {
+				err = setirkit(buff, size, pat->format.stop_h, 
+									pat->format.stop_l);
+				if(err == -1)
+					return -1;
+			}
+			++pat;
+			--patcount;
+		} while(patcount);
+		++k;
+	} while(k < rep);
+
+	return 0;
+}
+

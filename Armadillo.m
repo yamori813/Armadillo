@@ -270,6 +270,48 @@
 	[fileName setStringValue:[path lastPathComponent]];
 }
 
+// make irdata by current menu select pattern
+
+-(irdata *) mkirdata:(int)signalcount
+{
+	int codeIndex, frameIndex;
+	int i, j;
+
+	irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
+	pat = patptr;
+	for(j = 0; j < signalcount; ++j) {
+		// set value from xml
+		codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
+								  cStringUsingEncoding:NSASCIIStringEncoding]);
+		frameIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 2)]
+								   cStringUsingEncoding:NSASCIIStringEncoding]);
+		patptr->format.start_h = remoFrame[frameIndex]->start_h;
+		patptr->format.start_l = remoFrame[frameIndex]->start_l;
+		patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
+		patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
+		patptr->format.zero_h = remoCode[codeIndex]->zero_h;
+		patptr->format.zero_l = remoCode[codeIndex]->zero_l;
+		patptr->format.one_h = remoCode[codeIndex]->one_h;
+		patptr->format.one_l = remoCode[codeIndex]->one_l;
+		NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
+		for(i = 0; i < [theData length] / 2; ++i) {
+			patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+		}
+		patptr->bitlen = remoBits[frameIndex];
+		patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
+									   cStringUsingEncoding:NSASCIIStringEncoding]);
+		//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
+		++patptr;
+	}
+	return(pat);
+}
+
+-(void) nodata
+{
+	NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
+
+}
+
 //
 // Crossam2 code
 //
@@ -338,32 +380,7 @@
 
 	if(remoCodeCount) {
 		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
-		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
-		pat = patptr;
-		for(j = 0; j < signalcount; ++j) {
-			// set value from xml
-			codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
-									  cStringUsingEncoding:NSASCIIStringEncoding]);
-			frameIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 2)]
-									   cStringUsingEncoding:NSASCIIStringEncoding]);
-			patptr->format.start_h = remoFrame[frameIndex]->start_h;
-			patptr->format.start_l = remoFrame[frameIndex]->start_l;
-			patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
-			patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
-			patptr->format.zero_h = remoCode[codeIndex]->zero_h;
-			patptr->format.zero_l = remoCode[codeIndex]->zero_l;
-			patptr->format.one_h = remoCode[codeIndex]->one_h;
-			patptr->format.one_l = remoCode[codeIndex]->one_l;
-			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
-			for(i = 0; i < [theData length] / 2; ++i) {
-				patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
-			}
-			patptr->bitlen = remoBits[frameIndex];
-			patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
-										   cStringUsingEncoding:NSASCIIStringEncoding]);
-//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
-			++patptr;
-		}
+		pat = [self mkirdata:signalcount];
 		
 		// generate and send data
 		gen_size = genir_crossam2(1, signalcount, pat , cmddata, sizeof(cmddata));
@@ -378,10 +395,8 @@
 		[patView setNeedsDisplay:YES];
 		crossam2_write([dialSelect selectedSegment],[buttonItems indexOfObject:[[buttonSelect selectedItem] title]], cmddata, gen_size);	
 	} else {
-		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
+		[self nodata];
 	}
-
-
 }
 
 - (IBAction)crossam2Push:(id)sender
@@ -601,33 +616,8 @@
 	int i, j;
 	if(remoCodeCount) {
 		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
-		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
-		pat = patptr;
-		for(j = 0; j < signalcount; ++j) {
-			// set value from xml
-			codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
-									  cStringUsingEncoding:NSASCIIStringEncoding]);
-			frameIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 2)]
-									   cStringUsingEncoding:NSASCIIStringEncoding]);
-			patptr->format.start_h = remoFrame[frameIndex]->start_h;
-			patptr->format.start_l = remoFrame[frameIndex]->start_l;
-			patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
-			patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
-			patptr->format.zero_h = remoCode[codeIndex]->zero_h;
-			patptr->format.zero_l = remoCode[codeIndex]->zero_l;
-			patptr->format.one_h = remoCode[codeIndex]->one_h;
-			patptr->format.one_l = remoCode[codeIndex]->one_l;
-			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
-			for(i = 0; i < [theData length] / 2; ++i) {
-				patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
-			}
-			patptr->bitlen = remoBits[frameIndex];
-			patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
-										   cStringUsingEncoding:NSASCIIStringEncoding]);
-//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
-			++patptr;
-		}
-		
+		pat = [self mkirdata:signalcount];
+
 		// generate and send data
 		gen_size = genir_pcoprs1(signalcount, pat , cmddata);
 		[patView setIrPattern:1 pat:pat];
@@ -635,7 +625,7 @@
 		printf("genir_bitbang size = %d\n",gen_size);
 		pcoprs1_transfer([pcopes1LEDSelect selectedSegment]+1, cmddata);
 	} else {
-		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
+		[self nodata];
 	}
 }
 
@@ -656,36 +646,10 @@
 {
 	unsigned char cmddata[1024*128];
 	int gen_size;
-	int signalcount, codeIndex, frameIndex;
-	int i, j;
+	int signalcount;
 	if(remoCodeCount) {
 		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
-		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
-		pat = patptr;
-		for(j = 0; j < signalcount; ++j) {
-			// set value from xml
-			codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
-									  cStringUsingEncoding:NSASCIIStringEncoding]);
-			frameIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 2)]
-									   cStringUsingEncoding:NSASCIIStringEncoding]);
-			patptr->format.start_h = remoFrame[frameIndex]->start_h;
-			patptr->format.start_l = remoFrame[frameIndex]->start_l;
-			patptr->format.stop_h = remoFrame[frameIndex]->stop_h;
-			patptr->format.stop_l = remoFrame[frameIndex]->stop_l;
-			patptr->format.zero_h = remoCode[codeIndex]->zero_h;
-			patptr->format.zero_l = remoCode[codeIndex]->zero_l;
-			patptr->format.one_h = remoCode[codeIndex]->one_h;
-			patptr->format.one_l = remoCode[codeIndex]->one_l;
-			NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 3)];
-			for(i = 0; i < [theData length] / 2; ++i) {
-				patptr->data[i] = hex2Int((char *)[theData cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
-			}
-			patptr->bitlen = remoBits[frameIndex];
-			patptr->repeat = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 0)]
-										   cStringUsingEncoding:NSASCIIStringEncoding]);
-//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
-			++patptr;
-		}
+		pat = [self mkirdata:signalcount];
 		
 		// generate and send data
 		gen_size = genir_bitbang(signalcount, pat , cmddata, sizeof(cmddata));
@@ -694,7 +658,7 @@
 		printf("genir_bitbang size = %d\n",gen_size);
 		bitbang_transfer(gen_size, cmddata);
 	} else {
-		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
+		[self nodata];
 	}
 }
 
@@ -725,7 +689,7 @@
 //		}
 		remocon_transfer(remoBits[0]/4, [remoconFormatSelect indexOfSelectedItem]+1, cmddata);
 	} else {
-		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
+		[self nodata];
 	}
 }
 
@@ -764,7 +728,31 @@
 		NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(3)];
 		[btmsp430 send:12 data:theData];
 	} else {
-		NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
+		[self nodata];
+	}
+}
+
+- (IBAction)irkitTrans:(id)sender
+{
+	unsigned char cmddata[1024*128];
+	int signalcount;
+	IRKit *ir;
+
+	if(remoCodeCount) {
+		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
+		pat = [self mkirdata:signalcount];
+		
+		// generate and send data
+		if(genir_irkit(signalcount, pat , cmddata, sizeof(cmddata)) != -1) {
+			[patView setIrPattern:1 pat:pat];
+			[patView setNeedsDisplay:YES];
+			
+			ir = [[IRKit alloc] init];
+			[ir send:[NSString stringWithCString:(char *)cmddata encoding:NSUTF8StringEncoding]
+				host:[irkitHost stringValue]];
+		}
+	} else {
+		[self nodata];
 	}
 }
 

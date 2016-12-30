@@ -11,6 +11,7 @@
 
 #import "IrPatternView.h"
 #import "btmsp430.h"
+#import "IRKit.h"
 
 #include "genir.h"
 
@@ -42,7 +43,9 @@
 	IBOutlet NSButton *btmsp430OpenButton;
 	IBOutlet NSButton *btmsp430CloseButton;
 	IBOutlet NSButton *btmsp430TransButton;
-	
+
+	IBOutlet NSTextField *irkitHost;
+
 	IBOutlet NSProgressIndicator *waitTimer;
 	IBOutlet NSPopUpButton *dataSelect;
 	IBOutlet NSTextField *fileName;
@@ -101,6 +104,8 @@
 - (IBAction)btmsp430Open:(id)sender;
 - (IBAction)btmsp430Close:(id)sender;
 - (IBAction)btmsp430Trans:(id)sender;
+
+- (IBAction)irkitTrans:(id)sender;
 
 // 
 

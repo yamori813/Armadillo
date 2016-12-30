@@ -26,6 +26,7 @@
 		F565A6631E13CF3200314E96 /* btmsp430.m in Sources */ = {isa = PBXBuildFile; fileRef = F565A6621E13CF3200314E96 /* btmsp430.m */; };
 		F565A69C1E13CF7500314E96 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F565A69A1E13CF7500314E96 /* IOBluetooth.framework */; };
 		F565A69D1E13CF7500314E96 /* IOBluetoothUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F565A69B1E13CF7500314E96 /* IOBluetoothUI.framework */; };
+		F56832641E14F7B60024FCF2 /* IRKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F56832631E14F7B60024FCF2 /* IRKit.m */; };
 		F599A9301E13CCE5002B2221 /* libftd2xx.1.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F599A92F1E13CCE5002B2221 /* libftd2xx.1.1.0.dylib */; };
 		F599A9351E13CCF1002B2221 /* libftd2xx.1.1.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = F599A92F1E13CCE5002B2221 /* libftd2xx.1.1.0.dylib */; };
 		F5FDCCED163C96A90043C30A /* Armadillo.icns in Resources */ = {isa = PBXBuildFile; fileRef = F5FDCCEC163C96A90043C30A /* Armadillo.icns */; };
@@ -82,6 +83,8 @@
 		F565A6621E13CF3200314E96 /* btmsp430.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = btmsp430.m; sourceTree = "<group>"; };
 		F565A69A1E13CF7500314E96 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = /System/Library/Frameworks/IOBluetooth.framework; sourceTree = "<absolute>"; };
 		F565A69B1E13CF7500314E96 /* IOBluetoothUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetoothUI.framework; path = /System/Library/Frameworks/IOBluetoothUI.framework; sourceTree = "<absolute>"; };
+		F56832621E14F7B60024FCF2 /* IRKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRKit.h; sourceTree = "<group>"; };
+		F56832631E14F7B60024FCF2 /* IRKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IRKit.m; sourceTree = "<group>"; };
 		F599A92F1E13CCE5002B2221 /* libftd2xx.1.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libftd2xx.1.1.0.dylib; sourceTree = "<group>"; };
 		F5C2180613F291CC00C676FF /* ArmadilloSuite.scriptSuite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.scriptSuite; path = ArmadilloSuite.scriptSuite; sourceTree = "<group>"; };
 		F5C2180713F291CC00C676FF /* ArmadilloSuite.scriptTerminology */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.scriptTerminology; path = ArmadilloSuite.scriptTerminology; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				307EF1191245CC6100A021AD /* IrPatternView.m */,
 				F565A6611E13CF3200314E96 /* btmsp430.h */,
 				F565A6621E13CF3200314E96 /* btmsp430.m */,
+				F56832621E14F7B60024FCF2 /* IRKit.h */,
+				F56832631E14F7B60024FCF2 /* IRKit.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				309B55C71251E2F300EDA358 /* appleremote.c in Sources */,
 				F530CF6716E3308F0058BEC5 /* remocon.c in Sources */,
 				F565A6631E13CF3200314E96 /* btmsp430.m in Sources */,
+				F56832641E14F7B60024FCF2 /* IRKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
