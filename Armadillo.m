@@ -111,6 +111,7 @@
 		}
 		remoData = nil;
 		xmlFilePath = nil;
+		pat = NULL;
     }
     return self;
 }
@@ -272,13 +273,15 @@
 
 // make irdata by current menu select pattern
 
--(irdata *) mkirdata:(int)signalcount
+-(void) mkirdata:(int)signalcount
 {
 	int codeIndex, frameIndex;
 	int i, j;
 
-	irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
-	pat = patptr;
+	if(pat != NULL)
+		free(pat);
+	pat = (irdata *)malloc(sizeof(irdata) * signalcount);
+	irdata *patptr = pat;
 	for(j = 0; j < signalcount; ++j) {
 		// set value from xml
 		codeIndex = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(j * 4 + 1)]
@@ -303,7 +306,6 @@
 		//			NSLog(@"%d %d %d %@ %d %d", patptr->repeat, codeIndex, frameIndex, theData, [theData length], remoBits[frameIndex]);
 		++patptr;
 	}
-	return(pat);
 }
 
 -(void) nodata
@@ -379,7 +381,7 @@
 
 	if(remoCodeCount) {
 		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
-		pat = [self mkirdata:signalcount];
+		[self mkirdata:signalcount];
 		
 		// generate and send data
 		gen_size = genir_crossam2(1, signalcount, pat , cmddata, sizeof(cmddata));
@@ -613,7 +615,7 @@
 	int signalcount;
 	if(remoCodeCount) {
 		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
-		pat = [self mkirdata:signalcount];
+		[self mkirdata:signalcount];
 
 		// generate and send data
 		gen_size = genir_pcoprs1(signalcount, pat , cmddata);
@@ -646,7 +648,7 @@
 	int signalcount;
 	if(remoCodeCount) {
 		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
-		pat = [self mkirdata:signalcount];
+		[self mkirdata:signalcount];
 		
 		// generate and send data
 		gen_size = genir_bitbang(signalcount, pat , cmddata, sizeof(cmddata));
@@ -730,13 +732,13 @@
 
 - (IBAction)irkitTrans:(id)sender
 {
-	char cmddata[1024*128];
+	char cmddata[1024*32];
 	int signalcount;
 	IRKit *ir;
 
 	if(remoCodeCount) {
 		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
-		pat = [self mkirdata:signalcount];
+		[self mkirdata:signalcount];
 		
 		// generate and send data
 		if(genir_irkit(signalcount, pat , cmddata, sizeof(cmddata)) != -1) {
