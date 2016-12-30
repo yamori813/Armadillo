@@ -58,7 +58,7 @@
 // Methods to interact with the window:
 
 - (void)close;
-- (void)send:(int)len data:(NSData *)data;
+- (void)send:(int)len data:(NSString *)data;
 
 // Methods to handle the Baseband and RFCOMM connection:
 - (BOOL)openSerialPortProfile;

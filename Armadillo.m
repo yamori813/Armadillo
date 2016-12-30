@@ -271,7 +271,7 @@
 	[fileName setStringValue:[path lastPathComponent]];
 }
 
-// make irdata by current menu select pattern
+// make irdata to pat by current menu select pattern
 
 -(void) mkirdata:(int)signalcount
 {
@@ -310,8 +310,8 @@
 
 -(void) nodata
 {
-	NSRunAlertPanel( @"データがロードされていません" , @"XMLデータファイルをロードしてください。" , NULL , NULL , NULL );
-
+	NSRunAlertPanel(@"データがロードされていません", @"XMLデータファイルをロードしてください。",
+					NULL, NULL, NULL);
 }
 
 //
@@ -338,8 +338,8 @@
 			for(i = 0; i < [buttonItems count]; ++i)
 				[buttonSelect addItemWithTitle:[buttonItems objectAtIndex:i]];
 		} else {
-			if  (NSRunAlertPanel( @"クロッサムが確認できません" , @"クロッサムを初期化しますか？初期化する場合はOKボタンを押した後にクロッサムの"
-								  "RECボタンとPowerボタンを押した後ファンクション14を押してください。" , @"OK" , @"Cancel" , NULL ) == NSOKButton) {
+			if(NSRunAlertPanel(@"クロッサムが確認できません", @"クロッサムを初期化しますか？初期化する場合はOKボタンを押した後にクロッサムの"
+							   "RECボタンとPowerボタンを押した後ファンクション14を押してください。", @"OK", @"Cancel", NULL) == NSOKButton) {
 				crossam2_patch();
 			}
 		}

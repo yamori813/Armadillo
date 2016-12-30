@@ -12,3 +12,4 @@
 int bitbang_list(CFMutableArrayRef interfaceList);
 int bitbang_init(int iDev);
 int bitbang_transfer(int size, unsigned char *data);
+void bitbang_close();

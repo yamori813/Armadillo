@@ -47,7 +47,7 @@
 #pragma mark Methods to interact with the window
 #endif
 
-- (void)send:(int)len data:(NSData *)data
+- (void)send:(int)len data:(NSString *)data
 {
 	int i;
 	char senddat[32];
