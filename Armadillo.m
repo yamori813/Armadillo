@@ -857,6 +857,7 @@
 	CFStringRef crossamPortKey = CFSTR("Crossam2 Port");
 	CFStringRef pcoprs1PortKey = CFSTR("PC-OP-RS1 Port");
 	CFStringRef xmlFileKey = CFSTR("XML File");
+	CFStringRef irkithostKey = CFSTR("IRKit Host");
 	CFStringRef strvalue;
 	
 	strvalue = CFPreferencesCopyAppValue(windowFrameKey, appName);
@@ -892,7 +893,7 @@
 			CFRelease(strvalue);
 		}
 	}
-	NSLog(@"MORI MORI");
+
 	if([pcoprs1DevSelect numberOfItems] != 0) {
 		strvalue = CFPreferencesCopyAppValue(pcoprs1PortKey, appName);
 		if(strvalue) {
@@ -925,6 +926,12 @@
 		
 		CFRelease(strvalue);
 	}
+	
+	strvalue = CFPreferencesCopyAppValue(irkithostKey, appName);
+	if(strvalue) {
+		[irkitHost setStringValue:strvalue];
+		CFRelease(strvalue);
+	}
 }
 
 - (void) savePrefernce
@@ -936,6 +943,8 @@
 	CFStringRef crossamPortKey = CFSTR("Crossam2 Port");
 	CFStringRef pcoprs1PortKey = CFSTR("PC-OP-RS1 Port");
 	CFStringRef xmlFileKey = CFSTR("XML File");
+	CFStringRef irkithostKey = CFSTR("IRKit Host");
+
 	CFPreferencesSetAppValue(windowFrameKey, (CFStringRef)[ mainWindow 
 														   stringWithSavedFrame], appName);
 	int intnum = [ tabView indexOfTabViewItem: [tabView selectedTabViewItem]];
@@ -959,6 +968,9 @@
 
 	if(xmlFilePath != nil)
 		CFPreferencesSetAppValue(xmlFileKey, (CFStringRef)xmlFilePath, appName);
+
+	CFPreferencesSetAppValue(irkithostKey, (CFStringRef)[ irkitHost  
+														   stringValue], appName);
 	(void)CFPreferencesAppSynchronize(appName);
 }
 
