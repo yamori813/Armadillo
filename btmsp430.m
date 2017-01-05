@@ -12,7 +12,7 @@
 	redistribute this Apple software.
 	
 	In consideration of your agreement to abide by the following terms, and subject to these 
-	terms, Apple grants you a personal, non-exclusive license, under AppleÕs copyrights in 
+	terms, Apple grants you a personal, non-exclusive license, under Appleâ€™s copyrights in 
 	this original Apple software (the "Apple Software"), to use, reproduce, modify and 
 	redistribute the Apple Software, with or without modifications, in source and/or binary 
 	forms; provided that if you redistribute the Apple Software in its entirety and without 
@@ -47,18 +47,20 @@
 #pragma mark Methods to interact with the window
 #endif
 
-- (void)send:(int)len data:(NSString *)data
+- (void)send:(int)len data:(NSString *)data repeat:(int) repeat
 {
 	int i;
 	char senddat[32];
 	// http://plaza.rakuten.co.jp/teetee/diary/?ctgy=36
-	char irpat[] = {0xb0, 0x02, 0xb3, 0x02, 0x4d, 0x10, 0x00};
+	char irpat[] = {0xb0, 0x04, 0xb3, 0x02, 0x4d, 0x10, 0x00};
 	
 	for(i = 0; i < [data length] / 2; ++i) {
 			senddat[i] = hex2Int((char *)[data cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
 	}
+	irpat[1] = repeat;
 	irpat[4] = senddat[0];
 	irpat[5] = senddat[1];
+	irpat[6] = senddat[2];
 	[mRFCOMMChannel writeSync:irpat length:7];
 }
 

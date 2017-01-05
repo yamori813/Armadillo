@@ -722,9 +722,12 @@
 
 - (IBAction)btmsp430Trans:(id)sender
 {
+	int rep;
 	if(remoCodeCount) {
 		NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(3)];
-		[btmsp430 send:12 data:theData];
+		rep = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(0)]
+					  cStringUsingEncoding:NSASCIIStringEncoding]);
+		[btmsp430 send:20 data:theData repeat:rep];
 	} else {
 		[self nodata];
 	}
@@ -782,9 +785,10 @@
 		[dataSelect removeAllItems];
 //		for (id key in remoData)
 //			[dataSelect addItemWithTitle:key];
+		NSLog(@"%@", remoData);
 		NSEnumerator *enumerator = [remoData keyEnumerator];
 		id key;
-		
+
 		while ((key = [enumerator nextObject])) {
 			[dataSelect addItemWithTitle:key];
 		}
@@ -816,7 +820,8 @@
 //		[dataSelect addItemWithTitle:key];
 	NSEnumerator *enumerator = [remoData keyEnumerator];
 	id key;
-	
+
+	NSLog(@"%@", remoData);
 	while ((key = [enumerator nextObject])) {
 		[dataSelect addItemWithTitle:key];
 	}
