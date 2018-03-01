@@ -661,6 +661,16 @@
 	}
 }
 
+- (int)checktype:(irdata *)apat
+{
+	if(apat->format.start_h > 5000)
+		return 2;
+	else if(apat->format.start_h > 3000)
+		return 1;
+	
+	return 3;
+}
+
 - (IBAction)remoconTrans:(id)sender
 {
 	unsigned char cmddata[6];
@@ -668,9 +678,10 @@
 	int i, j, len;
 	
 	if(remoCodeCount) {
-					signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
+		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
 		irdata *patptr = (irdata *)malloc(sizeof(irdata) * signalcount);
 		pat = patptr;
+		[self mkirdata:signalcount];
 		len = 0;
 		j = 0;
 //		for(j = 0; j < signalcount; ++j) {
@@ -685,7 +696,7 @@
 				}
 			}
 //		}
-		remocon_transfer(remoBits[0]/4, [remoconFormatSelect indexOfSelectedItem]+1, cmddata);
+		remocon_transfer(remoBits[0]/4, [self checktype:pat], cmddata);
 	} else {
 		[self nodata];
 	}
@@ -723,11 +734,14 @@
 - (IBAction)btmsp430Trans:(id)sender
 {
 	int rep;
+	int signalcount;
 	if(remoCodeCount) {
+		signalcount = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] count] / 4;
+		[self mkirdata:signalcount];
 		NSString *theData = [[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(3)];
 		rep = atoi((char *)[[[remoData objectForKey:[dataSelect titleOfSelectedItem]] objectAtIndex:(0)]
 					  cStringUsingEncoding:NSASCIIStringEncoding]);
-		[btmsp430 send:20 data:theData repeat:rep];
+		[btmsp430 send:[self checktype:pat] len:remoBits[0] data:theData repeat:rep];
 	} else {
 		[self nodata];
 	}

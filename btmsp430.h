@@ -58,7 +58,7 @@
 // Methods to interact with the window:
 
 - (void)close;
-- (void)send:(int)len data:(NSString *)data repeat:(int) repeat;
+- (void)send:(int)type len:(int)len data:(NSString *)data repeat:(int) repeat;
 
 
 // Methods to handle the Baseband and RFCOMM connection:

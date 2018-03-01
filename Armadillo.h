@@ -38,7 +38,6 @@
 	IBOutlet NSButton *ftbitbangTransButton;
 
 	IBOutlet NSButton *remoconTransButton;
-	IBOutlet NSPopUpButton *remoconFormatSelect;
 
 	IBOutlet NSButton *btmsp430OpenButton;
 	IBOutlet NSButton *btmsp430CloseButton;

@@ -47,21 +47,23 @@
 #pragma mark Methods to interact with the window
 #endif
 
-- (void)send:(int)len data:(NSString *)data repeat:(int) repeat
+- (void)send:(int)type len:(int)len data:(NSString *)data repeat:(int) repeat
 {
 	int i;
-	char senddat[32];
+	int typeconv[] = {-1, 1, 0, 2};
 	// http://plaza.rakuten.co.jp/teetee/diary/?ctgy=36
-	char irpat[] = {0xb0, 0x04, 0xb3, 0x02, 0x4d, 0x10, 0x00};
+	char irpat[32] = {0xb0, 0x04, 0xb3, 0x02, 0x4d, 0x10, 0x00};
+
+	NSLog(@"MSP430 send %d %d", len, repeat);
 	
-	for(i = 0; i < [data length] / 2; ++i) {
-			senddat[i] = hex2Int((char *)[data cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
-	}
 	irpat[1] = repeat;
-	irpat[4] = senddat[0];
-	irpat[5] = senddat[1];
-	irpat[6] = senddat[2];
-	[mRFCOMMChannel writeSync:irpat length:7];
+	irpat[3] = typeconv[type];
+	irpat[4] = len;
+	for(i = 0; i < [data length] / 2; ++i) {
+			irpat[5 + i] = hex2Int((char *)[data cStringUsingEncoding:NSASCIIStringEncoding]+i*2);
+	}
+
+	[mRFCOMMChannel writeSync:irpat length:[data length] / 2 + 5];
 }
 
 - (void)close
